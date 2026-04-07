@@ -1,68 +1,64 @@
 # Bienvenida al curso de Fisica Mecanica
 
-Este libro acompana un curso introductorio de mecanica clasica. Su proposito es ayudar a construir intuicion fisica, desarrollar una estrategia ordenada de resolucion de problemas y conectar los modelos teoricos con situaciones reales mediante calculo, representaciones graficas y actividades de apoyo con Python cuando aporte claridad.
+Este libro organiza el curso de Fisica Mecanica siguiendo, de manera adaptada, la estructura de **PHY321: Classical Mechanics I**. La adaptacion busca conservar la progresion tematica fuerte del curso original y presentarla como un ebook reutilizable para distintos anos academicos.
 
-Aqui encontraras contenidos organizados por unidades, preguntas guia, relaciones matematicas esenciales y una ruta de trabajo pensada para avanzar de manera gradual desde la descripcion del movimiento hasta el estudio de sistemas rotacionales, oscilatorios y gravitacionales.
+## Nota de procedencia
+
+Parte importante del material de este libro fue adaptada a partir del repositorio de curso de Hjorth-Jensen y Pratt. Para evitar plagio y mantener trazabilidad academica, el libro incluye atribucion explicita en las paginas editoriales y en cada notebook importado.
+
+**Referencia APA del material fuente principal:** Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
+
+La licencia del material fuente es **CC0 1.0 Universal**. Puedes revisar el detalle en [Fuente y licencia](contents/phy321/source_attribution.md).
 
 ## Proposito formativo
 
 Al finalizar el curso, se espera que puedas:
 
-- Identificar las magnitudes fisicas relevantes de un problema mecanico.
-- Representar sistemas mediante diagramas, ecuaciones y modelos simplificados.
-- Aplicar principios de cinematica, dinamica y conservacion en problemas de complejidad creciente.
-- Justificar cada paso de una solucion con criterio fisico y consistencia matematica.
-- Usar herramientas computacionales como apoyo para visualizar, explorar y comunicar resultados.
+- Analizar fuerzas e interacciones y formular ecuaciones de movimiento con base en las leyes de Newton.
+- Resolver problemas de trabajo, energia, momentum lineal y momentum angular.
+- Interpretar sistemas oscilatorios, problemas de dos cuerpos, marcos no inerciales y formulaciones lagrangianas.
+- Combinar modelacion analitica con herramientas numericas para estudiar sistemas mecanicos.
+- Documentar soluciones con claridad conceptual, matematica y computacional.
 
-## Como trabajar en este libro
+## Como esta organizado el libro
 
-1. Revisa cada unidad en el orden sugerido por la navegacion.
-1. Estudia primero los conceptos y ecuaciones clave antes de resolver ejercicios.
-1. Usa las preguntas guia de cada capitulo para verificar comprension.
-1. Contrasta procedimientos algebraicos con interpretaciones fisicas y graficas.
-1. Vuelve sobre los temas anteriores cuando una unidad nueva los requiera.
+El recorrido principal del ebook sigue esta ruta:
 
-## Ruta del curso
+- [Introduccion y objetivos del curso](contents/phy321/intro.md)
+- [Programacion general por semanas](contents/phy321/schedule.md)
+- [Equipo docente y evaluacion sugerida](contents/phy321/teachers.md)
+- [Textos y referencias en formato APA](contents/phy321/textbooks.md)
+- [Fuente, licencia y criterio de adaptacion](contents/phy321/source_attribution.md)
 
-El desarrollo del curso sigue esta progresion:
+Despues del bloque inicial, el libro se divide en dos grandes tramos:
 
-- Fundamentos: [Introduccion a la Fisica Mecanica](contents/mechanics/intro.md) y [Magnitudes, Unidades y Vectores](contents/mechanics/units_vectors.md)
-- Cinematica: [Cinematica en Una Dimension](contents/mechanics/kinematics_1d.md) y [Cinematica en Dos Dimensiones](contents/mechanics/kinematics_2d.md)
-- Dinamica: [Leyes de Newton](contents/mechanics/newton_laws.md)
-- Conservacion: [Trabajo y Energia](contents/mechanics/work_energy.md) y [Momentum Lineal y Colisiones](contents/mechanics/momentum_collisions.md)
-- Sistemas extendidos: [Rotacion de Cuerpos Rigidos](contents/mechanics/rotation.md), [Oscilaciones](contents/mechanics/oscillations.md) y [Gravitacion](contents/mechanics/gravitation.md)
+- Material introductorio: capitulos sobre fundamentos matematicos, movimiento, leyes de Newton, trabajo, energia y leyes de conservacion.
+- Temas avanzados: oscilaciones, problemas de dos cuerpos, marcos no inerciales y formulacion lagrangiana.
+
+Tambien se incluyen notebooks de tareas y un proyecto parcial heredados del curso fuente para ampliar el trabajo guiado.
 
 ## Programacion general del curso
 
-La siguiente planificacion distribuye el recorrido del curso en 12 semanas y puede reutilizarse en distintos periodos academicos sin depender de fechas especificas.
+La siguiente programacion conserva la secuencia conceptual de PHY321, pero se presenta sin fechas de calendario para que pueda reutilizarse en otros periodos academicos.
 
 | Semana | Tema central | Enfoque de trabajo |
 | --- | --- | --- |
-| 1 | Introduccion al curso y herramientas basicas | Presentacion del enfoque de mecanica, magnitudes fisicas, sistema internacional y analisis dimensional |
-| 2 | Vectores y modelacion | Operaciones vectoriales, componentes cartesianas y lectura fisica de diagramas |
-| 3 | Cinematica en una dimension | Posicion, velocidad, aceleracion y movimiento con aceleracion constante |
-| 4 | Cinematica en dos dimensiones | Movimiento de proyectiles, descripcion vectorial y trayectorias planas |
-| 5 | Leyes de Newton I | Diagramas de cuerpo libre, fuerza neta y primera aproximacion a la dinamica |
-| 6 | Leyes de Newton II | Rozamiento, tensiones, planos inclinados y sistemas conectados |
-| 7 | Trabajo y energia | Trabajo de fuerzas, energia cinetica, energia potencial y conservacion |
-| 8 | Momentum lineal y colisiones | Impulso, conservacion del momentum y analisis de choques |
-| 9 | Rotacion I | Variables angulares, torque y analogias entre traslacion y rotacion |
-| 10 | Rotacion II | Momento de inercia, energia rotacional y momentum angular |
-| 11 | Oscilaciones mecanicas | Movimiento armonico simple, energia oscilatoria y sistemas masa-resorte |
-| 12 | Gravitacion y cierre integrador | Ley de gravitacion universal, orbitas y sintesis de modelos del curso |
+| 1 | Introduccion, vectores y herramientas de trabajo | Espacio, tiempo, movimiento, repaso matematico y organizacion computacional del curso |
+| 2 | Fundamentos matematicos y numericos | Coordenadas, vectores, algebra vectorial y apoyo numerico para mecanica |
+| 3 | Movimiento y leyes de Newton | Problemas simples de movimiento, fuerzas y ecuaciones de movimiento |
+| 4 | Modelos de fuerza y trabajo | Fuerza gravitatoria, fuerza elastica, trabajo mecanico y energia |
+| 5 | Conservacion y momentum | Energia, momentum lineal, momentum angular y leyes de conservacion |
+| 6 | Potenciales y oscilaciones armonicas | Fuerzas conservativas, equilibrio y oscilador armonico |
+| 7 | Oscilaciones amortiguadas y forzadas | Resonancia, modelacion numerica y lectura fisica de soluciones |
+| 8 | Problema de dos cuerpos | Centro de masa, coordenadas relativas y formulacion gravitatoria |
+| 9 | Orbitas y leyes de Kepler | Fuerzas centrales, orbitas elipticas y clasificacion de trayectorias |
+| 10 | Marcos no inerciales | Traslaciones aceleradas, sistemas rotantes y fuerza de Coriolis |
+| 11 | Calculo variacional y formulacion lagrangiana | Principio variacional, restricciones y ecuaciones de Euler-Lagrange |
+| 12 | Integracion y proyectos | Sintesis de contenidos, trabajo aplicado y cierre del curso |
 
-## Bibliografia base
+## Compilacion local
 
-1. John R. Taylor, *Classical Mechanics*
-1. David Halliday, Robert Resnick, Jearl Walker, *Fundamentals of Physics*
-1. Daniel Kleppner y Robert Kolenkow, *An Introduction to Mechanics*
-1. Hugh D. Young y Roger A. Freedman, *University Physics*
-
-## Desarrollo del libro
-
-Este repositorio esta construido con [Jupyter Book](https://jupyterbook.org/en/stable/intro.html) y puede seguir creciendo con apuntes, guias, ejercicios resueltos y actividades computacionales dentro de `contents/mechanics/`.
-
-Para compilar el libro de manera local:
+Para compilar este libro:
 
 1. Crear un entorno virtual de Python.
 1. Instalar dependencias con `pip install -r requirements.txt`.

@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nota de adaptacion y atribucion &#8212; Física Mecánica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=93a6d1e2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/phy321/hw5';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Nota de adaptacion y atribucion" href="Firstmidterm2022.html" />
+    <link rel="prev" title="Nota de adaptacion y atribucion" href="hw4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Física Mecánica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curso y Fuentes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion y objetivos del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Programacion general por semanas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachers.html">Equipo docente y evaluacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textbooks.html">Textos y referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_attribution.html">Fuente y licencia</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material Introductorio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1. Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2. Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3. Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4. Nota de adaptacion y atribucion</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Temas Avanzados</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5. Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6. Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7. Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8. Nota de adaptacion y atribucion</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tareas y Proyectos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hw1.html">Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="hw2.html">Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="hw3.html">Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="hw4.html">Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Nota de adaptacion y atribucion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Firstmidterm2022.html">Nota de adaptacion y atribucion</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/phy321/hw5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Nota de adaptacion y atribucion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Nota de adaptacion y atribucion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-5">Tarea 5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-homework-5">Introduction to homework 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-15-pt-work-energy-theorem-and-conservation-laws">Exercise 1 (15 pt), Work-energy theorem and conservation laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exsercise-2-15pt-rocket-momentum-and-mass">Exsercise 2 (15pt), Rocket, Momentum and mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-10pt-more-rockets">Exercise 3 (10pt), More Rockets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-10pt-center-of-mass">Exercise 4 (10pt), Center of mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-10pt-warming-up-for-the-earth-sun-system-scaling-the-equations">Exercise 5 (10pt), Warming up for the Earth-Sun system, Scaling the Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-40pt-numerical-elements-solving-exercise-5-numerically">Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-classwork-with-research">Integrating Classwork With Research</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="nota-de-adaptacion-y-atribucion">
+<h1>Nota de adaptacion y atribucion<a class="headerlink" href="#nota-de-adaptacion-y-atribucion" title="Link to this heading">#</a></h1>
+<p>Este notebook forma parte de una adaptacion del curso <strong>PHY321, Classical Mechanics I</strong> al libro <strong>Fisica Mecanica</strong>. El material fuente proviene del repositorio de curso publicado por Morten Hjorth-Jensen y Scott Pratt.</p>
+<p><strong>Referencia APA del material fuente:</strong> Hjorth-Jensen, M., &amp; Pratt, S. (2023). <em>PHY321, Classical Mechanics I</em> [Repositorio de curso y Jupyter Book]. GitHub. <a class="github reference external" href="https://github.com/mhjensen/Physics321">mhjensen/Physics321</a></p>
+<p><strong>Licencia del material fuente:</strong> CC0 1.0 Universal.</p>
+<!-- HTML file automatically generated from DocOnce source (https://github.com/doconce/doconce/)
+doconce format html hw5.do.txt --no_mako -->
+<!-- dom:TITLE: PHY321: Classical Mechanics 1 --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="tarea-5">
+<h1>Tarea 5<a class="headerlink" href="#tarea-5" title="Link to this heading">#</a></h1>
+<p><strong>Homework 5, due Friday   February 18</strong></p>
+<p>Date: <strong>Feb 6, 2022</strong></p>
+<section id="practicalities-about-homeworks-and-projects">
+<h2>Practicalities about  homeworks and projects<a class="headerlink" href="#practicalities-about-homeworks-and-projects" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <strong>Remember to write your name(s)</strong>!</p></li>
+<li><p>Homeworks are available ten days before the deadline.</p></li>
+<li><p>How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</p></li>
+</ol>
+</section>
+<section id="introduction-to-homework-5">
+<h2>Introduction to homework 5<a class="headerlink" href="#introduction-to-homework-5" title="Link to this heading">#</a></h2>
+<p>This week’s sets of classical pen and paper and computational
+exercises are a continuation of the topics from the previous homework
+set and lectures from the last two weeks. We keep dealing with simple
+motion problems and conservation laws; energy, momentum and angular
+momentum. These conservation laws are central in Physics and
+understanding them properly lays the foundation for understanding and
+analyzing more complicated physics problems.</p>
+<p>The relevant reading background is</p>
+<ol class="arabic simple">
+<li><p>chapters 3 and 4 of Taylor (there are many good examples there) and</p></li>
+<li><p>chapters 10-14 of Malthe-Sørenssen.</p></li>
+<li><p>For the numerical exercise, see Malthe-Sørenssen section 7.5</p></li>
+</ol>
+<p>In both textbooks there are many nice worked out examples. Malthe-Sørenssen’s text contains also several coding examples you may find useful.</p>
+<p>The numerical homework focuses on another motion problem where you can
+use the code you developed in homework sets 3 and 4, almost entirely. Please take
+a look at the posted solutions (jupyter-notebook) for homework sets 3 and 4. You
+need only to change the forces at play. The problem at hand is a
+classic, the gravitational force acting between the Sun and the
+Earth. Here you will notice also that the standard Euler-integration
+algorithm is not the best choice and we will introduce the so-called
+Euler-Cromer method and the Velocity-Verlet method. These methods will
+give much more stable numerical results with only few additions to
+your code.</p>
+<p>The code you develop here will also be reused when we analyze energy
+conservation in homework set 6. And for those of you doing the honors
+project, it serves as a starting point for the solar system variant.</p>
+</section>
+<section id="exercise-1-15-pt-work-energy-theorem-and-conservation-laws">
+<h2>Exercise 1 (15 pt), Work-energy theorem and conservation laws<a class="headerlink" href="#exercise-1-15-pt-work-energy-theorem-and-conservation-laws" title="Link to this heading">#</a></h2>
+<p>This exercise was partly discussed during the lectures of the week of February 8-12, see <a class="reference external" href="https://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html">https://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html</a>.</p>
+<p>We will study a classical electron which moves in the <span class="math notranslate nohighlight">\(x\)</span>-direction along a surface. The force from the surface is</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+\]</div>
+<p>The constant <span class="math notranslate nohighlight">\(b\)</span> represents the distance between atoms at the surface of the material, <span class="math notranslate nohighlight">\(F_0\)</span> is a constant and <span class="math notranslate nohighlight">\(x\)</span> is the position of the electron.</p>
+<ul class="simple">
+<li><p>1a (2pt) Is this a conservative force? And if so, what does that imply?</p></li>
+<li><p>1b (4pt) Use the work-energy theorem to find the velocity <span class="math notranslate nohighlight">\(v(x)\)</span>.</p></li>
+<li><p>1c (4pt) With the above expression for the force, find the potential energy.</p></li>
+<li><p>1d (5pt) Make a plot of the potential energy and discuss the equilibrium points where the force on the electron is zero. Discuss the physical interpretation of stable and unstable equilibrium points. Use energy conservation. Recommended read here  is Malthe-Sørenssen chapter 11.3.2.</p></li>
+</ul>
+</section>
+<section id="exsercise-2-15pt-rocket-momentum-and-mass">
+<h2>Exsercise 2 (15pt), Rocket, Momentum and mass<a class="headerlink" href="#exsercise-2-15pt-rocket-momentum-and-mass" title="Link to this heading">#</a></h2>
+<p>Taylor exercise 3.11.   This exercise is meant to illustrate momentum conservation or not.
+This exercise was partly discussed during the lectures, see the notes from the week of February 8-12 on <a class="reference external" href="https://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html">Energy and Momentum etc, see the part on Momentum conservation</a>. Taylor’s chapter 3.2 covers also this example.</p>
+</section>
+<section id="exercise-3-10pt-more-rockets">
+<h2>Exercise 3 (10pt), More Rockets<a class="headerlink" href="#exercise-3-10pt-more-rockets" title="Link to this heading">#</a></h2>
+<p>Taylor exercises 3.13 (5pt) and 3.14 (5pt). This is a continuation of
+the previous exercise and most of the relevant background material can
+be found in Taylor chapter 3.2.</p>
+</section>
+<section id="exercise-4-10pt-center-of-mass">
+<h2>Exercise 4 (10pt), Center of mass<a class="headerlink" href="#exercise-4-10pt-center-of-mass" title="Link to this heading">#</a></h2>
+<p>Taylor exercise 3.20. Here Taylor’s chapter 3.3 can be of use. This
+relation will turn out to be very useful when we discuss systems of
+many classical particles.</p>
+</section>
+<section id="exercise-5-10pt-warming-up-for-the-earth-sun-system-scaling-the-equations">
+<h2>Exercise 5 (10pt), Warming up for the Earth-Sun system, Scaling the Equations<a class="headerlink" href="#exercise-5-10pt-warming-up-for-the-earth-sun-system-scaling-the-equations" title="Link to this heading">#</a></h2>
+<p>The aim of this exercise (as well as the next) is to study the motion
+of objects under the influence of the gravitational force.  We will
+limit ourselves to the Earth-Sun system. Here we will scale the
+equations and sketch our first algorithm for solving the equations,
+namely using Euler’s method again, as we did in homework sets 3 and 4.  This part
+together with the numerical part forms also the entry point for the
+solar system honors project. Furthermore, we will reuse parts of these
+results when analyzing energy conservation in homework 6.</p>
+<p>We will limit ourselves (in order to test the algorithm) to a
+hypothetical solar system with the Earth only orbiting around the sun.
+The only force in the problem is gravity. Newton’s law of gravitation
+is given by a force <span class="math notranslate nohighlight">\(F_G\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(M_{\odot}\)</span> is the mass of the Sun and <span class="math notranslate nohighlight">\(M_{\mathrm{Earth}}\)</span> is
+the mass of the Earth. The gravitational constant is <span class="math notranslate nohighlight">\(G\)</span> and <span class="math notranslate nohighlight">\(r\)</span> is
+the distance between the Earth and the Sun.  The Sun
+has a mass which is much larger than that of the Earth. We can
+therefore safely neglect the motion of the Sun in this problem.</p>
+<p>We assume that the orbit of the Earth around the Sun
+is co-planar, and we take this to be the <span class="math notranslate nohighlight">\(xy\)</span>-plane.
+Using Newton’s second law of motion we get the following equations</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2x}{dt^2}=\frac{F_{G,x}}{M_{\mathrm{Earth}}},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2y}{dt^2}=\frac{F_{G,y}}{M_{\mathrm{Earth}}},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_{G,x}\)</span> and <span class="math notranslate nohighlight">\(F_{G,y}\)</span> are the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components of the
+gravitational force.</p>
+<p>We will use so-called astronomical units when rewriting our equations.
+Using astronomical units (AU as abbreviation)it means that one
+astronomical unit of length, known as 1 AU, is the average distance
+between the Sun and Earth, that is <span class="math notranslate nohighlight">\(1\)</span> AU = <span class="math notranslate nohighlight">\(1.5\times 10^{11}\)</span> m.  It
+can also be convenient to use years instead of seconds since years
+match better the time evolution of the solar system. The mass of the
+Sun is <span class="math notranslate nohighlight">\(M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30}\)</span> kg. The mass of
+Earth is <span class="math notranslate nohighlight">\(M_{\mathrm{Earth}}=6\times 10^{24}\)</span> kg with a distance 1AU.</p>
+<p>In setting up the equations we limit ourselves to a co-planar
+motion and use only the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates. But you should feel
+free to extend your equations to three dimensions, it is not very
+difficult and the data from NASA are all in three dimensions.</p>
+<p><a class="reference external" href="http://www.nasa.gov/index.html">NASA</a> has an excellent site at <a class="reference external" href="http://ssd.jpl.nasa.gov/horizons.cgi#top">http://ssd.jpl.nasa.gov/horizons.cgi#top</a>.
+From there you can extract initial conditions in order to start your differential equation solver.
+At the above website you need to change from <strong>OBSERVER</strong> to <strong>VECTOR</strong> and then write in the planet you are interested in.
+The generated data contain the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> values as well as their corresponding velocities. The velocities are in units of AU per day.
+Alternatively they can be obtained in terms of km and km/s.</p>
+<p>For the system below involving only the Earth and the Sun, you
+could just initialize the position with say <span class="math notranslate nohighlight">\(x=1\)</span> AU and <span class="math notranslate nohighlight">\(y=0\)</span> AU.</p>
+<p>We assume that mass units can be obtained by using the fact that
+Earth’s orbit is almost circular around the Sun.</p>
+<p>For circular motion we know that the force must obey the following relation</p>
+<div class="math notranslate nohighlight">
+\[
+F_G= \frac{M_{\mathrm{Earth}}v^2}{r}=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> is the velocity of Earth.
+The latter equation can be used to show that</p>
+<div class="math notranslate nohighlight">
+\[
+v^2r=GM_{\odot}=4\pi^2\mathrm{AU}^3/\mathrm{yr}^2.
+\]</div>
+<ul class="simple">
+<li><p>5a (5pt) Show how to derive the last equation and use this to scale the differential equations, getting thus rid of the constant <span class="math notranslate nohighlight">\(G\)</span> and the two masses. Split the differential equations for the motion in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions in terms of four coupled differential equations.</p></li>
+<li><p>5b (5pt)  Discretize the above differential equations and set up an algorithm for solving these equations using Euler’s forward algorithm and the so-called velocity Verlet method <a class="reference external" href="https://mhjensen.github.io/Physics321/doc/pub/week7/html/week7.html">discussed in the lecture notes</a>. Here you can reuse what you did in homework sets 3 and 4.</p></li>
+</ul>
+</section>
+<section id="exercise-6-40pt-numerical-elements-solving-exercise-5-numerically">
+<h2>Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically<a class="headerlink" href="#exercise-6-40pt-numerical-elements-solving-exercise-5-numerically" title="Link to this heading">#</a></h2>
+<p><strong>This exercise should be handed in as a jupyter-notebook</strong> at D2L. Remember to write your name(s).</p>
+<p>In homework sets 3 and 4 we:</p>
+<ol class="arabic simple">
+<li><p>studied  Euler’s Method to find the position and the velocity of a falling object, including air resistance and gravity</p></li>
+<li><p>and added additional forces to our model and studied a bouncing ball.</p></li>
+</ol>
+<p>This week we will reuse our code from homework 4 (exercises 6)
+and replace the air resistance and force from the ground with the
+gravitational force. Then we will study the stability of the system as function of initial conditions and the time step length.</p>
+<p>We start by importing some standard packages</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%matplotlib inline
+
+# let&#39;s start by importing useful packages we are familiar with
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+%matplotlib inline
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>6a (30 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler’s  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps <span class="math notranslate nohighlight">\(\Delta t\)</span>.  Make a plot of the results you obtain for the position of the Earth (plot the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values and/or if you prefer to use three dimensions the <span class="math notranslate nohighlight">\(z\)</span>-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm.</p></li>
+<li><p>6b (10pt) Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?</p></li>
+</ul>
+<p>Here we add a code-example which may aid in the above studies using Euler’s forward method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DeltaT = 0.001
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for time t, velocity v, and position r
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using Euler&#39;s method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler&#39;s forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">
+<h2>Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks<a class="headerlink" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" title="Link to this heading">#</a></h2>
+<p>The following gives you an opportunity to earn <strong>five extra credit
+points</strong> on each of the remaining homeworks and <strong>ten extra credit points</strong>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.</p>
+<p>The full information on extra credits is found at <a class="github reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/">mhjensen/Physics321</a>. There you will also find examples on how to write a scientific article.
+Below you can also find a description on how to gain extra credits by attending scientific talks.</p>
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md">see the information here</a></p>
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at <a class="reference external" href="mailto:butler&#37;&#52;&#48;frib&#46;msu&#46;edu">butler<span>&#64;</span>frib<span>&#46;</span>msu<span>&#46;</span>edu</a>.</p>
+<table class="dotable" border="1">
+<thead>
+<tr><th align="center">  HW/Project </th> <th align="center"> Due Date</th> <th align="center">Extra Credit Assignment</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3             </td> <td align="center">   2-8          </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   HW 4             </td> <td align="center">   2-15         </td> <td align="center">   Introduction               </td> </tr>
+<tr><td align="center">   HW 5             </td> <td align="center">   2-22         </td> <td align="center">   Methods                    </td> </tr>
+<tr><td align="center">   HW 6             </td> <td align="center">   3-1          </td> <td align="center">   Results and Discussion     </td> </tr>
+<tr><td align="center">   **Midterm 1**    </td> <td align="center">   **3-12**     </td> <td align="center">   *Full Written Report*      </td> </tr>
+<tr><td align="center">   HW 7             </td> <td align="center">   3-22         </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   HW 8             </td> <td align="center">   3-29         </td> <td align="center">   Introduction               </td> </tr>
+<tr><td align="center">   HW 9             </td> <td align="center">   4-5          </td> <td align="center">   Results and Discussion     </td> </tr>
+<tr><td align="center">   **Midterm 2      </td> <td align="center">   ** _4-16_    </td> <td align="center">   *Full Written Report*      </td> </tr>
+<tr><td align="center">   HW 10            </td> <td align="center">   4-26         </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   **Final**        </td> <td align="center">   **4-30**     </td> <td align="center">   *Full Written Report*      </td> </tr>
+</tbody>
+</table>
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.</p>
+</section>
+<section id="integrating-classwork-with-research">
+<h2>Integrating Classwork With Research<a class="headerlink" href="#integrating-classwork-with-research" title="Link to this heading">#</a></h2>
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:</p>
+<ol class="arabic simple">
+<li><p>Attend an MSU research talk (recommended research oriented Clubs is  provided below)</p></li>
+<li><p>Summarize the talk using at least 150 words</p></li>
+<li><p>Turn in the summary along with your Homework.</p></li>
+</ol>
+<p>Approved talks:
+Talks given by researchers through the following clubs:</p>
+<ul class="simple">
+<li><p>Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights</p></li>
+<li><p>Astronomy Club​: Meets Monday Nights</p></li>
+<li><p>Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week</p></li>
+</ul>
+<p>If you have any questions please consult Jeremy Rebenstock, <a class="reference external" href="mailto:rebensto&#37;&#52;&#48;msu&#46;edu">rebensto<span>&#64;</span>msu<span>&#46;</span>edu</a>.</p>
+<p>All the material on extra credits is at <a class="github reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/">mhjensen/Physics321</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents/phy321"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hw4.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Nota de adaptacion y atribucion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Firstmidterm2022.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Nota de adaptacion y atribucion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Nota de adaptacion y atribucion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-5">Tarea 5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-homework-5">Introduction to homework 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-15-pt-work-energy-theorem-and-conservation-laws">Exercise 1 (15 pt), Work-energy theorem and conservation laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exsercise-2-15pt-rocket-momentum-and-mass">Exsercise 2 (15pt), Rocket, Momentum and mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-10pt-more-rockets">Exercise 3 (10pt), More Rockets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-10pt-center-of-mass">Exercise 4 (10pt), Center of mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-10pt-warming-up-for-the-earth-sun-system-scaling-the-equations">Exercise 5 (10pt), Warming up for the Earth-Sun system, Scaling the Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-40pt-numerical-elements-solving-exercise-5-numerically">Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-classwork-with-research">Integrating Classwork With Research</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Equipo docente, con adaptación basada en material de Morten Hjorth-Jensen y Scott Pratt
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
