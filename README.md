@@ -1,4 +1,4 @@
-# Bienvenida al curso de Fisica Mecanica
+# Presentacion del curso y fuentes
 
 Este libro organiza el curso de Fisica Mecanica articulando dos fuentes principales:
 

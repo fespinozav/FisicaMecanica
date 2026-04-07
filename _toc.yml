@@ -1,28 +1,21 @@
 format: jb-book
-root: README
+root: contents/phy321/chapter1
 parts:
-- caption: "Curso y Fuentes"
+- caption: "Sobre el curso"
   numbered: false
   chapters:
+  - file: README
   - file: contents/phy321/intro
   - file: contents/utem/unidad0
   - file: contents/phy321/fundamentos_previos
   - file: contents/phy321/schedule
-  - file: contents/utem/material_docente_local
   - file: contents/phy321/teachers
+  - file: contents/utem/material_docente_local
   - file: contents/phy321/serway_apoyo
   - file: contents/phy321/source_attribution
-- caption: "Unidades y Guias UTEM"
-  numbered: false
-  chapters:
-  - file: contents/utem/unidad1
-  - file: contents/utem/unidad2
-  - file: contents/utem/unidad3
-  - file: contents/utem/guias_trabajo
 - caption: "Material Introductorio"
   numbered: true
   chapters:
-  - file: contents/phy321/chapter1
   - file: contents/phy321/chapter2
   - file: contents/phy321/chapter3
   - file: contents/phy321/chapter4
@@ -33,6 +26,13 @@ parts:
   - file: contents/phy321/chapter6
   - file: contents/phy321/chapter7
   - file: contents/phy321/chapter8
+- caption: "Unidades y Guias UTEM"
+  numbered: false
+  chapters:
+  - file: contents/utem/unidad1
+  - file: contents/utem/unidad2
+  - file: contents/utem/unidad3
+  - file: contents/utem/guias_trabajo
 - caption: "Tareas y Proyectos"
   numbered: false
   chapters:
