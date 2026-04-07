@@ -1,26 +1,51 @@
 # Introduccion a la Fisica Mecanica
 
-La mecánica es la rama de la física que estudia y analiza el movimiento y reposo de los cuerpos, y su evolución en el tiempo, bajo la acción de fuerzas. Modernamente la mecánica incluye la evolución de sistemas físicos más generales que los cuerpos másicos. En ese enfoque la mecánica estudia también las ecuaciones de evolución temporal de sistemas físicos como los campos electromagnéticos o los sistemas cuánticos donde propiamente no es correcto hablar de cuerpos físicos.
+## La historia y las limitaciones de la mecánica clásica
 
-La mecánica es una ciencia perteneciente a la física, ya que los fenómenos que estudia son físicos, por ello está relacionada con las matemáticas. Sin embargo, también puede relacionarse con la ingeniería, en un modo menos riguroso. Ambos puntos de vista se justifican parcialmente ya que, si bien la mecánica es la base para la mayoría de las ciencias de la ingeniería clásica, no tiene un carácter tan empírico como éstas y, en cambio, por su rigor y razonamiento deductivo, se parece más a la matemática.
+La mecánica clásica es la ciencia matemática que estudia el desplazamiento de los cuerpos bajo la acción de fuerzas. Galileo Galilei inició la era moderna de la mecánica al utilizar las matemáticas para describir el movimiento de los cuerpos. Su obra *Mecánica*, publicada en 1623, introdujo los conceptos de fuerza y describió el movimiento uniformemente acelerado de los objetos cerca de la superficie de la Tierra. Sesenta años más tarde, Isaac Newton formuló sus Leyes del Movimiento, que publicó en 1687 bajo el título *Philosophiae Naturalis Principia Mathematica* (*Principios matemáticos de la filosofía natural*). En el tercer libro, subtitulado *De mundi systemate* (*Sobre el sistema del mundo*), Newton resolvió el mayor problema científico de su época al aplicar su Ley de Gravitación Universal para determinar el movimiento de los planetas. Newton estableció un enfoque matemático para el análisis de los fenómenos físicos, en el que sostuvo que no era necesario introducir causas finales (hipótesis) que no tuvieran base experimental, “*Hypotheses non fingo*” (“no formulo hipótesis”), sino que los modelos físicos debían construirse a partir de observaciones experimentales y luego generalizarse mediante inducción. Esto condujo a un gran siglo de aplicaciones de los principios de la mecánica newtoniana a muchos problemas nuevos, culminando en el trabajo de Leonhard Euler. Euler inició un estudio sistemático del movimiento tridimensional de los cuerpos rígidos, lo que condujo a un conjunto de ecuaciones dinámicas hoy conocidas como las ecuaciones de movimiento de Euler.
 
-La mecanica clasica estudia el movimiento y el equilibrio de los cuerpos a partir de modelos idealizados, principios de conservacion y leyes dinamicas. Este libro organiza el curso en una ruta completamente en espanol, con enfasis en interpretar fenomenos, modelar situaciones fisicas y resolver problemas con orden.
+Junto con este desarrollo y refinamiento del concepto de fuerza y su aplicación a la descripción del movimiento, el concepto de energía fue emergiendo lentamente, culminando a mediados del siglo XIX con el descubrimiento del principio de conservación de la energía y sus aplicaciones inmediatas a las leyes de la termodinámica. Los principios de conservación son ahora centrales en nuestro estudio de la mecánica; la conservación del momento lineal, la energía y el momento angular permitió una nueva reformulación de la mecánica clásica.
 
-![Software de diseno 3D especializado en mecanica](../images/desarrollo-de-piezas-en-autocad.jpg)
-![Diagrama de cuerpo libre](../images/image_OXFyrCO.png)
+Durante este período, la metodología experimental y las herramientas matemáticas de la mecánica newtoniana se aplicaron a otros sistemas no rígidos de partículas, dando lugar al desarrollo de la mecánica del continuo. Surgieron las teorías de la mecánica de fluidos, la mecánica ondulatoria y el electromagnetismo, lo que condujo al desarrollo de la teoría ondulatoria de la luz. Sin embargo, había muchos aspectos desconcertantes en la teoría ondulatoria de la luz; por ejemplo, ¿se propaga la luz a través de un medio, el “éter”? Una serie de experimentos ópticos, culminando en el experimento de Michelson-Morley en 1887, descartó la hipótesis de un medio estacionario. Se hicieron muchos intentos por reconciliar la evidencia experimental con la mecánica clásica, pero los desafíos eran más fundamentales. Los conceptos básicos de tiempo absoluto y espacio absoluto, que Newton había definido en los *Principia*, eran por sí mismos inadecuados para explicar una gran cantidad de observaciones experimentales. Albert Einstein, al insistir en una reconsideración fundamental de los conceptos de espacio y tiempo, y de la relatividad del movimiento, en su teoría especial de la relatividad (1905), fue capaz de resolver los aparentes conflictos entre la óptica y la mecánica newtoniana. En particular, la relatividad especial proporciona el marco necesario para describir el movimiento de objetos que se desplazan rápidamente (velocidades mayores que \(v > 0.1c\)).
 
+Una segunda limitación de la validez de la mecánica newtoniana apareció a escalas microscópicas de longitud. Se desarrolló una nueva teoría, la mecánica estadística, que relacionaba las propiedades microscópicas de los átomos y moléculas individuales con las propiedades termodinámicas macroscópicas o globales de los materiales. Iniciada a mediados del siglo XIX, nuevas observaciones a escalas muy pequeñas revelaron anomalías en el comportamiento predicho de los gases (capacidad calorífica). Fue quedando cada vez más claro que la mecánica clásica no explicaba adecuadamente una amplia gama de fenómenos recientemente descubiertos a escalas atómicas y subatómicas. Una realización esencial fue que el lenguaje de la mecánica clásica ni siquiera era adecuado para describir cualitativamente ciertos fenómenos microscópicos. A comienzos del siglo XX, la mecánica cuántica proporcionó una descripción matemática de los fenómenos microscópicos en completo acuerdo con nuestro conocimiento empírico de todos los fenómenos no relativistas.
+
+En el siglo XX, a medida que las observaciones experimentales condujeron a un conocimiento más detallado de las propiedades a gran escala del universo, la Ley de Gravitación Universal de Newton dejó de modelar con precisión el universo observado y tuvo que ser reemplazada por la relatividad general. A fines del siglo XX y comienzos del siglo XXI, muchas observaciones nuevas, por ejemplo la expansión acelerada del universo, han requerido la introducción de nuevos conceptos como la energía oscura, lo que podría llevar una vez más a una reconsideración fundamental de los conceptos básicos de la física para explicar los fenómenos observados.
+
+---
+
+**Fuente original:** MIT OpenCourseWare, *8.01 Classical Mechanics, Spring 2022*.
+
+## Mecánica e ingeniería
+
+La mecánica, como rama de la física, mantiene una estrecha relación con las matemáticas por su rigor formal y su carácter deductivo. No obstante, también se vincula con la ingeniería, aunque desde una perspectiva menos estricta. Ambas miradas son válidas en cierta medida: por un lado, la mecánica constituye uno de los fundamentos esenciales de la ingeniería clásica; por otro, no posee un carácter tan empírico como las disciplinas de la ingeniería, y por ello, por su nivel de abstracción, rigor y estructura lógica, guarda mayor semejanza con la matemática.
+
+::::{grid} 2
+:gutter: 2
+
+:::{grid-item}
+```{figure} ../images/desarrollo-de-piezas-en-autocad.jpg
+---
+width: 100%
+name: fig-software-mecanica
+---
+Software de diseño 3D aplicado al desarrollo de piezas mecánicas.
+:::
+
+:::{grid-item}
+```{figure} ../images/image_OXFyrCO.png
+---
+width: 100%
+name: fig-diagrama-cuerpo-libre
+---
+Diagrama de cuerpo libre de una partícula sometida a fuerzas externas.
+
+::::
 
 
 ## Por que es la primera asignatura en su malla curricular
 
 La mecanica suele ser la primera experiencia universitaria donde una teoria fisica se convierte en herramienta de modelacion. Aqui no basta con recordar formulas: hay que decidir que sistema observar, que interacciones importan, que aproximaciones son razonables y como justificar el resultado.
-
-## Que encontraras en este book
-
-- una entrada conceptual al curso y su programacion;
-- capitulos breves organizados por temas centrales de mecanica;
-- unidades locales y guias para la ejercitacion;
-- y una capa de modelacion numerica para problemas que exceden el analisis elemental.
 
 ## Objetivos de aprendizaje
 
@@ -28,33 +53,3 @@ La mecanica suele ser la primera experiencia universitaria donde una teoria fisi
 - Traducir una situacion verbal a un diagrama, un conjunto de variables y un modelo.
 - Diferenciar entre cinematica, dinamica y leyes de conservacion.
 - Reconocer los supuestos que limitan la validez de un modelo.
-
-## Ejes del curso
-
-1. Describir el movimiento.
-1. Explicar el movimiento a partir de fuerzas.
-1. Resolver problemas usando energia, momentum y torque.
-1. Extender los modelos a rotacion, oscilaciones y gravitacion.
-1. Incorporar herramientas numericas y analiticas avanzadas cuando el sistema lo exija.
-
-## Estrategia de resolucion
-
-1. Definir el sistema.
-1. Elegir ejes y signos.
-1. Dibujar las interacciones relevantes.
-1. Escribir ecuaciones antes de reemplazar numeros.
-1. Verificar unidades y orden de magnitud.
-
-## Itinerario recomendado
-
-Si recien entras al curso, una ruta natural es:
-
-1. [Fundamentos previos](../phy321/fundamentos_previos.md)
-1. [Magnitudes, unidades y vectores](units_vectors.md)
-1. [Cinematica en una dimension](kinematics_1d.md)
-1. [Cinematica en dos dimensiones](kinematics_2d.md)
-1. [Leyes de Newton](newton_laws.md)
-1. [Trabajo y energia](work_energy.md)
-1. [Momentum lineal y colisiones](momentum_collisions.md)
-1. [Modelacion numerica](modelacion_numerica.md)
-1. [Rotacion, oscilaciones, gravitacion y temas avanzados](rotation.md)

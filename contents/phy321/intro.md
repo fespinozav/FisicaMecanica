@@ -1,14 +1,12 @@
-# Introduccion y objetivos del curso
-
-Esta seccion presenta la adaptacion local de la estructura academica de **PHY321** al libro **Fisica Mecanica**.
+# Sobre del curso
 
 ## Sentido del curso
 
 La mecanica clasica es uno de los primeros espacios donde se articulan con fuerza el razonamiento fisico, la modelacion matematica y la resolucion sistematica de problemas. En este libro se adopta una ruta de aprendizaje que combina:
 
-- formulacion analitica de ecuaciones de movimiento,
+- Formulacion analitica de ecuaciones de movimiento,
 - interpretacion fisica de fuerzas, energia y conservacion,
-- y apoyo computacional para estudiar sistemas que no siempre admiten soluciones cerradas simples.
+- Apoyo computacional para estudiar sistemas que no siempre admiten soluciones cerradas simples.
 
 ## Resultados de aprendizaje
 

@@ -1,6 +1,6 @@
 # Serway y Jewett como apoyo bibliografico
 
-Esta pagina integra, en forma de guia de lectura, el texto de Serway y Jewett como apoyo complementario para el curso.
+Esta pagina muestra, en forma de guia de lectura, el texto de Serway y Jewett como apoyo complementario para el curso.
 
 ## Criterio de uso en este curso
 
@@ -8,9 +8,9 @@ El libro se usa aqui como **texto de apoyo** para reforzar conceptos, ordenar le
 
 En terminos pedagogicos, el aporte principal de Serway y Jewett al curso es triple:
 
-- organiza la mecanica desde una progresion muy clara, que va desde medicion y cinematica hasta energia, momentum, rotacion y gravitacion;
-- enfatiza la resolucion de problemas con procedimientos ordenados y representaciones multiples;
-- y ofrece un lenguaje introductorio muy util para estudiantes de ciencias e ingenieria.
+- Organiza la mecanica desde una progresion muy clara, que va desde medicion y cinematica hasta energia, momentum, rotacion y gravitacion;
+- Enfatiza la resolucion de problemas con procedimientos ordenados y representaciones multiples;
+- Ofrece un lenguaje introductorio muy util para estudiantes de ciencias e ingenieria.
 
 ## Ruta de lectura sugerida
 
@@ -34,10 +34,10 @@ La siguiente tabla conecta el book con los capitulos del texto de apoyo.
 
 Para que el libro realmente apoye el curso, conviene usarlo de una manera acotada y estrategica:
 
-- leer el capitulo correspondiente antes o despues de cada clase como refuerzo conceptual;
-- contrastar la notacion del texto con la usada en las notas y guias locales;
-- usar sus secciones iniciales para repasar definiciones, unidades y modelos de analisis;
-- y reservar los ejemplos y problemas del texto como practica complementaria, citando siempre la fuente cuando se reutilicen ideas o soluciones.
+- Leer el capitulo correspondiente antes o despues de cada clase como refuerzo conceptual.
+- Contrastar la notacion del texto con la usada en las notas y guias locales.
+- Usar sus secciones iniciales para repasar definiciones, unidades y modelos de analisis
+- Reservar los ejemplos y problemas del texto como practica complementaria, citando siempre la fuente cuando se reutilicen ideas o soluciones.
 
 ## Nota de integridad academica
 

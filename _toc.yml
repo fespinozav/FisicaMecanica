@@ -1,16 +1,30 @@
 format: jb-book
-root: contents/mechanics/intro
+root: README
 parts:
 - caption: "Sobre el curso"
+  numbered: True
+  chapters:
+  - file: contents/mechanics/intro
+  - file: contents/phy321/serway_apoyo
+
+- caption: "Unidades"
+  numbered: False
+  chapters:
+  - file: contents/utem/unidad1
+  - file: contents/utem/unidad2
+  - file: contents/utem/unidad3
+  - file: contents/utem/unidad4
+  - file: contents/utem/unidad5
+  - file: contents/utem/unidad6
+  - file: contents/utem/unidad7
+  - file: contents/utem/unidad8
+  - file: contents/utem/guias_trabajo
+  - file: contents/utem/anexo_python
+- caption: "Problemas y proyectos"
   numbered: false
   chapters:
-  - file: README
-  - file: contents/phy321/intro
-  - file: contents/utem/unidad0
-  - file: contents/phy321/schedule
-  - file: contents/phy321/teachers
-  - file: contents/phy321/serway_apoyo
-  - file: contents/phy321/source_attribution
+  - file: contents/mechanics/problemas_aplicados
+  - file: contents/utem/pruebas_anteriores
 - caption: "Bases de la mecanica"
   numbered: true
   chapters:
@@ -30,14 +44,3 @@ parts:
   - file: contents/mechanics/gravitation
   - file: contents/mechanics/marcos_no_inerciales
   - file: contents/mechanics/formulacion_lagrangiana
-- caption: "Unidades y Guias UTEM"
-  numbered: false
-  chapters:
-  - file: contents/utem/unidad1
-  - file: contents/utem/unidad2
-  - file: contents/utem/unidad3
-  - file: contents/utem/guias_trabajo
-- caption: "Problemas y proyectos"
-  numbered: false
-  chapters:
-  - file: contents/mechanics/problemas_aplicados
