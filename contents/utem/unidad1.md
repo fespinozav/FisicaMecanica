@@ -4,7 +4,7 @@ Esta pagina adapta la unidad local sobre sistemas de unidades y vectores al form
 
 ## Temas centrales
 
-Segun la presentacion fuente, esta unidad cubre:
+Esta unidad cubre:
 
 - magnitudes fisicas escalares y vectoriales,
 - sistema internacional de unidades y sistema MKS,

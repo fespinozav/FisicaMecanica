@@ -33,7 +33,7 @@ En el PDF de programacion, `C1` y `C2` aparecen marcados como hitos semanales so
 La programacion oficial se apoya en dos capas de material:
 
 - la capa local del curso, formada por [Unidad 0](../utem/unidad0.md), [Unidad 1](../utem/unidad1.md), [Unidad 2](../utem/unidad2.md), [Unidad 3](../utem/unidad3.md) y las [Guias de trabajo](../utem/guias_trabajo.md),
-- y la capa de profundizacion basada en los capitulos `chapter1` a `chapter8` y en los notebooks heredados de `PHY321`.
+- y la capa de profundizacion conceptual y computacional desarrollada dentro del repositorio.
 
 ## Observacion editorial
 

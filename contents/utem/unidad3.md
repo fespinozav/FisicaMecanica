@@ -4,7 +4,7 @@ Esta pagina adapta la unidad local sobre cinematica bidimensional y movimiento c
 
 ## Temas centrales
 
-La presentacion fuente muestra dos ejes principales:
+Esta unidad se organiza en dos ejes principales:
 
 - movimiento en dos dimensiones,
 - y movimiento circunferencial.
