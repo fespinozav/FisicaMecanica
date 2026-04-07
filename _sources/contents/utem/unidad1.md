@@ -38,6 +38,16 @@ Esta unidad dialoga directamente con:
 - [Fundamentos previos: vectores, coordenadas y operadores basicos](../phy321/fundamentos_previos.md)
 - [Fundamentos matematicos y numericos para mecanica clasica](../phy321/chapter2.ipynb)
 
+## Lectura sugerida en Serway y Jewett
+
+Como apoyo bibliografico para esta unidad se recomienda revisar:
+
+- capitulo 1, especialmente las secciones sobre estandares de longitud, masa y tiempo, analisis dimensional, conversion de unidades y cifras significativas;
+- capitulo 3, sobre sistemas coordenados, cantidades vectoriales, aritmetica vectorial y vectores unitarios;
+- y los apendices B y D para repaso matematico basico y unidades del SI.
+
+**Referencia APA:** Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
+
 ## Guia asociada
 
 - [Guia 1: Unidades y vectores](../../references/Guia1.pdf)

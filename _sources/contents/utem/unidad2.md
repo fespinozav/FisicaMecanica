@@ -36,6 +36,20 @@ La unidad se conecta especialmente con:
 - [Problemas simples de movimiento y repaso de las leyes de Newton](../phy321/chapter3.ipynb)
 - [Fundamentos matematicos y numericos para mecanica clasica](../phy321/chapter2.ipynb)
 
+## Lectura sugerida en Serway y Jewett
+
+Como apoyo bibliografico para esta unidad se recomienda revisar el capitulo 2, *Movimiento en una dimension*, con especial atencion a:
+
+- posicion, velocidad y rapidez de una particula,
+- velocidad y rapidez instantaneas,
+- aceleracion,
+- diagramas de movimiento,
+- movimiento con aceleracion constante,
+- caida libre,
+- y ecuaciones cinematicas.
+
+**Referencia APA:** Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
+
 ## Guia asociada
 
 - [Guia 2: Cinematica de la particula](../../references/Guia2.pdf)

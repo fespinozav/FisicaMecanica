@@ -41,6 +41,15 @@ Esta unidad se relaciona especialmente con:
 - [Problemas simples de movimiento y repaso de las leyes de Newton](../phy321/chapter3.ipynb)
 - [Marcos no inerciales, traslaciones y sistemas rotantes](../phy321/chapter7.ipynb)
 
+## Lectura sugerida en Serway y Jewett
+
+Como apoyo bibliografico para esta unidad se recomienda revisar:
+
+- el capitulo 4, *Movimiento en dos dimensiones*, sobre vectores de posicion, velocidad y aceleracion, proyectiles y movimiento circular uniforme;
+- y, como proyeccion hacia dinamica, las primeras secciones del capitulo 6 sobre movimiento circular y aplicaciones de las leyes de Newton.
+
+**Referencia APA:** Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
+
 ## Guias asociadas
 
 - [Guia 3: Cinematica bidimensional](../../references/Guia3.pdf)

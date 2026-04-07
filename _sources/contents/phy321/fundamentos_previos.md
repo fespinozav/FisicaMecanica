@@ -161,3 +161,15 @@ Se recomienda leer esta pagina antes de entrar al bloque principal de contenidos
 - o cambios de base y rotaciones.
 
 Para la version extendida de estas ideas dentro del libro, revisa [Fundamentos matematicos y numericos para mecanica clasica](chapter2.ipynb).
+
+## Complemento bibliografico sugerido
+
+Si quieres reforzar este repaso con un texto introductorio mas tradicional, conviene revisar:
+
+- Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
+
+Dentro de ese texto, resultan especialmente utiles:
+
+- capitulo 1, por su trabajo con medicion, conversion de unidades y analisis dimensional;
+- capitulo 3, por su desarrollo de sistemas coordenados, cantidades vectoriales y vectores unitarios;
+- y los apendices B y D, para repaso matematico y unidades del SI.

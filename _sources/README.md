@@ -36,6 +36,7 @@ El recorrido principal del ebook sigue esta ruta:
 - [Material docente local de catedra](contents/utem/material_docente_local.md)
 - [Equipo docente y evaluacion sugerida](contents/phy321/teachers.md)
 - [Textos y referencias en formato APA](contents/phy321/textbooks.md)
+- [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md)
 - [Fuente, licencia y criterio de adaptacion](contents/phy321/source_attribution.md)
 
 Despues del bloque inicial, el libro se divide en dos grandes tramos:
@@ -87,6 +88,20 @@ El bloque local del curso queda distribuido dentro del book de esta manera:
 - [Unidad 3: cinematica bidimensional y movimiento circunferencial](contents/utem/unidad3.md)
 - [Guias de trabajo 1 a 8](contents/utem/guias_trabajo.md)
 - [Material docente local y archivos originales](contents/utem/material_docente_local.md)
+
+## Bibliografia base y fuentes del curso
+
+Para que la procedencia del material quede visible desde la portada, estas son las referencias base que estructuran el curso:
+
+- Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
+- Espinoza Vidal, F. (2026). *Programacion Mecanica Clasica* [Programacion de asignatura]. Universidad Tecnologica Metropolitana.
+- Espinoza Vidal, F., adaptado de Amigo, N. (2026). *Mecanica Clasica: Unidades 1 a 3 y material de apertura del curso* [Presentaciones y documentos docentes]. Universidad Tecnologica Metropolitana.
+- Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica* [Guias de ejercitacion]. Universidad Tecnologica Metropolitana.
+- Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
+- Taylor, J. R. (2005). *Classical mechanics*. University Science Books.
+- Malthe-Sorenssen, A. (2015). *Elementary mechanics using Python: A modern course combining analytical and numerical techniques*. Springer.
+
+El uso de Serway y Jewett dentro de este repositorio es bibliografico y pedagogico: se emplea para orientar lecturas, reforzar conceptos y mapear contenidos del curso, pero no se redistribuye como archivo dentro del book. La guia especifica de uso quedo en [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md).
 
 ## Compilacion local
 
