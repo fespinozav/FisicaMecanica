@@ -29,6 +29,7 @@ Eso permite reutilizar, adaptar y redistribuir el material. Aun asi, en este ebo
 En `FisicaMecanica` se aplicaron estos criterios:
 
 - se adopto la estructura general del curso fuente,
+- se creo la pagina `fundamentos_previos.md` a partir del bloque "Reminder on vectors and other mathematical quantities" de `chapter2`,
 - se importaron notebooks de capitulos y tareas desde `doc/LectureNotes`,
 - se incorporaron figuras auxiliares del curso fuente cuando los notebooks las referenciaban,
 - se agregaron notas visibles de atribucion en cada notebook importado,

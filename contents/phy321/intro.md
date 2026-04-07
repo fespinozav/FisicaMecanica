@@ -33,6 +33,10 @@ Siguiendo el espiritu del curso fuente, este ebook incorpora un componente compu
 - organizacion de calculos cientificos reproducibles,
 - y uso de notebooks para documentar, verificar y comunicar resultados.
 
+## Punto de partida recomendado
+
+Como apoyo inicial, el libro incorpora una unidad breve de [Fundamentos previos: vectores, coordenadas y operadores basicos](fundamentos_previos.md), adaptada a partir del segundo bloque tematico del material `PHY321`. La idea es que puedas entrar al curso con un repaso claro de notacion, sistemas de coordenadas, productos vectoriales, operadores diferenciales y cambios de base.
+
 ## Enfoque de trabajo
 
 El curso esta pensado para que combines:

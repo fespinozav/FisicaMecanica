@@ -25,6 +25,7 @@ Al finalizar el curso, se espera que puedas:
 El recorrido principal del ebook sigue esta ruta:
 
 - [Introduccion y objetivos del curso](contents/phy321/intro.md)
+- [Fundamentos previos: vectores, coordenadas y operadores basicos](contents/phy321/fundamentos_previos.md)
 - [Programacion general por semanas](contents/phy321/schedule.md)
 - [Equipo docente y evaluacion sugerida](contents/phy321/teachers.md)
 - [Textos y referencias en formato APA](contents/phy321/textbooks.md)
@@ -32,7 +33,7 @@ El recorrido principal del ebook sigue esta ruta:
 
 Despues del bloque inicial, el libro se divide en dos grandes tramos:
 
-- Material introductorio: capitulos sobre fundamentos matematicos, movimiento, leyes de Newton, trabajo, energia y leyes de conservacion.
+- Material introductorio: una pagina preliminar sobre vectores, coordenadas y operadores basicos, seguida de capitulos sobre fundamentos matematicos, movimiento, leyes de Newton, trabajo, energia y leyes de conservacion.
 - Temas avanzados: oscilaciones, problemas de dos cuerpos, marcos no inerciales y formulacion lagrangiana.
 
 Tambien se incluyen notebooks de tareas y un proyecto parcial heredados del curso fuente para ampliar el trabajo guiado.

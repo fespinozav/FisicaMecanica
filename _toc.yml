@@ -5,6 +5,7 @@ parts:
   numbered: false
   chapters:
   - file: contents/phy321/intro
+  - file: contents/phy321/fundamentos_previos
   - file: contents/phy321/schedule
   - file: contents/phy321/teachers
   - file: contents/phy321/textbooks
