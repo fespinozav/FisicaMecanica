@@ -6,7 +6,9 @@ La mecánica es una ciencia perteneciente a la física, ya que los fenómenos qu
 
 La mecanica clasica estudia el movimiento y el equilibrio de los cuerpos a partir de modelos idealizados, principios de conservacion y leyes dinamicas. Este libro organiza el curso en una ruta completamente en espanol, con enfasis en interpretar fenomenos, modelar situaciones fisicas y resolver problemas con orden.
 
-<img src="contents/images/desarrollo-de-piezas-en-autocad.jpg" alt="Software de diseño 3D especializado en mecánica>
+![Software de diseno 3D especializado en mecanica](../images/desarrollo-de-piezas-en-autocad.jpg)
+![Diagrama de cuerpo libre](../images/image_OXFyrCO.png)
+
 
 
 ## Por que es la primera asignatura en su malla curricular
