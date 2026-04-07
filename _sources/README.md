@@ -1,49 +1,70 @@
-# Machine Learning Book
+# Bienvenida al curso de Fisica Mecanica
 
-Un libro sobre métodos de *Machine Learning* enfocado en su aplicación utilizando librerías del lenguaje Python. El código fuente del libro está en https://github.com/phuijse/MachineLearningBook. El libro está publicado en: https://phuijse.github.io/MachineLearningBook/. Este libro fue desarrollado utilizando [jupyter-book](https://jupyterbook.org/en/stable/intro.html). Si encuentra errores por favor deja un *issue* en el repositorio que contiene el libro. El libro fue escrito por [Pablo Huijse](https://phuijse.github.io/) y está en continuo desarrollo.
+Este libro acompana un curso introductorio de mecanica clasica. Su proposito es ayudar a construir intuicion fisica, desarrollar una estrategia ordenada de resolucion de problemas y conectar los modelos teoricos con situaciones reales mediante calculo, representaciones graficas y actividades de apoyo con Python cuando aporte claridad.
 
-**Contenidos**
+Aqui encontraras contenidos organizados por unidades, preguntas guia, relaciones matematicas esenciales y una ruta de trabajo pensada para avanzar de manera gradual desde la descripcion del movimiento hasta el estudio de sistemas rotacionales, oscilatorios y gravitacionales.
 
-El libro incluye los siguientes temas
+## Proposito formativo
 
-- Fundamentos de aprendizaje supervisado
-- Regresión Lineal y logística
-- Máquinas de Soporte Vectorial
-- Árboles de decisión y ensambles
-- Selección de características
-- Redes Neuronales Artificiales 
-- Aprendizaje Reforzado
+Al finalizar el curso, se espera que puedas:
 
-A lo largo del libro encontrará ejemplos en base a las librerías [scikit-learn](https://scikit-learn.org/stable/) y [PyTorch](https://pytorch.org/)
+- Identificar las magnitudes fisicas relevantes de un problema mecanico.
+- Representar sistemas mediante diagramas, ecuaciones y modelos simplificados.
+- Aplicar principios de cinematica, dinamica y conservacion en problemas de complejidad creciente.
+- Justificar cada paso de una solucion con criterio fisico y consistencia matematica.
+- Usar herramientas computacionales como apoyo para visualizar, explorar y comunicar resultados.
 
-**Referencias**
+## Como trabajar en este libro
 
-Aprendizaje supervisado:
+1. Revisa cada unidad en el orden sugerido por la navegacion.
+1. Estudia primero los conceptos y ecuaciones clave antes de resolver ejercicios.
+1. Usa las preguntas guia de cada capitulo para verificar comprension.
+1. Contrasta procedimientos algebraicos con interpretaciones fisicas y graficas.
+1. Vuelve sobre los temas anteriores cuando una unidad nueva los requiera.
 
-1. [Hastie, Tibshirani, Friedman, "Elements of Statistical Learning", Springer, 2009](http://www.web.stanford.edu/~hastie/ElemStatLearn/)
-1. [A. Burkov, "Machine Learning ENGINEERING", True Positive INC, 2020](http://www.mlebook.com/wiki/doku.php)
+## Ruta del curso
 
-Redes Neuronales Artificiales:
+El desarrollo del curso sigue esta progresion:
 
-1. [I. Goodfellow and Y. Bengio and A. Courville, "Deep Learning", MIT PRESS, 2016](http://www.deeplearningbook.org/)
-1. [A. Zhang, Z.C. Lipton, M. Li, A.J. Smola, "Dive into Deep Learning"](https://www.d2l.ai/)
+- Fundamentos: [Introduccion a la Fisica Mecanica](contents/mechanics/intro.md) y [Magnitudes, Unidades y Vectores](contents/mechanics/units_vectors.md)
+- Cinematica: [Cinematica en Una Dimension](contents/mechanics/kinematics_1d.md) y [Cinematica en Dos Dimensiones](contents/mechanics/kinematics_2d.md)
+- Dinamica: [Leyes de Newton](contents/mechanics/newton_laws.md)
+- Conservacion: [Trabajo y Energia](contents/mechanics/work_energy.md) y [Momentum Lineal y Colisiones](contents/mechanics/momentum_collisions.md)
+- Sistemas extendidos: [Rotacion de Cuerpos Rigidos](contents/mechanics/rotation.md), [Oscilaciones](contents/mechanics/oscillations.md) y [Gravitacion](contents/mechanics/gravitation.md)
 
-Aprendizaje Reforzado:
+## Programacion general del curso
 
-1. [Sutton y Barto, "Reinforcement Learning: An Introduction", MIT Press, 2nd ed, 2018](http://www.incompleteideas.net/book/the-book.html)
-1. [V. Francois-Lavet, et al., "An Introduction to Deep Reinforcement Learning", Foundations and Trends in Machine Learning: Vol. 11, No. 3-4, 2018](https://arxiv.org/abs/1811.12560)
-1. [D. Silver, "Reinforced Learning Course"](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ)
+La siguiente planificacion distribuye el recorrido del curso en 12 semanas y puede reutilizarse en distintos periodos academicos sin depender de fechas especificas.
 
+| Semana | Tema central | Enfoque de trabajo |
+| --- | --- | --- |
+| 1 | Introduccion al curso y herramientas basicas | Presentacion del enfoque de mecanica, magnitudes fisicas, sistema internacional y analisis dimensional |
+| 2 | Vectores y modelacion | Operaciones vectoriales, componentes cartesianas y lectura fisica de diagramas |
+| 3 | Cinematica en una dimension | Posicion, velocidad, aceleracion y movimiento con aceleracion constante |
+| 4 | Cinematica en dos dimensiones | Movimiento de proyectiles, descripcion vectorial y trayectorias planas |
+| 5 | Leyes de Newton I | Diagramas de cuerpo libre, fuerza neta y primera aproximacion a la dinamica |
+| 6 | Leyes de Newton II | Rozamiento, tensiones, planos inclinados y sistemas conectados |
+| 7 | Trabajo y energia | Trabajo de fuerzas, energia cinetica, energia potencial y conservacion |
+| 8 | Momentum lineal y colisiones | Impulso, conservacion del momentum y analisis de choques |
+| 9 | Rotacion I | Variables angulares, torque y analogias entre traslacion y rotacion |
+| 10 | Rotacion II | Momento de inercia, energia rotacional y momentum angular |
+| 11 | Oscilaciones mecanicas | Movimiento armonico simple, energia oscilatoria y sistemas masa-resorte |
+| 12 | Gravitacion y cierre integrador | Ley de gravitacion universal, orbitas y sintesis de modelos del curso |
 
+## Bibliografia base
 
-**Dedicatoria**
+1. John R. Taylor, *Classical Mechanics*
+1. David Halliday, Robert Resnick, Jearl Walker, *Fundamentals of Physics*
+1. Daniel Kleppner y Robert Kolenkow, *An Introduction to Mechanics*
+1. Hugh D. Young y Roger A. Freedman, *University Physics*
 
-Este libro fue diseñado como recurso de aprendizaje para los estudiantes del curso de Inteligencia Artificial (INFO257) de la carrera de Ingeniería Civil en Informática de la Universidad Austral de Chile. 
+## Desarrollo del libro
 
-**Como compilar/publicar este libro**
+Este repositorio esta construido con [Jupyter Book](https://jupyterbook.org/en/stable/intro.html) y puede seguir creciendo con apuntes, guias, ejercicios resueltos y actividades computacionales dentro de `contents/mechanics/`.
 
-1. Clonar el repositorio: git clone https://github.com/phuijse/MachineLearningBook.git
-1. Instalar dependencias: pip install -r requirements.txt
-1. Ejecutar los cuadernillos
-1. Compilar con: jupyter-book build .
-1. Subir a github pages: ghp-import -n -p -f _build/html/
+Para compilar el libro de manera local:
+
+1. Crear un entorno virtual de Python.
+1. Instalar dependencias con `pip install -r requirements.txt`.
+1. Ejecutar `jupyter-book build .`.
+1. Revisar la salida generada en `_build/html/`.
