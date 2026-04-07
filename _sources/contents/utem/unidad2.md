@@ -303,7 +303,7 @@ El análisis gráfico es fundamental en cinemática.
 
 - el área bajo la curva representa el cambio de velocidad.
 
-Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [oai_citation:1‡MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
 
 ---
 
