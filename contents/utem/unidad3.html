@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Unidad 3: cinematica bidimensional y movimiento circunferencial &#8212; Física Mecánica</title>
+    <title>Unidad 3: Cinemática bidimensional de la partícula &#8212; Física Mecánica</title>
   
   
   
@@ -63,11 +63,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/utem/unidad3';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Guias de trabajo" href="guias_trabajo.html" />
-    <link rel="prev" title="Unidad 2: cinematica de la particula en una dimension" href="unidad2.html" />
+    <link rel="next" title="Unidad 4: Dinámica de la partícula" href="unidad4.html" />
+    <link rel="prev" title="Unidad 2: Cinemática de la partícula en una dimensión" href="unidad2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -138,7 +140,7 @@
     
   
 
-<a class="navbar-brand logo" href="../mechanics/intro.html">
+<a class="navbar-brand logo" href="../../README.html">
   
   
   
@@ -159,43 +161,44 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sobre el curso</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../README.html">Fisica Mecanica, Universidad Tecnologica Metropolitana, 2026</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../phy321/intro.html">Introduccion y objetivos del curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unidad0.html">Unidad 0: presentacion, reglamentos y politicas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../phy321/schedule.html">Programacion oficial del curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../phy321/teachers.html">Equipo docente y evaluacion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../phy321/serway_apoyo.html">Serway y Jewett como apoyo bibliografico</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../phy321/source_attribution.html">Criterios editoriales y uso de materiales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/intro.html">1. Introduccion a la Fisica Mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phy321/serway_apoyo.html">2. Serway y Jewett como apoyo bibliografico</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">1. Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/units_vectors.html">2. Magnitudes, Unidades y Vectores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_1d.html">3. Cinematica en Una Dimension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_2d.html">4. Cinematica en Dos Dimensiones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/newton_laws.html">5. Leyes de Newton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/work_energy.html">6. Trabajo y Energia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/momentum_collisions.html">7. Momentum Lineal y Colisiones</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelacion y temas avanzados</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/modelacion_numerica.html">8. Modelacion numerica en mecanica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/rotation.html">9. Rotacion de Cuerpos Rigidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/oscillations.html">10. Oscilaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/gravitation.html">11. Gravitacion y problema de dos cuerpos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/marcos_no_inerciales.html">12. Marcos no inerciales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mechanics/formulacion_lagrangiana.html">13. Formulacion lagrangiana</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unidades y Guias UTEM</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unidades</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="unidad1.html">Unidad 1: sistemas de unidades y vectores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unidad2.html">Unidad 2: cinematica de la particula en una dimension</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 3: cinematica bidimensional y movimiento circunferencial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad1.html">Unidad 1: Sistema de unidades, magnitudes y vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad2.html">Unidad 2: Cinemática de la partícula en una dimensión</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 3: Cinemática bidimensional de la partícula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad4.html">Unidad 4: Dinámica de la partícula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad5.html">Unidad 5: Trabajo y energía mecánica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad6.html">Unidad 6: Dinámica de un sistema de partículas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad7.html">Unidad 7: Impulso y momentum lineal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad8.html">Unidad 8: Estática del sólido rígido</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guias_trabajo.html">Guias de trabajo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anexo_python.html">Anexo: Mecánica elemental usando Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problemas y proyectos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../mechanics/problemas_aplicados.html">Problemas aplicados, tareas y proyectos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">3. Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/units_vectors.html">4. Magnitudes, Unidades y Vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_1d.html">5. Cinematica en Una Dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_2d.html">6. Cinematica en Dos Dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/newton_laws.html">7. Leyes de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/work_energy.html">8. Trabajo y Energia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/momentum_collisions.html">9. Momentum Lineal y Colisiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelacion y temas avanzados</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/modelacion_numerica.html">10. Modelacion numerica en mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/rotation.html">11. Rotacion de Cuerpos Rigidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/oscillations.html">12. Oscilaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/gravitation.html">13. Gravitacion y problema de dos cuerpos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/marcos_no_inerciales.html">14. Marcos no inerciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/formulacion_lagrangiana.html">15. Formulacion lagrangiana</a></li>
 </ul>
 
     </div>
@@ -346,7 +349,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Unidad 3: cinematica bidimensional y movimiento circunferencial</h1>
+    <h1>Unidad 3: Cinemática bidimensional de la partícula</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,11 +359,56 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temas-centrales">Temas centrales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lugar-de-esta-unidad-dentro-del-curso">Lugar de esta unidad dentro del curso</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#articulacion-con-el-book">Articulacion con el book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-sugerida-en-serway-y-jewett">Lectura sugerida en Serway y Jewett</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guias-asociadas">Guias asociadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-de-aprendizaje">Objetivo de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-cinematica-en-dos-dimensiones">1. Introducción a la cinemática en dos dimensiones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-de-movimiento-en-dos-dimensiones">2. Ecuaciones de movimiento en dos dimensiones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eje-x">Eje <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eje-y">Eje <span class="math notranslate nohighlight">\(y\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">3. Interpretación física</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-parabolico">4. Movimiento parabólico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-del-modelo">Consideraciones del modelo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-la-velocidad-inicial">5. Descomposición de la velocidad inicial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-del-movimiento-parabolico">6. Ecuaciones del movimiento parabólico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-eje-horizontal">En el eje horizontal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-eje-vertical">En el eje vertical</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitudes-importantes-en-el-movimiento-parabolico">7. Magnitudes importantes en el movimiento parabólico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tiempo-de-vuelo">Tiempo de vuelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#altura-maxima">Altura máxima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-horizontal">Alcance horizontal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-maximo">Alcance máximo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-en-cualquier-punto-de-la-trayectoria">8. Velocidad en cualquier punto de la trayectoria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria-parabolica">9. Trayectoria parabólica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-circunferencial">10. Movimiento circunferencial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arco-recorrido-y-desplazamiento-angular">11. Arco recorrido y desplazamiento angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-angular-rapidez-angular-y-aceleracion-angular">12. Posición angular, rapidez angular y aceleración angular</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-angular">Posición angular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rapidez-angular">Rapidez angular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-angular">Aceleración angular</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-del-movimiento-angular">13. Ecuaciones del movimiento angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rapidez-tangencial">14. Rapidez tangencial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-tangencial">15. Aceleración tangencial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-centripeta">16. Aceleración centrípeta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-y-frecuencia">17. Período y frecuencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo">Período</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frecuencia">Frecuencia</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-circular-uniforme">18. Movimiento circular uniforme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">19. Síntesis de la unidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
 </ul>
             </nav>
         </div>
@@ -372,59 +420,457 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="unidad-3-cinematica-bidimensional-y-movimiento-circunferencial">
-<h1>Unidad 3: cinematica bidimensional y movimiento circunferencial<a class="headerlink" href="#unidad-3-cinematica-bidimensional-y-movimiento-circunferencial" title="Link to this heading">#</a></h1>
-<p>Esta pagina adapta la unidad local sobre cinematica bidimensional y movimiento circunferencial al formato del book.</p>
-<section id="temas-centrales">
-<h2>Temas centrales<a class="headerlink" href="#temas-centrales" title="Link to this heading">#</a></h2>
-<p>Esta unidad se organiza en dos ejes principales:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="unidad-3-cinematica-bidimensional-de-la-particula">
+<h1>Unidad 3: Cinemática bidimensional de la partícula<a class="headerlink" href="#unidad-3-cinematica-bidimensional-de-la-particula" title="Link to this heading">#</a></h1>
+<section id="descripcion-general">
+<h2>Descripción general<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
+<p>En esta unidad se estudia el movimiento de una partícula en dos dimensiones. A diferencia de la cinemática en una dimensión, aquí la posición, la velocidad y la aceleración se describen mediante componentes en ejes perpendiculares, lo que permite analizar trayectorias en el plano.</p>
+<p>Se abordarán dos casos fundamentales:</p>
 <ul class="simple">
-<li><p>movimiento en dos dimensiones,</p></li>
-<li><p>y movimiento circunferencial.</p></li>
-</ul>
-<p>Dentro de esos ejes aparecen:</p>
-<ul class="simple">
-<li><p>ecuaciones de movimiento en dos dimensiones,</p></li>
-<li><p>movimiento parabolico,</p></li>
-<li><p>tiempo de vuelo, altura maxima y alcance,</p></li>
-<li><p>variables angulares,</p></li>
-<li><p>rapidez angular,</p></li>
-<li><p>aceleracion angular,</p></li>
-<li><p>rapidez tangencial,</p></li>
-<li><p>aceleracion tangencial y centripeta,</p></li>
-<li><p>periodo y frecuencia,</p></li>
-<li><p>y problemas de aplicacion sobre trayectorias circulares.</p></li>
+<li><p>el movimiento parabólico;</p></li>
+<li><p>el movimiento circunferencial.</p></li>
 </ul>
 </section>
-<section id="lugar-de-esta-unidad-dentro-del-curso">
-<h2>Lugar de esta unidad dentro del curso<a class="headerlink" href="#lugar-de-esta-unidad-dentro-del-curso" title="Link to this heading">#</a></h2>
-<p>Esta unidad amplia la cinematica lineal hacia trayectorias planas y rotacionales. Por eso funciona como puente entre:</p>
+<section id="objetivo-de-aprendizaje">
+<h2>Objetivo de aprendizaje<a class="headerlink" href="#objetivo-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar esta unidad, el estudiante será capaz de:</p>
 <ul class="simple">
-<li><p>la cinematica inicial del curso,</p></li>
-<li><p>el estudio posterior de fuerzas centrales y sistemas rotantes,</p></li>
-<li><p>y la interpretacion geometrica del movimiento.</p></li>
+<li><p>describir el movimiento de una partícula en el plano usando componentes cartesianas;</p></li>
+<li><p>aplicar ecuaciones cinemáticas en dos dimensiones;</p></li>
+<li><p>analizar el movimiento parabólico como combinación de MRU y MRUA;</p></li>
+<li><p>identificar magnitudes angulares en el movimiento circunferencial;</p></li>
+<li><p>relacionar rapidez angular, rapidez tangencial y aceleraciones asociadas al movimiento circular.</p></li>
 </ul>
 </section>
-<section id="articulacion-con-el-book">
-<h2>Articulacion con el book<a class="headerlink" href="#articulacion-con-el-book" title="Link to this heading">#</a></h2>
-<p>Esta unidad se relaciona especialmente con:</p>
+<hr class="docutils" />
+<section id="introduccion-a-la-cinematica-en-dos-dimensiones">
+<h2>1. Introducción a la cinemática en dos dimensiones<a class="headerlink" href="#introduccion-a-la-cinematica-en-dos-dimensiones" title="Link to this heading">#</a></h2>
+<p>La cinemática bidimensional estudia el movimiento de un cuerpo cuya trayectoria ocurre en un plano.</p>
+<p>En este caso, la posición de la partícula se expresa mediante dos coordenadas:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../mechanics/kinematics_2d.html"><span class="std std-doc">Cinematica en dos dimensiones</span></a></p></li>
-<li><p><a class="reference internal" href="../mechanics/marcos_no_inerciales.html"><span class="std std-doc">Marcos no inerciales</span></a></p></li>
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span>, posición horizontal;</p></li>
+<li><p><span class="math notranslate nohighlight">\(y(t)\)</span>, posición vertical.</p></li>
+</ul>
+<p>La descripción del movimiento se hace separando el análisis en cada eje.</p>
+</section>
+<hr class="docutils" />
+<section id="ecuaciones-de-movimiento-en-dos-dimensiones">
+<h2>2. Ecuaciones de movimiento en dos dimensiones<a class="headerlink" href="#ecuaciones-de-movimiento-en-dos-dimensiones" title="Link to this heading">#</a></h2>
+<p>Si la partícula tiene aceleraciones constantes <span class="math notranslate nohighlight">\(a_x\)</span> y <span class="math notranslate nohighlight">\(a_y\)</span>, las ecuaciones de movimiento son:</p>
+<section id="eje-x">
+<h3>Eje <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#eje-x" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_i + v_{x,i}(t-t_i) + \frac{1}{2}a_x(t-t_i)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_x(t) = v_{x,i} + a_x(t-t_i)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_x^2(t) = v_{x,i}^2 + 2a_x(x-x_i)
+\]</div>
+</section>
+<section id="eje-y">
+<h3>Eje <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#eje-y" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+y(t) = y_i + v_{y,i}(t-t_i) + \frac{1}{2}a_y(t-t_i)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y(t) = v_{y,i} + a_y(t-t_i)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y^2(t) = v_{y,i}^2 + 2a_y(y-y_i)
+\]</div>
+<p>En la mayoría de los problemas introductorios se toma:</p>
+<div class="math notranslate nohighlight">
+\[
+t_i = 0
+\]</div>
+<p>por lo que las ecuaciones se simplifican.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="interpretacion-fisica">
+<h2>3. Interpretación física<a class="headerlink" href="#interpretacion-fisica" title="Link to this heading">#</a></h2>
+<p>La gran ventaja del tratamiento bidimensional es que el movimiento puede descomponerse en dos movimientos independientes:</p>
+<ul class="simple">
+<li><p>uno en el eje horizontal;</p></li>
+<li><p>otro en el eje vertical.</p></li>
+</ul>
+<p>Esto permite resolver problemas complejos usando herramientas conocidas de cinemática en una dimensión.</p>
+</section>
+<hr class="docutils" />
+<section id="movimiento-parabolico">
+<h2>4. Movimiento parabólico<a class="headerlink" href="#movimiento-parabolico" title="Link to this heading">#</a></h2>
+<p>El movimiento parabólico es un caso particular de movimiento en dos dimensiones.</p>
+<p>Se produce cuando un cuerpo es lanzado con una velocidad inicial que forma un ángulo con la horizontal y luego queda sometido solamente a la aceleración de gravedad.</p>
+<section id="consideraciones-del-modelo">
+<h3>Consideraciones del modelo<a class="headerlink" href="#consideraciones-del-modelo" title="Link to this heading">#</a></h3>
+<p>Para estudiar este movimiento se asume que:</p>
+<ul class="simple">
+<li><p>la fricción del aire es despreciable;</p></li>
+<li><p>la aceleración de gravedad es constante;</p></li>
+<li><p>el movimiento ocurre en un plano;</p></li>
+<li><p>la trayectoria es parabólica.</p></li>
+</ul>
+<p>Además:</p>
+<ul class="simple">
+<li><p>el tiempo total en el aire se llama <strong>tiempo de vuelo</strong>;</p></li>
+<li><p>la distancia horizontal recorrida se llama <strong>alcance</strong>;</p></li>
+<li><p>el punto más alto de la trayectoria corresponde a la <strong>altura máxima</strong>.</p></li>
 </ul>
 </section>
-<section id="lectura-sugerida-en-serway-y-jewett">
-<h2>Lectura sugerida en Serway y Jewett<a class="headerlink" href="#lectura-sugerida-en-serway-y-jewett" title="Link to this heading">#</a></h2>
-<p>Como apoyo bibliografico para esta unidad se recomienda revisar:</p>
+</section>
+<hr class="docutils" />
+<section id="descomposicion-de-la-velocidad-inicial">
+<h2>5. Descomposición de la velocidad inicial<a class="headerlink" href="#descomposicion-de-la-velocidad-inicial" title="Link to this heading">#</a></h2>
+<p>Si un proyectil es lanzado con rapidez inicial <span class="math notranslate nohighlight">\(v_0\)</span> y ángulo <span class="math notranslate nohighlight">\(\theta\)</span> respecto de la horizontal, entonces sus componentes iniciales son:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{x,0} = v_0 \cos\theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_{y,0} = v_0 \sin\theta
+\]</div>
+<p>Esto permite estudiar el movimiento por separado en cada eje.</p>
+</section>
+<hr class="docutils" />
+<section id="ecuaciones-del-movimiento-parabolico">
+<h2>6. Ecuaciones del movimiento parabólico<a class="headerlink" href="#ecuaciones-del-movimiento-parabolico" title="Link to this heading">#</a></h2>
+<section id="en-el-eje-horizontal">
+<h3>En el eje horizontal<a class="headerlink" href="#en-el-eje-horizontal" title="Link to this heading">#</a></h3>
+<p>En el eje <span class="math notranslate nohighlight">\(x\)</span> no hay aceleración:</p>
+<div class="math notranslate nohighlight">
+\[
+a_x = 0
+\]</div>
+<p>Por tanto, el movimiento horizontal es un <strong>MRU</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_0 + v_{x,0}t
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_x(t) = v_{x,0}
+\]</div>
+</section>
+<section id="en-el-eje-vertical">
+<h3>En el eje vertical<a class="headerlink" href="#en-el-eje-vertical" title="Link to this heading">#</a></h3>
+<p>En el eje <span class="math notranslate nohighlight">\(y\)</span> la aceleración es constante e igual a la gravedad:</p>
+<div class="math notranslate nohighlight">
+\[
+a_y = -g
+\]</div>
+<p>Por tanto, el movimiento vertical es un <strong>MRUA</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t) = y_0 + v_{y,0}t - \frac{1}{2}gt^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y(t) = v_{y,0} - gt
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y^2(t) = v_{y,0}^2 - 2g(y-y_0)
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="magnitudes-importantes-en-el-movimiento-parabolico">
+<h2>7. Magnitudes importantes en el movimiento parabólico<a class="headerlink" href="#magnitudes-importantes-en-el-movimiento-parabolico" title="Link to this heading">#</a></h2>
+<section id="tiempo-de-vuelo">
+<h3>Tiempo de vuelo<a class="headerlink" href="#tiempo-de-vuelo" title="Link to this heading">#</a></h3>
+<p>Corresponde al tiempo total que el proyectil permanece en el aire.</p>
+</section>
+<section id="altura-maxima">
+<h3>Altura máxima<a class="headerlink" href="#altura-maxima" title="Link to this heading">#</a></h3>
+<p>Se alcanza cuando la velocidad vertical se anula:</p>
+<div class="math notranslate nohighlight">
+\[
+v_y = 0
+\]</div>
+</section>
+<section id="alcance-horizontal">
+<h3>Alcance horizontal<a class="headerlink" href="#alcance-horizontal" title="Link to this heading">#</a></h3>
+<p>Es la distancia total recorrida sobre el eje horizontal durante el tiempo de vuelo.</p>
+</section>
+<section id="alcance-maximo">
+<h3>Alcance máximo<a class="headerlink" href="#alcance-maximo" title="Link to this heading">#</a></h3>
+<p>En el modelo ideal, el alcance horizontal es máximo cuando el ángulo de lanzamiento es:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = 45^\circ
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="velocidad-en-cualquier-punto-de-la-trayectoria">
+<h2>8. Velocidad en cualquier punto de la trayectoria<a class="headerlink" href="#velocidad-en-cualquier-punto-de-la-trayectoria" title="Link to this heading">#</a></h2>
+<p>La velocidad total del proyectil en un instante cualquiera tiene dos componentes:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}(t) = v_x(t)\hat{i} + v_y(t)\hat{j}
+\]</div>
+<p>Su magnitud se calcula como:</p>
+<div class="math notranslate nohighlight">
+\[
+v(t) = \sqrt{v_x^2 + v_y^2}
+\]</div>
+<p>Esto permite conocer tanto la rapidez como la dirección del movimiento en cualquier punto.</p>
+</section>
+<hr class="docutils" />
+<section id="trayectoria-parabolica">
+<h2>9. Trayectoria parabólica<a class="headerlink" href="#trayectoria-parabolica" title="Link to this heading">#</a></h2>
+<p>Como el movimiento horizontal es uniforme y el vertical es uniformemente acelerado, la trayectoria que describe el proyectil es una parábola.</p>
+<p>Esta es una de las aplicaciones más clásicas de la cinemática bidimensional.</p>
+</section>
+<hr class="docutils" />
+<section id="movimiento-circunferencial">
+<h2>10. Movimiento circunferencial<a class="headerlink" href="#movimiento-circunferencial" title="Link to this heading">#</a></h2>
+<p>Otro caso importante de movimiento bidimensional es el movimiento circunferencial, en el cual la partícula describe una trayectoria circular.</p>
+<p>En este tipo de movimiento se introducen magnitudes angulares para describir la posición y la rapidez de giro.</p>
+</section>
+<hr class="docutils" />
+<section id="arco-recorrido-y-desplazamiento-angular">
+<h2>11. Arco recorrido y desplazamiento angular<a class="headerlink" href="#arco-recorrido-y-desplazamiento-angular" title="Link to this heading">#</a></h2>
+<p>Cuando una partícula recorre una circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span>, la longitud del arco recorrido <span class="math notranslate nohighlight">\(\Delta s\)</span> se relaciona con el desplazamiento angular <span class="math notranslate nohighlight">\(\Delta\theta\)</span> mediante:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta s = r\Delta\theta
+\]</div>
+<p>Esta expresión permite conectar las magnitudes lineales con las angulares.</p>
+</section>
+<hr class="docutils" />
+<section id="posicion-angular-rapidez-angular-y-aceleracion-angular">
+<h2>12. Posición angular, rapidez angular y aceleración angular<a class="headerlink" href="#posicion-angular-rapidez-angular-y-aceleracion-angular" title="Link to this heading">#</a></h2>
+<section id="posicion-angular">
+<h3>Posición angular<a class="headerlink" href="#posicion-angular" title="Link to this heading">#</a></h3>
+<p>La posición angular describe el ángulo barrido por la partícula:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta(t)
+\]</div>
+</section>
+<section id="rapidez-angular">
+<h3>Rapidez angular<a class="headerlink" href="#rapidez-angular" title="Link to this heading">#</a></h3>
+<p>La rapidez angular indica qué tan rápido cambia el ángulo con el tiempo:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega(t) = \omega_i + \alpha(t-t_i)
+\]</div>
+</section>
+<section id="aceleracion-angular">
+<h3>Aceleración angular<a class="headerlink" href="#aceleracion-angular" title="Link to this heading">#</a></h3>
+<p>La aceleración angular mide la variación de la rapidez angular:</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha = \text{constante}
+\]</div>
+<p>Cuando es constante, las ecuaciones del movimiento angular son análogas a las del MRUA lineal.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ecuaciones-del-movimiento-angular">
+<h2>13. Ecuaciones del movimiento angular<a class="headerlink" href="#ecuaciones-del-movimiento-angular" title="Link to this heading">#</a></h2>
+<p>Si la aceleración angular es constante, entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta(t) = \theta_i + \omega_i(t-t_i) + \frac{1}{2}\alpha(t-t_i)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\omega(t) = \omega_i + \alpha(t-t_i)
+\]</div>
+<p>Estas ecuaciones son la versión angular de las ecuaciones de movimiento lineal.</p>
+</section>
+<hr class="docutils" />
+<section id="rapidez-tangencial">
+<h2>14. Rapidez tangencial<a class="headerlink" href="#rapidez-tangencial" title="Link to this heading">#</a></h2>
+<p>La rapidez tangencial corresponde a la rapidez lineal de la partícula sobre la circunferencia y se relaciona con la rapidez angular mediante:</p>
+<div class="math notranslate nohighlight">
+\[
+v = r\omega
+\]</div>
+<p>Esta expresión muestra que, para un mismo radio, una mayor rapidez angular implica una mayor rapidez lineal.</p>
+</section>
+<hr class="docutils" />
+<section id="aceleracion-tangencial">
+<h2>15. Aceleración tangencial<a class="headerlink" href="#aceleracion-tangencial" title="Link to this heading">#</a></h2>
+<p>Si la rapidez angular cambia en el tiempo, existe una aceleración tangencial dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+a_t = r\alpha
+\]</div>
+<p>Esta aceleración es tangente a la trayectoria y está asociada al cambio en la magnitud de la velocidad.</p>
+</section>
+<hr class="docutils" />
+<section id="aceleracion-centripeta">
+<h2>16. Aceleración centrípeta<a class="headerlink" href="#aceleracion-centripeta" title="Link to this heading">#</a></h2>
+<p>En todo movimiento circular existe una aceleración radial dirigida hacia el centro de la trayectoria, llamada <strong>aceleración centrípeta</strong>.</p>
+<p>Su magnitud es:</p>
+<div class="math notranslate nohighlight">
+\[
+a_c = \frac{v^2}{r}
+\]</div>
+<p>o equivalentemente:</p>
+<div class="math notranslate nohighlight">
+\[
+a_c = r\omega^2
+\]</div>
+<p>Esta aceleración no cambia la rapidez, sino la dirección de la velocidad.</p>
+</section>
+<hr class="docutils" />
+<section id="periodo-y-frecuencia">
+<h2>17. Período y frecuencia<a class="headerlink" href="#periodo-y-frecuencia" title="Link to this heading">#</a></h2>
+<section id="periodo">
+<h3>Período<a class="headerlink" href="#periodo" title="Link to this heading">#</a></h3>
+<p>El período <span class="math notranslate nohighlight">\(T\)</span> es el tiempo que tarda la partícula en dar una vuelta completa.</p>
+</section>
+<section id="frecuencia">
+<h3>Frecuencia<a class="headerlink" href="#frecuencia" title="Link to this heading">#</a></h3>
+<p>La frecuencia <span class="math notranslate nohighlight">\(f\)</span> es el número de vueltas por unidad de tiempo:</p>
+<div class="math notranslate nohighlight">
+\[
+f = \frac{1}{T}
+\]</div>
+<p>Además, la rapidez angular se relaciona con el período y la frecuencia mediante:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega = \frac{2\pi}{T}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\omega = 2\pi f
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="movimiento-circular-uniforme">
+<h2>18. Movimiento circular uniforme<a class="headerlink" href="#movimiento-circular-uniforme" title="Link to this heading">#</a></h2>
+<p>Cuando la partícula se mueve en una circunferencia con rapidez constante, el movimiento se llama <strong>movimiento circular uniforme</strong>.</p>
+<p>En este caso:</p>
 <ul class="simple">
-<li><p>el capitulo 4, <em>Movimiento en dos dimensiones</em>, sobre vectores de posicion, velocidad y aceleracion, proyectiles y movimiento circular uniforme;</p></li>
-<li><p>y, como proyeccion hacia dinamica, las primeras secciones del capitulo 6 sobre movimiento circular y aplicaciones de las leyes de Newton.</p></li>
+<li><p>la rapidez angular es constante;</p></li>
+<li><p>la aceleración angular es cero;</p></li>
+<li><p>la única aceleración presente es la centrípeta.</p></li>
 </ul>
 </section>
-<section id="guias-asociadas">
-<h2>Guias asociadas<a class="headerlink" href="#guias-asociadas" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="sintesis-de-la-unidad">
+<h2>19. Síntesis de la unidad<a class="headerlink" href="#sintesis-de-la-unidad" title="Link to this heading">#</a></h2>
+<p>En esta unidad se estudió el movimiento de una partícula en el plano, separando el análisis en dos direcciones perpendiculares.</p>
+<p>Se trabajaron dos modelos principales:</p>
 <ul class="simple">
-<li><p>Guia 3: Cinematica bidimensional</p></li>
+<li><p>el movimiento parabólico, donde el eje horizontal sigue MRU y el vertical sigue MRUA;</p></li>
+<li><p>el movimiento circunferencial, donde aparecen magnitudes angulares y aceleraciones asociadas al cambio de dirección y de rapidez.</p></li>
+</ul>
+<p>Estos contenidos sirven de base para comprender trayectorias más complejas y preparar el estudio posterior de la dinámica.</p>
+</section>
+<hr class="docutils" />
+<section id="conceptos-clave">
+<h2>Conceptos clave<a class="headerlink" href="#conceptos-clave" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>cinemática bidimensional</p></li>
+<li><p>movimiento parabólico</p></li>
+<li><p>tiempo de vuelo</p></li>
+<li><p>altura máxima</p></li>
+<li><p>alcance</p></li>
+<li><p>velocidad inicial</p></li>
+<li><p>componentes de la velocidad</p></li>
+<li><p>movimiento circunferencial</p></li>
+<li><p>desplazamiento angular</p></li>
+<li><p>rapidez angular</p></li>
+<li><p>aceleración angular</p></li>
+<li><p>rapidez tangencial</p></li>
+<li><p>aceleración tangencial</p></li>
+<li><p>aceleración centrípeta</p></li>
+<li><p>período</p></li>
+<li><p>frecuencia</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="formulas-clave">
+<h2>Fórmulas clave<a class="headerlink" href="#formulas-clave" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_i + v_{x,i}(t-t_i) + \frac{1}{2}a_x(t-t_i)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = y_i + v_{y,i}(t-t_i) + \frac{1}{2}a_y(t-t_i)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_{x,0} = v_0\cos\theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_{y,0} = v_0\sin\theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_0 + v_{x,0}t
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = y_0 + v_{y,0}t - \frac{1}{2}gt^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y(t) = v_{y,0} - gt
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta s = r\Delta\theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\theta(t) = \theta_i + \omega_i(t-t_i) + \frac{1}{2}\alpha(t-t_i)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\omega(t) = \omega_i + \alpha(t-t_i)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v = r\omega
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a_t = r\alpha
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a_c = \frac{v^2}{r}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a_c = r\omega^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f = \frac{1}{T}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\omega = \frac{2\pi}{T}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\omega = 2\pi f
+\]</div>
+</section>
+<section id="guia-asociada">
+<h2>Guía asociada<a class="headerlink" href="#guia-asociada" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Guía 3:</strong> Cinemática bidimensional</p></li>
 </ul>
 </section>
 </section>
@@ -465,15 +911,15 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Unidad 2: cinematica de la particula en una dimension</p>
+        <p class="prev-next-title">Unidad 2: Cinemática de la partícula en una dimensión</p>
       </div>
     </a>
     <a class="right-next"
-       href="guias_trabajo.html"
+       href="unidad4.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Guias de trabajo</p>
+        <p class="prev-next-title">Unidad 4: Dinámica de la partícula</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -495,11 +941,56 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temas-centrales">Temas centrales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lugar-de-esta-unidad-dentro-del-curso">Lugar de esta unidad dentro del curso</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#articulacion-con-el-book">Articulacion con el book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-sugerida-en-serway-y-jewett">Lectura sugerida en Serway y Jewett</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guias-asociadas">Guias asociadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-de-aprendizaje">Objetivo de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-cinematica-en-dos-dimensiones">1. Introducción a la cinemática en dos dimensiones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-de-movimiento-en-dos-dimensiones">2. Ecuaciones de movimiento en dos dimensiones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eje-x">Eje <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eje-y">Eje <span class="math notranslate nohighlight">\(y\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">3. Interpretación física</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-parabolico">4. Movimiento parabólico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-del-modelo">Consideraciones del modelo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-la-velocidad-inicial">5. Descomposición de la velocidad inicial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-del-movimiento-parabolico">6. Ecuaciones del movimiento parabólico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-eje-horizontal">En el eje horizontal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-eje-vertical">En el eje vertical</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitudes-importantes-en-el-movimiento-parabolico">7. Magnitudes importantes en el movimiento parabólico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tiempo-de-vuelo">Tiempo de vuelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#altura-maxima">Altura máxima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-horizontal">Alcance horizontal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-maximo">Alcance máximo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-en-cualquier-punto-de-la-trayectoria">8. Velocidad en cualquier punto de la trayectoria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria-parabolica">9. Trayectoria parabólica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-circunferencial">10. Movimiento circunferencial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arco-recorrido-y-desplazamiento-angular">11. Arco recorrido y desplazamiento angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-angular-rapidez-angular-y-aceleracion-angular">12. Posición angular, rapidez angular y aceleración angular</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-angular">Posición angular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rapidez-angular">Rapidez angular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-angular">Aceleración angular</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-del-movimiento-angular">13. Ecuaciones del movimiento angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rapidez-tangencial">14. Rapidez tangencial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-tangencial">15. Aceleración tangencial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-centripeta">16. Aceleración centrípeta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-y-frecuencia">17. Período y frecuencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo">Período</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frecuencia">Frecuencia</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-circular-uniforme">18. Movimiento circular uniforme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">19. Síntesis de la unidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
 </ul>
   </nav></div>
 

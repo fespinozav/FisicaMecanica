@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 6: Dinámica de un sistema de partículas &#8212; Física Mecánica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=93a6d1e2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/utem/unidad6';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Unidad 7: Impulso y momentum lineal" href="unidad7.html" />
+    <link rel="prev" title="Unidad 5: Trabajo y energía mecánica" href="unidad5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Física Mecánica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sobre el curso</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/intro.html">1. Introduccion a la Fisica Mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phy321/serway_apoyo.html">2. Serway y Jewett como apoyo bibliografico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unidades</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unidad1.html">Unidad 1: Sistema de unidades, magnitudes y vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad2.html">Unidad 2: Cinemática de la partícula en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad3.html">Unidad 3: Cinemática bidimensional de la partícula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad4.html">Unidad 4: Dinámica de la partícula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad5.html">Unidad 5: Trabajo y energía mecánica</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 6: Dinámica de un sistema de partículas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad7.html">Unidad 7: Impulso y momentum lineal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad8.html">Unidad 8: Estática del sólido rígido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guias_trabajo.html">Guias de trabajo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anexo_python.html">Anexo: Mecánica elemental usando Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problemas y proyectos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/problemas_aplicados.html">Problemas aplicados, tareas y proyectos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">3. Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/units_vectors.html">4. Magnitudes, Unidades y Vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_1d.html">5. Cinematica en Una Dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_2d.html">6. Cinematica en Dos Dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/newton_laws.html">7. Leyes de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/work_energy.html">8. Trabajo y Energia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/momentum_collisions.html">9. Momentum Lineal y Colisiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelacion y temas avanzados</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/modelacion_numerica.html">10. Modelacion numerica en mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/rotation.html">11. Rotacion de Cuerpos Rigidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/oscillations.html">12. Oscilaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/gravitation.html">13. Gravitacion y problema de dos cuerpos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/marcos_no_inerciales.html">14. Marcos no inerciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/formulacion_lagrangiana.html">15. Formulacion lagrangiana</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/fespinozav/FisicaMecanica" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/utem/unidad6.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 6: Dinámica de un sistema de partículas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-de-aprendizaje">Objetivo de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-los-sistemas-de-particulas">1. Introducción a los sistemas de partículas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centro-de-masa">2. Centro de masa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centro-de-masa-en-una-dimension">3. Centro de masa en una dimensión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-dos-particulas">Caso de dos partículas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centro-de-masa-en-dos-y-tres-dimensiones">4. Centro de masa en dos y tres dimensiones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-del-centro-de-masa">5. Velocidad del centro de masa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretación física</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-una-dimension">En una dimensión</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-del-centro-de-masa">6. Aceleración del centro de masa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerzas-internas-y-fuerzas-externas">7. Fuerzas internas y fuerzas externas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerzas-internas">Fuerzas internas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerzas-externas">Fuerzas externas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-del-centro-de-masa-y-fuerza-externa-neta">8. Movimiento del centro de masa y fuerza externa neta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-lineal-de-un-sistema">9. Momentum lineal de un sistema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-fuerza-externa-y-cambio-de-momentum">10. Relación entre fuerza externa y cambio de momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-aislado">11. Sistema aislado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-tipicas-del-centro-de-masa">12. Aplicaciones típicas del centro de masa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conceptual-sencillo">13. Ejemplo conceptual sencillo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-del-movimiento-global">14. Interpretación del movimiento global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencia-entre-movimiento-interno-y-movimiento-del-centro-de-masa">15. Diferencia entre movimiento interno y movimiento del centro de masa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">16. Síntesis de la unidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="unidad-6-dinamica-de-un-sistema-de-particulas">
+<h1>Unidad 6: Dinámica de un sistema de partículas<a class="headerlink" href="#unidad-6-dinamica-de-un-sistema-de-particulas" title="Link to this heading">#</a></h1>
+<section id="descripcion-general">
+<h2>Descripción general<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
+<p>En esta unidad se extiende el estudio de la mecánica desde una sola partícula hacia un sistema formado por varias partículas. Para describir el movimiento global del sistema se introduce el concepto de <strong>centro de masa</strong>, que permite representar el comportamiento colectivo de todas las partículas mediante un solo punto.</p>
+<p>También se estudia cómo se relacionan las fuerzas externas con el movimiento del sistema completo, lo que permite analizar el movimiento del centro de masa y distinguir entre fuerzas internas y externas.</p>
+</section>
+<section id="objetivo-de-aprendizaje">
+<h2>Objetivo de aprendizaje<a class="headerlink" href="#objetivo-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar esta unidad, el estudiante será capaz de:</p>
+<ul class="simple">
+<li><p>comprender qué es un sistema de partículas;</p></li>
+<li><p>calcular la posición y la velocidad del centro de masa;</p></li>
+<li><p>interpretar físicamente el centro de masa como descriptor del movimiento global del sistema;</p></li>
+<li><p>distinguir entre fuerzas internas y fuerzas externas;</p></li>
+<li><p>relacionar la fuerza externa neta con el movimiento del centro de masa;</p></li>
+<li><p>aplicar estas ideas al análisis de sistemas discretos simples.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="introduccion-a-los-sistemas-de-particulas">
+<h2>1. Introducción a los sistemas de partículas<a class="headerlink" href="#introduccion-a-los-sistemas-de-particulas" title="Link to this heading">#</a></h2>
+<p>Hasta ahora se ha estudiado principalmente el movimiento de una partícula individual. Sin embargo, muchos sistemas físicos reales están formados por varias partículas o varios cuerpos que interactúan entre sí.</p>
+<p>Ejemplos:</p>
+<ul class="simple">
+<li><p>dos masas unidas por una barra;</p></li>
+<li><p>un sistema planeta–satélite;</p></li>
+<li><p>un conjunto de cuerpos en colisión;</p></li>
+<li><p>un objeto extenso modelado como varias partículas.</p></li>
+</ul>
+<p>Cuando se analiza un sistema de partículas, interesa estudiar:</p>
+<ul class="simple">
+<li><p>el movimiento de cada partícula;</p></li>
+<li><p>el movimiento global del sistema como un todo.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="centro-de-masa">
+<h2>2. Centro de masa<a class="headerlink" href="#centro-de-masa" title="Link to this heading">#</a></h2>
+<p>El <strong>centro de masa</strong> es el punto en el cual puede considerarse concentrada toda la masa del sistema para describir su movimiento global.</p>
+<p>Para un sistema de <span class="math notranslate nohighlight">\(N\)</span> partículas, su vector posición se define como:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{r}_{cm} = \frac{\sum_{i=1}^{N} m_i \vec{r}_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_i\)</span> es la masa de la partícula <span class="math notranslate nohighlight">\(i\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{r}_i\)</span> es su vector posición.</p></li>
+</ul>
+<section id="interpretacion-fisica">
+<h3>Interpretación física<a class="headerlink" href="#interpretacion-fisica" title="Link to this heading">#</a></h3>
+<p>El centro de masa describe cómo se mueve el sistema como un todo.</p>
+<p>Si la densidad del cuerpo es uniforme, el centro de masa puede coincidir con el centro geométrico, pero en general depende de cómo esté distribuida la masa.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="centro-de-masa-en-una-dimension">
+<h2>3. Centro de masa en una dimensión<a class="headerlink" href="#centro-de-masa-en-una-dimension" title="Link to this heading">#</a></h2>
+<p>Si las partículas están distribuidas sobre el eje <span class="math notranslate nohighlight">\(x\)</span>, la posición del centro de masa se calcula como:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{cm} = \frac{\sum_{i=1}^{N} m_i x_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<section id="caso-de-dos-particulas">
+<h3>Caso de dos partículas<a class="headerlink" href="#caso-de-dos-particulas" title="Link to this heading">#</a></h3>
+<p>Para dos masas <span class="math notranslate nohighlight">\(m_1\)</span> y <span class="math notranslate nohighlight">\(m_2\)</span> ubicadas en posiciones <span class="math notranslate nohighlight">\(x_1\)</span> y <span class="math notranslate nohighlight">\(x_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{cm} = \frac{m_1x_1 + m_2x_2}{m_1 + m_2}
+\]</div>
+</section>
+<section id="interpretacion">
+<h3>Interpretación<a class="headerlink" href="#interpretacion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>el centro de masa queda más cerca de la partícula de mayor masa;</p></li>
+<li><p>si ambas masas son iguales, el centro de masa queda en el punto medio.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="centro-de-masa-en-dos-y-tres-dimensiones">
+<h2>4. Centro de masa en dos y tres dimensiones<a class="headerlink" href="#centro-de-masa-en-dos-y-tres-dimensiones" title="Link to this heading">#</a></h2>
+<p>En forma vectorial:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{r}_{cm} = x_{cm}\hat{i} + y_{cm}\hat{j} + z_{cm}\hat{k}
+\]</div>
+<p>con:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{cm} = \frac{\sum m_i x_i}{\sum m_i}
+\qquad
+y_{cm} = \frac{\sum m_i y_i}{\sum m_i}
+\qquad
+z_{cm} = \frac{\sum m_i z_i}{\sum m_i}
+\]</div>
+<p>Esto permite trabajar con sistemas distribuidos en el plano o en el espacio.</p>
+</section>
+<hr class="docutils" />
+<section id="velocidad-del-centro-de-masa">
+<h2>5. Velocidad del centro de masa<a class="headerlink" href="#velocidad-del-centro-de-masa" title="Link to this heading">#</a></h2>
+<p>La <strong>velocidad del centro de masa</strong> es la derivada temporal de su posición.</p>
+<p>Se define como:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}_{cm} = \frac{\sum_{i=1}^{N} m_i \vec{v}_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\vec{v}_i\)</span> es la velocidad de la partícula <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<section id="id1">
+<h3>Interpretación física<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>La velocidad del centro de masa es una velocidad promedio ponderada por las masas del sistema.</p>
+<p>Esto significa que las partículas más masivas influyen más en el movimiento global del sistema.</p>
+</section>
+<section id="en-una-dimension">
+<h3>En una dimensión<a class="headerlink" href="#en-una-dimension" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+v_{cm} = \frac{\sum_{i=1}^{N} m_i v_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="aceleracion-del-centro-de-masa">
+<h2>6. Aceleración del centro de masa<a class="headerlink" href="#aceleracion-del-centro-de-masa" title="Link to this heading">#</a></h2>
+<p>La <strong>aceleración del centro de masa</strong> es la derivada temporal de la velocidad del centro de masa:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_{cm} = \frac{d\vec{v}_{cm}}{dt}
+\]</div>
+<p>o equivalentemente:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_{cm} = \frac{\sum_{i=1}^{N} m_i \vec{a}_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<p>Esta magnitud describe cómo cambia el movimiento global del sistema.</p>
+</section>
+<hr class="docutils" />
+<section id="fuerzas-internas-y-fuerzas-externas">
+<h2>7. Fuerzas internas y fuerzas externas<a class="headerlink" href="#fuerzas-internas-y-fuerzas-externas" title="Link to this heading">#</a></h2>
+<p>En un sistema de partículas pueden actuar dos tipos de fuerzas.</p>
+<section id="fuerzas-internas">
+<h3>Fuerzas internas<a class="headerlink" href="#fuerzas-internas" title="Link to this heading">#</a></h3>
+<p>Son las fuerzas que las partículas del sistema se ejercen entre sí.</p>
+<p>Ejemplos:</p>
+<ul class="simple">
+<li><p>tensión entre partes de un sistema;</p></li>
+<li><p>fuerza elástica entre masas unidas por un resorte;</p></li>
+<li><p>interacción gravitatoria entre cuerpos del sistema.</p></li>
+</ul>
+</section>
+<section id="fuerzas-externas">
+<h3>Fuerzas externas<a class="headerlink" href="#fuerzas-externas" title="Link to this heading">#</a></h3>
+<p>Son las fuerzas ejercidas por cuerpos que no pertenecen al sistema.</p>
+<p>Ejemplos:</p>
+<ul class="simple">
+<li><p>peso total del sistema;</p></li>
+<li><p>fuerza normal del entorno;</p></li>
+<li><p>fuerza aplicada por una persona o una máquina;</p></li>
+<li><p>roce con una superficie externa.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="movimiento-del-centro-de-masa-y-fuerza-externa-neta">
+<h2>8. Movimiento del centro de masa y fuerza externa neta<a class="headerlink" href="#movimiento-del-centro-de-masa-y-fuerza-externa-neta" title="Link to this heading">#</a></h2>
+<p>Uno de los resultados más importantes en dinámica de sistemas es que el movimiento del centro de masa está gobernado únicamente por la <strong>fuerza externa neta</strong>.</p>
+<p>Matemáticamente:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum \vec{F}_{ext} = M\vec{a}_{cm}
+\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M = \sum m_i\)</span> es la masa total del sistema;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{a}_{cm}\)</span> es la aceleración del centro de masa.</p></li>
+</ul>
+<section id="id2">
+<h3>Interpretación física<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Las fuerzas internas se cancelan entre sí al considerar el sistema completo, por lo que solo las fuerzas externas pueden modificar el movimiento global del sistema.</p>
+<p>Este resultado permite tratar al sistema completo como si toda su masa estuviera concentrada en el centro de masa.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="momentum-lineal-de-un-sistema">
+<h2>9. Momentum lineal de un sistema<a class="headerlink" href="#momentum-lineal-de-un-sistema" title="Link to this heading">#</a></h2>
+<p>El momentum lineal total de un sistema de partículas se define como la suma de los momenta individuales:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{P} = \sum_{i=1}^{N} m_i \vec{v}_i
+\]</div>
+<p>Como la velocidad del centro de masa es:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}_{cm} = \frac{\sum m_i \vec{v}_i}{\sum m_i}
+\]</div>
+<p>se obtiene:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{P} = M\vec{v}_{cm}
+\]</div>
+<p>Esto muestra que el momentum total del sistema puede calcularse usando la masa total y la velocidad del centro de masa.</p>
+</section>
+<hr class="docutils" />
+<section id="relacion-entre-fuerza-externa-y-cambio-de-momentum">
+<h2>10. Relación entre fuerza externa y cambio de momentum<a class="headerlink" href="#relacion-entre-fuerza-externa-y-cambio-de-momentum" title="Link to this heading">#</a></h2>
+<p>La fuerza externa neta también puede expresarse como la variación temporal del momentum total:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum \vec{F}_{ext} = \frac{d\vec{P}}{dt}
+\]</div>
+<p>Dado que:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{P} = M\vec{v}_{cm}
+\]</div>
+<p>si la masa total del sistema permanece constante:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum \vec{F}_{ext} = M\vec{a}_{cm}
+\]</div>
+<p>Esta ecuación conecta directamente la dinámica del sistema con el movimiento de su centro de masa.</p>
+</section>
+<hr class="docutils" />
+<section id="sistema-aislado">
+<h2>11. Sistema aislado<a class="headerlink" href="#sistema-aislado" title="Link to this heading">#</a></h2>
+<p>Un sistema se considera <strong>aislado</strong> si la fuerza externa neta que actúa sobre él es cero:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum \vec{F}_{ext} = 0
+\]</div>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_{cm} = 0
+\]</div>
+<p>y por tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}_{cm} = \text{constante}
+\]</div>
+<section id="id3">
+<h3>Interpretación<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Si no actúan fuerzas externas netas, el centro de masa permanece en reposo o se mueve con velocidad constante.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="aplicaciones-tipicas-del-centro-de-masa">
+<h2>12. Aplicaciones típicas del centro de masa<a class="headerlink" href="#aplicaciones-tipicas-del-centro-de-masa" title="Link to this heading">#</a></h2>
+<p>El concepto de centro de masa es útil para:</p>
+<ul class="simple">
+<li><p>describir el movimiento de cuerpos extensos;</p></li>
+<li><p>analizar sistemas de varias masas;</p></li>
+<li><p>estudiar colisiones;</p></li>
+<li><p>comprender trayectorias de objetos compuestos;</p></li>
+<li><p>separar el movimiento global del sistema del movimiento interno entre sus partes.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ejemplo-conceptual-sencillo">
+<h2>13. Ejemplo conceptual sencillo<a class="headerlink" href="#ejemplo-conceptual-sencillo" title="Link to this heading">#</a></h2>
+<p>Supongamos dos masas:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_1 = 3\text{ kg}\)</span> en <span class="math notranslate nohighlight">\(x_1 = 2\text{ m}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_2 = 5\text{ kg}\)</span> en <span class="math notranslate nohighlight">\(x_2 = 6\text{ m}\)</span>.</p></li>
+</ul>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{cm} = \frac{m_1x_1 + m_2x_2}{m_1 + m_2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_{cm} = \frac{3(2) + 5(6)}{3+5}
+= \frac{6+30}{8}
+= 4.5\text{ m}
+\]</div>
+<p>Esto muestra que el centro de masa queda más cerca de la masa mayor.</p>
+</section>
+<hr class="docutils" />
+<section id="interpretacion-del-movimiento-global">
+<h2>14. Interpretación del movimiento global<a class="headerlink" href="#interpretacion-del-movimiento-global" title="Link to this heading">#</a></h2>
+<p>Un sistema puede tener movimientos internos complejos y, aun así, su centro de masa moverse de forma simple.</p>
+<p>Por ejemplo:</p>
+<ul class="simple">
+<li><p>en una explosión, las partículas salen en distintas direcciones, pero el centro de masa sigue obedeciendo a las fuerzas externas;</p></li>
+<li><p>en un objeto lanzado al aire, aunque rote o cambie de orientación, su centro de masa sigue una trayectoria determinada por la fuerza de gravedad.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="diferencia-entre-movimiento-interno-y-movimiento-del-centro-de-masa">
+<h2>15. Diferencia entre movimiento interno y movimiento del centro de masa<a class="headerlink" href="#diferencia-entre-movimiento-interno-y-movimiento-del-centro-de-masa" title="Link to this heading">#</a></h2>
+<p>En un sistema de partículas pueden coexistir dos tipos de movimiento:</p>
+<ul class="simple">
+<li><p>el movimiento del centro de masa;</p></li>
+<li><p>el movimiento relativo de las partículas respecto del centro de masa.</p></li>
+</ul>
+<p>Esta separación es muy útil porque permite estudiar primero el movimiento global del sistema y luego los movimientos internos si es necesario.</p>
+</section>
+<hr class="docutils" />
+<section id="sintesis-de-la-unidad">
+<h2>16. Síntesis de la unidad<a class="headerlink" href="#sintesis-de-la-unidad" title="Link to this heading">#</a></h2>
+<p>En esta unidad se introdujo el concepto de sistema de partículas y se estudió el centro de masa como herramienta para describir el movimiento global del sistema.</p>
+<p>Se analizaron:</p>
+<ul class="simple">
+<li><p>la posición del centro de masa;</p></li>
+<li><p>la velocidad y aceleración del centro de masa;</p></li>
+<li><p>la diferencia entre fuerzas internas y externas;</p></li>
+<li><p>la relación entre fuerza externa neta y movimiento del centro de masa;</p></li>
+<li><p>el momentum lineal total del sistema.</p></li>
+</ul>
+<p>Estos conceptos preparan el estudio del impulso, la conservación del momentum y el análisis de colisiones.</p>
+</section>
+<hr class="docutils" />
+<section id="conceptos-clave">
+<h2>Conceptos clave<a class="headerlink" href="#conceptos-clave" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>sistema de partículas</p></li>
+<li><p>centro de masa</p></li>
+<li><p>posición del centro de masa</p></li>
+<li><p>velocidad del centro de masa</p></li>
+<li><p>aceleración del centro de masa</p></li>
+<li><p>fuerzas internas</p></li>
+<li><p>fuerzas externas</p></li>
+<li><p>masa total</p></li>
+<li><p>momentum lineal del sistema</p></li>
+<li><p>sistema aislado</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="formulas-clave">
+<h2>Fórmulas clave<a class="headerlink" href="#formulas-clave" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\vec{r}_{cm} = \frac{\sum_{i=1}^{N} m_i \vec{r}_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_{cm} = \frac{\sum_{i=1}^{N} m_i x_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}_{cm} = \frac{\sum_{i=1}^{N} m_i \vec{v}_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_{cm} = \frac{\sum_{i=1}^{N} m_i \vec{a}_i}{\sum_{i=1}^{N} m_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum \vec{F}_{ext} = M\vec{a}_{cm}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{P} = \sum_{i=1}^{N} m_i \vec{v}_i
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{P} = M\vec{v}_{cm}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum \vec{F}_{ext} = \frac{d\vec{P}}{dt}
+\]</div>
+</section>
+<section id="guia-asociada">
+<h2>Guía asociada<a class="headerlink" href="#guia-asociada" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Guía 6</strong>: Dinámica de un sistema de partículas</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents/utem"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="unidad5.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Unidad 5: Trabajo y energía mecánica</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="unidad7.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Unidad 7: Impulso y momentum lineal</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-de-aprendizaje">Objetivo de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-los-sistemas-de-particulas">1. Introducción a los sistemas de partículas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centro-de-masa">2. Centro de masa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centro-de-masa-en-una-dimension">3. Centro de masa en una dimensión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-dos-particulas">Caso de dos partículas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centro-de-masa-en-dos-y-tres-dimensiones">4. Centro de masa en dos y tres dimensiones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-del-centro-de-masa">5. Velocidad del centro de masa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretación física</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-una-dimension">En una dimensión</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-del-centro-de-masa">6. Aceleración del centro de masa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerzas-internas-y-fuerzas-externas">7. Fuerzas internas y fuerzas externas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerzas-internas">Fuerzas internas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerzas-externas">Fuerzas externas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-del-centro-de-masa-y-fuerza-externa-neta">8. Movimiento del centro de masa y fuerza externa neta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-lineal-de-un-sistema">9. Momentum lineal de un sistema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-fuerza-externa-y-cambio-de-momentum">10. Relación entre fuerza externa y cambio de momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-aislado">11. Sistema aislado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-tipicas-del-centro-de-masa">12. Aplicaciones típicas del centro de masa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conceptual-sencillo">13. Ejemplo conceptual sencillo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-del-movimiento-global">14. Interpretación del movimiento global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencia-entre-movimiento-interno-y-movimiento-del-centro-de-masa">15. Diferencia entre movimiento interno y movimiento del centro de masa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">16. Síntesis de la unidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Equipo docente, con adaptación basada en material de Morten Hjorth-Jensen y Scott Pratt
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

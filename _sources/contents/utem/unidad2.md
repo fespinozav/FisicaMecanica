@@ -1,49 +1,491 @@
-# Unidad 2: cinematica de la particula en una dimension
+# Unidad 2: Cinemática de la partícula en una dimensión
 
-Esta pagina adapta la unidad local sobre cinematica de la particula en una dimension al formato del book.
+## Descripción general
 
-## Temas centrales
+La cinemática es la parte de la mecánica que describe el movimiento sin estudiar sus causas. En esta unidad se analiza el movimiento de una partícula en una sola dimensión, introduciendo las magnitudes fundamentales que permiten describirlo: posición, desplazamiento, velocidad y aceleración.
 
-La unidad 2 organiza la introduccion local a la cinematica de la particula en una dimension. Los temas centrales de trabajo son:
+El estudio de la cinemática unidimensional permite construir la base conceptual para comprender luego el movimiento en dos dimensiones y, más adelante, la dinámica.
 
-- definicion de cinematica y modelo de particula,
-- sistema de referencia inercial y no inercial,
-- tiempo, trayectoria y posicion,
-- desplazamiento y distancia recorrida,
-- rapidez media y velocidad media,
-- movimiento rectilineo uniforme (MRU),
-- movimiento rectilineo uniformemente acelerado (MRUA),
-- ecuaciones de itinerario,
-- interpretacion grafica del movimiento,
-- y ejercicios de aplicacion.
+## Objetivo de aprendizaje
 
-## Aporte al desarrollo del curso
+Al finalizar esta unidad, el estudiante será capaz de:
 
-Esta unidad sirve para pasar desde el lenguaje de magnitudes y vectores a la descripcion matematica del movimiento. Es la antesala natural a:
+- Describir el movimiento de una partícula en una dimensión.
+- Diferenciar posición, trayectoria, distancia recorrida y desplazamiento.
+- Calcular rapidez media, velocidad media y velocidad instantánea.
+- Calcular aceleración media e instantánea.
+- Analizar movimiento rectilíneo uniforme y uniformemente acelerado.
+- Interpretar gráficas de posición, velocidad y aceleración en función del tiempo.
+- Resolver problemas básicos de caída libre.
 
-- la formulacion de ecuaciones de movimiento,
-- la lectura fisica de velocidad y aceleracion,
-- y la resolucion sistematica de problemas mas complejos de dinamica.
+```{figure} ../images/fig4_1-onedimensional.png
+---
+width: 80%
+name: Sistema cartesiano unidimensional (1D)
+---
+Diagrama de un sistema cartesiano de una dimensión
+```
+---
 
-## Articulacion con el book
+## 1. Introducción a la cinemática
 
-La unidad se conecta especialmente con:
+La cinemática estudia el movimiento de los cuerpos sin considerar las fuerzas que lo producen.
 
-- [Cinematica en una dimension](../mechanics/kinematics_1d.md)
-- [Modelacion numerica en mecanica](../mechanics/modelacion_numerica.md)
+En esta unidad se modela al cuerpo como una **partícula**, es decir, como un objeto cuyas dimensiones son despreciables respecto de las distancias involucradas en el problema.
 
-## Lectura sugerida en Serway y Jewett
+Para describir el movimiento se requiere:
 
-Como apoyo bibliografico para esta unidad se recomienda revisar el capitulo 2, *Movimiento en una dimension*, con especial atencion a:
+- Un sistema de referencia.
+- Un eje coordenado.
+- Un origen.
+- Una variable de tiempo.
 
-- posicion, velocidad y rapidez de una particula,
-- velocidad y rapidez instantaneas,
-- aceleracion,
-- diagramas de movimiento,
-- movimiento con aceleracion constante,
-- caida libre,
-- y ecuaciones cinematicas.
+En una dimensión, el movimiento ocurre a lo largo de una recta, generalmente representada por el eje $x$.
 
-## Guia asociada
 
-- Guia 2: Cinematica de la particula
+
+---
+
+## 2. Posición y sistema de referencia
+
+La **posición** de una partícula indica su ubicación respecto del origen del sistema de referencia.
+
+Si la partícula se mueve en el eje $x$, su posición se expresa como:
+
+$$
+x = x(t)
+$$
+
+Esto significa que la posición depende del tiempo.
+
+### Interpretación
+
+- Si $x > 0$, la partícula está a la derecha del origen.
+- Si $x < 0$, está a la izquierda del origen.
+- Si $x = 0$, está en el origen.
+
+La posición no indica cuánto recorrió el móvil, sino solo dónde se encuentra en un instante.
+
+---
+
+## 3. Intervalo de tiempo
+
+El movimiento se estudia entre dos instantes:
+
+- instante inicial: $t_i$
+- instante final: $t_f$
+
+El intervalo de tiempo se define como:
+
+$$
+\Delta t = t_f - t_i
+$$
+
+La unidad SI del tiempo es el segundo, $s$.
+
+---
+
+## 4. Distancia recorrida y desplazamiento
+
+### Distancia recorrida
+
+Es la longitud total del camino efectivamente seguido por la partícula.
+
+Es una magnitud escalar y siempre es positiva o cero.
+
+### Desplazamiento
+
+El desplazamiento representa el cambio de posición entre dos instantes:
+
+$$
+\Delta x = x_f - x_i
+$$
+
+donde:
+
+- $x_i$ es la posición inicial;
+- $x_f$ es la posición final.
+
+### Observación importante
+
+La distancia recorrida y el desplazamiento no siempre coinciden.
+
+Ejemplo:
+
+Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vuelve a $x = 5 \text{ m}$:
+
+- distancia recorrida: $6 + 3 = 9 \text{ m}$
+- desplazamiento: $5 - 2 = 3 \text{ m}$
+
+---
+
+## 5. Rapidez media y velocidad media
+
+### Rapidez media
+
+La rapidez media se define como la distancia recorrida dividida por el tiempo transcurrido:
+
+$$
+\text{rapidez media} = \frac{\text{distancia recorrida}}{\Delta t}
+$$
+
+Es una magnitud escalar.
+
+### Velocidad media
+
+La velocidad media se define como el desplazamiento dividido por el intervalo de tiempo:
+
+$$
+\bar{v} = \frac{\Delta x}{\Delta t}
+$$
+
+Es una magnitud vectorial en 1D, por lo que su signo indica el sentido del movimiento.
+
+### Interpretación del signo
+
+- $\bar{v} > 0$: movimiento hacia el sentido positivo del eje;
+- $\bar{v} < 0$: movimiento hacia el sentido negativo;
+- $\bar{v} = 0$: no hubo cambio neto de posición.
+
+---
+
+## 6. Velocidad instantánea
+
+La velocidad instantánea describe qué tan rápido y en qué sentido cambia la posición en un instante dado.
+
+Matemáticamente se define como el límite de la velocidad media cuando el intervalo de tiempo tiende a cero:
+
+$$
+v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
+$$
+
+En cálculo diferencial:
+
+$$
+v(t) = \frac{dx}{dt}
+$$
+
+### Interpretación gráfica
+
+En una gráfica de posición versus tiempo, la velocidad instantánea corresponde a la pendiente de la recta tangente a la curva en un punto.
+
+---
+
+## 7. Aceleración media e instantánea
+
+La aceleración describe cómo cambia la velocidad en el tiempo.
+
+### Aceleración media
+
+$$
+\bar{a} = \frac{\Delta v}{\Delta t}
+$$
+
+donde:
+
+$$
+\Delta v = v_f - v_i
+$$
+
+### Aceleración instantánea
+
+$$
+a(t) = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}
+$$
+
+o equivalentemente:
+
+$$
+a(t) = \frac{dv}{dt}
+$$
+
+Como la velocidad es derivada de la posición:
+
+$$
+a(t) = \frac{d^2x}{dt^2}
+$$
+
+### Interpretación física
+
+- Si la aceleración y la velocidad tienen el mismo signo, la rapidez aumenta.
+- Si tienen signos opuestos, la rapidez disminuye.
+
+### Interpretación gráfica
+
+En una gráfica velocidad versus tiempo, la aceleración corresponde a la pendiente.
+
+---
+
+## 8. Movimiento rectilíneo uniforme (MRU)
+
+Un movimiento rectilíneo uniforme ocurre cuando la velocidad es constante.
+
+### Características
+
+- trayectoria recta;
+- velocidad constante;
+- aceleración nula.
+
+$$
+a = 0
+$$
+
+### Ecuación de posición
+
+$$
+x(t) = x_0 + vt
+$$
+
+donde:
+
+- $x_0$ es la posición inicial;
+- $v$ es la velocidad constante;
+- $t$ es el tiempo.
+
+### Interpretación gráfica
+
+- gráfica $x$ vs $t$: una recta;
+- gráfica $v$ vs $t$: una línea horizontal;
+- gráfica $a$ vs $t$: una línea sobre cero.
+
+---
+
+## 9. Movimiento rectilíneo uniformemente acelerado (MRUA)
+
+Este movimiento ocurre cuando la aceleración es constante.
+
+$$
+a = \text{constante}
+$$
+
+### Ecuaciones fundamentales
+
+#### Velocidad en función del tiempo
+
+$$
+v(t) = v_0 + at
+$$
+
+#### Posición en función del tiempo
+
+$$
+x(t) = x_0 + v_0 t + \frac{1}{2}at^2
+$$
+
+#### Relación entre velocidad y posición
+
+$$
+v^2 = v_0^2 + 2a(x - x_0)
+$$
+
+### Interpretación gráfica
+
+- gráfica $x$ vs $t$: parábola;
+- gráfica $v$ vs $t$: recta;
+- gráfica $a$ vs $t$: línea horizontal constante.
+
+---
+
+## 10. Relación entre gráficas y movimiento
+
+El análisis gráfico es fundamental en cinemática.
+
+### En una gráfica posición-tiempo
+
+- la pendiente representa la velocidad.
+
+### En una gráfica velocidad-tiempo
+
+- la pendiente representa la aceleración;
+- el área bajo la curva representa el desplazamiento.
+
+### En una gráfica aceleración-tiempo
+
+- el área bajo la curva representa el cambio de velocidad.
+
+Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [oai_citation:1‡MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+
+---
+
+## 11. Caída libre
+
+La caída libre es un caso particular de movimiento rectilíneo uniformemente acelerado en dirección vertical, bajo la acción de la gravedad.
+
+Si se desprecia la resistencia del aire, la aceleración es constante y vale:
+
+$$
+g \approx 9.8 \text{ m/s}^2
+$$
+
+### Si el eje positivo apunta hacia arriba
+
+Entonces:
+
+$$
+a = -g
+$$
+
+Las ecuaciones quedan:
+
+#### Velocidad
+
+$$
+v(t) = v_0 - gt
+$$
+
+#### Posición
+
+$$
+y(t) = y_0 + v_0 t - \frac{1}{2}gt^2
+$$
+
+#### Relación entre velocidad y posición
+
+$$
+v^2 = v_0^2 - 2g(y - y_0)
+$$
+
+### Casos típicos
+
+- objeto que se deja caer: $v_0 = 0$
+- lanzamiento vertical hacia arriba;
+- lanzamiento vertical hacia abajo.
+
+---
+
+## 12. Significado físico del signo de la aceleración
+
+Es importante entender que una aceleración negativa no significa necesariamente que el objeto se esté frenando.
+
+El signo solo indica dirección respecto del eje elegido.
+
+Por ejemplo:
+
+- si un objeto se mueve hacia la izquierda y acelera hacia la izquierda, entonces tanto $v$ como $a$ son negativas, pero la rapidez aumenta;
+- si un objeto se mueve hacia la derecha y la aceleración apunta a la izquierda, entonces la rapidez disminuye.
+
+---
+
+## 13. Uso de derivadas e integración en cinemática
+
+En el enfoque formal de la cinemática:
+
+- la velocidad es la derivada de la posición;
+- la aceleración es la derivada de la velocidad.
+
+$$
+v(t) = \frac{dx}{dt}
+$$
+
+$$
+a(t) = \frac{dv}{dt}
+$$
+
+Y en sentido inverso:
+
+- la posición puede obtenerse integrando la velocidad;
+- la velocidad puede obtenerse integrando la aceleración.
+
+Esto conecta la cinemática con las herramientas fundamentales del cálculo.  [oai_citation:2‡MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+
+---
+
+## 14. Aplicaciones típicas
+
+Los modelos de cinemática en una dimensión permiten resolver problemas como:
+
+- encuentro entre móviles;
+- frenado de un automóvil;
+- aceleración desde el reposo;
+- caída de objetos;
+- lanzamiento vertical;
+- cálculo de tiempo, desplazamiento y velocidad final.
+
+---
+
+## 15. Síntesis de la unidad
+
+En esta unidad se introdujeron las magnitudes fundamentales para describir el movimiento en una dimensión:
+
+- posición;
+- desplazamiento;
+- distancia recorrida;
+- velocidad media e instantánea;
+- aceleración media e instantánea.
+
+También se estudiaron dos modelos fundamentales:
+
+- movimiento rectilíneo uniforme;
+- movimiento rectilíneo uniformemente acelerado.
+
+Finalmente, se abordó la caída libre como una aplicación directa del MRUA.
+
+---
+
+## Conceptos clave
+
+- posición
+- sistema de referencia
+- intervalo de tiempo
+- desplazamiento
+- distancia recorrida
+- rapidez media
+- velocidad media
+- velocidad instantánea
+- aceleración media
+- aceleración instantánea
+- MRU
+- MRUA
+- caída libre
+
+---
+
+## Fórmulas clave
+
+$$
+\Delta x = x_f - x_i
+$$
+
+$$
+\bar{v} = \frac{\Delta x}{\Delta t}
+$$
+
+$$
+v(t) = \frac{dx}{dt}
+$$
+
+$$
+\bar{a} = \frac{\Delta v}{\Delta t}
+$$
+
+$$
+a(t) = \frac{dv}{dt}
+$$
+
+$$
+x(t) = x_0 + vt
+$$
+
+$$
+v(t) = v_0 + at
+$$
+
+$$
+x(t) = x_0 + v_0 t + \frac{1}{2}at^2
+$$
+
+$$
+v^2 = v_0^2 + 2a(x - x_0)
+$$
+
+$$
+y(t) = y_0 + v_0 t - \frac{1}{2}gt^2
+$$
+
+$$
+v(t) = v_0 - gt
+$$
+
+## Guía asociada
+
+- **Guía 2:** Cinemática de la partícula

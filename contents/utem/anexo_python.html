@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Anexo: Mecánica elemental usando Python &#8212; Física Mecánica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=93a6d1e2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/utem/anexo_python';</script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Problemas aplicados, tareas y proyectos" href="../mechanics/problemas_aplicados.html" />
+    <link rel="prev" title="Guias de trabajo" href="guias_trabajo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Física Mecánica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sobre el curso</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/intro.html">1. Introduccion a la Fisica Mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phy321/serway_apoyo.html">2. Serway y Jewett como apoyo bibliografico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unidades</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unidad1.html">Unidad 1: Sistema de unidades, magnitudes y vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad2.html">Unidad 2: Cinemática de la partícula en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad3.html">Unidad 3: Cinemática bidimensional de la partícula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad4.html">Unidad 4: Dinámica de la partícula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad5.html">Unidad 5: Trabajo y energía mecánica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad6.html">Unidad 6: Dinámica de un sistema de partículas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad7.html">Unidad 7: Impulso y momentum lineal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unidad8.html">Unidad 8: Estática del sólido rígido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guias_trabajo.html">Guias de trabajo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Anexo: Mecánica elemental usando Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problemas y proyectos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/problemas_aplicados.html">Problemas aplicados, tareas y proyectos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">3. Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/units_vectors.html">4. Magnitudes, Unidades y Vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_1d.html">5. Cinematica en Una Dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/kinematics_2d.html">6. Cinematica en Dos Dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/newton_laws.html">7. Leyes de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/work_energy.html">8. Trabajo y Energia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/momentum_collisions.html">9. Momentum Lineal y Colisiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelacion y temas avanzados</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/modelacion_numerica.html">10. Modelacion numerica en mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/rotation.html">11. Rotacion de Cuerpos Rigidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/oscillations.html">12. Oscilaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/gravitation.html">13. Gravitacion y problema de dos cuerpos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/marcos_no_inerciales.html">14. Marcos no inerciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mechanics/formulacion_lagrangiana.html">15. Formulacion lagrangiana</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/fespinozav/FisicaMecanica" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Repositorio de origen"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/utem/anexo_python.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Anexo: Mecánica elemental usando Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-de-aprendizaje">Objetivo de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-google-colab">1. ¿Qué es Google Colab?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-basicas-en-colab">Operaciones básicas en Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atajos-utiles">Atajos útiles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-como-calculadora-cientifica">2. Python como calculadora científica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-basicas">Operaciones básicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-variables">Uso de variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-la-libreria-math">3. Uso de la librería <code class="docutils literal notranslate"><span class="pre">math</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-basicos">Ejemplos básicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-mecanica">Aplicación en mecánica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-simples-en-python">4. Scripts simples en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-calculo-del-peso-de-varios-cuerpos">Ejemplo: cálculo del peso de varios cuerpos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidad-en-mecanica">Utilidad en mecánica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-en-python">5. Funciones en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-funcion-para-calcular-energia-cinetica">Ejemplo: función para calcular energía cinética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-la-funcion">Uso de la función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-funcion-para-el-peso">Ejemplo: función para el peso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-en-fisica">Importancia en física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arreglos-y-datos-con-numpy">6. Arreglos y datos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tiempos-igualmente-espaciados">Ejemplo: tiempos igualmente espaciados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-cinematica">Aplicación en cinemática</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-con-matplotlib">7. Gráficos con <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-posicion-en-funcion-del-tiempo">Ejemplo: posición en función del tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-conjuntos-de-datos">8. Gráficos de conjuntos de datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidad-en-el-curso">Utilidad en el curso</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-funciones-en-mecanica">9. Gráficos de funciones en mecánica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tiro-parabolico">Ejemplo: tiro parabólico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-estudiantes">10. Buenas prácticas para estudiantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-sugeridas-al-curso">11. Aplicaciones sugeridas al curso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="anexo-mecanica-elemental-usando-python">
+<h1>Anexo: Mecánica elemental usando Python<a class="headerlink" href="#anexo-mecanica-elemental-usando-python" title="Link to this heading">#</a></h1>
+<section id="descripcion-general">
+<h2>Descripción general<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
+<p>Este anexo introduce el uso básico de Python en el contexto de la mecánica elemental, utilizando cuadernos Jupyter ejecutados en <strong>Google Colab</strong>. Su propósito es entregar a los estudiantes una base práctica para realizar cálculos, definir funciones simples y construir gráficos útiles para apoyar el estudio de la cinemática, la dinámica y la energía.</p>
+<p>El enfoque de este anexo está inspirado en una serie de notebooks introductorios orientados a mecánica elemental, organizados en torno a cuatro ejes:</p>
+<ul class="simple">
+<li><p>uso de Python como calculadora;</p></li>
+<li><p>scripts y funciones;</p></li>
+<li><p>gráficos de datos;</p></li>
+<li><p>gráficos de funciones.</p></li>
+</ul>
+</section>
+<section id="objetivo-de-aprendizaje">
+<h2>Objetivo de aprendizaje<a class="headerlink" href="#objetivo-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este anexo, el estudiante será capaz de:</p>
+<ul class="simple">
+<li><p>usar Google Colab para abrir, editar y ejecutar notebooks;</p></li>
+<li><p>escribir instrucciones básicas en Python;</p></li>
+<li><p>utilizar variables, operaciones aritméticas y funciones matemáticas;</p></li>
+<li><p>definir funciones simples para problemas de mecánica;</p></li>
+<li><p>generar gráficos básicos con Python;</p></li>
+<li><p>interpretar visualmente relaciones físicas a partir de datos y funciones.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="que-es-google-colab">
+<h2>1. ¿Qué es Google Colab?<a class="headerlink" href="#que-es-google-colab" title="Link to this heading">#</a></h2>
+<p>Google Colab es un entorno en la nube que permite trabajar con notebooks tipo Jupyter sin instalar Python en el computador. En Colab se puede:</p>
+<ul class="simple">
+<li><p>escribir código en celdas;</p></li>
+<li><p>agregar texto explicativo en formato Markdown;</p></li>
+<li><p>ejecutar cálculos paso a paso;</p></li>
+<li><p>insertar gráficos y resultados en el mismo documento.</p></li>
+</ul>
+<section id="operaciones-basicas-en-colab">
+<h3>Operaciones básicas en Colab<a class="headerlink" href="#operaciones-basicas-en-colab" title="Link to this heading">#</a></h3>
+<p>En un notebook existen dos tipos de celdas principales:</p>
+<ul class="simple">
+<li><p><strong>celdas de código</strong>, para ejecutar Python;</p></li>
+<li><p><strong>celdas de texto</strong>, para escribir explicaciones, fórmulas y comentarios.</p></li>
+</ul>
+</section>
+<section id="atajos-utiles">
+<h3>Atajos útiles<a class="headerlink" href="#atajos-utiles" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Shift + Enter</strong>: ejecuta la celda actual y pasa a la siguiente;</p></li>
+<li><p><strong>Ctrl + Enter</strong>: ejecuta la celda actual;</p></li>
+<li><p><strong>Alt + Enter</strong>: ejecuta la celda y crea una nueva debajo.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="python-como-calculadora-cientifica">
+<h2>2. Python como calculadora científica<a class="headerlink" href="#python-como-calculadora-cientifica" title="Link to this heading">#</a></h2>
+<p>Python puede utilizarse como una calculadora para operaciones frecuentes en mecánica.</p>
+<section id="operaciones-basicas">
+<h3>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="mi">10</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span>
+<span class="mi">8</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="uso-de-variables">
+<h3>Uso de variables<a class="headerlink" href="#uso-de-variables" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">peso</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">g</span>
+<span class="n">peso</span>
+</pre></div>
+</div>
+</section>
+<section id="interpretacion-fisica">
+<h3>Interpretación física<a class="headerlink" href="#interpretacion-fisica" title="Link to this heading">#</a></h3>
+<p>Este tipo de instrucciones permite calcular magnitudes simples como:</p>
+<ul class="simple">
+<li><p>peso;</p></li>
+<li><p>rapidez;</p></li>
+<li><p>energía cinética;</p></li>
+<li><p>trabajo mecánico;</p></li>
+<li><p>período;</p></li>
+<li><p>frecuencia.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="uso-de-la-libreria-math">
+<h2>3. Uso de la librería <code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#uso-de-la-libreria-math" title="Link to this heading">#</a></h2>
+<p>Para muchas aplicaciones en mecánica se necesitan funciones matemáticas especiales. Python incluye la librería <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+<section id="ejemplos-basicos">
+<h3>Ejemplos básicos<a class="headerlink" href="#ejemplos-basicos" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</section>
+<section id="aplicacion-en-mecanica">
+<h3>Aplicación en mecánica<a class="headerlink" href="#aplicacion-en-mecanica" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">vx0</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">vy0</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="n">vx0</span><span class="p">,</span> <span class="n">vy0</span>
+</pre></div>
+</div>
+<p>Esto permite descomponer vectores y trabajar correctamente con ángulos en radianes.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="scripts-simples-en-python">
+<h2>4. Scripts simples en Python<a class="headerlink" href="#scripts-simples-en-python" title="Link to this heading">#</a></h2>
+<p>Un script es una secuencia ordenada de instrucciones que Python ejecuta paso a paso.</p>
+<section id="ejemplo-calculo-del-peso-de-varios-cuerpos">
+<h3>Ejemplo: cálculo del peso de varios cuerpos<a class="headerlink" href="#ejemplo-calculo-del-peso-de-varios-cuerpos" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="n">m1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">m3</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">g</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">*</span> <span class="n">g</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">m3</span> <span class="o">*</span> <span class="n">g</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="utilidad-en-mecanica">
+<h3>Utilidad en mecánica<a class="headerlink" href="#utilidad-en-mecanica" title="Link to this heading">#</a></h3>
+<p>Los scripts son útiles para:</p>
+<ul class="simple">
+<li><p>automatizar cálculos repetitivos;</p></li>
+<li><p>comparar resultados;</p></li>
+<li><p>evitar errores aritméticos;</p></li>
+<li><p>resolver rápidamente ejercicios con varios casos.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="funciones-en-python">
+<h2>5. Funciones en Python<a class="headerlink" href="#funciones-en-python" title="Link to this heading">#</a></h2>
+<p>Las funciones permiten reutilizar cálculos y organizar mejor el trabajo.</p>
+<section id="ejemplo-funcion-para-calcular-energia-cinetica">
+<h3>Ejemplo: función para calcular energía cinética<a class="headerlink" href="#ejemplo-funcion-para-calcular-energia-cinetica" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">energia_cinetica</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="uso-de-la-funcion">
+<h3>Uso de la función<a class="headerlink" href="#uso-de-la-funcion" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">energia_cinetica</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">energia_cinetica</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ejemplo-funcion-para-el-peso">
+<h3>Ejemplo: función para el peso<a class="headerlink" href="#ejemplo-funcion-para-el-peso" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">peso</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span> <span class="o">*</span> <span class="n">g</span>
+</pre></div>
+</div>
+</section>
+<section id="importancia-en-fisica">
+<h3>Importancia en física<a class="headerlink" href="#importancia-en-fisica" title="Link to this heading">#</a></h3>
+<p>Las funciones son especialmente útiles para representar fórmulas físicas de manera directa y clara.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="arreglos-y-datos-con-numpy">
+<h2>6. Arreglos y datos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#arreglos-y-datos-con-numpy" title="Link to this heading">#</a></h2>
+<p>Cuando se trabaja con muchos valores, conviene usar <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+<section id="ejemplo-tiempos-igualmente-espaciados">
+<h3>Ejemplo: tiempos igualmente espaciados<a class="headerlink" href="#ejemplo-tiempos-igualmente-espaciados" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+<p>Resultado esperado:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="aplicacion-en-cinematica">
+<h3>Aplicación en cinemática<a class="headerlink" href="#aplicacion-en-cinematica" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">v0</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Esto permite calcular la posición para muchos instantes al mismo tiempo.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="graficos-con-matplotlib">
+<h2>7. Gráficos con <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#graficos-con-matplotlib" title="Link to this heading">#</a></h2>
+<p>Para visualizar funciones y datos en mecánica se usa frecuentemente <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+<section id="ejemplo-posicion-en-funcion-del-tiempo">
+<h3>Ejemplo: posición en función del tiempo<a class="headerlink" href="#ejemplo-posicion-en-funcion-del-tiempo" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">v0</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Posición [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Movimiento rectilíneo uniformemente acelerado&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="interpretacion">
+<h3>Interpretación<a class="headerlink" href="#interpretacion" title="Link to this heading">#</a></h3>
+<p>Este gráfico permite visualizar cómo cambia la posición con el tiempo en un MRUA.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="graficos-de-conjuntos-de-datos">
+<h2>8. Gráficos de conjuntos de datos<a class="headerlink" href="#graficos-de-conjuntos-de-datos" title="Link to this heading">#</a></h2>
+<p>Python también puede graficar datos experimentales o tablas de valores.</p>
+<section id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tiempo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">velocidad</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tiempo</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Velocidad [m/s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Velocidad en función del tiempo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="utilidad-en-el-curso">
+<h3>Utilidad en el curso<a class="headerlink" href="#utilidad-en-el-curso" title="Link to this heading">#</a></h3>
+<p>Esto sirve para:</p>
+<ul class="simple">
+<li><p>graficar resultados experimentales;</p></li>
+<li><p>comparar teoría y datos;</p></li>
+<li><p>identificar tendencias;</p></li>
+<li><p>interpretar pendientes y áreas.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="graficos-de-funciones-en-mecanica">
+<h2>9. Gráficos de funciones en mecánica<a class="headerlink" href="#graficos-de-funciones-en-mecanica" title="Link to this heading">#</a></h2>
+<p>Un uso muy valioso de Python es graficar funciones físicas.</p>
+<section id="ejemplo-tiro-parabolico">
+<h3>Ejemplo: tiro parabólico<a class="headerlink" href="#ejemplo-tiro-parabolico" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Trayectoria de un proyectil&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Interpretación<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Este tipo de gráfico permite conectar directamente las ecuaciones del movimiento con la forma de la trayectoria.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="buenas-practicas-para-estudiantes">
+<h2>10. Buenas prácticas para estudiantes<a class="headerlink" href="#buenas-practicas-para-estudiantes" title="Link to this heading">#</a></h2>
+<p>Cuando trabajes en Colab, se recomienda:</p>
+<ul class="simple">
+<li><p>comentar el código;</p></li>
+<li><p>usar nombres de variables claros;</p></li>
+<li><p>incluir unidades en los gráficos;</p></li>
+<li><p>probar primero ejemplos simples;</p></li>
+<li><p>revisar si los resultados tienen sentido físico;</p></li>
+<li><p>separar el cálculo, el gráfico y la interpretación.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="aplicaciones-sugeridas-al-curso">
+<h2>11. Aplicaciones sugeridas al curso<a class="headerlink" href="#aplicaciones-sugeridas-al-curso" title="Link to this heading">#</a></h2>
+<p>Este anexo puede usarse para apoyar contenidos como:</p>
+<ul class="simple">
+<li><p>conversiones de unidades;</p></li>
+<li><p>vectores y descomposición;</p></li>
+<li><p>cinemática 1D;</p></li>
+<li><p>tiro parabólico;</p></li>
+<li><p>movimiento circular;</p></li>
+<li><p>leyes de Newton;</p></li>
+<li><p>energía mecánica;</p></li>
+<li><p>momentum lineal.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="conceptos-clave">
+<h2>Conceptos clave<a class="headerlink" href="#conceptos-clave" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Google Colab</p></li>
+<li><p>notebook</p></li>
+<li><p>celda de código</p></li>
+<li><p>celda Markdown</p></li>
+<li><p>variable</p></li>
+<li><p>script</p></li>
+<li><p>función</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></li>
+<li><p>gráfico</p></li>
+<li><p>visualización de datos</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents/utem"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="guias_trabajo.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Guias de trabajo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../mechanics/problemas_aplicados.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Problemas aplicados, tareas y proyectos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-de-aprendizaje">Objetivo de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-google-colab">1. ¿Qué es Google Colab?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-basicas-en-colab">Operaciones básicas en Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atajos-utiles">Atajos útiles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-como-calculadora-cientifica">2. Python como calculadora científica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-basicas">Operaciones básicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-variables">Uso de variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-la-libreria-math">3. Uso de la librería <code class="docutils literal notranslate"><span class="pre">math</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-basicos">Ejemplos básicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-mecanica">Aplicación en mecánica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-simples-en-python">4. Scripts simples en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-calculo-del-peso-de-varios-cuerpos">Ejemplo: cálculo del peso de varios cuerpos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidad-en-mecanica">Utilidad en mecánica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-en-python">5. Funciones en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-funcion-para-calcular-energia-cinetica">Ejemplo: función para calcular energía cinética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-la-funcion">Uso de la función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-funcion-para-el-peso">Ejemplo: función para el peso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-en-fisica">Importancia en física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arreglos-y-datos-con-numpy">6. Arreglos y datos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tiempos-igualmente-espaciados">Ejemplo: tiempos igualmente espaciados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-cinematica">Aplicación en cinemática</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-con-matplotlib">7. Gráficos con <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-posicion-en-funcion-del-tiempo">Ejemplo: posición en función del tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-conjuntos-de-datos">8. Gráficos de conjuntos de datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidad-en-el-curso">Utilidad en el curso</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-funciones-en-mecanica">9. Gráficos de funciones en mecánica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tiro-parabolico">Ejemplo: tiro parabólico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-estudiantes">10. Buenas prácticas para estudiantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-sugeridas-al-curso">11. Aplicaciones sugeridas al curso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Equipo docente, con adaptación basada en material de Morten Hjorth-Jensen y Scott Pratt
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

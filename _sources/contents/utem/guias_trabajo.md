@@ -26,8 +26,4 @@ Una forma natural de recorrerlas dentro del semestre es la siguiente:
 
 ## Vinculos con el resto del book
 
-Las guias no reemplazan los capitulos del libro. Conviene usarlas como complemento de:
-
-- [Unidad 1](unidad1.md), [Unidad 2](unidad2.md) y [Unidad 3](unidad3.md),
-- los capitulos `chapter1` a `chapter8`,
-- y las tareas heredadas del material `PHY321`.
+Las guias no reemplazan los capitulos del libro. Conviene usarlas como complemento.
