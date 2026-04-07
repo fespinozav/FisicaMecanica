@@ -1,5 +1,7 @@
 # Fisica Mecanica, Universidad Tecnologica Metropolitana, 2026
 
+Jupyter Book del curso: [https://fespinozav.github.io/FisicaMecanica/](https://fespinozav.github.io/FisicaMecanica/)
+
 Este repositorio contiene el material principal del curso de **Fisica Mecanica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de catedra, las guias de trabajo y los notebooks de apoyo adaptados desde `PHY321`.
 
 El trabajo del curso se apoya en dos espacios principales:
