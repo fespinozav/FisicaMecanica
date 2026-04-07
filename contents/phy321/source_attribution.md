@@ -46,7 +46,7 @@ En `FisicaMecanica` se aplicaron estos criterios:
 
 ## Nota sobre materiales con copyright
 
-La carpeta `references/` contiene tambien un texto de apoyo bibliografico de Serway y Jewett. En este book se lo registra solo como referencia en APA y no se lo expone como archivo descargable republicado.
+La carpeta `references/` contiene tambien un texto de apoyo bibliografico de Serway y Jewett. En este book se lo registra en APA, se lo usa para orientar lecturas y articular capitulos con las unidades del curso, pero no se lo expone como archivo descargable republicado ni se reproducen sus enunciados extensos.
 
 ## Alcance de la atribucion
 

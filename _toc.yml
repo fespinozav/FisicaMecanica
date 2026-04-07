@@ -11,6 +11,7 @@ parts:
   - file: contents/utem/material_docente_local
   - file: contents/phy321/teachers
   - file: contents/phy321/textbooks
+  - file: contents/phy321/serway_apoyo
   - file: contents/phy321/source_attribution
 - caption: "Unidades y Guias UTEM"
   numbered: false

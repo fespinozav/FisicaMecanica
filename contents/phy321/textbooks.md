@@ -21,6 +21,17 @@ Esta pagina recoge y normaliza en formato APA las referencias visibles en el cur
 - El texto de Serway y Jewett se conserva como referencia bibliografica de apoyo, pero no se republica dentro del book como archivo descargable.
 - Cada notebook importado incluye una nota de atribucion con referencia APA y licencia del material fuente.
 
+## Serway y Jewett dentro de la ruta del curso
+
+El texto de Serway y Jewett se utiliza aqui como apoyo transversal para las unidades iniciales y para los bloques clasicos de mecanica. En particular:
+
+- el capitulo 1 refuerza unidades, medicion, analisis dimensional y modelado;
+- los capitulos 2 a 4 sirven como apoyo directo para cinematica, vectores y movimiento en dos dimensiones;
+- los capitulos 5 a 13 ofrecen un puente ordenado hacia dinamica, energia, momentum, rotacion, equilibrio y gravitacion;
+- y los capitulos 15 a 17 amplian el recorrido hacia oscilaciones y ondas.
+
+La guia completa de articulacion con el book se presenta en [Serway y Jewett como apoyo bibliografico](serway_apoyo.md).
+
 ## Nota editorial
 
 La adaptacion local no presenta estas referencias como sustituto de los textos originales. Al contrario, se recomienda usarlas como apoyo para profundizar en:
