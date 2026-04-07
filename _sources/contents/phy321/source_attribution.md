@@ -11,7 +11,7 @@ Las referencias generales del curso se concentran en la portada principal del bo
 En este repositorio se articulan tres capas de trabajo:
 
 - una estructura de curso basada en el modelo general de `PHY321`,
-- el material docente local almacenado en `references/`,
+- el material docente local del curso,
 - y textos de apoyo usados como respaldo conceptual y bibliografico.
 
 La adaptacion busca mantener una ruta clara de aprendizaje, traducida al espanol y alineada con la programacion local del curso.

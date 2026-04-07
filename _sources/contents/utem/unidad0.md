@@ -1,6 +1,6 @@
 # Unidad 0: presentacion, reglamentos y politicas
 
-Esta unidad adapta el sentido de los documentos [Unidad0.pdf](../../references/Unidad0.pdf) y [Semana00-Mecanica_feev.pdf](../../references/Semana00-Mecanica_feev.pdf) como marco de entrada al curso.
+Esta unidad adapta el sentido del material de apertura del curso como marco de entrada al semestre.
 
 ## Funcion de la unidad 0
 

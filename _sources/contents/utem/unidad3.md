@@ -1,6 +1,6 @@
 # Unidad 3: cinematica bidimensional y movimiento circunferencial
 
-Esta pagina adapta la presentacion [Unidad3_FEEV.pptx](../../references/Unidad3_FEEV.pptx) al formato del book.
+Esta pagina adapta la unidad local sobre cinematica bidimensional y movimiento circunferencial al formato del book.
 
 ## Temas centrales
 
@@ -46,4 +46,4 @@ Como apoyo bibliografico para esta unidad se recomienda revisar:
 
 ## Guias asociadas
 
-- [Guia 3: Cinematica bidimensional](../../references/Guia3.pdf)
+- Guia 3: Cinematica bidimensional

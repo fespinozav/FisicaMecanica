@@ -1,6 +1,6 @@
 # Programacion oficial del curso
 
-Esta pagina adapta el documento local [PROGRAMACION MECANICA CLASICA.pdf](../../references/PROGRAMACION%20MECANICA%20CLASICA.pdf) y lo articula con la estructura del book.
+Esta pagina organiza la programacion oficial del curso y la articula con la estructura del book.
 
 ## Evaluacion oficial
 

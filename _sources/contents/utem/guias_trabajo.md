@@ -1,19 +1,19 @@
 # Guias de trabajo
 
-Esta pagina incorpora las guias almacenadas en `references/` como bloque de ejercitacion complementaria del curso.
+Esta pagina resume el bloque de guias de ejercitacion complementaria del curso.
 
 ## Guias incorporadas
 
-| Guia | Tema identificado en la portada | Archivo |
-| --- | --- | --- |
-| 1 | Unidades y vectores | [Guia1.pdf](../../references/Guia1.pdf) |
-| 2 | Cinematica de la particula | [Guia2.pdf](../../references/Guia2.pdf) |
-| 3 | Cinematica bidimensional | [Guia3.pdf](../../references/Guia3.pdf) |
-| 4 | Dinamica de la particula | [Guia4.pdf](../../references/Guia4.pdf) |
-| 5 | Trabajo y energia mecanica | [Guia5.pdf](../../references/Guia5.pdf) |
-| 6 | Dinamica de un sistema de particulas | [Guia6.pdf](../../references/Guia6.pdf) |
-| 7 | Impulso y momentum lineal | [Guia7.pdf](../../references/Guia7.pdf) |
-| 8 | Estatica del solido rigido | [Guia8.pdf](../../references/Guia8.pdf) |
+| Guia | Tema identificado en la portada |
+| --- | --- |
+| 1 | Unidades y vectores |
+| 2 | Cinematica de la particula |
+| 3 | Cinematica bidimensional |
+| 4 | Dinamica de la particula |
+| 5 | Trabajo y energia mecanica |
+| 6 | Dinamica de un sistema de particulas |
+| 7 | Impulso y momentum lineal |
+| 8 | Estatica del solido rigido |
 
 ## Uso sugerido
 
