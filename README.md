@@ -1,96 +1,65 @@
-# Presentacion del curso y fuentes
+# Fisica Mecanica, Universidad Tecnologica Metropolitana, 2026
 
-Este libro organiza el curso de Fisica Mecanica articulando dos fuentes principales:
+Este repositorio contiene el material principal del curso de **Fisica Mecanica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de catedra, las guias de trabajo y los notebooks de apoyo adaptados desde `PHY321`.
 
-- una ruta conceptual adaptada desde **PHY321: Classical Mechanics I**,
-- y el material docente local disponible en `references/`, incluyendo `Unidad0`, `Semana00`, la programacion oficial, las unidades 1 a 3 y las guias de trabajo.
+El trabajo del curso se apoya en dos espacios principales:
 
-## Nota de procedencia
+- el repositorio GitHub: [fespinozav/FisicaMecanica](https://github.com/fespinozav/FisicaMecanica)
+- el Jupyter Book del curso: [https://fespinozav.github.io/FisicaMecanica/](https://fespinozav.github.io/FisicaMecanica/)
 
-Parte importante del material de este libro fue adaptada a partir del repositorio de curso de Hjorth-Jensen y Pratt. Para evitar plagio y mantener trazabilidad academica, el libro incluye atribucion explicita en las paginas editoriales y en cada notebook importado.
+Aqui encontraras una vista general del curso, con recursos, evaluacion, materiales y resultados de aprendizaje.
 
-**Referencia APA del material fuente principal:** Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
+## Recursos principales del curso
 
-La licencia del material fuente es **CC0 1.0 Universal**. Puedes revisar el detalle de uso y adaptacion en [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md).
-
-Ademas, el book incorpora y adapta material docente local de la Universidad Tecnologica Metropolitana. La entrada institucional del curso queda organizada desde [Unidad 0: presentacion, reglamentos y politicas](contents/utem/unidad0.md), [Programacion oficial del curso](contents/phy321/schedule.md) y [Material docente local](contents/utem/material_docente_local.md).
-
-## Proposito formativo
-
-Al finalizar el curso, se espera que puedas:
-
-- Analizar fuerzas e interacciones y formular ecuaciones de movimiento con base en las leyes de Newton.
-- Resolver problemas de trabajo, energia, momentum lineal y momentum angular.
-- Interpretar sistemas oscilatorios, problemas de dos cuerpos, marcos no inerciales y formulaciones lagrangianas.
-- Combinar modelacion analitica con herramientas numericas para estudiar sistemas mecanicos.
-- Documentar soluciones con claridad conceptual, matematica y computacional.
-
-## Como esta organizado el libro
-
-El recorrido principal del ebook sigue esta ruta:
-
-- [Introduccion y objetivos del curso](contents/phy321/intro.md)
-- [Unidad 0: presentacion, reglamentos y politicas](contents/utem/unidad0.md)
-- [Fundamentos previos: vectores, coordenadas y operadores basicos](contents/phy321/fundamentos_previos.md)
-- [Programacion oficial del curso](contents/phy321/schedule.md)
-- [Material docente local de catedra](contents/utem/material_docente_local.md)
-- [Equipo docente y evaluacion sugerida](contents/phy321/teachers.md)
-- [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md)
-- [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md)
-
-Despues del bloque inicial, el libro se divide en dos grandes tramos:
-
-- Material local UTEM: unidad 0, programacion oficial, unidades 1 a 3 y guias de trabajo.
-- Material introductorio: una pagina preliminar sobre vectores, coordenadas y operadores basicos, seguida de capitulos sobre fundamentos matematicos, movimiento, leyes de Newton, trabajo, energia y leyes de conservacion.
-- Temas avanzados: oscilaciones, problemas de dos cuerpos, marcos no inerciales y formulacion lagrangiana.
-
-Tambien se incluyen notebooks de tareas y un proyecto parcial heredados del curso fuente para ampliar el trabajo guiado.
-
-## Unidad 0 y encuadre del curso
-
-La unidad 0 se incorpora como puerta de entrada al semestre y adapta el sentido de los documentos `Unidad0.pdf` y `Semana00-Mecanica_feev.pdf`, originalmente asociados al trabajo del Dr. Nicolas Amigo y a la presentacion local del curso. En esta version del book, la unidad 0 cumple cuatro funciones:
-
-- presentar el curso, su organizacion y el uso de este repositorio,
-- introducir reglamentos y politicas de trabajo academico,
-- ordenar la evaluacion del semestre con base en la programacion oficial,
-- y conectar las primeras unidades locales con la ruta conceptual del ebook.
-
-Como sintesis operativa, se espera que el trabajo del curso mantenga estas pautas:
-
-- usar unidades del SI, notacion vectorial clara y procedimientos bien justificados,
-- desarrollar semanalmente las unidades y guias antes de las evaluaciones,
-- citar fuentes cuando se reutilicen ideas, soluciones o material externo,
-- y atenerse a la normativa institucional vigente para justificaciones, apelaciones y situaciones especiales.
-
-## Programacion oficial del curso 2026
-
-Las siguientes fechas se adaptan desde el documento [PROGRAMACION MECANICA CLASICA.pdf](references/PROGRAMACION%20MECANICA%20CLASICA.pdf). Cuando el PDF marca controles como bandas semanales, aqui se conservan como semanas oficiales y no como una fecha unica inventada.
-
-| Hito | Ponderacion | Fecha oficial |
+| Recurso | Enlace | Uso principal |
 | --- | --- | --- |
-| Control 1 (C1) | 20% | Semana del 20 al 26 de abril de 2026 |
-| Prueba 1 (P1) | 30% | Viernes 15 de mayo de 2026 |
-| Semana de autoaprendizaje | - | Del 18 al 24 de mayo de 2026 |
-| Control 2 (C2) | 20% | Semana del 8 al 14 de junio de 2026 |
-| Prueba 2 (P2) | 30% | Viernes 3 de julio de 2026 |
-| Prueba recuperativa | - | Viernes 10 de julio de 2026 |
-| Termino de clases | - | Viernes 17 de julio de 2026 |
-| Examen | - | Viernes 24 de julio de 2026 |
+| Jupyter Book | [Abrir book](https://fespinozav.github.io/FisicaMecanica/) | Recorrido principal del curso y lectura de capitulos |
+| Repositorio GitHub | [Abrir repo](https://github.com/fespinozav/FisicaMecanica) | Archivos fuente, versionado y materiales descargables |
+| Programacion oficial | [PROGRAMACION MECANICA CLASICA.pdf](references/PROGRAMACION%20MECANICA%20CLASICA.pdf) | Fechas y ponderaciones oficiales |
+| Unidad 0 | [Unidad 0](contents/utem/unidad0.md) | Presentacion, reglamentos y politicas |
+| Material local | [Material docente local](contents/utem/material_docente_local.md) | Unidades, guias y archivos originales |
 
-## Material incorporado desde `references/`
+## Equipo docente, evaluacion y aspectos practicos
 
-El bloque local del curso queda distribuido dentro del book de esta manera:
+| Componente | Descripcion |
+| --- | --- |
+| Curso | Fisica Mecanica |
+| Institucion | Universidad Tecnologica Metropolitana |
+| Modalidad del repositorio | Ebook del curso, materiales descargables y notebooks |
+| Material base | Unidades locales, guias de trabajo y adaptacion de `PHY321` |
 
-- [Unidad 0: presentacion, reglamentos y politicas](contents/utem/unidad0.md)
-- [Unidad 1: sistemas de unidades y vectores](contents/utem/unidad1.md)
-- [Unidad 2: cinematica de la particula en una dimension](contents/utem/unidad2.md)
-- [Unidad 3: cinematica bidimensional y movimiento circunferencial](contents/utem/unidad3.md)
-- [Guias de trabajo 1 a 8](contents/utem/guias_trabajo.md)
-- [Material docente local y archivos originales](contents/utem/material_docente_local.md)
+## Evaluacion y fechas oficiales
 
-## Bibliografia base y fuentes del curso
+La evaluacion oficial del curso se organiza de la siguiente manera:
 
-Para que la procedencia del material quede visible desde la portada, estas son las referencias base que estructuran el curso:
+| Actividad | Sigla | Ponderacion | Fecha oficial |
+| --- | --- | --- | --- |
+| Control 1 | C1 | 20% | Semana del 20 al 26 de abril de 2026 |
+| Prueba 1 | P1 | 30% | Viernes 15 de mayo de 2026 |
+| Semana de autoaprendizaje | - | - | Del 18 al 24 de mayo de 2026 |
+| Control 2 | C2 | 20% | Semana del 8 al 14 de junio de 2026 |
+| Prueba 2 | P2 | 30% | Viernes 3 de julio de 2026 |
+| Prueba recuperativa | - | - | Viernes 10 de julio de 2026 |
+| Termino de clases | - | - | Viernes 17 de julio de 2026 |
+| Examen | - | - | Viernes 24 de julio de 2026 |
+
+Para el trabajo semanal dentro del repositorio, conviene combinar:
+
+- lectura del Jupyter Book,
+- revision de las unidades locales,
+- resolucion de guias,
+- y desarrollo de notebooks y tareas cuando corresponda.
+
+## Textos y materiales de apoyo
+
+Los materiales principales del curso se articulan en cuatro capas:
+
+- material docente local en `references/`, incluyendo unidad 0, programacion, unidades 1 a 3 y guias de trabajo;
+- ebook del curso en GitHub Pages, con navegacion por capitulos y material complementario;
+- notebooks adaptados desde `PHY321: Classical Mechanics I`;
+- y bibliografia de apoyo para profundizacion conceptual.
+
+### Referencias base en APA
 
 - Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
 - Espinoza Vidal, F. (2026). *Programacion Mecanica Clasica* [Programacion de asignatura]. Universidad Tecnologica Metropolitana.
@@ -100,13 +69,49 @@ Para que la procedencia del material quede visible desde la portada, estas son l
 - Taylor, J. R. (2005). *Classical mechanics*. University Science Books.
 - Malthe-Sorenssen, A. (2015). *Elementary mechanics using Python: A modern course combining analytical and numerical techniques*. Springer.
 
-El uso de Serway y Jewett dentro de este repositorio es bibliografico y pedagogico: se emplea para orientar lecturas, reforzar conceptos y mapear contenidos del curso, pero no se redistribuye como archivo dentro del book. La guia especifica de uso quedo en [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md).
+## Estructura del repositorio
+
+Dentro del book y del repositorio, el recorrido principal queda organizado asi:
+
+- [Introduccion y objetivos del curso](contents/phy321/intro.md)
+- [Unidad 0: presentacion, reglamentos y politicas](contents/utem/unidad0.md)
+- [Fundamentos previos: vectores, coordenadas y operadores basicos](contents/phy321/fundamentos_previos.md)
+- [Programacion oficial del curso](contents/phy321/schedule.md)
+- [Material docente local](contents/utem/material_docente_local.md)
+- [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md)
+- [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md)
+
+El bloque de contenidos principales del ebook cubre:
+
+- fundamentos matematicos y numericos para mecanica clasica,
+- movimiento y leyes de Newton,
+- trabajo, energia, momentum y conservacion,
+- oscilaciones armonicas,
+- problemas de dos cuerpos,
+- marcos no inerciales,
+- y formulacion lagrangiana.
+
+## Resultados de aprendizaje
+
+Al finalizar el curso, se espera que puedas:
+
+- analizar fuerzas e interacciones y formular ecuaciones de movimiento con base en las leyes de Newton;
+- resolver problemas de trabajo, energia, momentum lineal y momentum angular;
+- interpretar oscilaciones, problemas de dos cuerpos y marcos no inerciales;
+- usar herramientas numericas para estudiar sistemas mecanicos;
+- y documentar soluciones con claridad conceptual, matematica y computacional.
+
+## Nota de procedencia y uso de materiales
+
+Parte importante del material de este repositorio fue adaptada desde `PHY321`. El contenido local del curso se integra con esa estructura para construir una version en espanol y alineada con la programacion oficial.
+
+El material docente propio puede reorganizarse y adaptarse libremente dentro del repositorio. Los textos externos de apoyo se usan como referencia conceptual y bibliografica, sin redistribuir material protegido por copyright. El detalle editorial puede revisarse en [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md).
 
 ## Compilacion local
 
 Para compilar este libro:
 
 1. Crear un entorno virtual de Python.
-1. Instalar dependencias con `pip install -r requirements.txt`.
-1. Ejecutar `jupyter-book build .`.
-1. Revisar la salida generada en `_build/html/`.
+2. Instalar dependencias con `pip install -r requirements.txt`.
+3. Ejecutar `jupyter-book build .`.
+4. Revisar la salida generada en `_build/html/`.
