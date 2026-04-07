@@ -1,37 +1,22 @@
 format: jb-book
 root: README
 parts:
-- caption: "Aprendizaje Supervisado"
+- caption: "Fundamentos"
   numbered: true
   chapters:
-  - file: contents/supervised_learning/intro
-  - file: contents/supervised_learning/linear
-  - file: contents/supervised_learning/validation
-  - file: contents/supervised_learning/logistic
-  - file: contents/supervised_learning/metrics
-  - file: contents/supervised_learning/svm
-  - file: contents/supervised_learning/trees
-  - file: contents/supervised_learning/ensembles1
-  - file: contents/supervised_learning/ensembles2
-  - file: contents/supervised_learning/features
-  - file: contents/supervised_learning/engineering
-- caption: "Redes Neuronales Artificiales"
+  - file: contents/mechanics/intro
+  - file: contents/mechanics/units_vectors
+  - file: contents/mechanics/kinematics_1d
+  - file: contents/mechanics/kinematics_2d
+- caption: "Dinamica"
   numbered: true
   chapters:
-      - file: contents/neural_networks/torch-tensor
-      - file: contents/neural_networks/torch-training
-      - file: contents/neural_networks/images
-      - file: contents/neural_networks/cnn
-      - file: contents/neural_networks/cnn-lightning
-      - file: contents/neural_networks/data_augmentation
-      - file: contents/neural_networks/transfer_learning
-      - file: contents/neural_networks/tips
-- caption: "Aprendizaje Reforzado"
+  - file: contents/mechanics/newton_laws
+  - file: contents/mechanics/work_energy
+  - file: contents/mechanics/momentum_collisions
+- caption: "Sistemas Extendidos"
   numbered: true
   chapters:
-      - file: contents/reinforcement_learning/intro
-      - file: contents/reinforcement_learning/qlearning
-      - file: contents/reinforcement_learning/qlearning2
-      - file: contents/reinforcement_learning/dqn1
-      - file: contents/reinforcement_learning/dqn2
-      - file: contents/reinforcement_learning/policygrad
+  - file: contents/mechanics/rotation
+  - file: contents/mechanics/oscillations
+  - file: contents/mechanics/gravitation
