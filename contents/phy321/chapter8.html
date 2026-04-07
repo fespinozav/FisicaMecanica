@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Nota de adaptacion y atribucion &#8212; Física Mecánica</title>
+    <title>7. Cálculo variacional y formulación lagrangiana &#8212; Física Mecánica</title>
   
   
   
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=93a6d1e2" />
   
@@ -68,8 +68,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/phy321/chapter8';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Nota de adaptacion y atribucion" href="hw1.html" />
-    <link rel="prev" title="7. Nota de adaptacion y atribucion" href="chapter7.html" />
+    <link rel="next" title="Unidad 1: sistemas de unidades y vectores" href="../utem/unidad1.html" />
+    <link rel="prev" title="6. Marcos no inerciales, traslaciones y sistemas rotantes" href="chapter7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -140,7 +140,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../README.html">
+<a class="navbar-brand logo" href="chapter1.html">
   
   
   
@@ -159,16 +159,30 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curso y Fuentes</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sobre el curso</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Presentacion del curso y fuentes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion y objetivos del curso</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad0.html">Unidad 0: presentacion, reglamentos y politicas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fundamentos_previos.html">Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Programacion oficial del curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../utem/material_docente_local.html">Material docente local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teachers.html">Equipo docente y evaluacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utem/material_docente_local.html">Material docente local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serway_apoyo.html">Serway y Jewett como apoyo bibliografico</a></li>
 <li class="toctree-l1"><a class="reference internal" href="source_attribution.html">Criterios editoriales y uso de materiales</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material Introductorio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">1. Fundamentos matemáticos y numéricos para mecánica clásica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">2. Problemas simples de movimiento y repaso de las leyes de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">3. Trabajo, energía, momentum y leyes de conservación</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Temas Avanzados</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">4. Oscilaciones armónicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">5. Problemas de dos cuerpos: desde la fuerza gravitatoria hasta la dispersión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">6. Marcos no inerciales, traslaciones y sistemas rotantes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Cálculo variacional y formulación lagrangiana</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unidades y Guias UTEM</span></p>
 <ul class="nav bd-sidenav">
@@ -177,42 +191,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad3.html">Unidad 3: cinematica bidimensional y movimiento circunferencial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utem/guias_trabajo.html">Guias de trabajo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material Introductorio</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1. Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2. Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3. Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4. Nota de adaptacion y atribucion</a></li>
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Temas Avanzados</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5. Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6. Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7. Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Nota de adaptacion y atribucion</a></li>
-
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tareas y Proyectos</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="hw1.html">Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="hw2.html">Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="hw3.html">Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="hw4.html">Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="hw5.html">Nota de adaptacion y atribucion</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Firstmidterm2022.html">Nota de adaptacion y atribucion</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="hw1.html">Tarea 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw2.html">Tarea 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw3.html">Tarea 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw4.html">Tarea 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw5.html">Tarea 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firstmidterm2022.html">Proyecto de primer examen parcial</a></li>
 </ul>
 
     </div>
@@ -348,7 +334,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Nota de adaptacion y atribucion</h1>
+    <h1>Cálculo variacional y formulación lagrangiana</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -358,29 +344,24 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Nota de adaptacion y atribucion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-variacional-y-formulacion-lagrangiana">8. Cálculo variacional y formulación lagrangiana</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-motion">8.1. Constrained motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-brachiostone">8.1.1. Example: brachiostone</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximizing-a-function">8.1.2. Maximizing a Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">8.1.3. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-motion">7.1. Constrained motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-brachiostone">7.1.1. Example: brachiostone</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximizing-a-function">7.1.2. Maximizing a Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">7.1.3. Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians">8.2. Lagrangians</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-lagranges-equations-of-motion-from-newtons-laws">8.2.1. Proving Lagrange’s Equations of Motion from Newton’s Laws</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-examples">8.2.2. Lagrangian Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians">7.2. Lagrangians</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-lagranges-equations-of-motion-from-newtons-laws">7.2.1. Proving Lagrange’s Equations of Motion from Newton’s Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-examples">7.2.2. Lagrangian Examples</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">8.3. Small Vibrations and Normal Modes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coupled-springs">8.3.1. Coupled Springs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-pendulum">8.3.2. Double Pendulum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">7.3. Small Vibrations and Normal Modes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coupled-springs">7.3.1. Coupled Springs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-pendulum">7.3.2. Double Pendulum</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-laws">8.4. Conservation Laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-laws">7.4. Conservation Laws</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -391,14 +372,13 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="nota-de-adaptacion-y-atribucion">
-<h1><span class="section-number">8. </span>Nota de adaptacion y atribucion<a class="headerlink" href="#nota-de-adaptacion-y-atribucion" title="Link to this heading">#</a></h1>
-<p>Este notebook forma parte de una adaptacion del curso <strong>PHY321, Classical Mechanics I</strong> al libro <strong>Fisica Mecanica</strong>. El material fuente proviene del repositorio de curso publicado por Morten Hjorth-Jensen y Scott Pratt.</p>
-<p><strong>Referencia APA del material fuente:</strong> Hjorth-Jensen, M., &amp; Pratt, S. (2023). <em>PHY321, Classical Mechanics I</em> [Repositorio de curso y Jupyter Book]. GitHub. <a class="github reference external" href="https://github.com/mhjensen/Physics321">mhjensen/Physics321</a></p>
-<p><strong>Licencia del material fuente:</strong> CC0 1.0 Universal.</p>
-</section>
+  <blockquote>
+<div><p><strong>Nota editorial</strong></p>
+<p>Este notebook forma parte de la adaptacion de <code class="docutils literal notranslate"><span class="pre">PHY321</span></code> al libro <strong>Fisica Mecanica</strong>.
+La presentacion del curso, la bibliografia general y los criterios de uso del material se encuentran en <a class="reference internal" href="../../README.html"><span class="std std-doc">Presentacion del curso y fuentes</span></a>.</p>
+</div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="calculo-variacional-y-formulacion-lagrangiana">
-<h1><span class="section-number">8. </span>Cálculo variacional y formulación lagrangiana<a class="headerlink" href="#calculo-variacional-y-formulacion-lagrangiana" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Cálculo variacional y formulación lagrangiana<a class="headerlink" href="#calculo-variacional-y-formulacion-lagrangiana" title="Link to this heading">#</a></h1>
 <p>The calculus of variations involves
 problems where the quantity to be minimized or maximized is an integral.</p>
 <p>The usual minimization problem one faces involves taking a function
@@ -539,7 +519,7 @@ dx}\frac{\partial \cal{L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
 \]</div>
 <p>known as the <strong>Euler-Lagrange</strong> equation.</p>
 <section id="constrained-motion">
-<h2><span class="section-number">8.1. </span>Constrained motion<a class="headerlink" href="#constrained-motion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Constrained motion<a class="headerlink" href="#constrained-motion" title="Link to this heading">#</a></h2>
 <p>Sometimes an auxiliary constraint is added to the problem (beyond
 fixing the end poits <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>). Just ahead, we will work on the
 example of a hanging chain. The shape of the curve minimizes the
@@ -708,7 +688,7 @@ Lagrange’s undetermined multiplier.  If we have a set of constraints
 \frac{\partial f}{\partial x_i}+\sum_k\lambda_k\frac{\partial \phi_k}{\partial x_i} =0.
 \]</div>
 <section id="example-brachiostone">
-<h3><span class="section-number">8.1.1. </span>Example: brachiostone<a class="headerlink" href="#example-brachiostone" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Example: brachiostone<a class="headerlink" href="#example-brachiostone" title="Link to this heading">#</a></h3>
 <p>Consider a particle constrained to move along a path (like a bead
 moving without friction on a wire) and you need to design a path from
 <span class="math notranslate nohighlight">\(x=y=0\)</span> to some final point <span class="math notranslate nohighlight">\(x_f,y_f\)</span>. Assume there is a constant
@@ -768,7 +748,7 @@ a chance to work with cycloids in the exercises at the end of this
 chapter.</p>
 </section>
 <section id="maximizing-a-function">
-<h3><span class="section-number">8.1.2. </span>Maximizing a Function<a class="headerlink" href="#maximizing-a-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>Maximizing a Function<a class="headerlink" href="#maximizing-a-function" title="Link to this heading">#</a></h3>
 <p>As an example of using Lagrange multipliers for a standard
 optimization formula we attempt to maximize the following function,</p>
 <div class="math notranslate nohighlight">
@@ -852,7 +832,7 @@ f\left\{y(t),y'(t),x\right\}\rightarrow f\left\{y(t),y'(t),x\right\}-\lambda C\l
 \]</div>
 </section>
 <section id="example">
-<h3><span class="section-number">8.1.3. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.3. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <p>Consider a chain of length <span class="math notranslate nohighlight">\(L\)</span> and mass per unit length <span class="math notranslate nohighlight">\(\kappa\)</span> that
 hangs from point <span class="math notranslate nohighlight">\(x=0,y=0\)</span> to point <span class="math notranslate nohighlight">\(x_f,y_f\)</span>. The shape must minimize
 the potential energy. Find general expressions for the shape in terms
@@ -929,7 +909,7 @@ the moon. These solutions are known as <a class="reference external" href="http:
 </section>
 </section>
 <section id="lagrangians">
-<h2><span class="section-number">8.2. </span>Lagrangians<a class="headerlink" href="#lagrangians" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Lagrangians<a class="headerlink" href="#lagrangians" title="Link to this heading">#</a></h2>
 <p>Lagrangians represent a powerful method for solving problems that
 would be nearly impossible by direct application of Newton’s third
 law, <span class="math notranslate nohighlight">\(\boldsymbol{F}=m\boldsymbol{a}\)</span>. The method works well for problems where a
@@ -995,7 +975,7 @@ m\ell^2\ddot{\theta}&amp;=&amp;-mg\ell\sin\theta,\\
 \end{eqnarray*}
 \end{split}\]</div>
 <section id="proving-lagranges-equations-of-motion-from-newtons-laws">
-<h3><span class="section-number">8.2.1. </span>Proving Lagrange’s Equations of Motion from Newton’s Laws<a class="headerlink" href="#proving-lagranges-equations-of-motion-from-newtons-laws" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Proving Lagrange’s Equations of Motion from Newton’s Laws<a class="headerlink" href="#proving-lagranges-equations-of-motion-from-newtons-laws" title="Link to this heading">#</a></h3>
 <p>Lagrange’s equations of motion can only be applied for the following conditions:</p>
 <ul class="simple">
 <li><p>The potential energy is a function of the generalized coordinates <span class="math notranslate nohighlight">\(q_i\)</span>, but not of <span class="math notranslate nohighlight">\(\dot{q}_i\)</span>.</p></li>
@@ -1063,7 +1043,7 @@ see that the bottom expressions above are identical,</p>
 \]</div>
 </section>
 <section id="lagrangian-examples">
-<h3><span class="section-number">8.2.2. </span>Lagrangian Examples<a class="headerlink" href="#lagrangian-examples" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.2. </span>Lagrangian Examples<a class="headerlink" href="#lagrangian-examples" title="Link to this heading">#</a></h3>
 <p>Two examples are presented here. In the first, there are two
 generalized coordinates, but the two equations of motion can be
 reduced to one through conservation laws (angular momentum in this
@@ -1143,7 +1123,7 @@ outward indefinitely.</p>
 </section>
 </section>
 <section id="small-vibrations-and-normal-modes">
-<h2><span class="section-number">8.3. </span>Small Vibrations and Normal Modes<a class="headerlink" href="#small-vibrations-and-normal-modes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Small Vibrations and Normal Modes<a class="headerlink" href="#small-vibrations-and-normal-modes" title="Link to this heading">#</a></h2>
 <p>Two examples are provided for solving for normal modes. These are
 solutions with multiple generalized coordinates, where the motion is
 that of simple harmonic motion. However, the motion is only simple for
@@ -1167,7 +1147,7 @@ involves finding the direction, or the linear combination of <span class="math n
 that form the coordinates <span class="math notranslate nohighlight">\(q_i\)</span> in which the motion is that of a
 single oscillator in each coordinate.</p>
 <section id="coupled-springs">
-<h3><span class="section-number">8.3.1. </span>Coupled Springs<a class="headerlink" href="#coupled-springs" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Coupled Springs<a class="headerlink" href="#coupled-springs" title="Link to this heading">#</a></h3>
 <p>For a first example, we consider a system of springs, where we write
 the Lagrangian, then find the normal modes. For the second example, a
 double pendulum is considered. In this case, one must first make a
@@ -1302,7 +1282,7 @@ natural resonant frequencies of the system. This is important in the
 construction of many structures, such as bridges or vehicles.</p>
 </section>
 <section id="double-pendulum">
-<h3><span class="section-number">8.3.2. </span>Double Pendulum<a class="headerlink" href="#double-pendulum" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>Double Pendulum<a class="headerlink" href="#double-pendulum" title="Link to this heading">#</a></h3>
 <p>Consider a double pendulum confined to the <span class="math notranslate nohighlight">\(x-y\)</span> plane, where <span class="math notranslate nohighlight">\(y\)</span> is
 vertical. A mass <span class="math notranslate nohighlight">\(m\)</span> is connected to the ceiling with a massless
 string of length <span class="math notranslate nohighlight">\(\ell\)</span>. A second mass <span class="math notranslate nohighlight">\(m\)</span> hangs from the first mass
@@ -1521,7 +1501,7 @@ matrices and find eigenvectors and eigenvalues.</p>
 </section>
 </section>
 <section id="conservation-laws">
-<h2><span class="section-number">8.4. </span>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Link to this heading">#</a></h2>
 <p>Energy is conserved only when the Lagrangian has no explicit
 dependence on time, i.e. <span class="math notranslate nohighlight">\(L(q,\dot{q})\)</span>, not <span class="math notranslate nohighlight">\(L(q,\dot{q},t)\)</span>. To show
 this, we first define the Hamiltonian,</p>
@@ -1704,15 +1684,15 @@ instance, you may need to write the Lagrangian in terms of angles.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Nota de adaptacion y atribucion</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Marcos no inerciales, traslaciones y sistemas rotantes</p>
       </div>
     </a>
     <a class="right-next"
-       href="hw1.html"
+       href="../utem/unidad1.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Nota de adaptacion y atribucion</p>
+        <p class="prev-next-title">Unidad 1: sistemas de unidades y vectores</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1734,29 +1714,24 @@ instance, you may need to write the Lagrangian in terms of angles.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Nota de adaptacion y atribucion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-variacional-y-formulacion-lagrangiana">8. Cálculo variacional y formulación lagrangiana</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-motion">8.1. Constrained motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-brachiostone">8.1.1. Example: brachiostone</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximizing-a-function">8.1.2. Maximizing a Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">8.1.3. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-motion">7.1. Constrained motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-brachiostone">7.1.1. Example: brachiostone</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximizing-a-function">7.1.2. Maximizing a Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">7.1.3. Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians">8.2. Lagrangians</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-lagranges-equations-of-motion-from-newtons-laws">8.2.1. Proving Lagrange’s Equations of Motion from Newton’s Laws</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-examples">8.2.2. Lagrangian Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians">7.2. Lagrangians</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-lagranges-equations-of-motion-from-newtons-laws">7.2.1. Proving Lagrange’s Equations of Motion from Newton’s Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-examples">7.2.2. Lagrangian Examples</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">8.3. Small Vibrations and Normal Modes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coupled-springs">8.3.1. Coupled Springs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-pendulum">8.3.2. Double Pendulum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">7.3. Small Vibrations and Normal Modes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coupled-springs">7.3.1. Coupled Springs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-pendulum">7.3.2. Double Pendulum</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-laws">8.4. Conservation Laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-laws">7.4. Conservation Laws</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
