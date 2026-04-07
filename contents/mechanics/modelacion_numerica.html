@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Modelacion numerica en mecanica &#8212; Física Mecánica</title>
+    <title>Modelacion numerica en mecanica &#8212; Física Mecánica</title>
   
   
   
@@ -68,8 +68,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/mechanics/modelacion_numerica';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="11. Rotacion de Cuerpos Rigidos" href="rotation.html" />
-    <link rel="prev" title="9. Momentum Lineal y Colisiones" href="momentum_collisions.html" />
+    <link rel="next" title="Rotacion de Cuerpos Rigidos" href="rotation.html" />
+    <link rel="prev" title="Momentum Lineal y Colisiones" href="momentum_collisions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -183,22 +183,22 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">3. Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="units_vectors.html">4. Magnitudes, Unidades y Vectores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinematics_1d.html">5. Cinematica en Una Dimension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinematics_2d.html">6. Cinematica en Dos Dimensiones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newton_laws.html">7. Leyes de Newton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_energy.html">8. Trabajo y Energia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="momentum_collisions.html">9. Momentum Lineal y Colisiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units_vectors.html">Magnitudes, Unidades y Vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinematics_1d.html">Cinematica en Una Dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinematics_2d.html">Cinematica en Dos Dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton_laws.html">Leyes de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_energy.html">Trabajo y Energia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="momentum_collisions.html">Momentum Lineal y Colisiones</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelacion y temas avanzados</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Modelacion numerica en mecanica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rotation.html">11. Rotacion de Cuerpos Rigidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oscillations.html">12. Oscilaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gravitation.html">13. Gravitacion y problema de dos cuerpos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="marcos_no_inerciales.html">14. Marcos no inerciales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulacion_lagrangiana.html">15. Formulacion lagrangiana</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modelacion numerica en mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Rotacion de Cuerpos Rigidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oscillations.html">Oscilaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gravitation.html">Gravitacion y problema de dos cuerpos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marcos_no_inerciales.html">Marcos no inerciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulacion_lagrangiana.html">Formulacion lagrangiana</a></li>
 </ul>
 
     </div>
@@ -359,18 +359,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">10.1. Objetivos de aprendizaje</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-formulacion-continua-a-la-discretizacion">10.2. De la formulacion continua a la discretizacion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-numerica">10.3. Integracion numerica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-frecuentes-en-mecanica">10.4. Algoritmos frecuentes en mecanica</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler">10.4.1. Euler</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-cromer">10.4.2. Euler-Cromer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet">10.4.3. Velocity Verlet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-formulacion-continua-a-la-discretizacion">De la formulacion continua a la discretizacion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-numerica">Integracion numerica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-frecuentes-en-mecanica">Algoritmos frecuentes en mecanica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler">Euler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-cromer">Euler-Cromer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet">Velocity Verlet</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-conviene-vigilar-en-una-simulacion">10.5. Que conviene vigilar en una simulacion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#situaciones-donde-esta-pagina-resulta-util">10.6. Situaciones donde esta pagina resulta util</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-de-trabajo">10.7. Recomendaciones de trabajo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-conviene-vigilar-en-una-simulacion">Que conviene vigilar en una simulacion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#situaciones-donde-esta-pagina-resulta-util">Situaciones donde esta pagina resulta util</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-de-trabajo">Recomendaciones de trabajo</a></li>
 </ul>
             </nav>
         </div>
@@ -383,10 +383,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modelacion-numerica-en-mecanica">
-<h1><span class="section-number">10. </span>Modelacion numerica en mecanica<a class="headerlink" href="#modelacion-numerica-en-mecanica" title="Link to this heading">#</a></h1>
+<h1>Modelacion numerica en mecanica<a class="headerlink" href="#modelacion-numerica-en-mecanica" title="Link to this heading">#</a></h1>
 <p>La mecanica clasica no se limita a resolver ecuaciones de forma analitica. Muchos sistemas fisicos exigen aproximaciones numericas para explorar trayectorias, verificar conservacion de energia o comparar modelos ideales con situaciones mas realistas.</p>
 <section id="objetivos-de-aprendizaje">
-<h2><span class="section-number">10.1. </span>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Comprender por que aparecen los metodos numericos en problemas mecanicos.</p></li>
 <li><p>Aproximar derivadas e integrales con esquemas discretos simples.</p></li>
@@ -395,7 +395,7 @@
 </ul>
 </section>
 <section id="de-la-formulacion-continua-a-la-discretizacion">
-<h2><span class="section-number">10.2. </span>De la formulacion continua a la discretizacion<a class="headerlink" href="#de-la-formulacion-continua-a-la-discretizacion" title="Link to this heading">#</a></h2>
+<h2>De la formulacion continua a la discretizacion<a class="headerlink" href="#de-la-formulacion-continua-a-la-discretizacion" title="Link to this heading">#</a></h2>
 <p>Cuando una variable depende del tiempo, las derivadas pueden aproximarse con incrementos finitos:</p>
 <div class="math notranslate nohighlight">
 \[\frac{dx}{dt} \approx \frac{x_{i+1}-x_i}{\Delta t}\]</div>
@@ -404,28 +404,28 @@
 <p>La idea central consiste en reemplazar un problema continuo por una secuencia ordenada de pasos pequeños.</p>
 </section>
 <section id="integracion-numerica">
-<h2><span class="section-number">10.3. </span>Integracion numerica<a class="headerlink" href="#integracion-numerica" title="Link to this heading">#</a></h2>
+<h2>Integracion numerica<a class="headerlink" href="#integracion-numerica" title="Link to this heading">#</a></h2>
 <p>Para estimar areas o trabajo acumulado se usan reglas como:</p>
 <div class="math notranslate nohighlight">
 \[\int_a^b f(x)\,dx \approx \sum_i \frac{f(x_i)+f(x_{i+1})}{2}\Delta x\]</div>
 <p>Esta expresion corresponde a la regla del trapecio. Cuando la funcion es suave, la regla de Simpson mejora la precision usando parabolas locales.</p>
 </section>
 <section id="algoritmos-frecuentes-en-mecanica">
-<h2><span class="section-number">10.4. </span>Algoritmos frecuentes en mecanica<a class="headerlink" href="#algoritmos-frecuentes-en-mecanica" title="Link to this heading">#</a></h2>
+<h2>Algoritmos frecuentes en mecanica<a class="headerlink" href="#algoritmos-frecuentes-en-mecanica" title="Link to this heading">#</a></h2>
 <section id="euler">
-<h3><span class="section-number">10.4.1. </span>Euler<a class="headerlink" href="#euler" title="Link to this heading">#</a></h3>
+<h3>Euler<a class="headerlink" href="#euler" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[v_{i+1}=v_i+a_i\Delta t, \qquad x_{i+1}=x_i+v_i\Delta t\]</div>
 <p>Es simple de implementar, pero puede acumular error con rapidez.</p>
 </section>
 <section id="euler-cromer">
-<h3><span class="section-number">10.4.2. </span>Euler-Cromer<a class="headerlink" href="#euler-cromer" title="Link to this heading">#</a></h3>
+<h3>Euler-Cromer<a class="headerlink" href="#euler-cromer" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[v_{i+1}=v_i+a_i\Delta t, \qquad x_{i+1}=x_i+v_{i+1}\Delta t\]</div>
 <p>Suele comportarse mejor en oscilaciones y sistemas donde interesa controlar la energia.</p>
 </section>
 <section id="velocity-verlet">
-<h3><span class="section-number">10.4.3. </span>Velocity Verlet<a class="headerlink" href="#velocity-verlet" title="Link to this heading">#</a></h3>
+<h3>Velocity Verlet<a class="headerlink" href="#velocity-verlet" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[x_{i+1}=x_i+v_i\Delta t+\frac{1}{2}a_i\Delta t^2\]</div>
 <div class="math notranslate nohighlight">
@@ -434,7 +434,7 @@
 </section>
 </section>
 <section id="que-conviene-vigilar-en-una-simulacion">
-<h2><span class="section-number">10.5. </span>Que conviene vigilar en una simulacion<a class="headerlink" href="#que-conviene-vigilar-en-una-simulacion" title="Link to this heading">#</a></h2>
+<h2>Que conviene vigilar en una simulacion<a class="headerlink" href="#que-conviene-vigilar-en-una-simulacion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El tamano del paso temporal <code class="docutils literal notranslate"><span class="pre">\Delta</span> <span class="pre">t</span></code>.</p></li>
 <li><p>La propagacion del error redondeo-truncamiento.</p></li>
@@ -444,7 +444,7 @@
 </ul>
 </section>
 <section id="situaciones-donde-esta-pagina-resulta-util">
-<h2><span class="section-number">10.6. </span>Situaciones donde esta pagina resulta util<a class="headerlink" href="#situaciones-donde-esta-pagina-resulta-util" title="Link to this heading">#</a></h2>
+<h2>Situaciones donde esta pagina resulta util<a class="headerlink" href="#situaciones-donde-esta-pagina-resulta-util" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Caida de un cuerpo con rozamiento.</p></li>
 <li><p>Oscilaciones donde no se dispone de una solucion cerrada sencilla.</p></li>
@@ -453,7 +453,7 @@
 </ol>
 </section>
 <section id="recomendaciones-de-trabajo">
-<h2><span class="section-number">10.7. </span>Recomendaciones de trabajo<a class="headerlink" href="#recomendaciones-de-trabajo" title="Link to this heading">#</a></h2>
+<h2>Recomendaciones de trabajo<a class="headerlink" href="#recomendaciones-de-trabajo" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Comparar siempre el resultado numerico con un caso analitico sencillo.</p></li>
 <li><p>Graficar posicion, velocidad, aceleracion y energia cuando sea posible.</p></li>
@@ -499,7 +499,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Momentum Lineal y Colisiones</p>
+        <p class="prev-next-title">Momentum Lineal y Colisiones</p>
       </div>
     </a>
     <a class="right-next"
@@ -507,7 +507,7 @@
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Rotacion de Cuerpos Rigidos</p>
+        <p class="prev-next-title">Rotacion de Cuerpos Rigidos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -529,18 +529,18 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">10.1. Objetivos de aprendizaje</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-formulacion-continua-a-la-discretizacion">10.2. De la formulacion continua a la discretizacion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-numerica">10.3. Integracion numerica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-frecuentes-en-mecanica">10.4. Algoritmos frecuentes en mecanica</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler">10.4.1. Euler</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-cromer">10.4.2. Euler-Cromer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet">10.4.3. Velocity Verlet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-formulacion-continua-a-la-discretizacion">De la formulacion continua a la discretizacion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-numerica">Integracion numerica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-frecuentes-en-mecanica">Algoritmos frecuentes en mecanica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler">Euler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-cromer">Euler-Cromer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet">Velocity Verlet</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-conviene-vigilar-en-una-simulacion">10.5. Que conviene vigilar en una simulacion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#situaciones-donde-esta-pagina-resulta-util">10.6. Situaciones donde esta pagina resulta util</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-de-trabajo">10.7. Recomendaciones de trabajo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-conviene-vigilar-en-una-simulacion">Que conviene vigilar en una simulacion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#situaciones-donde-esta-pagina-resulta-util">Situaciones donde esta pagina resulta util</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-de-trabajo">Recomendaciones de trabajo</a></li>
 </ul>
   </nav></div>
 

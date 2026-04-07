@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12. Oscilaciones &#8212; Física Mecánica</title>
+    <title>Oscilaciones &#8212; Física Mecánica</title>
   
   
   
@@ -68,8 +68,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/mechanics/oscillations';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="13. Gravitacion y problema de dos cuerpos" href="gravitation.html" />
-    <link rel="prev" title="11. Rotacion de Cuerpos Rigidos" href="rotation.html" />
+    <link rel="next" title="Gravitacion y problema de dos cuerpos" href="gravitation.html" />
+    <link rel="prev" title="Rotacion de Cuerpos Rigidos" href="rotation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -183,22 +183,22 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">3. Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="units_vectors.html">4. Magnitudes, Unidades y Vectores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinematics_1d.html">5. Cinematica en Una Dimension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinematics_2d.html">6. Cinematica en Dos Dimensiones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newton_laws.html">7. Leyes de Newton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_energy.html">8. Trabajo y Energia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="momentum_collisions.html">9. Momentum Lineal y Colisiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phy321/fundamentos_previos.html">Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units_vectors.html">Magnitudes, Unidades y Vectores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinematics_1d.html">Cinematica en Una Dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinematics_2d.html">Cinematica en Dos Dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton_laws.html">Leyes de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_energy.html">Trabajo y Energia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="momentum_collisions.html">Momentum Lineal y Colisiones</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelacion y temas avanzados</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modelacion_numerica.html">10. Modelacion numerica en mecanica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rotation.html">11. Rotacion de Cuerpos Rigidos</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Oscilaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gravitation.html">13. Gravitacion y problema de dos cuerpos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="marcos_no_inerciales.html">14. Marcos no inerciales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulacion_lagrangiana.html">15. Formulacion lagrangiana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelacion_numerica.html">Modelacion numerica en mecanica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Rotacion de Cuerpos Rigidos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Oscilaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gravitation.html">Gravitacion y problema de dos cuerpos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marcos_no_inerciales.html">Marcos no inerciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulacion_lagrangiana.html">Formulacion lagrangiana</a></li>
 </ul>
 
     </div>
@@ -359,13 +359,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">12.1. Objetivos de aprendizaje</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-simple">12.2. Oscilador armonico simple</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energia">12.3. Energia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensiones">12.4. Extensiones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amortiguamiento-y-forzamiento">12.5. Amortiguamiento y forzamiento</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-analisis">12.6. Preguntas de analisis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-tipo">12.7. Problemas tipo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-simple">Oscilador armonico simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energia">Energia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensiones">Extensiones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amortiguamiento-y-forzamiento">Amortiguamiento y forzamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-analisis">Preguntas de analisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-tipo">Problemas tipo</a></li>
 </ul>
             </nav>
         </div>
@@ -378,10 +378,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="oscilaciones">
-<h1><span class="section-number">12. </span>Oscilaciones<a class="headerlink" href="#oscilaciones" title="Link to this heading">#</a></h1>
+<h1>Oscilaciones<a class="headerlink" href="#oscilaciones" title="Link to this heading">#</a></h1>
 <p>Muchos sistemas mecanicos cercanos al equilibrio exhiben oscilaciones. El oscilador armonico simple es uno de los modelos mas importantes de toda la fisica.</p>
 <section id="objetivos-de-aprendizaje">
-<h2><span class="section-number">12.1. </span>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Modelar oscilaciones alrededor de un equilibrio estable.</p></li>
 <li><p>Resolver el movimiento armonico simple.</p></li>
@@ -390,7 +390,7 @@
 </ul>
 </section>
 <section id="oscilador-armonico-simple">
-<h2><span class="section-number">12.2. </span>Oscilador armonico simple<a class="headerlink" href="#oscilador-armonico-simple" title="Link to this heading">#</a></h2>
+<h2>Oscilador armonico simple<a class="headerlink" href="#oscilador-armonico-simple" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[F = -k x\]</div>
 <div class="math notranslate nohighlight">
@@ -399,12 +399,12 @@
 \[x(t) = A \cos(\omega t + \phi), \qquad \omega = \sqrt{\frac{k}{m}}\]</div>
 </section>
 <section id="energia">
-<h2><span class="section-number">12.3. </span>Energia<a class="headerlink" href="#energia" title="Link to this heading">#</a></h2>
+<h2>Energia<a class="headerlink" href="#energia" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[E = \frac{1}{2} m v^2 + \frac{1}{2} k x^2\]</div>
 </section>
 <section id="extensiones">
-<h2><span class="section-number">12.4. </span>Extensiones<a class="headerlink" href="#extensiones" title="Link to this heading">#</a></h2>
+<h2>Extensiones<a class="headerlink" href="#extensiones" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Pendulo simple para angulos pequenos.</p></li>
 <li><p>Oscilaciones amortiguadas.</p></li>
@@ -414,7 +414,7 @@
 </ul>
 </section>
 <section id="amortiguamiento-y-forzamiento">
-<h2><span class="section-number">12.5. </span>Amortiguamiento y forzamiento<a class="headerlink" href="#amortiguamiento-y-forzamiento" title="Link to this heading">#</a></h2>
+<h2>Amortiguamiento y forzamiento<a class="headerlink" href="#amortiguamiento-y-forzamiento" title="Link to this heading">#</a></h2>
 <p>Una forma clasica de extender el modelo es</p>
 <div class="math notranslate nohighlight">
 \[m\ddot{x}+b\dot{x}+kx=F_0\cos(\omega t)\]</div>
@@ -426,7 +426,7 @@
 </ul>
 </section>
 <section id="preguntas-de-analisis">
-<h2><span class="section-number">12.6. </span>Preguntas de analisis<a class="headerlink" href="#preguntas-de-analisis" title="Link to this heading">#</a></h2>
+<h2>Preguntas de analisis<a class="headerlink" href="#preguntas-de-analisis" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Como cambia el periodo cuando varia <code class="docutils literal notranslate"><span class="pre">m</span></code> o <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p></li>
 <li><p>Que informacion aporta la energia total en un oscilador sin roce.</p></li>
@@ -434,7 +434,7 @@
 </ol>
 </section>
 <section id="problemas-tipo">
-<h2><span class="section-number">12.7. </span>Problemas tipo<a class="headerlink" href="#problemas-tipo" title="Link to this heading">#</a></h2>
+<h2>Problemas tipo<a class="headerlink" href="#problemas-tipo" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Sistema masa-resorte.</p></li>
 <li><p>Periodo de un pendulo simple.</p></li>
@@ -479,7 +479,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Rotacion de Cuerpos Rigidos</p>
+        <p class="prev-next-title">Rotacion de Cuerpos Rigidos</p>
       </div>
     </a>
     <a class="right-next"
@@ -487,7 +487,7 @@
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Gravitacion y problema de dos cuerpos</p>
+        <p class="prev-next-title">Gravitacion y problema de dos cuerpos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -509,13 +509,13 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">12.1. Objetivos de aprendizaje</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-simple">12.2. Oscilador armonico simple</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energia">12.3. Energia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensiones">12.4. Extensiones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amortiguamiento-y-forzamiento">12.5. Amortiguamiento y forzamiento</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-analisis">12.6. Preguntas de analisis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-tipo">12.7. Problemas tipo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-simple">Oscilador armonico simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energia">Energia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensiones">Extensiones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amortiguamiento-y-forzamiento">Amortiguamiento y forzamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-analisis">Preguntas de analisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-tipo">Problemas tipo</a></li>
 </ul>
   </nav></div>
 
