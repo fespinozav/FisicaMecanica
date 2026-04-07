@@ -1,6 +1,6 @@
 # Fundamentos previos: vectores, coordenadas y operadores basicos
 
-Esta unidad preliminar adapta y sintetiza, en espanol, el bloque **"Reminder on vectors and other mathematical quantities"** del material fuente `PHY321`.
+Esta unidad preliminar adapta y sintetiza, en espanol, el bloque sobre recordatorio de vectores y otras magnitudes matematicas del material fuente `PHY321`.
 
 ## Para que sirve este repaso
 
@@ -11,7 +11,7 @@ Antes de estudiar leyes de Newton, energia, oscilaciones o problemas de dos cuer
 - las unidades fisicas y las dimensiones de cada magnitud,
 - y la distincion entre cantidades escalares, vectoriales y matriciales.
 
-Este repaso funciona como puente entre el inicio del curso y el bloque de herramientas matematicas del capitulo 2.
+Este repaso funciona como puente entre el inicio del curso y el bloque de herramientas matematicas y numericas del libro.
 
 ## Preguntas fundamentales al comenzar
 
@@ -156,4 +156,4 @@ Se recomienda leer esta pagina antes de entrar al bloque principal de contenidos
 - operadores diferenciales,
 - o cambios de base y rotaciones.
 
-Para la version extendida de estas ideas dentro del libro, revisa [Fundamentos matematicos y numericos para mecanica clasica](chapter2.ipynb).
+Para continuar con la dimension computacional del curso, revisa [Modelacion numerica en mecanica](../mechanics/modelacion_numerica.md).

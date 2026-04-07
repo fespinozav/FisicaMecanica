@@ -32,7 +32,7 @@ La unidad 1 cumple el rol de nivelar el lenguaje basico con que se formulan los 
 Esta unidad dialoga directamente con:
 
 - [Fundamentos previos: vectores, coordenadas y operadores basicos](../phy321/fundamentos_previos.md)
-- [Fundamentos matematicos y numericos para mecanica clasica](../phy321/chapter2.ipynb)
+- [Magnitudes, unidades y vectores](../mechanics/units_vectors.md)
 
 ## Lectura sugerida en Serway y Jewett
 

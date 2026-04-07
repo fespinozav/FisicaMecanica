@@ -1,6 +1,6 @@
 # Introduccion y objetivos del curso
 
-Esta seccion presenta la adaptacion local de la estructura academica de **PHY321, Classical Mechanics I** al libro **Fisica Mecanica**.
+Esta seccion presenta la adaptacion local de la estructura academica de **PHY321** al libro **Fisica Mecanica**.
 
 ## Sentido del curso
 

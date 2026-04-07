@@ -29,8 +29,8 @@ Esta unidad sirve para pasar desde el lenguaje de magnitudes y vectores a la des
 
 La unidad se conecta especialmente con:
 
-- [Problemas simples de movimiento y repaso de las leyes de Newton](../phy321/chapter3.ipynb)
-- [Fundamentos matematicos y numericos para mecanica clasica](../phy321/chapter2.ipynb)
+- [Cinematica en una dimension](../mechanics/kinematics_1d.md)
+- [Modelacion numerica en mecanica](../mechanics/modelacion_numerica.md)
 
 ## Lectura sugerida en Serway y Jewett
 
