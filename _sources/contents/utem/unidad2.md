@@ -4,7 +4,7 @@ Esta pagina adapta la unidad local sobre cinematica de la particula en una dimen
 
 ## Temas centrales
 
-La unidad 2 organiza la introduccion local a la cinematica de la particula en una dimension. Los temas visibles en la presentacion fuente son:
+La unidad 2 organiza la introduccion local a la cinematica de la particula en una dimension. Los temas centrales de trabajo son:
 
 - definicion de cinematica y modelo de particula,
 - sistema de referencia inercial y no inercial,

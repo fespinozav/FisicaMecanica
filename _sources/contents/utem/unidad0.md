@@ -13,7 +13,7 @@ En esta adaptacion, la unidad 0 cumple un rol claramente institucional y metodol
 
 ## Politicas de trabajo del curso
 
-El material fuente sugiere una apertura orientada al orden academico del semestre. En esta version del book, eso se traduce en las siguientes pautas de trabajo:
+La apertura del curso se organiza en torno al orden academico del semestre. En esta version del book, eso se traduce en las siguientes pautas de trabajo:
 
 - estudiar las unidades y guias de forma semanal y acumulativa,
 - entregar procedimientos completos, con unidades, notacion y justificacion fisica clara,

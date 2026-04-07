@@ -1,6 +1,6 @@
 # Fundamentos previos: vectores, coordenadas y operadores basicos
 
-Esta unidad preliminar adapta y sintetiza, en espanol, el bloque sobre recordatorio de vectores y otras magnitudes matematicas del material fuente `PHY321`.
+Esta unidad preliminar sintetiza, en espanol, un repaso de vectores y otras magnitudes matematicas utiles para el inicio del curso.
 
 ## Para que sirve este repaso
 
