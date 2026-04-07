@@ -6,7 +6,6 @@ only_build_toc_files: true
 exclude_patterns:
   - .venv/**
   - _build
-  - references/**
   - .DS_Store
 
 execute:
