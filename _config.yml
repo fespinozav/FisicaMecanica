@@ -12,9 +12,14 @@ exclude_patterns:
 execute:
   execute_notebooks: off
 
+repository:
+  url: https://github.com/fespinozav/FisicaMecanica
+  branch: main
+  path_to_book: ""
+
 html:
   home_page_in_navbar: false
-  use_repository_button: false
+  use_repository_button: true
   use_issues_button: false
   use_edit_page_button: false
 
