@@ -162,6 +162,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curso y Fuentes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion y objetivos del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundamentos_previos.html">Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Programacion general por semanas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teachers.html">Equipo docente y evaluacion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textbooks.html">Textos y referencias</a></li>
@@ -350,53 +351,53 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Nota de adaptacion y atribucion</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-y-numericos-para-mecanica-clasica">2. Fundamentos matemáticos y numéricos para mecánica clásica</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-on-vectors-and-other-mathematical-quantities">2.2. Reminder on vectors and other mathematical quantities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars-vectors-and-matrices">2.3. Scalars, Vectors and Matrices</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-coordinates">2.3.1. Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-vectors">2.3.2. Unit Vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">2.1. Introduccion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repaso-de-vectores-y-otras-cantidades-matematicas">2.2. Repaso de vectores y otras cantidades matematicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalares-vectores-y-matrices">2.3. Escalares, vectores y matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-polares">2.3.1. Coordenadas polares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-unitarios">2.3.2. Vectores unitarios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-operations-scalar-product-or-dot-product">2.4. Vector Operations, Scalar Product (or dot product)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digression-linear-algebra-notation-for-vectors">2.5. Digression, Linear Algebra Notation for Vectors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b">2.6. Vector Product (or cross product) of vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-vectors">2.6.1. Pseudo-vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-vectoriales-y-producto-escalar">2.4. Operaciones vectoriales y producto escalar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion-de-algebra-lineal-para-vectores">2.5. Notacion de algebra lineal para vectores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#producto-vectorial-de-los-vectores-boldsymbol-a-y-boldsymbol-b">2.6. Producto vectorial de los vectores <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> y <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudovectores">2.6.1. Pseudovectores</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-of-a-vector-with-respect-to-a-scalar">2.7. Differentiation of a vector with respect to a scalar</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-operator-nabla">2.7.1. Gradient operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curl">2.7.2. The curl</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplacian">2.7.3. The Laplacian</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-identities">2.7.4. Some identities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-useful-relations">2.7.5. More useful relations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gausss-theorem">2.7.6. Gauss’s Theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-stokess-theorem">2.7.7. and Stokes’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivacion-de-un-vector-respecto-de-un-escalar">2.7. Derivacion de un vector respecto de un escalar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-gradiente-nabla">2.7.1. Operador gradiente <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rotacional">2.7.2. El rotacional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-laplaciano">2.7.3. El laplaciano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunas-identidades">2.7.4. Algunas identidades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-relaciones-utiles">2.7.5. Otras relaciones utiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-gauss">2.7.6. Teorema de Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-teorema-de-stokes">2.7.7. y teorema de Stokes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-matrix-features">2.8. Basic Matrix Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-famous-matrices">2.8.1. Some famous Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-basicas-de-matrices">2.8. Propiedades basicas de matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunas-matrices-importantes">2.8.1. Algunas matrices importantes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotations">2.9. Rotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors">2.9.1. Tensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotaciones">2.9. Rotaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensores">2.9.1. Tensores</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-elements">2.10. Numerical Elements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-well-known-example-to-illustrate-many-of-the-above-concepts">2.11. A well-known example to illustrate many of the above concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-above-example">2.11.1. Analyzing the above example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-numericos">2.10. Elementos numericos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-ejemplo-conocido-para-ilustrar-varios-de-los-conceptos-anteriores">2.11. Un ejemplo conocido para ilustrar varios de los conceptos anteriores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-ejemplo-anterior">2.11.1. Analisis del ejemplo anterior</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-practicalities-software-and-needed-installations">2.12. Python practicalities, Software and needed installations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installers">2.12.1. Python installers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aspectos-practicos-de-python-software-e-instalaciones-necesarias">2.12. Aspectos practicos de Python, software e instalaciones necesarias</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instaladores-de-python">2.12.1. Instaladores de Python</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-python-libraries">2.13. Useful Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-examples-and-important-matrix-and-vector-handling-packages">2.14. Numpy examples and Important Matrix and vector handling packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-in-python">2.14.1. Matrices in Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-pandas">2.14.2. Meet the Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-utiles-de-python">2.13. Bibliotecas utiles de Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-con-numpy-y-paquetes-importantes-para-manejo-de-matrices-y-vectores">2.14. Ejemplos con NumPy y paquetes importantes para manejo de matrices y vectores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-en-python">2.14.1. Matrices en Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-pandas">2.14.2. Introduccion a pandas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-git-and-github-gitlab-and-similar">2.15. Introduction to Git and GitHub/GitLab and similar</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-git-github-gitlab-y-herramientas-afines">2.15. Introduccion a Git, GitHub, GitLab y herramientas afines</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-git-and-github-links">2.15.1. Useful Git and GitHub links</a></li>
 </ul>
 </li>
@@ -422,8 +423,8 @@
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="fundamentos-matematicos-y-numericos-para-mecanica-clasica">
 <h1><span class="section-number">2. </span>Fundamentos matemáticos y numéricos para mecánica clásica<a class="headerlink" href="#fundamentos-matematicos-y-numericos-para-mecanica-clasica" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<section id="introduccion">
+<h2><span class="section-number">2.1. </span>Introduccion<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
 <p>Classical mechanics is a topic which has been taught intensively over
 several centuries. It is, with its many variants and ways of
 presenting the educational material, normally the first <strong>real</strong> physics
@@ -452,8 +453,8 @@ continuous problem to a discretized one. This appproach enables us to
 solve a much broader class of problems.
 In mechanics this means, since we often rephrase the physical problems in terms of differential equations, that we can in most settings reuse the same program with some minimal changes.</p>
 </section>
-<section id="reminder-on-vectors-and-other-mathematical-quantities">
-<h2><span class="section-number">2.2. </span>Reminder on vectors and other mathematical quantities<a class="headerlink" href="#reminder-on-vectors-and-other-mathematical-quantities" title="Link to this heading">#</a></h2>
+<section id="repaso-de-vectores-y-otras-cantidades-matematicas">
+<h2><span class="section-number">2.2. </span>Repaso de vectores y otras cantidades matematicas<a class="headerlink" href="#repaso-de-vectores-y-otras-cantidades-matematicas" title="Link to this heading">#</a></h2>
 <p>Our studies will start with the motion of different types of objects
 such as a falling ball, a runner, a bicycle etc etc. It means that an
 object’s position in space varies with time.
@@ -501,8 +502,8 @@ interested in. Thus</p>
 <li><p><span class="math notranslate nohighlight">\([\omega]=\)</span> 1/time</p></li>
 </ul>
 </section>
-<section id="scalars-vectors-and-matrices">
-<h2><span class="section-number">2.3. </span>Scalars, Vectors and Matrices<a class="headerlink" href="#scalars-vectors-and-matrices" title="Link to this heading">#</a></h2>
+<section id="escalares-vectores-y-matrices">
+<h2><span class="section-number">2.3. </span>Escalares, vectores y matrices<a class="headerlink" href="#escalares-vectores-y-matrices" title="Link to this heading">#</a></h2>
 <p>A scalar is something with a value that is independent of coordinate
 system. Examples are mass, or the relative time between events. A
 vector has magnitude and direction. Under rotation, the magnitude
@@ -548,8 +549,8 @@ notation is sometimes more convenient if we wish to represent vector
 operations in a mathematically more compact way, see below here. We may also find this useful if  we want the different
 components to represent other coordinate systems that the Cartesian one. A typical example would be going from a Cartesian representation to a spherical basis. We will encounter such cases many times in this course.</p>
 <p>We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.</p>
-<section id="polar-coordinates">
-<h3><span class="section-number">2.3.1. </span>Polar Coordinates<a class="headerlink" href="#polar-coordinates" title="Link to this heading">#</a></h3>
+<section id="coordenadas-polares">
+<h3><span class="section-number">2.3.1. </span>Coordenadas polares<a class="headerlink" href="#coordenadas-polares" title="Link to this heading">#</a></h3>
 <p>As an example, consider a two-dimensional Cartesian system with a vector <span class="math notranslate nohighlight">\(\boldsymbol{r}=(x,y)\)</span>.
 Our vector is then written as</p>
 <div class="math notranslate nohighlight">
@@ -579,8 +580,8 @@ x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi},
 \]</div>
 <p>Below we will show that the norms of this vector in a Cartesian basis and a Polar basis are equal.</p>
 </section>
-<section id="unit-vectors">
-<h3><span class="section-number">2.3.2. </span>Unit Vectors<a class="headerlink" href="#unit-vectors" title="Link to this heading">#</a></h3>
+<section id="vectores-unitarios">
+<h3><span class="section-number">2.3.2. </span>Vectores unitarios<a class="headerlink" href="#vectores-unitarios" title="Link to this heading">#</a></h3>
 <p>Also known as basis vectors, unit vectors point in the direction of
 the coordinate axes, have unit norm, and are orthogonal to one
 another. Sometimes this is referred to as an orthonormal basis,</p>
@@ -625,8 +626,8 @@ x_iy_i=\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y}.
 <p>We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called <a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_notation">Einstein summation convention</a>.</p>
 </section>
 </section>
-<section id="vector-operations-scalar-product-or-dot-product">
-<h2><span class="section-number">2.4. </span>Vector Operations, Scalar Product (or dot product)<a class="headerlink" href="#vector-operations-scalar-product-or-dot-product" title="Link to this heading">#</a></h2>
+<section id="operaciones-vectoriales-y-producto-escalar">
+<h2><span class="section-number">2.4. </span>Operaciones vectoriales y producto escalar<a class="headerlink" href="#operaciones-vectoriales-y-producto-escalar" title="Link to this heading">#</a></h2>
 <p>For two vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -647,8 +648,8 @@ x_iy_i=\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y}.
 \]</div>
 <p>The superscript <span class="math notranslate nohighlight">\(T\)</span> represents the transposition operations.</p>
 </section>
-<section id="digression-linear-algebra-notation-for-vectors">
-<h2><span class="section-number">2.5. </span>Digression, Linear Algebra Notation for Vectors<a class="headerlink" href="#digression-linear-algebra-notation-for-vectors" title="Link to this heading">#</a></h2>
+<section id="notacion-de-algebra-lineal-para-vectores">
+<h2><span class="section-number">2.5. </span>Notacion de algebra lineal para vectores<a class="headerlink" href="#notacion-de-algebra-lineal-para-vectores" title="Link to this heading">#</a></h2>
 <p>As an example, consider a three-dimensional velocity defined by a vector <span class="math notranslate nohighlight">\(\boldsymbol{v}=(v_x,v_y,v_z)\)</span>. For those of you familiar with linear algebra, we would write this quantity as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -706,8 +707,8 @@ using Polar coordinates we have
 the norm is conserved since we have <span class="math notranslate nohighlight">\(\rho = \sqrt{x^2+y^2}\)</span>. A
 transformation to a new basis should not change the norm.</p>
 </section>
-<section id="vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b">
-<h2><span class="section-number">2.6. </span>Vector Product (or cross product) of vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span><a class="headerlink" href="#vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b" title="Link to this heading">#</a></h2>
+<section id="producto-vectorial-de-los-vectores-boldsymbol-a-y-boldsymbol-b">
+<h2><span class="section-number">2.6. </span>Producto vectorial de los vectores <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> y <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span><a class="headerlink" href="#producto-vectorial-de-los-vectores-boldsymbol-a-y-boldsymbol-b" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
@@ -749,8 +750,8 @@ perpendicular to both <span class="math notranslate nohighlight">\(\boldsymbol{a
 \[
 |c|=|a||b|\sin{\theta_{ab}}.
 \]</div>
-<section id="pseudo-vectors">
-<h3><span class="section-number">2.6.1. </span>Pseudo-vectors<a class="headerlink" href="#pseudo-vectors" title="Link to this heading">#</a></h3>
+<section id="pseudovectores">
+<h3><span class="section-number">2.6.1. </span>Pseudovectores<a class="headerlink" href="#pseudovectores" title="Link to this heading">#</a></h3>
 <p>Vectors obtained by the cross product of two real vectors are called
 pseudo-vectors because the assignment of their direction can be
 arbitrarily flipped by defining the Levi-Civita symbol to be based on
@@ -768,8 +769,8 @@ the direction of the outgoing electron momenta are a real vector. This
 is precisely what is observed in weak decays.</p>
 </section>
 </section>
-<section id="differentiation-of-a-vector-with-respect-to-a-scalar">
-<h2><span class="section-number">2.7. </span>Differentiation of a vector with respect to a scalar<a class="headerlink" href="#differentiation-of-a-vector-with-respect-to-a-scalar" title="Link to this heading">#</a></h2>
+<section id="derivacion-de-un-vector-respecto-de-un-escalar">
+<h2><span class="section-number">2.7. </span>Derivacion de un vector respecto de un escalar<a class="headerlink" href="#derivacion-de-un-vector-respecto-de-un-escalar" title="Link to this heading">#</a></h2>
 <p>As an  example, consider the
 acceleration <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span>, which is given by the change in velocity per unit time, <span class="math notranslate nohighlight">\(\boldsymbol{a}=d\boldsymbol{v}/dt\)</span>
 with components</p>
@@ -778,8 +779,8 @@ with components</p>
 a_i = (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(i=x,y,z\)</span> or <span class="math notranslate nohighlight">\(i=1,2,3\)</span> if we are in three dimensions.</p>
-<section id="gradient-operator-nabla">
-<h3><span class="section-number">2.7.1. </span>Gradient operator <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#gradient-operator-nabla" title="Link to this heading">#</a></h3>
+<section id="operador-gradiente-nabla">
+<h3><span class="section-number">2.7.1. </span>Operador gradiente <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#operador-gradiente-nabla" title="Link to this heading">#</a></h3>
 <p>This represents  the derivatives <span class="math notranslate nohighlight">\(\partial/\partial
 x\)</span>, <span class="math notranslate nohighlight">\(\partial/\partial y\)</span> and <span class="math notranslate nohighlight">\(\partial/\partial z\)</span>. An often used shorthand is  <span class="math notranslate nohighlight">\(\partial_x=\partial/\partial_x\)</span>.</p>
 <p>The gradient of a scalar function of position and time
@@ -802,8 +803,8 @@ we have</p>
 \]</div>
 <p>Note that the divergence is a scalar.</p>
 </section>
-<section id="the-curl">
-<h3><span class="section-number">2.7.2. </span>The curl<a class="headerlink" href="#the-curl" title="Link to this heading">#</a></h3>
+<section id="el-rotacional">
+<h3><span class="section-number">2.7.2. </span>El rotacional<a class="headerlink" href="#el-rotacional" title="Link to this heading">#</a></h3>
 <p>The <strong>curl</strong> of a vector is defined as
 <span class="math notranslate nohighlight">\(\nabla\times\boldsymbol{a}\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -816,8 +817,8 @@ we have</p>
 (\boldsymbol{\nabla}\times\boldsymbol{a})_i=\epsilon_{ijk}\partial_j a_k(\boldsymbol{r},t).
 \]</div>
 </section>
-<section id="the-laplacian">
-<h3><span class="section-number">2.7.3. </span>The Laplacian<a class="headerlink" href="#the-laplacian" title="Link to this heading">#</a></h3>
+<section id="el-laplaciano">
+<h3><span class="section-number">2.7.3. </span>El laplaciano<a class="headerlink" href="#el-laplaciano" title="Link to this heading">#</a></h3>
 <p>The Laplacian is referred to as <span class="math notranslate nohighlight">\(\nabla^2\)</span> and is defined as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -825,8 +826,8 @@ we have</p>
 \]</div>
 <p>Question: is the Laplacian a scalar or a vector?</p>
 </section>
-<section id="some-identities">
-<h3><span class="section-number">2.7.4. </span>Some identities<a class="headerlink" href="#some-identities" title="Link to this heading">#</a></h3>
+<section id="algunas-identidades">
+<h3><span class="section-number">2.7.4. </span>Algunas identidades<a class="headerlink" href="#algunas-identidades" title="Link to this heading">#</a></h3>
 <p>Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -840,8 +841,8 @@ we have</p>
 \end{eqnarray}
 \end{split}\]</div>
 </section>
-<section id="more-useful-relations">
-<h3><span class="section-number">2.7.5. </span>More useful relations<a class="headerlink" href="#more-useful-relations" title="Link to this heading">#</a></h3>
+<section id="otras-relaciones-utiles">
+<h3><span class="section-number">2.7.5. </span>Otras relaciones utiles<a class="headerlink" href="#otras-relaciones-utiles" title="Link to this heading">#</a></h3>
 <p>Using the fact that multiplication of reals is distributive we can show that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -863,8 +864,8 @@ we have</p>
 \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
 \]</div>
 </section>
-<section id="gausss-theorem">
-<h3><span class="section-number">2.7.6. </span>Gauss’s Theorem<a class="headerlink" href="#gausss-theorem" title="Link to this heading">#</a></h3>
+<section id="teorema-de-gauss">
+<h3><span class="section-number">2.7.6. </span>Teorema de Gauss<a class="headerlink" href="#teorema-de-gauss" title="Link to this heading">#</a></h3>
 <p>For an integral over a volume <span class="math notranslate nohighlight">\(V\)</span> confined by a surface <span class="math notranslate nohighlight">\(S\)</span>, Gauss’s theorem gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -876,8 +877,8 @@ we have</p>
 \int_C d\boldsymbol{\ell}\cdot\boldsymbol{A}=\int_Sd\boldsymbol{s} \cdot(\nabla\times\boldsymbol{A})
 \]</div>
 </section>
-<section id="and-stokess-theorem">
-<h3><span class="section-number">2.7.7. </span>and Stokes’s Theorem<a class="headerlink" href="#and-stokess-theorem" title="Link to this heading">#</a></h3>
+<section id="y-teorema-de-stokes">
+<h3><span class="section-number">2.7.7. </span>y teorema de Stokes<a class="headerlink" href="#y-teorema-de-stokes" title="Link to this heading">#</a></h3>
 <p>Stoke’s law can be understood by considering a small rectangle,
 <span class="math notranslate nohighlight">\(-\Delta x&lt;x&lt;\Delta x\)</span>, <span class="math notranslate nohighlight">\(-\Delta y&lt;y&lt;\Delta y\)</span>. The path integral
 around the edges is</p>
@@ -896,8 +897,8 @@ around the edges is</p>
 <p>Here <span class="math notranslate nohighlight">\(\Delta S\)</span> is the area of the surface element.</p>
 </section>
 </section>
-<section id="basic-matrix-features">
-<h2><span class="section-number">2.8. </span>Basic Matrix Features<a class="headerlink" href="#basic-matrix-features" title="Link to this heading">#</a></h2>
+<section id="propiedades-basicas-de-matrices">
+<h2><span class="section-number">2.8. </span>Propiedades basicas de matrices<a class="headerlink" href="#propiedades-basicas-de-matrices" title="Link to this heading">#</a></h2>
 <p><strong>Note</strong>: The material on matrices is optional and will not be used much
 (except for illustrations at the very end on garmonic oscillations)
 since most of you have not yet taken a course on linear algebra. The
@@ -934,8 +935,8 @@ material is however included here for the sake of completeness.</p>
 <tr><td align="center">   $A = \left (A^{\dagger} \right )^{-1}$    </td> <td align="center">   unitary            </td> <td align="center">   $\sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij}$    </td> </tr>
 </tbody>
 </table>
-<section id="some-famous-matrices">
-<h3><span class="section-number">2.8.1. </span>Some famous Matrices<a class="headerlink" href="#some-famous-matrices" title="Link to this heading">#</a></h3>
+<section id="algunas-matrices-importantes">
+<h3><span class="section-number">2.8.1. </span>Algunas matrices importantes<a class="headerlink" href="#algunas-matrices-importantes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Diagonal if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span></p></li>
 <li><p>Upper triangular if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &gt; j\)</span></p></li>
@@ -958,8 +959,8 @@ material is however included here for the sake of completeness.</p>
 </ul>
 </section>
 </section>
-<section id="rotations">
-<h2><span class="section-number">2.9. </span>Rotations<a class="headerlink" href="#rotations" title="Link to this heading">#</a></h2>
+<section id="rotaciones">
+<h2><span class="section-number">2.9. </span>Rotaciones<a class="headerlink" href="#rotaciones" title="Link to this heading">#</a></h2>
 <p>Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis <span class="math notranslate nohighlight">\(\hat{e}'_1\)</span>, <span class="math notranslate nohighlight">\(\hat{e}'_2\)</span> and <span class="math notranslate nohighlight">\(\hat{e}'_3\)</span>. The same vector <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> mentioned above can also be expressed in the new basis,</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto3"></div>
@@ -1032,8 +1033,8 @@ U^{-1}_{ij}&amp;=&amp;\hat{e}_i\cdot\hat{e}'_j=U_{ji}.
 U^{-1}&amp;=&amp;U^{t}.
 \end{eqnarray}
 \]</div>
-<section id="tensors">
-<h3><span class="section-number">2.9.1. </span>Tensors<a class="headerlink" href="#tensors" title="Link to this heading">#</a></h3>
+<section id="tensores">
+<h3><span class="section-number">2.9.1. </span>Tensores<a class="headerlink" href="#tensores" title="Link to this heading">#</a></h3>
 <p>A tensor obeying Eq. (<a class="reference internal" href="#eq:transposedef"><span class="xref myst">8</span></a>) defines what is known as
 a unitary, or orthogonal, transformation.</p>
 <p>The matrix <span class="math notranslate nohighlight">\(U\)</span> can be used to transform any vector to the new basis. Consider a vector</p>
@@ -1129,8 +1130,8 @@ trace.</p>
 <p>A similar example is the determinant of a matrix, which is also a scalar.</p>
 </section>
 </section>
-<section id="numerical-elements">
-<h2><span class="section-number">2.10. </span>Numerical Elements<a class="headerlink" href="#numerical-elements" title="Link to this heading">#</a></h2>
+<section id="elementos-numericos">
+<h2><span class="section-number">2.10. </span>Elementos numericos<a class="headerlink" href="#elementos-numericos" title="Link to this heading">#</a></h2>
 <p>Numerical algorithms call for approximate discrete models and much of
 the development of methods for continuous models are nowadays being
 replaced by methods for discrete models in science and industry,
@@ -1185,8 +1186,8 @@ understanding how to apply available, generic software to solve a
 particular problem.</p>
 <p><em>However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.</em></p>
 </section>
-<section id="a-well-known-example-to-illustrate-many-of-the-above-concepts">
-<h2><span class="section-number">2.11. </span>A well-known example to illustrate many of the above concepts<a class="headerlink" href="#a-well-known-example-to-illustrate-many-of-the-above-concepts" title="Link to this heading">#</a></h2>
+<section id="un-ejemplo-conocido-para-ilustrar-varios-de-los-conceptos-anteriores">
+<h2><span class="section-number">2.11. </span>Un ejemplo conocido para ilustrar varios de los conceptos anteriores<a class="headerlink" href="#un-ejemplo-conocido-para-ilustrar-varios-de-los-conceptos-anteriores" title="Link to this heading">#</a></h2>
 <p>Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
 abovementioned topics using an example many of you may have seen before in for example CMSE201.
 A simple algorithm for integration is the Trapezoidal rule.
@@ -1245,8 +1246,8 @@ plt.show()
 </div>
 </div>
 </div>
-<section id="analyzing-the-above-example">
-<h3><span class="section-number">2.11.1. </span>Analyzing the above example<a class="headerlink" href="#analyzing-the-above-example" title="Link to this heading">#</a></h3>
+<section id="analisis-del-ejemplo-anterior">
+<h3><span class="section-number">2.11.1. </span>Analisis del ejemplo anterior<a class="headerlink" href="#analisis-del-ejemplo-anterior" title="Link to this heading">#</a></h3>
 <p>This example shows the potential of combining numerical algorithms
 with symbolic calculations, allowing us to</p>
 <ul class="simple">
@@ -1258,8 +1259,8 @@ with symbolic calculations, allowing us to</p>
 </ul>
 </section>
 </section>
-<section id="python-practicalities-software-and-needed-installations">
-<h2><span class="section-number">2.12. </span>Python practicalities, Software and needed installations<a class="headerlink" href="#python-practicalities-software-and-needed-installations" title="Link to this heading">#</a></h2>
+<section id="aspectos-practicos-de-python-software-e-instalaciones-necesarias">
+<h2><span class="section-number">2.12. </span>Aspectos practicos de Python, software e instalaciones necesarias<a class="headerlink" href="#aspectos-practicos-de-python-software-e-instalaciones-necesarias" title="Link to this heading">#</a></h2>
 <p>We will make extensive use of Python as programming language and its
 myriad of available libraries.  You will find
 Jupyter notebooks invaluable in your work.</p>
@@ -1282,8 +1283,8 @@ you can use <strong>pip</strong> as well and simply install Python as</p>
 <li><p>sudo apt-get install python3  (or python for pyhton2.7)</p></li>
 </ol>
 <p>etc etc.</p>
-<section id="python-installers">
-<h3><span class="section-number">2.12.1. </span>Python installers<a class="headerlink" href="#python-installers" title="Link to this heading">#</a></h3>
+<section id="instaladores-de-python">
+<h3><span class="section-number">2.12.1. </span>Instaladores de Python<a class="headerlink" href="#instaladores-de-python" title="Link to this heading">#</a></h3>
 <p>If you don’t want to perform these operations separately and venture
 into the hassle of exploring how to set up dependencies and paths, we
 recommend two widely used distrubutions which set up all relevant
@@ -1307,8 +1308,8 @@ license.</p>
 no setup and runs entirely in the cloud. Try it out!</p>
 </section>
 </section>
-<section id="useful-python-libraries">
-<h2><span class="section-number">2.13. </span>Useful Python libraries<a class="headerlink" href="#useful-python-libraries" title="Link to this heading">#</a></h2>
+<section id="bibliotecas-utiles-de-python">
+<h2><span class="section-number">2.13. </span>Bibliotecas utiles de Python<a class="headerlink" href="#bibliotecas-utiles-de-python" title="Link to this heading">#</a></h2>
 <p>Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.numpy.org/">NumPy</a> is a highly popular library for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays</p></li>
@@ -1331,8 +1332,8 @@ further processing. For example, convert to latex as</p>
 </div>
 <p>And to add more versatility, the Python package <a class="reference external" href="http://www.sympy.org/en/index.html">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.</p>
 </section>
-<section id="numpy-examples-and-important-matrix-and-vector-handling-packages">
-<h2><span class="section-number">2.14. </span>Numpy examples and Important Matrix and vector handling packages<a class="headerlink" href="#numpy-examples-and-important-matrix-and-vector-handling-packages" title="Link to this heading">#</a></h2>
+<section id="ejemplos-con-numpy-y-paquetes-importantes-para-manejo-de-matrices-y-vectores">
+<h2><span class="section-number">2.14. </span>Ejemplos con NumPy y paquetes importantes para manejo de matrices y vectores<a class="headerlink" href="#ejemplos-con-numpy-y-paquetes-importantes-para-manejo-de-matrices-y-vectores" title="Link to this heading">#</a></h2>
 <p>There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
 popular ones have been wrapped into ofter software packages like those from the widely used text <strong>Numerical Recipes</strong>. The original source codes in many of the available packages are often taken from the widely used
 software package LAPACK, which follows two other popular packages
@@ -1432,8 +1433,8 @@ print(x.itemsize)
 </div>
 </div>
 </div>
-<section id="matrices-in-python">
-<h3><span class="section-number">2.14.1. </span>Matrices in Python<a class="headerlink" href="#matrices-in-python" title="Link to this heading">#</a></h3>
+<section id="matrices-en-python">
+<h3><span class="section-number">2.14.1. </span>Matrices en Python<a class="headerlink" href="#matrices-en-python" title="Link to this heading">#</a></h3>
 <p>Having defined vectors, we are now ready to try out matrices. We can
 define a <span class="math notranslate nohighlight">\(3 \times 3 \)</span> real matrix <span class="math notranslate nohighlight">\(\hat{A}\)</span> as (recall that we user
 lowercase letters for vectors and uppercase letters for matrices)</p>
@@ -1505,8 +1506,8 @@ print(A)
 </div>
 </div>
 </section>
-<section id="meet-the-pandas">
-<h3><span class="section-number">2.14.2. </span>Meet the Pandas<a class="headerlink" href="#meet-the-pandas" title="Link to this heading">#</a></h3>
+<section id="introduccion-a-pandas">
+<h3><span class="section-number">2.14.2. </span>Introduccion a pandas<a class="headerlink" href="#introduccion-a-pandas" title="Link to this heading">#</a></h3>
 <p>Another useful Python package is
 <a class="reference external" href="https://pandas.pydata.org/">pandas</a>, which is an open source library
 providing high-performance, easy-to-use data structures and data
@@ -1644,8 +1645,8 @@ the same flexibility as <strong>pandas</strong>, but allows for the extension to
 higher dimensions than two.</p>
 </section>
 </section>
-<section id="introduction-to-git-and-github-gitlab-and-similar">
-<h2><span class="section-number">2.15. </span>Introduction to Git and GitHub/GitLab and similar<a class="headerlink" href="#introduction-to-git-and-github-gitlab-and-similar" title="Link to this heading">#</a></h2>
+<section id="introduccion-a-git-github-gitlab-y-herramientas-afines">
+<h2><span class="section-number">2.15. </span>Introduccion a Git, GitHub, GitLab y herramientas afines<a class="headerlink" href="#introduccion-a-git-github-gitlab-y-herramientas-afines" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://git-scm.com/">Git</a> is a distributed version-control system
 for tracking changes in any set of files, originally designed for
 coordinating work among programmers cooperating on source code during
@@ -1750,53 +1751,53 @@ systems and functions well with Python.  Some of the more popular ones  are</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Nota de adaptacion y atribucion</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-y-numericos-para-mecanica-clasica">2. Fundamentos matemáticos y numéricos para mecánica clásica</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-on-vectors-and-other-mathematical-quantities">2.2. Reminder on vectors and other mathematical quantities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars-vectors-and-matrices">2.3. Scalars, Vectors and Matrices</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-coordinates">2.3.1. Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-vectors">2.3.2. Unit Vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">2.1. Introduccion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repaso-de-vectores-y-otras-cantidades-matematicas">2.2. Repaso de vectores y otras cantidades matematicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalares-vectores-y-matrices">2.3. Escalares, vectores y matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-polares">2.3.1. Coordenadas polares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-unitarios">2.3.2. Vectores unitarios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-operations-scalar-product-or-dot-product">2.4. Vector Operations, Scalar Product (or dot product)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digression-linear-algebra-notation-for-vectors">2.5. Digression, Linear Algebra Notation for Vectors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b">2.6. Vector Product (or cross product) of vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-vectors">2.6.1. Pseudo-vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-vectoriales-y-producto-escalar">2.4. Operaciones vectoriales y producto escalar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion-de-algebra-lineal-para-vectores">2.5. Notacion de algebra lineal para vectores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#producto-vectorial-de-los-vectores-boldsymbol-a-y-boldsymbol-b">2.6. Producto vectorial de los vectores <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> y <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudovectores">2.6.1. Pseudovectores</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-of-a-vector-with-respect-to-a-scalar">2.7. Differentiation of a vector with respect to a scalar</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-operator-nabla">2.7.1. Gradient operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curl">2.7.2. The curl</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplacian">2.7.3. The Laplacian</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-identities">2.7.4. Some identities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-useful-relations">2.7.5. More useful relations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gausss-theorem">2.7.6. Gauss’s Theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-stokess-theorem">2.7.7. and Stokes’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivacion-de-un-vector-respecto-de-un-escalar">2.7. Derivacion de un vector respecto de un escalar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-gradiente-nabla">2.7.1. Operador gradiente <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rotacional">2.7.2. El rotacional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-laplaciano">2.7.3. El laplaciano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunas-identidades">2.7.4. Algunas identidades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-relaciones-utiles">2.7.5. Otras relaciones utiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-gauss">2.7.6. Teorema de Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-teorema-de-stokes">2.7.7. y teorema de Stokes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-matrix-features">2.8. Basic Matrix Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-famous-matrices">2.8.1. Some famous Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-basicas-de-matrices">2.8. Propiedades basicas de matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunas-matrices-importantes">2.8.1. Algunas matrices importantes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotations">2.9. Rotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors">2.9.1. Tensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotaciones">2.9. Rotaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensores">2.9.1. Tensores</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-elements">2.10. Numerical Elements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-well-known-example-to-illustrate-many-of-the-above-concepts">2.11. A well-known example to illustrate many of the above concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-above-example">2.11.1. Analyzing the above example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-numericos">2.10. Elementos numericos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-ejemplo-conocido-para-ilustrar-varios-de-los-conceptos-anteriores">2.11. Un ejemplo conocido para ilustrar varios de los conceptos anteriores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-ejemplo-anterior">2.11.1. Analisis del ejemplo anterior</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-practicalities-software-and-needed-installations">2.12. Python practicalities, Software and needed installations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installers">2.12.1. Python installers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aspectos-practicos-de-python-software-e-instalaciones-necesarias">2.12. Aspectos practicos de Python, software e instalaciones necesarias</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instaladores-de-python">2.12.1. Instaladores de Python</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-python-libraries">2.13. Useful Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-examples-and-important-matrix-and-vector-handling-packages">2.14. Numpy examples and Important Matrix and vector handling packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-in-python">2.14.1. Matrices in Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-pandas">2.14.2. Meet the Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-utiles-de-python">2.13. Bibliotecas utiles de Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-con-numpy-y-paquetes-importantes-para-manejo-de-matrices-y-vectores">2.14. Ejemplos con NumPy y paquetes importantes para manejo de matrices y vectores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-en-python">2.14.1. Matrices en Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-pandas">2.14.2. Introduccion a pandas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-git-and-github-gitlab-and-similar">2.15. Introduction to Git and GitHub/GitLab and similar</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-git-github-gitlab-y-herramientas-afines">2.15. Introduccion a Git, GitHub, GitLab y herramientas afines</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-git-and-github-links">2.15.1. Useful Git and GitHub links</a></li>
 </ul>
 </li>

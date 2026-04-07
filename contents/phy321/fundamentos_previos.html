@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Nota de adaptacion y atribucion &#8212; Física Mecánica</title>
+    <title>Fundamentos previos: vectores, coordenadas y operadores basicos &#8212; Física Mecánica</title>
   
   
   
@@ -63,11 +63,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/phy321/chapter1';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/phy321/fundamentos_previos';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="2. Nota de adaptacion y atribucion" href="chapter2.html" />
-    <link rel="prev" title="Fuente y licencia" href="source_attribution.html" />
+    <link rel="next" title="Programacion general por semanas" href="schedule.html" />
+    <link rel="prev" title="Introduccion y objetivos del curso" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -158,17 +160,17 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curso y Fuentes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion y objetivos del curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fundamentos_previos.html">Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos previos: vectores, coordenadas y operadores basicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Programacion general por semanas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teachers.html">Equipo docente y evaluacion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textbooks.html">Textos y referencias</a></li>
 <li class="toctree-l1"><a class="reference internal" href="source_attribution.html">Fuente y licencia</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Material Introductorio</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Nota de adaptacion y atribucion</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1. Nota de adaptacion y atribucion</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="chapter2.html">2. Nota de adaptacion y atribucion</a></li>
 
@@ -261,7 +263,7 @@
       
       
       
-      <li><a href="../../_sources/contents/phy321/chapter1.ipynb" target="_blank"
+      <li><a href="../../_sources/contents/phy321/fundamentos_previos.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +273,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -337,7 +339,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Nota de adaptacion y atribucion</h1>
+    <h1>Fundamentos previos: vectores, coordenadas y operadores basicos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -347,10 +349,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Nota de adaptacion y atribucion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-mecanica-clasica">1. Introducción a la mecánica clásica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-sirve-este-repaso">Para que sirve este repaso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-fundamentales-al-comenzar">Preguntas fundamentales al comenzar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitudes-y-notacion-basica">Magnitudes y notacion basica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalares-vectores-y-matrices">Escalares, vectores y matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-cartesianas-y-polares">Coordenadas cartesianas y polares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-unitarios-y-cambio-de-base">Vectores unitarios y cambio de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#producto-punto-y-producto-cruz">Producto punto y producto cruz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivacion-vectorial-y-operadores-diferenciales">Derivacion vectorial y operadores diferenciales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-y-rotaciones">Matrices y rotaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-usar-este-material-dentro-del-curso">Como usar este material dentro del curso</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -361,82 +370,157 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="nota-de-adaptacion-y-atribucion">
-<h1><span class="section-number">1. </span>Nota de adaptacion y atribucion<a class="headerlink" href="#nota-de-adaptacion-y-atribucion" title="Link to this heading">#</a></h1>
-<p>Este notebook forma parte de una adaptacion del curso <strong>PHY321, Classical Mechanics I</strong> al libro <strong>Fisica Mecanica</strong>. El material fuente proviene del repositorio de curso publicado por Morten Hjorth-Jensen y Scott Pratt.</p>
-<p><strong>Referencia APA del material fuente:</strong> Hjorth-Jensen, M., &amp; Pratt, S. (2023). <em>PHY321, Classical Mechanics I</em> [Repositorio de curso y Jupyter Book]. GitHub. <a class="github reference external" href="https://github.com/mhjensen/Physics321">mhjensen/Physics321</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamentos-previos-vectores-coordenadas-y-operadores-basicos">
+<h1>Fundamentos previos: vectores, coordenadas y operadores basicos<a class="headerlink" href="#fundamentos-previos-vectores-coordenadas-y-operadores-basicos" title="Link to this heading">#</a></h1>
+<p>Esta unidad preliminar adapta y sintetiza, en espanol, el bloque <strong>“Reminder on vectors and other mathematical quantities”</strong> del material fuente <code class="docutils literal notranslate"><span class="pre">PHY321</span></code>.</p>
+<p><strong>Referencia APA del material adaptado:</strong> Hjorth-Jensen, M., &amp; Pratt, S. (2023). <em>PHY321, Classical Mechanics I</em> [Repositorio de curso y Jupyter Book]. GitHub. <a class="github reference external" href="https://github.com/mhjensen/Physics321">mhjensen/Physics321</a></p>
 <p><strong>Licencia del material fuente:</strong> CC0 1.0 Universal.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-mecanica-clasica">
-<h1><span class="section-number">1. </span>Introducción a la mecánica clásica<a class="headerlink" href="#introduccion-a-la-mecanica-clasica" title="Link to this heading">#</a></h1>
-<p>Classical mechanics is a topic which has been taught intensively over
-several centuries. It is, with its many variants and ways of
-presenting the educational material, normally the first <strong>real</strong> physics
-course many of us meet and it lays the foundation for further physics
-studies. Many of the equations and ways of reasoning about the
-underlying laws of motion and pertinent forces, shape our approaches and understanding
-of the scientific method and discourse, as well as the way we develop our insights
-and deeper understanding about physical systems.</p>
-<p>There is a wealth of
-well-tested (from both a physics point of view and a pedagogical
-standpoint) exercises and problems which can be solved
-analytically. However, many of these problems represent idealized and
-less realistic situations.  The large majority of these problems are
-solved by paper and pencil and are traditionally aimed
-at what we normally refer to as continuous models from which we may find an analytical solution.  As a consequence,
-when teaching mechanics, it implies that we can seldomly venture beyond an idealized case
-in order to develop our understandings and insights about the
-underlying forces and laws of motion.</p>
-<p>On the other hand, numerical algorithms call for approximate discrete
-models and much of the development of methods for continuous models
-are nowadays being replaced by methods for discrete models in science and
-industry, simply because <strong>much larger classes of problems can be addressed</strong> with discrete models, often  by simpler and more
-generic methodologies.</p>
-<p>As we will see below, when properly scaling the equations at hand,
-discrete models open up for more advanced abstractions and the possibility to
-study  real life systems, with the added bonus that we can explore and
-deepen our basic understanding of various physical systems</p>
-<p>Analytical solutions are as important as before. In addition, such
-solutions provide us with invaluable benchmarks and tests for our
-discrete models. Such benchmarks, as we will see below, allow us
-to discuss possible sources of errors and their behaviors.  And
-finally, since most of our models are based on various algorithms from
-numerical mathematics, we have a unique oppotunity to gain a deeper
-understanding of the mathematical approaches we are using.</p>
-<p>With computing and data science as important elements in essentially
-all aspects of a modern society, we could  then try to define Computing as
-<strong>solving scientific problems using all possible tools, including
-symbolic computing, computers and numerical algorithms, and analytical
-paper and pencil solutions</strong>.
-Computing provides us with the tools to develope our own understanding of the scientific method by enhancing algorithmic thinking.</p>
-<p>The way we will teach this course reflects
-this definition of computing. The course contains both classical paper
-and pencil exercises as well as  computational projects and exercises. The
-hope is that this will allow you to explore the physics of systems
-governed by the degrees of freedom of classical mechanics at a deeper
-level, and that these insights about the scientific method will help
-you to develop a better understanding of how the underlying forces and
-equations of motion and how they impact a given system. Furthermore, by introducing various numerical methods
-via computational projects and exercises, we aim at developing your competences and skills about these topics.</p>
-<p>These competences will enable you to</p>
+<section id="para-que-sirve-este-repaso">
+<h2>Para que sirve este repaso<a class="headerlink" href="#para-que-sirve-este-repaso" title="Link to this heading">#</a></h2>
+<p>Antes de estudiar leyes de Newton, energia, oscilaciones o problemas de dos cuerpos, conviene fijar un lenguaje comun para describir sistemas mecanicos. Ese lenguaje incluye:</p>
 <ul class="simple">
-<li><p>understand how algorithms are used to solve mathematical problems,</p></li>
-<li><p>derive, verify, and implement algorithms,</p></li>
-<li><p>understand what can go wrong with algorithms,</p></li>
-<li><p>use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and</p></li>
-<li><p>think algorithmically for the purposes of gaining deeper insights about scientific problems.</p></li>
+<li><p>la eleccion de un origen y de ejes de referencia,</p></li>
+<li><p>la orientacion positiva del sistema de coordenadas,</p></li>
+<li><p>las unidades fisicas y las dimensiones de cada magnitud,</p></li>
+<li><p>y la distincion entre cantidades escalares, vectoriales y matriciales.</p></li>
 </ul>
-<p>All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.</p>
-<p>The power of the scientific method lies in identifying a given problem
-as a special case of an abstract class of problems, identifying
-general solution methods for this class of problems, and applying a
-general method to the specific problem (applying means, in the case of
-computing, calculations by pen and paper, symbolic computing, or
-numerical computing by ready-made and/or self-written software). This
-generic view on problems and methods is particularly important for
-understanding how to apply available, generic software to solve a
-particular problem.</p>
-<p><em>However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.</em></p>
+<p>Este repaso funciona como puente entre el inicio del curso y el bloque de herramientas matematicas del capitulo 2.</p>
+</section>
+<section id="preguntas-fundamentales-al-comenzar">
+<h2>Preguntas fundamentales al comenzar<a class="headerlink" href="#preguntas-fundamentales-al-comenzar" title="Link to this heading">#</a></h2>
+<p>Cuando modelamos el movimiento de una particula o de un sistema, aparecen de inmediato preguntas como estas:</p>
+<ul class="simple">
+<li><p>La fisica del problema cambia si movemos el origen de coordenadas.</p></li>
+<li><p>Existen direcciones privilegiadas en el espacio.</p></li>
+<li><p>La descripcion cambia si usamos un sistema dextrorso o levogiro.</p></li>
+<li><p>El resultado depende de la escala elegida para medir longitudes, tiempos o masas.</p></li>
+</ul>
+<p>Estas preguntas ayudan a distinguir entre lo que depende de nuestra representacion y lo que realmente corresponde a una ley fisica.</p>
+</section>
+<section id="magnitudes-y-notacion-basica">
+<h2>Magnitudes y notacion basica<a class="headerlink" href="#magnitudes-y-notacion-basica" title="Link to this heading">#</a></h2>
+<p>En este curso usaremos unidades SI. Algunas magnitudes centrales son:</p>
+<ul class="simple">
+<li><p>posicion: <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span></p></li>
+<li><p>masa: <span class="math notranslate nohighlight">\(m\)</span></p></li>
+<li><p>tiempo: <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p>velocidad: <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span></p></li>
+<li><p>aceleracion: <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span></p></li>
+<li><p>momentum lineal: <span class="math notranslate nohighlight">\(\boldsymbol{p}\)</span></p></li>
+<li><p>energia cinetica: <span class="math notranslate nohighlight">\(K\)</span></p></li>
+<li><p>energia potencial: <span class="math notranslate nohighlight">\(V\)</span></p></li>
+<li><p>frecuencia angular: <span class="math notranslate nohighlight">\(\omega\)</span></p></li>
+</ul>
+<p>Tambien es importante distinguir entre <strong>unidad</strong> y <strong>dimension</strong>. Por ejemplo:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{r}] =\)</span> longitud</p></li>
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{v}] =\)</span> longitud/tiempo</p></li>
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{a}] =\)</span> longitud/tiempo<span class="math notranslate nohighlight">\(^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{p}] =\)</span> masa por longitud/tiempo</p></li>
+<li><p><span class="math notranslate nohighlight">\([K] =\)</span> energia</p></li>
+<li><p><span class="math notranslate nohighlight">\([\omega] =\)</span> 1/tiempo</p></li>
+</ul>
+</section>
+<section id="escalares-vectores-y-matrices">
+<h2>Escalares, vectores y matrices<a class="headerlink" href="#escalares-vectores-y-matrices" title="Link to this heading">#</a></h2>
+<p>Un <strong>escalar</strong> queda completamente descrito por su magnitud. La masa, el tiempo o la energia son ejemplos habituales.</p>
+<p>Un <strong>vector</strong> requiere modulo, direccion y sentido. En coordenadas cartesianas escribimos, por ejemplo,</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}=(a_x,a_y,a_z)
+\]</div>
+<p>o bien</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}=a_x\boldsymbol{e}_1+a_y\boldsymbol{e}_2+a_z\boldsymbol{e}_3,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\boldsymbol{e}_1\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{e}_2\)</span> y <span class="math notranslate nohighlight">\(\boldsymbol{e}_3\)</span> son vectores unitarios.</p>
+<p>Una <strong>matriz</strong> organiza relaciones lineales entre componentes y resulta especialmente util cuando trabajamos con cambios de base, rotaciones o sistemas de ecuaciones.</p>
+</section>
+<section id="coordenadas-cartesianas-y-polares">
+<h2>Coordenadas cartesianas y polares<a class="headerlink" href="#coordenadas-cartesianas-y-polares" title="Link to this heading">#</a></h2>
+<p>En dos dimensiones, un vector posicion puede escribirse como</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}=x\boldsymbol{e}_1+y\boldsymbol{e}_2.
+\]</div>
+<p>La misma informacion puede expresarse en coordenadas polares:</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}=\rho\cos\phi\,\boldsymbol{e}_1+\rho\sin\phi\,\boldsymbol{e}_2.
+\]</div>
+<p>La idea central es que una misma magnitud fisica puede representarse con distintas coordenadas sin cambiar su significado fisico. Cambia la descripcion; no cambia el objeto.</p>
+</section>
+<section id="vectores-unitarios-y-cambio-de-base">
+<h2>Vectores unitarios y cambio de base<a class="headerlink" href="#vectores-unitarios-y-cambio-de-base" title="Link to this heading">#</a></h2>
+<p>Los vectores unitarios:</p>
+<ul class="simple">
+<li><p>tienen norma igual a 1,</p></li>
+<li><p>apuntan en la direccion de los ejes,</p></li>
+<li><p>y forman una base ortonormal cuando son mutuamente perpendiculares.</p></li>
+</ul>
+<p>En una base ortonormal se cumple</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{e}_i\cdot\boldsymbol{e}_j=\delta_{ij}.
+\]</div>
+<p>Esta idea sera esencial cuando pasemos desde coordenadas cartesianas a coordenadas polares, cilindricas o esfericas, y tambien cuando estudiemos marcos no inerciales.</p>
+</section>
+<section id="producto-punto-y-producto-cruz">
+<h2>Producto punto y producto cruz<a class="headerlink" href="#producto-punto-y-producto-cruz" title="Link to this heading">#</a></h2>
+<p>Para dos vectores <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> y <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}\cdot\boldsymbol{b}=|\boldsymbol{a}|\,|\boldsymbol{b}|\cos\theta,
+\]</div>
+<p>de modo que el <strong>producto punto</strong> entrega un escalar. Se usa, por ejemplo, en trabajo mecanico, proyecciones y calculo de normas.</p>
+<p>El <strong>producto cruz</strong> produce un vector perpendicular al plano definido por ambos vectores:</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}\times\boldsymbol{b}.
+\]</div>
+<p>En mecanica aparece de manera natural en el torque y en el momentum angular.</p>
+</section>
+<section id="derivacion-vectorial-y-operadores-diferenciales">
+<h2>Derivacion vectorial y operadores diferenciales<a class="headerlink" href="#derivacion-vectorial-y-operadores-diferenciales" title="Link to this heading">#</a></h2>
+<p>Si la posicion depende del tiempo, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{v}=\frac{d\boldsymbol{r}}{dt},
+\qquad
+\boldsymbol{a}=\frac{d\boldsymbol{v}}{dt}.
+\]</div>
+<p>Cuando una magnitud depende del espacio, entran en juego operadores diferenciales basicos:</p>
+<ul class="simple">
+<li><p><strong>gradiente</strong>: describe como cambia un campo escalar en el espacio,</p></li>
+<li><p><strong>divergencia</strong>: mide fuentes o sumideros de un campo vectorial,</p></li>
+<li><p><strong>rotacional</strong>: cuantifica la tendencia local a rotar,</p></li>
+<li><p><strong>laplaciano</strong>: aparece en ecuaciones diferenciales de amplio uso en fisica.</p></li>
+</ul>
+<p>Aunque estas herramientas se estudian con mas detalle en otros cursos, aqui conviene reconocerlas desde el comienzo porque reaparecen en fuerzas centrales, potenciales y formulaciones mas avanzadas.</p>
+</section>
+<section id="matrices-y-rotaciones">
+<h2>Matrices y rotaciones<a class="headerlink" href="#matrices-y-rotaciones" title="Link to this heading">#</a></h2>
+<p>Las matrices permiten formalizar cambios de base y rotaciones. En particular, una rotacion conserva longitudes y angulos, de modo que cambia la representacion de un vector sin alterar su norma.</p>
+<p>Esta idea anticipa varios temas del curso:</p>
+<ul class="simple">
+<li><p>descripcion del movimiento en distintos sistemas de referencia,</p></li>
+<li><p>analisis de simetrias,</p></li>
+<li><p>y formulacion mas compacta de relaciones fisicas.</p></li>
+</ul>
+</section>
+<section id="como-usar-este-material-dentro-del-curso">
+<h2>Como usar este material dentro del curso<a class="headerlink" href="#como-usar-este-material-dentro-del-curso" title="Link to this heading">#</a></h2>
+<p>Se recomienda leer esta pagina antes de entrar al bloque principal de contenidos y volver a ella cuando aparezcan dificultades con:</p>
+<ul class="simple">
+<li><p>representacion de vectores,</p></li>
+<li><p>productos vectoriales y escalares,</p></li>
+<li><p>eleccion de coordenadas,</p></li>
+<li><p>operadores diferenciales,</p></li>
+<li><p>o cambios de base y rotaciones.</p></li>
+</ul>
+<p>Para la version extendida de estas ideas dentro del libro, revisa <a class="reference internal" href="chapter2.html"><span class="std std-doc">Fundamentos matematicos y numericos para mecanica clasica</span></a>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -470,20 +554,20 @@ particular problem.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="source_attribution.html"
+       href="intro.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Fuente y licencia</p>
+        <p class="prev-next-title">Introduccion y objetivos del curso</p>
       </div>
     </a>
     <a class="right-next"
-       href="chapter2.html"
+       href="schedule.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Nota de adaptacion y atribucion</p>
+        <p class="prev-next-title">Programacion general por semanas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -505,10 +589,17 @@ particular problem.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Nota de adaptacion y atribucion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-mecanica-clasica">1. Introducción a la mecánica clásica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-sirve-este-repaso">Para que sirve este repaso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-fundamentales-al-comenzar">Preguntas fundamentales al comenzar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitudes-y-notacion-basica">Magnitudes y notacion basica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalares-vectores-y-matrices">Escalares, vectores y matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-cartesianas-y-polares">Coordenadas cartesianas y polares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-unitarios-y-cambio-de-base">Vectores unitarios y cambio de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#producto-punto-y-producto-cruz">Producto punto y producto cruz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivacion-vectorial-y-operadores-diferenciales">Derivacion vectorial y operadores diferenciales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-y-rotaciones">Matrices y rotaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-usar-este-material-dentro-del-curso">Como usar este material dentro del curso</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
