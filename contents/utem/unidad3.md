@@ -34,8 +34,8 @@ Esta unidad amplia la cinematica lineal hacia trayectorias planas y rotacionales
 
 Esta unidad se relaciona especialmente con:
 
-- [Problemas simples de movimiento y repaso de las leyes de Newton](../phy321/chapter3.ipynb)
-- [Marcos no inerciales, traslaciones y sistemas rotantes](../phy321/chapter7.ipynb)
+- [Cinematica en dos dimensiones](../mechanics/kinematics_2d.md)
+- [Marcos no inerciales](../mechanics/marcos_no_inerciales.md)
 
 ## Lectura sugerida en Serway y Jewett
 

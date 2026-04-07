@@ -18,13 +18,13 @@ La adaptacion busca mantener una ruta clara de aprendizaje, traducida al espanol
 
 ## Uso de notebooks y material importado
 
-Los notebooks heredados se conservan como parte del andamiaje del ebook y siguen siendo utiles para:
+Los notebooks heredados del proyecto fuente se conservan como archivo de trabajo y siguen siendo utiles para:
 
 - ampliar contenidos,
 - proponer tareas o actividades,
 - y sostener la capa computacional del curso.
 
-Cuando corresponde, la atribucion del material importado queda visible en los notebooks mismos.
+En la navegacion principal del book se priorizan ahora paginas en espanol. Los materiales heredados que permanecen en el repositorio cumplen una funcion de respaldo y adaptacion progresiva.
 
 ## Materiales propios y materiales de apoyo
 

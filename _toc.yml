@@ -1,5 +1,5 @@
 format: jb-book
-root: contents/phy321/chapter1
+root: contents/mechanics/intro
 parts:
 - caption: "Sobre el curso"
   numbered: false
@@ -7,24 +7,29 @@ parts:
   - file: README
   - file: contents/phy321/intro
   - file: contents/utem/unidad0
-  - file: contents/phy321/fundamentos_previos
   - file: contents/phy321/schedule
   - file: contents/phy321/teachers
   - file: contents/phy321/serway_apoyo
   - file: contents/phy321/source_attribution
-- caption: "Material Introductorio"
+- caption: "Bases de la mecanica"
   numbered: true
   chapters:
-  - file: contents/phy321/chapter2
-  - file: contents/phy321/chapter3
-  - file: contents/phy321/chapter4
-- caption: "Temas Avanzados"
+  - file: contents/phy321/fundamentos_previos
+  - file: contents/mechanics/units_vectors
+  - file: contents/mechanics/kinematics_1d
+  - file: contents/mechanics/kinematics_2d
+  - file: contents/mechanics/newton_laws
+  - file: contents/mechanics/work_energy
+  - file: contents/mechanics/momentum_collisions
+- caption: "Modelacion y temas avanzados"
   numbered: true
   chapters:
-  - file: contents/phy321/chapter5
-  - file: contents/phy321/chapter6
-  - file: contents/phy321/chapter7
-  - file: contents/phy321/chapter8
+  - file: contents/mechanics/modelacion_numerica
+  - file: contents/mechanics/rotation
+  - file: contents/mechanics/oscillations
+  - file: contents/mechanics/gravitation
+  - file: contents/mechanics/marcos_no_inerciales
+  - file: contents/mechanics/formulacion_lagrangiana
 - caption: "Unidades y Guias UTEM"
   numbered: false
   chapters:
@@ -32,12 +37,7 @@ parts:
   - file: contents/utem/unidad2
   - file: contents/utem/unidad3
   - file: contents/utem/guias_trabajo
-- caption: "Tareas y Proyectos"
+- caption: "Problemas y proyectos"
   numbered: false
   chapters:
-  - file: contents/phy321/hw1
-  - file: contents/phy321/hw2
-  - file: contents/phy321/hw3
-  - file: contents/phy321/hw4
-  - file: contents/phy321/hw5
-  - file: contents/phy321/Firstmidterm2022
+  - file: contents/mechanics/problemas_aplicados

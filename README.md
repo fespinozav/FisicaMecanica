@@ -56,7 +56,7 @@ Los materiales principales del curso se articulan en cuatro capas:
 
 - material docente local del curso, incluyendo unidad 0, programacion, unidades 1 a 3 y guias de trabajo;
 - ebook del curso en GitHub Pages, con navegacion por capitulos y material complementario;
-- notebooks adaptados desde `PHY321: Classical Mechanics I`;
+- material base adaptado desde `PHY321`;
 - y bibliografia de apoyo para profundizacion conceptual.
 
 ### Referencias base en APA

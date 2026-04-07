@@ -34,6 +34,28 @@ E = \frac{1}{2} m v^2 + \frac{1}{2} k x^2
 - Pendulo simple para angulos pequenos.
 - Oscilaciones amortiguadas.
 - Resonancia y respuesta forzada.
+- Superposicion y descomposicion en modos.
+- Fuerzas periodicas y analisis cualitativo de resonancias.
+
+## Amortiguamiento y forzamiento
+
+Una forma clasica de extender el modelo es
+
+```{math}
+m\ddot{x}+b\dot{x}+kx=F_0\cos(\omega t)
+```
+
+Aqui aparecen tres ideas que conviene distinguir:
+
+- el amortiguamiento reduce la amplitud con el tiempo;
+- el forzamiento externo alimenta el sistema;
+- y la resonancia ocurre cuando la frecuencia de excitacion se acerca a la frecuencia natural.
+
+## Preguntas de analisis
+
+1. Como cambia el periodo cuando varia `m` o `k`.
+1. Que informacion aporta la energia total en un oscilador sin roce.
+1. Por que un algoritmo numerico mal elegido puede deformar artificialmente la amplitud.
 
 ## Problemas tipo
 
