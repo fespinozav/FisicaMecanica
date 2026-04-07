@@ -1,22 +1,34 @@
 format: jb-book
 root: README
 parts:
-- caption: "Fundamentos"
+- caption: "Curso y Fuentes"
+  numbered: false
+  chapters:
+  - file: contents/phy321/intro
+  - file: contents/phy321/schedule
+  - file: contents/phy321/teachers
+  - file: contents/phy321/textbooks
+  - file: contents/phy321/source_attribution
+- caption: "Material Introductorio"
   numbered: true
   chapters:
-  - file: contents/mechanics/intro
-  - file: contents/mechanics/units_vectors
-  - file: contents/mechanics/kinematics_1d
-  - file: contents/mechanics/kinematics_2d
-- caption: "Dinamica"
+  - file: contents/phy321/chapter1
+  - file: contents/phy321/chapter2
+  - file: contents/phy321/chapter3
+  - file: contents/phy321/chapter4
+- caption: "Temas Avanzados"
   numbered: true
   chapters:
-  - file: contents/mechanics/newton_laws
-  - file: contents/mechanics/work_energy
-  - file: contents/mechanics/momentum_collisions
-- caption: "Sistemas Extendidos"
-  numbered: true
+  - file: contents/phy321/chapter5
+  - file: contents/phy321/chapter6
+  - file: contents/phy321/chapter7
+  - file: contents/phy321/chapter8
+- caption: "Tareas y Proyectos"
+  numbered: false
   chapters:
-  - file: contents/mechanics/rotation
-  - file: contents/mechanics/oscillations
-  - file: contents/mechanics/gravitation
+  - file: contents/phy321/hw1
+  - file: contents/phy321/hw2
+  - file: contents/phy321/hw3
+  - file: contents/phy321/hw4
+  - file: contents/phy321/hw5
+  - file: contents/phy321/Firstmidterm2022

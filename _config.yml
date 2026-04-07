@@ -1,6 +1,6 @@
 # Book settings
 title: "Física Mecánica"
-author: Equipo docente
+author: "Equipo docente, con adaptación basada en material de Morten Hjorth-Jensen y Scott Pratt"
 copyright: "2026"
 only_build_toc_files: true
 exclude_patterns:
