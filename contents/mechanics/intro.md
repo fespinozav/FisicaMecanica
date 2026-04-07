@@ -1,8 +1,15 @@
 # Introduccion a la Fisica Mecanica
 
+La mecánica es la rama de la física que estudia y analiza el movimiento y reposo de los cuerpos, y su evolución en el tiempo, bajo la acción de fuerzas. Modernamente la mecánica incluye la evolución de sistemas físicos más generales que los cuerpos másicos. En ese enfoque la mecánica estudia también las ecuaciones de evolución temporal de sistemas físicos como los campos electromagnéticos o los sistemas cuánticos donde propiamente no es correcto hablar de cuerpos físicos.
+
+La mecánica es una ciencia perteneciente a la física, ya que los fenómenos que estudia son físicos, por ello está relacionada con las matemáticas. Sin embargo, también puede relacionarse con la ingeniería, en un modo menos riguroso. Ambos puntos de vista se justifican parcialmente ya que, si bien la mecánica es la base para la mayoría de las ciencias de la ingeniería clásica, no tiene un carácter tan empírico como éstas y, en cambio, por su rigor y razonamiento deductivo, se parece más a la matemática.
+
 La mecanica clasica estudia el movimiento y el equilibrio de los cuerpos a partir de modelos idealizados, principios de conservacion y leyes dinamicas. Este libro organiza el curso en una ruta completamente en espanol, con enfasis en interpretar fenomenos, modelar situaciones fisicas y resolver problemas con orden.
 
-## Por que empezar por aqui
+<img src="contents/images/desarrollo-de-piezas-en-autocad.jpg" alt="Software de diseño 3D especializado en mecánica>
+
+
+## Por que es la primera asignatura en su malla curricular
 
 La mecanica suele ser la primera experiencia universitaria donde una teoria fisica se convierte en herramienta de modelacion. Aqui no basta con recordar formulas: hay que decidir que sistema observar, que interacciones importan, que aproximaciones son razonables y como justificar el resultado.
 
@@ -49,10 +56,3 @@ Si recien entras al curso, una ruta natural es:
 1. [Momentum lineal y colisiones](momentum_collisions.md)
 1. [Modelacion numerica](modelacion_numerica.md)
 1. [Rotacion, oscilaciones, gravitacion y temas avanzados](rotation.md)
-
-## Preguntas guia
-
-- Que objeto o conjunto de objetos estoy modelando?
-- Que simplificaciones estoy haciendo?
-- Que magnitudes se conservan?
-- La respuesta obtenida tiene sentido fisico?
