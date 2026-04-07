@@ -15,9 +15,9 @@ Aqui encontraras una vista general del curso, con recursos, evaluacion, material
 | --- | --- | --- |
 | Jupyter Book | [Abrir book](https://fespinozav.github.io/FisicaMecanica/) | Recorrido principal del curso y lectura de capitulos |
 | Repositorio GitHub | [Abrir repo](https://github.com/fespinozav/FisicaMecanica) | Archivos fuente, versionado y materiales descargables |
-| Programacion oficial | [PROGRAMACION MECANICA CLASICA.pdf](references/PROGRAMACION%20MECANICA%20CLASICA.pdf) | Fechas y ponderaciones oficiales |
+| Programacion oficial | [Programacion oficial del curso](contents/phy321/schedule.md) | Fechas y ponderaciones oficiales |
 | Unidad 0 | [Unidad 0](contents/utem/unidad0.md) | Presentacion, reglamentos y politicas |
-| Material local | [Material docente local](contents/utem/material_docente_local.md) | Unidades, guias y archivos originales |
+| Unidades locales | [Unidad 1](contents/utem/unidad1.md) | Inicio del trabajo tematico del curso |
 
 ## Equipo docente, evaluacion y aspectos practicos
 
@@ -54,7 +54,7 @@ Para el trabajo semanal dentro del repositorio, conviene combinar:
 
 Los materiales principales del curso se articulan en cuatro capas:
 
-- material docente local en `references/`, incluyendo unidad 0, programacion, unidades 1 a 3 y guias de trabajo;
+- material docente local del curso, incluyendo unidad 0, programacion, unidades 1 a 3 y guias de trabajo;
 - ebook del curso en GitHub Pages, con navegacion por capitulos y material complementario;
 - notebooks adaptados desde `PHY321: Classical Mechanics I`;
 - y bibliografia de apoyo para profundizacion conceptual.
@@ -77,7 +77,6 @@ Dentro del book y del repositorio, el recorrido principal queda organizado asi:
 - [Unidad 0: presentacion, reglamentos y politicas](contents/utem/unidad0.md)
 - [Fundamentos previos: vectores, coordenadas y operadores basicos](contents/phy321/fundamentos_previos.md)
 - [Programacion oficial del curso](contents/phy321/schedule.md)
-- [Material docente local](contents/utem/material_docente_local.md)
 - [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md)
 - [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md)
 

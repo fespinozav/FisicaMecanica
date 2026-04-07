@@ -1,6 +1,6 @@
 # Unidad 2: cinematica de la particula en una dimension
 
-Esta pagina adapta la presentacion [Unidad2_FEEV.pptx](../../references/Unidad2_FEEV.pptx) al formato del book.
+Esta pagina adapta la unidad local sobre cinematica de la particula en una dimension al formato del book.
 
 ## Temas centrales
 
@@ -46,4 +46,4 @@ Como apoyo bibliografico para esta unidad se recomienda revisar el capitulo 2, *
 
 ## Guia asociada
 
-- [Guia 2: Cinematica de la particula](../../references/Guia2.pdf)
+- Guia 2: Cinematica de la particula

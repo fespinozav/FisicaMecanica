@@ -1,6 +1,6 @@
 # Unidad 1: sistemas de unidades y vectores
 
-Esta pagina adapta la presentacion [Unidad1_FEEV.pptx](../../references/Unidad1_FEEV.pptx) al formato del book.
+Esta pagina adapta la unidad local sobre sistemas de unidades y vectores al formato del book.
 
 ## Temas centrales
 
@@ -44,4 +44,4 @@ Como apoyo bibliografico para esta unidad se recomienda revisar:
 
 ## Guia asociada
 
-- [Guia 1: Unidades y vectores](../../references/Guia1.pdf)
+- Guia 1: Unidades y vectores

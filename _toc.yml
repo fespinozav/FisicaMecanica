@@ -10,7 +10,6 @@ parts:
   - file: contents/phy321/fundamentos_previos
   - file: contents/phy321/schedule
   - file: contents/phy321/teachers
-  - file: contents/utem/material_docente_local
   - file: contents/phy321/serway_apoyo
   - file: contents/phy321/source_attribution
 - caption: "Material Introductorio"
