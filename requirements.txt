@@ -1,3 +1,2 @@
-jupyter-book
+jupyter-book<2
 sphinx-proof
-myst-parser
