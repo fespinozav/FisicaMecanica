@@ -2,10 +2,6 @@
 
 Esta pagina adapta la presentacion [Unidad2_FEEV.pptx](../../references/Unidad2_FEEV.pptx) al formato del book.
 
-## Referencia APA
-
-Espinoza Vidal, F., adaptado de Amigo, N. (2026). *Unidad 2: Cinematica de la particula en una dimension* [Presentacion de clase]. Universidad Tecnologica Metropolitana.
-
 ## Temas centrales
 
 La unidad 2 organiza la introduccion local a la cinematica de la particula en una dimension. Los temas visibles en la presentacion fuente son:
@@ -47,8 +43,6 @@ Como apoyo bibliografico para esta unidad se recomienda revisar el capitulo 2, *
 - movimiento con aceleracion constante,
 - caida libre,
 - y ecuaciones cinematicas.
-
-**Referencia APA:** Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
 
 ## Guia asociada
 

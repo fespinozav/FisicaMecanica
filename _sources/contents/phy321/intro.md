@@ -2,10 +2,6 @@
 
 Esta seccion presenta la adaptacion local de la estructura academica de **PHY321, Classical Mechanics I** al libro **Fisica Mecanica**.
 
-**Referencia APA del material adaptado:** Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
-
-**Licencia del material fuente:** CC0 1.0 Universal.
-
 ## Sentido del curso
 
 La mecanica clasica es uno de los primeros espacios donde se articulan con fuerza el razonamiento fisico, la modelacion matematica y la resolucion sistematica de problemas. En este libro se adopta una ruta de aprendizaje que combina:
@@ -47,4 +43,4 @@ El curso esta pensado para que combines:
 1. experimentacion numerica,
 1. y reflexion critica sobre la validez de cada modelo.
 
-Para detalles sobre secuencia semanal, revisa [Programacion general por semanas](schedule.md). Para transparencia sobre procedencia del material, revisa [Fuente y licencia](source_attribution.md).
+Para detalles sobre secuencia semanal, revisa [Programacion general por semanas](schedule.md). Para los criterios editoriales de uso y adaptacion del material, revisa [Criterios editoriales y uso de materiales](source_attribution.md).

@@ -2,8 +2,6 @@
 
 Esta pagina adapta el documento local [PROGRAMACION MECANICA CLASICA.pdf](../../references/PROGRAMACION%20MECANICA%20CLASICA.pdf) y lo articula con la estructura del book.
 
-**Referencia APA del documento fuente:** Espinoza Vidal, F. (2026). *Programacion Mecanica Clasica* [Programacion de asignatura]. Universidad Tecnologica Metropolitana.
-
 ## Evaluacion oficial
 
 Segun el cuadro de evaluacion visible en la programacion del curso:

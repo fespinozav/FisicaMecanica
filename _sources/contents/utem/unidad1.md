@@ -2,10 +2,6 @@
 
 Esta pagina adapta la presentacion [Unidad1_FEEV.pptx](../../references/Unidad1_FEEV.pptx) al formato del book.
 
-## Referencia APA
-
-Espinoza Vidal, F., adaptado de Amigo, N. (2026). *Unidad 1: Sistemas de unidades* [Presentacion de clase]. Universidad Tecnologica Metropolitana.
-
 ## Temas centrales
 
 Segun la presentacion fuente, esta unidad cubre:
@@ -45,8 +41,6 @@ Como apoyo bibliografico para esta unidad se recomienda revisar:
 - capitulo 1, especialmente las secciones sobre estandares de longitud, masa y tiempo, analisis dimensional, conversion de unidades y cifras significativas;
 - capitulo 3, sobre sistemas coordenados, cantidades vectoriales, aritmetica vectorial y vectores unitarios;
 - y los apendices B y D para repaso matematico basico y unidades del SI.
-
-**Referencia APA:** Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
 
 ## Guia asociada
 

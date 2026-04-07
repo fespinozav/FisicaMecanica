@@ -2,10 +2,6 @@
 
 Esta unidad adapta el sentido de los documentos [Unidad0.pdf](../../references/Unidad0.pdf) y [Semana00-Mecanica_feev.pdf](../../references/Semana00-Mecanica_feev.pdf) como marco de entrada al curso.
 
-## Referencia APA
-
-Amigo, N., & Espinoza Vidal, F. (2026). *Mecanica Clasica: unidad 0 y semana 00* [Material docente interno]. Universidad Tecnologica Metropolitana.
-
 ## Funcion de la unidad 0
 
 En esta adaptacion, la unidad 0 cumple un rol claramente institucional y metodologico:

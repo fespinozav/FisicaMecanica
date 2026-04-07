@@ -2,12 +2,6 @@
 
 Esta pagina adapta la funcion organizativa de `teachers.md` en `PHY321`, pero reemplaza los datos especificos del curso original por una version reutilizable para `FisicaMecanica`.
 
-## Referencia de origen
-
-La estructura de esta pagina se inspira en:
-
-Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
-
 ## Equipo docente
 
 Puedes completar esta tabla con el equipo academico del periodo correspondiente.

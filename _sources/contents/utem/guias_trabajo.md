@@ -2,10 +2,6 @@
 
 Esta pagina incorpora las guias almacenadas en `references/` como bloque de ejercitacion complementaria del curso.
 
-## Referencia APA
-
-Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica* [Guias de ejercitacion]. Universidad Tecnologica Metropolitana.
-
 ## Guias incorporadas
 
 | Guia | Tema identificado en la portada | Archivo |

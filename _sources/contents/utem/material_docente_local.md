@@ -2,12 +2,6 @@
 
 Esta pagina organiza el material almacenado en la carpeta `references/` y lo incorpora como bloque local del curso dentro del book.
 
-## Referencia APA del bloque local
-
-- Espinoza Vidal, F. (2026). *Programacion Mecanica Clasica* [Programacion de asignatura]. Universidad Tecnologica Metropolitana.
-- Espinoza Vidal, F., adaptado de Amigo, N. (2026). *Mecanica Clasica: Unidades 1 a 3 y material de apertura del curso* [Presentaciones y documentos docentes]. Universidad Tecnologica Metropolitana.
-- Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica* [Guias de ejercitacion]. Universidad Tecnologica Metropolitana.
-
 ## Documentos de apertura del curso
 
 - [Unidad0.pdf](../../references/Unidad0.pdf)
