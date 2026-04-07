@@ -21,12 +21,12 @@ parts:
   - file: contents/utem/guias_trabajo
   - file: contents/utem/anexo_python
 - caption: "Problemas y proyectos"
-  numbered: false
+  numbered: False
   chapters:
   - file: contents/mechanics/problemas_aplicados
   - file: contents/utem/pruebas_anteriores
 - caption: "Bases de la mecanica"
-  numbered: true
+  numbered: False
   chapters:
   - file: contents/phy321/fundamentos_previos
   - file: contents/mechanics/units_vectors
@@ -36,7 +36,7 @@ parts:
   - file: contents/mechanics/work_energy
   - file: contents/mechanics/momentum_collisions
 - caption: "Modelacion y temas avanzados"
-  numbered: true
+  numbered: False
   chapters:
   - file: contents/mechanics/modelacion_numerica
   - file: contents/mechanics/rotation
