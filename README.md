@@ -11,7 +11,7 @@ Parte importante del material de este libro fue adaptada a partir del repositori
 
 **Referencia APA del material fuente principal:** Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
 
-La licencia del material fuente es **CC0 1.0 Universal**. Puedes revisar el detalle en [Fuente y licencia](contents/phy321/source_attribution.md).
+La licencia del material fuente es **CC0 1.0 Universal**. Puedes revisar el detalle de uso y adaptacion en [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md).
 
 Ademas, el book incorpora y adapta material docente local de la Universidad Tecnologica Metropolitana. La entrada institucional del curso queda organizada desde [Unidad 0: presentacion, reglamentos y politicas](contents/utem/unidad0.md), [Programacion oficial del curso](contents/phy321/schedule.md) y [Material docente local](contents/utem/material_docente_local.md).
 
@@ -35,9 +35,8 @@ El recorrido principal del ebook sigue esta ruta:
 - [Programacion oficial del curso](contents/phy321/schedule.md)
 - [Material docente local de catedra](contents/utem/material_docente_local.md)
 - [Equipo docente y evaluacion sugerida](contents/phy321/teachers.md)
-- [Textos y referencias en formato APA](contents/phy321/textbooks.md)
 - [Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md)
-- [Fuente, licencia y criterio de adaptacion](contents/phy321/source_attribution.md)
+- [Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md)
 
 Despues del bloque inicial, el libro se divide en dos grandes tramos:
 

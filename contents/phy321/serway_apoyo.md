@@ -1,8 +1,6 @@
 # Serway y Jewett como apoyo bibliografico
 
-Esta pagina integra, en forma de guia de lectura, el texto:
-
-Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
+Esta pagina integra, en forma de guia de lectura, el texto de Serway y Jewett como apoyo complementario para el curso.
 
 ## Criterio de uso en este curso
 

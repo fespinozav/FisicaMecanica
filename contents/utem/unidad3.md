@@ -2,10 +2,6 @@
 
 Esta pagina adapta la presentacion [Unidad3_FEEV.pptx](../../references/Unidad3_FEEV.pptx) al formato del book.
 
-## Referencia APA
-
-Espinoza Vidal, F., adaptado de Amigo, N. (2026). *Unidad 3: Cinematica bidimensional de la particula* [Presentacion de clase]. Universidad Tecnologica Metropolitana.
-
 ## Temas centrales
 
 La presentacion fuente muestra dos ejes principales:
@@ -47,8 +43,6 @@ Como apoyo bibliografico para esta unidad se recomienda revisar:
 
 - el capitulo 4, *Movimiento en dos dimensiones*, sobre vectores de posicion, velocidad y aceleracion, proyectiles y movimiento circular uniforme;
 - y, como proyeccion hacia dinamica, las primeras secciones del capitulo 6 sobre movimiento circular y aplicaciones de las leyes de Newton.
-
-**Referencia APA:** Serway, R. A., & Jewett, J. W., Jr. (2018). *Fisica para ciencias e ingenieria* (Vol. 1, 10a ed.). Cengage Learning.
 
 ## Guias asociadas
 

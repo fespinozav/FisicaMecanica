@@ -1,59 +1,35 @@
-# Fuente y licencia
+# Criterios editoriales y uso de materiales
 
-Esta pagina documenta la procedencia del material adaptado en este ebook.
+Esta pagina resume como se integran los materiales dentro de `FisicaMecanica`.
 
-## Fuente principal
+## Centralizacion de referencias
 
-El libro incorpora y adapta contenido del siguiente repositorio:
+Las referencias generales del curso se concentran en la portada principal del book, que coincide con `README.md`. De ese modo, las paginas de contenido quedan mas limpias y el detalle bibliografico se consulta en un solo lugar.
 
-Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Repositorio de curso y Jupyter Book]. GitHub. https://github.com/mhjensen/Physics321
+## Criterio de adaptacion del book
 
-Tambien se consulta su version publicada como libro en linea:
+En este repositorio se articulan tres capas de trabajo:
 
-Hjorth-Jensen, M., & Pratt, S. (2023). *PHY321, Classical Mechanics I* [Jupyter Book]. https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter1.html
+- una estructura de curso basada en el modelo general de `PHY321`,
+- el material docente local almacenado en `references/`,
+- y textos de apoyo usados como respaldo conceptual y bibliografico.
 
-## Fuente local complementaria
+La adaptacion busca mantener una ruta clara de aprendizaje, traducida al espanol y alineada con la programacion local del curso.
 
-Ademas de la capa basada en `PHY321`, este book incorpora material docente local almacenado en `references/`. Las referencias APA principales son:
+## Uso de notebooks y material importado
 
-- Espinoza Vidal, F. (2026). *Programacion Mecanica Clasica* [Programacion de asignatura]. Universidad Tecnologica Metropolitana.
-- Espinoza Vidal, F., adaptado de Amigo, N. (2026). *Mecanica Clasica: Unidades 1 a 3 y material de apertura del curso* [Presentaciones y documentos docentes]. Universidad Tecnologica Metropolitana.
-- Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica* [Guias de ejercitacion]. Universidad Tecnologica Metropolitana.
+Los notebooks heredados se conservan como parte del andamiaje del ebook y siguen siendo utiles para:
 
-## Licencia del material fuente
+- ampliar contenidos,
+- proponer tareas o actividades,
+- y sostener la capa computacional del curso.
 
-El repositorio `mhjensen/Physics321` publica su contenido bajo licencia **CC0 1.0 Universal**.
+Cuando corresponde, la atribucion del material importado queda visible en los notebooks mismos.
 
-En este repo se conserva ademas una copia local de esa licencia en [PHY321_LICENSE_CC0.txt](PHY321_LICENSE_CC0.txt).
+## Materiales propios y materiales de apoyo
 
-Eso permite reutilizar, adaptar y redistribuir el material. Aun asi, en este ebook se mantiene atribucion academica explicita para:
+El material docente propio del curso puede resumirse, reorganizarse y adaptarse libremente dentro del repositorio. En cambio, los textos de apoyo externos se usan como referencia conceptual y bibliografica, sin redistribuir archivos protegidos ni copiar extensamente su contenido.
 
-- reconocer la autoria intelectual del curso fuente,
-- evitar presentar material adaptado como produccion original sin contexto,
-- y facilitar la trazabilidad de conceptos, notebooks y secuencias tematicas.
+## Licencia auxiliar conservada en el repo
 
-## Criterio de adaptacion en este repo
-
-En `FisicaMecanica` se aplicaron estos criterios:
-
-- se adopto la estructura general del curso fuente,
-- se creo la pagina `fundamentos_previos.md` a partir del bloque "Reminder on vectors and other mathematical quantities" de `chapter2`,
-- se integro el bloque local `references/` como capa inicial del curso, incluyendo unidad 0, programacion, unidades y guias,
-- se importaron notebooks de capitulos y tareas desde `doc/LectureNotes`,
-- se incorporaron figuras auxiliares del curso fuente cuando los notebooks las referenciaban,
-- se agregaron notas visibles de atribucion en cada notebook importado,
-- y se reescribieron en espanol las paginas editoriales de introduccion, programacion y referencias.
-
-## Nota sobre materiales con copyright
-
-La carpeta `references/` contiene tambien un texto de apoyo bibliografico de Serway y Jewett. En este book se lo registra en APA, se lo usa para orientar lecturas y articular capitulos con las unidades del curso, pero no se lo expone como archivo descargable republicado ni se reproducen sus enunciados extensos.
-
-## Alcance de la atribucion
-
-La atribucion se hace al nivel de:
-
-- curso y repositorio original,
-- paginas editoriales adaptadas,
-- y notebooks incluidos en este libro.
-
-Cuando el material cite o recomiende textos adicionales, esas referencias se conservan en [Textos y referencias](textbooks.md).
+El repositorio conserva una copia local de la licencia del material abierto importado en [PHY321_LICENSE_CC0.txt](PHY321_LICENSE_CC0.txt), porque sigue siendo util para documentar la procedencia tecnica del material que dio origen a parte del book.
