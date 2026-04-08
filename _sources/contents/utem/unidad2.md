@@ -97,7 +97,7 @@ La trayectoria se define como la curva que describe una partícula cuando se mue
 
 ```{figure} ../images/trayectoria.png
 ---
-width: 70%
+width: 60%
 name: trayectoria
 ---
 Trayectoría de un mariposa en el sistema de coordenadas cartesiano
@@ -114,15 +114,6 @@ name: Pos
 ---
 Posición de un cohete con su vector representativo
 ```
-#### Desplazamiento
-
-Se define como el vector que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:
-
-$$
-\Delta \vect{r} = \vect{r}_f - \vect{r}_i
-$$
-
-donde, $\Delta$ se usa para destacar la diferencia (resta) entre dos valores.
 
 
 ---
@@ -140,7 +131,7 @@ $$
 \Delta t = t_f - t_i
 $$
 
-La unidad SI del tiempo es el segundo, $s$.
+La unidad S.I. del tiempo es el segundo, $s$.
 
 ---
 
@@ -150,20 +141,29 @@ La unidad SI del tiempo es el segundo, $s$.
 
 Es la longitud total del camino efectivamente seguido por la partícula.
 
-Es una magnitud escalar y siempre es positiva o cero.
+Es una magnitud escalar y siempre es positiva o cero. **Es un escalar**. Su unidad de medida en S.I. es el metro. La distancia recorrida siempre es mayor o igual al desplazamiento. Se suele simbolizar por la letra $d$, ya sea minúscula o mayúscula.
 
-### Desplazamiento
+#### Desplazamiento
 
-El desplazamiento representa el cambio de posición entre dos instantes:
+Se define como el vector que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:
 
 $$
-\Delta x = x_f - x_i
+\Delta \vec{r} = \vec{r}_f - \vec{r}_i
 $$
 
 donde:
 
-- $x_i$ es la posición inicial;
-- $x_f$ es la posición final.
+- $r_i$ es la posición inicial;
+- $r_f$ es la posición final.
+- $\Delta$ se usa para destacar la diferencia, (resta) entre dos valores.
+
+```{figure} ../images/distrec.png
+---
+width: 60%
+name: distrec
+---
+Desplazamiento de un avión de papel
+```
 
 ### Observación importante
 
@@ -173,8 +173,8 @@ Ejemplo:
 
 Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vuelve a $x = 5 \text{ m}$:
 
-- distancia recorrida: $6 + 3 = 9 \text{ m}$
-- desplazamiento: $5 - 2 = 3 \text{ m}$
+- distancia recorrida $(\Delta \vec{x})$: $6 + 3 = 9 \text{ m}$
+- desplazamiento $(\Delta x)$: $5 - 2 = 3 \text{ m}$
 
 ---
 
@@ -185,20 +185,20 @@ Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vue
 La rapidez media se define como la distancia recorrida dividida por el tiempo transcurrido:
 
 $$
-\text{rapidez media} = \frac{\text{distancia recorrida}}{\Delta t}
+\bar{v} = \frac{d}{\Delta t} = \frac{d}{t_f - t_i}
 $$
 
-Es una magnitud escalar.
+Es una magnitud **escalar**.
 
 ### Velocidad media
 
 La velocidad media se define como el desplazamiento dividido por el intervalo de tiempo:
 
 $$
-\bar{v} = \frac{\Delta x}{\Delta t}
+\vec{v_m} = \frac{\Delta \vec{r}}{\Delta t}
 $$
 
-Es una magnitud vectorial en 1D, por lo que su signo indica el sentido del movimiento.
+Es un **vector**, por lo que su signo indica el sentido del movimiento. Su unidad de medida en el S.I. es m/s.
 
 ### Interpretación del signo
 

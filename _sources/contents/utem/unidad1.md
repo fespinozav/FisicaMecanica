@@ -56,9 +56,9 @@ Ejemplos:
 
 ---
 
-## 3. Sistema Internacional de Unidades (SI)
+## 3. Sistema Internacional de Unidades (S.I.)
 
-El sistema de unidades más utilizado en ciencia e ingeniería es el **Sistema Internacional de Unidades (SI)**.
+El sistema de unidades más utilizado en ciencia e ingeniería es el **Sistema Internacional de Unidades (S.I.)**.
 
 ### Magnitudes fundamentales más importantes en mecánica
 
@@ -113,11 +113,11 @@ Ejemplos:
 
 Las conversiones consisten en expresar una misma cantidad en unidades diferentes sin alterar su valor físico.
 
-### Tabla general de unidades SI para conversiones
+### Tabla general de unidades S.I. para conversiones
 
-#### Unidades base del SI
+#### Unidades base del S.I.
 
-| Magnitud | Unidad SI | Símbolo |
+| Magnitud | Unidad S.I. | Símbolo |
 |---|---|---|
 | longitud | metro | m |
 | masa | kilogramo | kg |
@@ -143,7 +143,7 @@ Las conversiones consisten en expresar una misma cantidad en unidades diferentes
 | carga eléctrica | coulomb | C | $A \cdot s$ |
 | diferencia de potencial | volt | V | $kg \cdot m^2 \cdot s^{-3} \cdot A^{-1}$ |
 
-#### Prefijos SI más usados
+#### Prefijos S.I. más usados
 
 | Prefijo | Símbolo | Factor |
 |---|---|---|
