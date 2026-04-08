@@ -366,6 +366,8 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-referencia">Sistema de referencia</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria">Trayectoria</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion">Posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desplazamiento">Desplazamiento</a></li>
 </ul>
 </li>
 </ul>
@@ -373,7 +375,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervalo-de-tiempo">3. Intervalo de tiempo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-recorrida-y-desplazamiento">4. Distancia recorrida y desplazamiento</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-recorrida">Distancia recorrida</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desplazamiento">Desplazamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Desplazamiento</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observacion-importante">Observación importante</a></li>
 </ul>
 </li>
@@ -391,13 +393,13 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-media">Aceleración media</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-instantanea">Aceleración instantánea</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniforme-mru">8. Movimiento rectilíneo uniforme (MRU)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion">Ecuación de posición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniformemente-acelerado-mrua">9. Movimiento rectilíneo uniformemente acelerado (MRUA)</a><ul class="nav section-nav flex-column">
@@ -407,7 +409,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-velocidad-y-posicion">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-graficas-y-movimiento">10. Relación entre gráficas y movimiento</a><ul class="nav section-nav flex-column">
@@ -419,8 +421,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caida-libre">11. Caída libre</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-eje-positivo-apunta-hacia-arriba">Si el eje positivo apunta hacia arriba</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion">Posición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Relación entre velocidad y posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-tipicos">Casos típicos</a></li>
@@ -529,12 +531,32 @@ x = x(t)
 <h4>Trayectoria<a class="headerlink" href="#trayectoria" title="Link to this heading">#</a></h4>
 <p>La trayectoria se define como la curva que describe una partícula cuando se mueve en el espacio.</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../../_images/trayectoria.png"><img alt="../../_images/trayectoria.png" src="../../_images/trayectoria.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="../../_images/trayectoria.png"><img alt="../../_images/trayectoria.png" src="../../_images/trayectoria.png" style="width: 70%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figura 14 </span><span class="caption-text">Trayectoría de un mariposa en el sistema de coordenadas cartesiano</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="posicion">
+<h4>Posición<a class="headerlink" href="#posicion" title="Link to this heading">#</a></h4>
+<p>la posición se define como el vector que une el origen del sistema de referencia, con un punto sobre la trayectoria en un tiempo determinado. Su unidad de medida en el S.I. es el metro.</p>
+<figure class="align-default" id="pos">
+<a class="reference internal image-reference" href="../../_images/posicion.png"><img alt="../../_images/posicion.png" src="../../_images/posicion.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 15 </span><span class="caption-text">Posición de un cohete con su vector representativo</span><a class="headerlink" href="#pos" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="desplazamiento">
+<h4>Desplazamiento<a class="headerlink" href="#desplazamiento" title="Link to this heading">#</a></h4>
+<p>Se define como el vector que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \vect{r} = \vect{r}_f - \vect{r}_i
+\]</div>
+<p>donde, <span class="math notranslate nohighlight">\(\Delta\)</span> se usa para destacar la diferencia (resta) entre dos valores.</p>
 </section>
 </section>
 </section>
@@ -561,8 +583,8 @@ x = x(t)
 <p>Es la longitud total del camino efectivamente seguido por la partícula.</p>
 <p>Es una magnitud escalar y siempre es positiva o cero.</p>
 </section>
-<section id="desplazamiento">
-<h3>Desplazamiento<a class="headerlink" href="#desplazamiento" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Desplazamiento<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>El desplazamiento representa el cambio de posición entre dos instantes:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -674,8 +696,8 @@ a(t) = \frac{d^2x}{dt^2}
 <li><p>Si tienen signos opuestos, la rapidez disminuye.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>Interpretación gráfica<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Interpretación gráfica<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>En una gráfica velocidad versus tiempo, la aceleración corresponde a la pendiente.</p>
 </section>
 </section>
@@ -708,8 +730,8 @@ x(t) = x_0 + vt
 <li><p><span class="math notranslate nohighlight">\(t\)</span> es el tiempo.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>Interpretación gráfica<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Interpretación gráfica<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>gráfica <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una recta;</p></li>
 <li><p>gráfica <span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una línea horizontal;</p></li>
@@ -749,8 +771,8 @@ v^2 = v_0^2 + 2a(x - x_0)
 \]</div>
 </section>
 </section>
-<section id="id4">
-<h3>Interpretación gráfica<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>Interpretación gráfica<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>gráfica <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: parábola;</p></li>
 <li><p>gráfica <span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: recta;</p></li>
@@ -807,15 +829,15 @@ a = -g
 v(t) = v_0 - gt
 \]</div>
 </section>
-<section id="posicion">
-<h4>Posición<a class="headerlink" href="#posicion" title="Link to this heading">#</a></h4>
+<section id="id6">
+<h4>Posición<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
 y(t) = y_0 + v_0 t - \frac{1}{2}gt^2
 \]</div>
 </section>
-<section id="id5">
-<h4>Relación entre velocidad y posición<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<section id="id7">
+<h4>Relación entre velocidad y posición<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
 v^2 = v_0^2 - 2g(y - y_0)
@@ -1044,6 +1066,8 @@ v(t) = v_0 - gt
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-referencia">Sistema de referencia</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria">Trayectoria</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion">Posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desplazamiento">Desplazamiento</a></li>
 </ul>
 </li>
 </ul>
@@ -1051,7 +1075,7 @@ v(t) = v_0 - gt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervalo-de-tiempo">3. Intervalo de tiempo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-recorrida-y-desplazamiento">4. Distancia recorrida y desplazamiento</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-recorrida">Distancia recorrida</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desplazamiento">Desplazamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Desplazamiento</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observacion-importante">Observación importante</a></li>
 </ul>
 </li>
@@ -1069,13 +1093,13 @@ v(t) = v_0 - gt
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-media">Aceleración media</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-instantanea">Aceleración instantánea</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniforme-mru">8. Movimiento rectilíneo uniforme (MRU)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion">Ecuación de posición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniformemente-acelerado-mrua">9. Movimiento rectilíneo uniformemente acelerado (MRUA)</a><ul class="nav section-nav flex-column">
@@ -1085,7 +1109,7 @@ v(t) = v_0 - gt
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-velocidad-y-posicion">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-graficas-y-movimiento">10. Relación entre gráficas y movimiento</a><ul class="nav section-nav flex-column">
@@ -1097,8 +1121,8 @@ v(t) = v_0 - gt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caida-libre">11. Caída libre</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-eje-positivo-apunta-hacia-arriba">Si el eje positivo apunta hacia arriba</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion">Posición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Relación entre velocidad y posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-tipicos">Casos típicos</a></li>

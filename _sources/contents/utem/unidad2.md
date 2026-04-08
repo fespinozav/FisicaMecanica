@@ -44,7 +44,6 @@ Para describir el movimiento se requiere:
 En una dimensión, el movimiento ocurre a lo largo de una recta, generalmente representada por el eje $x$.
 
 
-
 ---
 
 ## 2. Posición y sistema de referencia
@@ -98,11 +97,33 @@ La trayectoria se define como la curva que describe una partícula cuando se mue
 
 ```{figure} ../images/trayectoria.png
 ---
-width: 80%
-name: Obs1
+width: 70%
+name: trayectoria
 ---
 Trayectoría de un mariposa en el sistema de coordenadas cartesiano
 ```
+
+#### Posición
+
+la posición se define como el vector que une el origen del sistema de referencia, con un punto sobre la trayectoria en un tiempo determinado. Su unidad de medida en el S.I. es el metro.
+
+```{figure} ../images/posicion.png
+---
+width: 70%
+name: Pos
+---
+Posición de un cohete con su vector representativo
+```
+#### Desplazamiento
+
+Se define como el vector que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:
+
+$$
+\Delta \vect{r} = \vect{r}_f - \vect{r}_i
+$$
+
+donde, $\Delta$ se usa para destacar la diferencia (resta) entre dos valores.
+
 
 ---
 
