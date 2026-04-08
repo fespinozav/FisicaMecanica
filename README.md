@@ -1,6 +1,6 @@
-# Fisica Mecanica
+# Física Mecánica
 
-Este repositorio contiene el material principal del curso de **Fisica Mecanica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de catedra, las guias de trabajo y los notebooks de apoyo.
+Este repositorio contiene el material principal del curso de **Física Mecánica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de cátedra, las guías de trabajo y los notebooks de apoyo.
 
 El trabajo del curso se apoya en dos espacios principales:
 
