@@ -1,4 +1,4 @@
-# Fisica Mecanica, Universidad Tecnologica Metropolitana
+# Fisica Mecanica
 
 Este repositorio contiene el material principal del curso de **Fisica Mecanica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de catedra, las guias de trabajo y los notebooks de apoyo.
 
