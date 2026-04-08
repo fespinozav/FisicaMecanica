@@ -9,10 +9,7 @@ El trabajo del curso se apoya en dos espacios principales:
 
 Aqui encontraras una vista general del curso, con recursos, evaluacion, materiales y resultados de aprendizaje.
 
-## Equipo docente, evaluacion y aspectos practicos
-
-- Profesor: Dr(c). Felipe Espinoza Vidal
-- Contacto: felipe.espinozav@utem.cl
+## Evaluacion y aspectos practicos
 
 | Componente | Descripcion |
 | --- | --- |
@@ -52,7 +49,7 @@ Los materiales principales del curso se articulan en cuatro capas:
 - Ebook del curso en GitHub Pages, con navegacion por capitulos y material complementario.
 - Bibliografia de apoyo para profundizacion conceptual.
 
-### Referencias base en APA
+### Referencias base
 
 - Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica* [Guias de ejercitacion]. Universidad Tecnologica Metropolitana.
 - Serway, Raymond A. (2004). Física. Tomo I, Madrid, España: Mc Graw Hill.

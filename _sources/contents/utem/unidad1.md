@@ -113,9 +113,9 @@ Ejemplos:
 
 Las conversiones consisten en expresar una misma cantidad en unidades diferentes sin alterar su valor físico.
 
-## Tabla general de unidades SI para conversiones
+### Tabla general de unidades SI para conversiones
 
-### 1) Unidades base del SI
+#### Unidades base del SI
 
 | Magnitud | Unidad SI | Símbolo |
 |---|---|---|
@@ -127,7 +127,7 @@ Las conversiones consisten en expresar una misma cantidad en unidades diferentes
 | cantidad de sustancia | mol | mol |
 | intensidad luminosa | candela | cd |
 
-### 2) Unidades derivadas frecuentes
+#### Unidades derivadas frecuentes
 
 | Magnitud derivada | Unidad SI | Símbolo | Expresión en unidades base |
 |---|---|---|---|
@@ -143,7 +143,7 @@ Las conversiones consisten en expresar una misma cantidad en unidades diferentes
 | carga eléctrica | coulomb | C | $A \cdot s$ |
 | diferencia de potencial | volt | V | $kg \cdot m^2 \cdot s^{-3} \cdot A^{-1}$ |
 
-### 3) Prefijos SI más usados
+#### Prefijos SI más usados
 
 | Prefijo | Símbolo | Factor |
 |---|---|---|
@@ -159,7 +159,7 @@ Las conversiones consisten en expresar una misma cantidad en unidades diferentes
 | nano | n | $10^{-9}$ |
 | pico | p | $10^{-12}$ |
 
-### 4) Equivalencias rápidas
+#### Equivalencias rápidas
 
 | Conversión | Equivalencia |
 |---|---|
@@ -174,7 +174,7 @@ Las conversiones consisten en expresar una misma cantidad en unidades diferentes
 | volumen | $1 \text{ cm}^3 = 10^{-6} \text{ m}^3$ |
 | velocidad | $1 \text{ km/h} \approx 0.278 \text{ m/s}$ |
 
-### Idea central
+#### Idea central
 
 Se multiplica por un factor de conversión equivalente a 1.
 
@@ -235,11 +235,26 @@ Por lo tanto, la expresión es consistente.
 
 Un vector es una cantidad que tiene magnitud, dirección y sentido.
 
-Se representa gráficamente por una flecha:
+Notación:
 
-- el largo representa la magnitud;
-- la orientación representa la dirección;
-- la punta indica el sentido.
+- $\vec{A}$
+- $\vec{a}$
+- $\vec{AB}$
+
+Se representa gráficamente por una flecha.
+
+- El largo representa la magnitud.
+- La orientación representa la dirección.
+- La punta indica el sentido.
+
+```{figure} ../images/vector_A.png
+---
+width: 60%
+name: vector_a
+---
+Vector A, desde el punto a, al punto b
+
+```
 
 ### Ejemplos físicos de vectores
 
@@ -247,6 +262,15 @@ Se representa gráficamente por una flecha:
 - velocidad
 - aceleración
 - fuerza
+
+```{figure} ../images/vector_v.png
+---
+width: 60%
+name: vector_v
+---
+Vector de Tensión ($\vec{T}$) y Vector de Velocidad ($\vec{V}$)
+
+```
 
 ---
 
@@ -278,13 +302,31 @@ Ambos tienen la misma magnitud, pero sentidos opuestos.
 
 Para sumar dos vectores:
 
-1. se dibuja el primero;
-2. se coloca el origen del segundo en la punta del primero;
+1. se dibuja el primero
+2. se coloca el origen del segundo en la punta del primero
 3. el vector resultante va desde el origen del primero hasta la punta del segundo.
+
+```{figure} ../images/suma_de_vectores.png
+---
+width: 60%
+name: suma_vect
+---
+Suma de los vectores A y B
+
+```
 
 ### Método del paralelogramo
 
 Si ambos vectores parten del mismo punto, la diagonal del paralelogramo formado representa la suma.
+
+```{figure} ../images/suma_de_vectores2.png
+---
+width: 60%
+name: suma_vect
+---
+Suma de los vectores A y B
+
+```
 
 ### Propiedades
 
@@ -302,6 +344,15 @@ $$
 $$
 
 Gráficamente, se invierte el sentido de $\vec{B}$ y luego se suma.
+
+```{figure} ../images/vect_rest.png
+---
+width: 60%
+name: resta_vect
+---
+Resta de los vectores A y B
+
+```
 
 ---
 
@@ -323,6 +374,15 @@ es un nuevo vector cuya magnitud es $|c|$ veces la de $\vec{A}$.
 ## 12. Sistemas de coordenadas
 
 Para describir vectores en forma analítica se utiliza un sistema de coordenadas.
+
+```{figure} ../images/vector_coord.png
+---
+width: 60%
+name: vector_coord
+---
+Vector descrito de forma anlítica en el sistema de coordenadas 3D
+
+```
 
 ### Coordenadas cartesianas en 2D
 
@@ -364,20 +424,29 @@ $$
 
 ## 14. Dirección de un vector en el plano
 
-Si un vector forma un ángulo $\theta$ con el eje $x$ positivo, entonces:
+Si un vector forma un ángulo $\alpha$ con el eje $x$ positivo, entonces:
+
+```{figure} ../images/trigonometria_vect.png
+---
+width: 80%
+name: vect_trig
+---
+Descomposición de un vector
+
+```
 
 $$
-A_x = A \cos \theta
+A_x = A \cos \alpha
 $$
 
 $$
-A_y = A \sin \theta
+A_y = A \sin \alpha
 $$
 
 Y también:
 
 $$
-\tan \theta = \frac{A_y}{A_x}
+\tan \alpha = \frac{A_y}{A_x}
 $$
 
 Esto permite pasar entre forma polar y forma cartesiana.
@@ -615,11 +684,11 @@ Los vectores no se suman directamente en forma polar componente a componente com
 
 En mecánica, los vectores permiten describir de forma rigurosa:
 
-- la posición de una partícula;
-- el desplazamiento entre dos puntos;
-- la velocidad en el plano;
-- la aceleración;
-- la fuerza neta sobre un cuerpo.
+- La posición de una partícula.
+- El desplazamiento entre dos puntos.
+- La velocidad en el plano.
+- La aceleración.
+- La fuerza neta sobre un cuerpo.
 
 ---
 
@@ -627,12 +696,12 @@ En mecánica, los vectores permiten describir de forma rigurosa:
 
 En esta unidad se introdujo el lenguaje fundamental de la mecánica:
 
-- el uso correcto de unidades;
-- la notación científica;
-- las conversiones;
-- el análisis dimensional;
-- la diferencia entre escalares y vectores;
-- la representación y operaciones con vectores.
+- El uso correcto de unidades.
+- La notación científica.
+- Las conversiones.
+- El análisis dimensional.
+- La diferencia entre escalares y vectores.
+- La representación y operaciones con vectores.
 
 Estos contenidos serán la base para estudiar posteriormente el movimiento en una y dos dimensiones.
 
