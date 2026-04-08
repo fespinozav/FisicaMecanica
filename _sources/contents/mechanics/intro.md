@@ -51,7 +51,7 @@ Diagrama de cuerpo libre de una partícula sometida a fuerzas externas.
 ::::
 
 
-## Por que es la primera asignatura en su malla curricular
+## Por que es de las primeras asignaturas en su malla curricular
 
 La mecanica suele ser la primera experiencia universitaria donde una teoria fisica se convierte en herramienta de modelacion. Aqui no basta con recordar formulas: hay que decidir que sistema observar, que interacciones importan, que aproximaciones son razonables y como justificar el resultado.
 
