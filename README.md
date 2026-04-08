@@ -19,7 +19,7 @@ Aqui encontraras una vista general del curso, con recursos, evaluacion, material
 | Material base | Unidades locales, guias de trabajo |
 
 ## Evaluaciones primer semestre de 2026
-### FÍSICA MECÁNICA COD:FISB4020/541
+### FÍSICA MECÁNICA | COD:FISB4020/541
 
 La evaluacion oficial del curso se organiza de la siguiente manera:
 
