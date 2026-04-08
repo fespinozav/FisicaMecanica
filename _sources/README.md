@@ -1,6 +1,6 @@
-# Fisica Mecanica, Universidad Tecnologica Metropolitana
+# Física Mecánica
 
-Este repositorio contiene el material principal del curso de **Fisica Mecanica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de catedra, las guias de trabajo y los notebooks de apoyo.
+Este repositorio contiene el material principal del curso de **Física Mecánica**. Aqui se organiza el ebook del curso, la programacion oficial, las unidades de cátedra, las guías de trabajo y los notebooks de apoyo.
 
 El trabajo del curso se apoya en dos espacios principales:
 
@@ -19,7 +19,7 @@ Aqui encontraras una vista general del curso, con recursos, evaluacion, material
 | Material base | Unidades locales, guias de trabajo |
 
 ## Evaluaciones primer semestre de 2026
-### FÍSICA MECÁNICA COD:FISB4020/541
+### FÍSICA MECÁNICA | COD:FISB4020/541
 
 La evaluacion oficial del curso se organiza de la siguiente manera:
 
@@ -51,7 +51,7 @@ Los materiales principales del curso se articulan en cuatro capas:
 
 ### Referencias base
 
-- Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica* [Guias de ejercitacion]. Universidad Tecnologica Metropolitana.
+- Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica*.
 - Serway, Raymond A. (2004). Física. Tomo I, Madrid, España: Mc Graw Hill.
 - Tipler Paul A.(1999). Física. Volumen I. Barcelona, España: Reverte. +
 - Alonso & Finn. (1992). Física. Volumen I, México: Fondo Educacional Internacional

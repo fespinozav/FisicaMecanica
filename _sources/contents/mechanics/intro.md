@@ -47,6 +47,7 @@ width: 100%
 name: fig-diagrama-cuerpo-libre
 ---
 Diagrama de cuerpo libre de una partícula sometida a fuerzas externas.
+```
 
 ::::
 

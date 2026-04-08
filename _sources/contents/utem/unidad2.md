@@ -31,7 +31,8 @@ Diagrama de un sistema cartesiano de una dimensión
 
 La cinemática estudia el movimiento de los cuerpos sin considerar las fuerzas que lo producen.
 
-En esta unidad se modela al cuerpo como una **partícula**, es decir, como un objeto cuyas dimensiones son despreciables respecto de las distancias involucradas en el problema.
+En esta unidad se modela al cuerpo como una **partícula**, decimos que un cuerpo (persona, objeto, planeta, etc.) se comporta como una partícula cuando sus
+dimensiones son pequeñas comparadas con otras dimensiones que intervienen en el problema.
 
 Para describir el movimiento se requiere:
 
@@ -65,6 +66,43 @@ Esto significa que la posición depende del tiempo.
 - Si $x = 0$, está en el origen.
 
 La posición no indica cuánto recorrió el móvil, sino solo dónde se encuentra en un instante.
+
+### Sistema de referencia
+
+Definimos un sistema de referencia como un sistema de coordenadas respecto del cual estudiamos un movimiento de un cuerpo. Este puede ser "Inercial" o "No Inercial".
+
+Un sistema de referencia, es **inercial** cuando el observador se encuentra en reposo o se mueve con velocidad constante respecto al objeto estudiado.
+
+```{figure} ../images/obs1.png
+---
+width: 80%
+name: Obs1
+---
+Observador mirando un vehiculo en movimiento
+```
+
+Por otro lado, un sistema de referencia, es **No inercial**, cuando el observador se encuentra en aceleración respecto al objeto bajo estudio.
+
+```{figure} ../images/obs3.png
+---
+width: 80%
+name: Obs3
+---
+Observador dentro de un vehículo en movimiento
+```
+En este curso siempre utilizaremos sistema de referencia **inerciales** descritos mediante un sistema de coordenadas cartesiano. El observador no se representa.
+
+#### Trayectoria
+
+La trayectoria se define como la curva que describe una partícula cuando se mueve en el espacio.
+
+```{figure} ../images/trayectoria.png
+---
+width: 80%
+name: Obs1
+---
+Trayectoría de un mariposa en el sistema de coordenadas cartesiano
+```
 
 ---
 

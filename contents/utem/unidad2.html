@@ -364,6 +364,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-cinematica">1. Introducción a la cinemática</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-y-sistema-de-referencia">2. Posición y sistema de referencia</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-referencia">Sistema de referencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria">Trayectoria</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervalo-de-tiempo">3. Intervalo de tiempo</a></li>
@@ -387,13 +391,13 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-media">Aceleración media</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-instantanea">Aceleración instantánea</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniforme-mru">8. Movimiento rectilíneo uniforme (MRU)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion">Ecuación de posición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniformemente-acelerado-mrua">9. Movimiento rectilíneo uniformemente acelerado (MRUA)</a><ul class="nav section-nav flex-column">
@@ -403,7 +407,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-velocidad-y-posicion">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-graficas-y-movimiento">10. Relación entre gráficas y movimiento</a><ul class="nav section-nav flex-column">
@@ -416,7 +420,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-eje-positivo-apunta-hacia-arriba">Si el eje positivo apunta hacia arriba</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion">Posición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Relación entre velocidad y posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-tipicos">Casos típicos</a></li>
@@ -471,7 +475,8 @@
 <section id="introduccion-a-la-cinematica">
 <h2>1. Introducción a la cinemática<a class="headerlink" href="#introduccion-a-la-cinematica" title="Link to this heading">#</a></h2>
 <p>La cinemática estudia el movimiento de los cuerpos sin considerar las fuerzas que lo producen.</p>
-<p>En esta unidad se modela al cuerpo como una <strong>partícula</strong>, es decir, como un objeto cuyas dimensiones son despreciables respecto de las distancias involucradas en el problema.</p>
+<p>En esta unidad se modela al cuerpo como una <strong>partícula</strong>, decimos que un cuerpo (persona, objeto, planeta, etc.) se comporta como una partícula cuando sus
+dimensiones son pequeñas comparadas con otras dimensiones que intervienen en el problema.</p>
 <p>Para describir el movimiento se requiere:</p>
 <ul class="simple">
 <li><p>Un sistema de referencia.</p></li>
@@ -499,6 +504,38 @@ x = x(t)
 <li><p>Si <span class="math notranslate nohighlight">\(x = 0\)</span>, está en el origen.</p></li>
 </ul>
 <p>La posición no indica cuánto recorrió el móvil, sino solo dónde se encuentra en un instante.</p>
+</section>
+<section id="sistema-de-referencia">
+<h3>Sistema de referencia<a class="headerlink" href="#sistema-de-referencia" title="Link to this heading">#</a></h3>
+<p>Definimos un sistema de referencia como un sistema de coordenadas respecto del cual estudiamos un movimiento de un cuerpo. Este puede ser “Inercial” o “No Inercial”.</p>
+<p>Un sistema de referencia, es <strong>inercial</strong> cuando el observador se encuentra en reposo o se mueve con velocidad constante respecto al objeto estudiado.</p>
+<figure class="align-default" id="obs1">
+<a class="reference internal image-reference" href="../../_images/obs1.png"><img alt="../../_images/obs1.png" src="../../_images/obs1.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 12 </span><span class="caption-text">Observador mirando un vehiculo en movimiento</span><a class="headerlink" href="#obs1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Por otro lado, un sistema de referencia, es <strong>No inercial</strong>, cuando el observador se encuentra en aceleración respecto al objeto bajo estudio.</p>
+<figure class="align-default" id="obs3">
+<a class="reference internal image-reference" href="../../_images/obs3.png"><img alt="../../_images/obs3.png" src="../../_images/obs3.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 13 </span><span class="caption-text">Observador dentro de un vehículo en movimiento</span><a class="headerlink" href="#obs3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>En este curso siempre utilizaremos sistema de referencia <strong>inerciales</strong> descritos mediante un sistema de coordenadas cartesiano. El observador no se representa.</p>
+<section id="trayectoria">
+<h4>Trayectoria<a class="headerlink" href="#trayectoria" title="Link to this heading">#</a></h4>
+<p>La trayectoria se define como la curva que describe una partícula cuando se mueve en el espacio.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/trayectoria.png"><img alt="../../_images/trayectoria.png" src="../../_images/trayectoria.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 14 </span><span class="caption-text">Trayectoría de un mariposa en el sistema de coordenadas cartesiano</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 <hr class="docutils" />
@@ -637,8 +674,8 @@ a(t) = \frac{d^2x}{dt^2}
 <li><p>Si tienen signos opuestos, la rapidez disminuye.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h3>Interpretación gráfica<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Interpretación gráfica<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>En una gráfica velocidad versus tiempo, la aceleración corresponde a la pendiente.</p>
 </section>
 </section>
@@ -671,8 +708,8 @@ x(t) = x_0 + vt
 <li><p><span class="math notranslate nohighlight">\(t\)</span> es el tiempo.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>Interpretación gráfica<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Interpretación gráfica<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>gráfica <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una recta;</p></li>
 <li><p>gráfica <span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una línea horizontal;</p></li>
@@ -712,8 +749,8 @@ v^2 = v_0^2 + 2a(x - x_0)
 \]</div>
 </section>
 </section>
-<section id="id3">
-<h3>Interpretación gráfica<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Interpretación gráfica<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>gráfica <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: parábola;</p></li>
 <li><p>gráfica <span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: recta;</p></li>
@@ -777,8 +814,8 @@ v(t) = v_0 - gt
 y(t) = y_0 + v_0 t - \frac{1}{2}gt^2
 \]</div>
 </section>
-<section id="id4">
-<h4>Relación entre velocidad y posición<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id5">
+<h4>Relación entre velocidad y posición<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
 v^2 = v_0^2 - 2g(y - y_0)
@@ -1005,6 +1042,10 @@ v(t) = v_0 - gt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-cinematica">1. Introducción a la cinemática</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-y-sistema-de-referencia">2. Posición y sistema de referencia</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">Interpretación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-referencia">Sistema de referencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria">Trayectoria</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervalo-de-tiempo">3. Intervalo de tiempo</a></li>
@@ -1028,13 +1069,13 @@ v(t) = v_0 - gt
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-media">Aceleración media</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-instantanea">Aceleración instantánea</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniforme-mru">8. Movimiento rectilíneo uniforme (MRU)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion">Ecuación de posición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniformemente-acelerado-mrua">9. Movimiento rectilíneo uniformemente acelerado (MRUA)</a><ul class="nav section-nav flex-column">
@@ -1044,7 +1085,7 @@ v(t) = v_0 - gt
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-velocidad-y-posicion">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-graficas-y-movimiento">10. Relación entre gráficas y movimiento</a><ul class="nav section-nav flex-column">
@@ -1057,7 +1098,7 @@ v(t) = v_0 - gt
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-eje-positivo-apunta-hacia-arriba">Si el eje positivo apunta hacia arriba</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion">Posición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Relación entre velocidad y posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-tipicos">Casos típicos</a></li>
