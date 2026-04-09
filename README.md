@@ -51,7 +51,8 @@ Los materiales principales del curso se articulan en cuatro capas:
 
 ### Referencias base
 
-- Universidad Tecnologica Metropolitana, Departamento de Fisica. (2026). *Guias 1 a 8 de Mecanica Clasica*.
+- Universidad Tecnologica Metropolitana (2026), *Guias 1 a 8 de Mecanica Clasica*, Departamento de Fisica. (2026).
+- Amigo, Nicolas (2025), *Guias 1 a 8 de Mecanica Clasica*, Universidad Tecnologica Metropolitana (2026), Departamento de Fisica.
 - Serway, Raymond A. (2004). Física. Tomo I, Madrid, España: Mc Graw Hill.
 - Tipler Paul A.(1999). Física. Volumen I. Barcelona, España: Reverte. +
 - Alonso & Finn. (1992). Física. Volumen I, México: Fondo Educacional Internacional
