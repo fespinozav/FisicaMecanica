@@ -486,7 +486,7 @@ $$
 
 ```{figure} ../images/lv_up.png
 ---
-width: 95%
+width: 60%
 name: lv_up
 ---
 Ejemplo de lanzamiento vertical hacia arriba [^vishubcode.com]
