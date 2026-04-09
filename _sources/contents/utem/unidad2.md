@@ -228,6 +228,16 @@ $$
 
 En una gráfica de posición versus tiempo, la velocidad instantánea corresponde a la pendiente de la recta tangente a la curva en un punto.
 
+```{figure} ../images/vt.png
+---
+width: 60%
+name: vt
+---
+Interpretación de la derivada de la velocidad instantánea
+```
+
+
+
 ---
 
 ## 7. Aceleración media e instantánea
@@ -362,7 +372,9 @@ El análisis gráfico es fundamental en cinemática.
 
 - el área bajo la curva representa el cambio de velocidad.
 
-Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [^MIT-OpenCourseWare_4]
+
+[^MIT-OpenCourseWare_4]:https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com
 
 ---
 
@@ -445,9 +457,7 @@ Y en sentido inverso:
 - la posición puede obtenerse integrando la velocidad;
 - la velocidad puede obtenerse integrando la aceleración.
 
-Esto conecta la cinemática con las herramientas fundamentales del cálculo. [^MIT-OpenCourseWare_8]
-
-[^MIT-OpenCourseWare_8]:(https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+Esto conecta la cinemática con las herramientas fundamentales del cálculo. [^MIT-OpenCourseWare_4]
 
 ---
 

@@ -422,8 +422,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caida-libre">11. Caída libre</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-eje-positivo-apunta-hacia-arriba">Si el eje positivo apunta hacia arriba</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Posición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Relación entre velocidad y posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-tipicos">Casos típicos</a></li>
@@ -654,6 +654,13 @@ v(t) = \frac{dx}{dt}
 <section id="interpretacion-grafica">
 <h3>Interpretación gráfica<a class="headerlink" href="#interpretacion-grafica" title="Link to this heading">#</a></h3>
 <p>En una gráfica de posición versus tiempo, la velocidad instantánea corresponde a la pendiente de la recta tangente a la curva en un punto.</p>
+<figure class="align-default" id="vt">
+<a class="reference internal image-reference" href="../../_images/vt.png"><img alt="../../_images/vt.png" src="../../_images/vt.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 17 </span><span class="caption-text">Interpretación de la derivada de la velocidad instantánea</span><a class="headerlink" href="#vt" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <hr class="docutils" />
@@ -802,7 +809,7 @@ v^2 = v_0^2 + 2a(x - x_0)
 <ul class="simple">
 <li><p>el área bajo la curva representa el cambio de velocidad.</p></li>
 </ul>
-<p>Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  <a class="reference external" href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com">MIT OpenCourseWare</a></p>
+<p>Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  <a class="footnote-reference brackets" href="#mit-opencourseware-4" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -829,15 +836,15 @@ a = -g
 v(t) = v_0 - gt
 \]</div>
 </section>
-<section id="id5">
-<h4>Posición<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<section id="id6">
+<h4>Posición<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
 y(t) = y_0 + v_0 t - \frac{1}{2}gt^2
 \]</div>
 </section>
-<section id="id6">
-<h4>Relación entre velocidad y posición<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<section id="id7">
+<h4>Relación entre velocidad y posición<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
 v^2 = v_0^2 - 2g(y - y_0)
@@ -885,7 +892,7 @@ a(t) = \frac{dv}{dt}
 <li><p>la posición puede obtenerse integrando la velocidad;</p></li>
 <li><p>la velocidad puede obtenerse integrando la aceleración.</p></li>
 </ul>
-<p>Esto conecta la cinemática con las herramientas fundamentales del cálculo. <a class="footnote-reference brackets" href="#mit-opencourseware-8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Esto conecta la cinemática con las herramientas fundamentales del cálculo. <a class="footnote-reference brackets" href="#mit-opencourseware-4" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </section>
 <hr class="docutils" />
 <section id="aplicaciones-tipicas">
@@ -992,9 +999,10 @@ v(t) = v_0 - gt
 </ul>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="mit-opencourseware-8" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>(<a class="reference external" href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com">https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com</a>)</p>
+<aside class="footnote brackets" id="mit-opencourseware-4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id5">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p><a class="reference external" href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com">https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com</a></p>
 </aside>
 </aside>
 </section>
@@ -1129,8 +1137,8 @@ v(t) = v_0 - gt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caida-libre">11. Caída libre</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-eje-positivo-apunta-hacia-arriba">Si el eje positivo apunta hacia arriba</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Posición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Relación entre velocidad y posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Posición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-tipicos">Casos típicos</a></li>
