@@ -173,8 +173,8 @@ Ejemplo:
 
 Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vuelve a $x = 5 \text{ m}$:
 
-- distancia recorrida $(\Delta \vec{x})$: $6 + 3 = 9 \text{ m}$
-- desplazamiento $(\Delta x)$: $5 - 2 = 3 \text{ m}$
+- distancia recorrida $(\Delta x)$: $6 + 3 = 9 \text{ m}$
+- desplazamiento $(\Delta \vec{x})$: $5 - 2 = 3 \text{ m}$
 
 ---
 
