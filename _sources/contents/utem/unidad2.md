@@ -423,16 +423,16 @@ El análisis gráfico es fundamental en cinemática.
 
 ### En una gráfica posición-tiempo
 
-- la pendiente representa la velocidad.
+- La pendiente representa la **velocidad**.
 
 ### En una gráfica velocidad-tiempo
 
-- la pendiente representa la aceleración;
-- el área bajo la curva representa el desplazamiento.
+- La pendiente representa la **aceleración**;
+- El área bajo la curva representa el **desplazamiento**.
 
 ### En una gráfica aceleración-tiempo
 
-- el área bajo la curva representa el cambio de velocidad.
+- El área bajo la curva representa el cambio de velocidad.
 
 Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [^MIT-OpenCourseWare_4]
 
@@ -480,9 +480,19 @@ $$
 
 ### Casos típicos
 
-- objeto que se deja caer: $v_0 = 0$
-- lanzamiento vertical hacia arriba;
-- lanzamiento vertical hacia abajo.
+- Objeto que se deja caer: $v_0 = 0$
+- Lanzamiento vertical hacia arriba;
+- Lanzamiento vertical hacia abajo.
+
+```{figure} ../images/lv_up.png
+---
+width: 95%
+name: lv_up
+---
+Ejemplo de lanzamiento vertical hacia arriba
+```
+
+
 
 ---
 
@@ -527,12 +537,12 @@ Esto conecta la cinemática con las herramientas fundamentales del cálculo. [^M
 
 Los modelos de cinemática en una dimensión permiten resolver problemas como:
 
-- encuentro entre móviles;
-- frenado de un automóvil;
-- aceleración desde el reposo;
-- caída de objetos;
-- lanzamiento vertical;
-- cálculo de tiempo, desplazamiento y velocidad final.
+- encuentro entre móviles
+- Frenado de un automóvil
+- Aceleración desde el reposo
+- Caída de objetos
+- Lanzamiento vertical
+- Cálculo de tiempo, desplazamiento y velocidad final.
 
 ---
 
@@ -540,16 +550,16 @@ Los modelos de cinemática en una dimensión permiten resolver problemas como:
 
 En esta unidad se introdujeron las magnitudes fundamentales para describir el movimiento en una dimensión:
 
-- posición;
-- desplazamiento;
-- distancia recorrida;
-- velocidad media e instantánea;
-- aceleración media e instantánea.
+- Posición
+- Desplazamiento
+- Distancia recorrida
+- Velocidad media e instantánea
+- Aceleración media e instantánea.
 
 También se estudiaron dos modelos fundamentales:
 
-- movimiento rectilíneo uniforme;
-- movimiento rectilíneo uniformemente acelerado.
+- Movimiento rectilíneo uniforme
+- Movimiento rectilíneo uniformemente acelerado.
 
 Finalmente, se abordó la caída libre como una aplicación directa del MRUA.
 
