@@ -289,7 +289,41 @@ width: 60%
 name: at
 ---
 Interpretación de derivada del vector de velocidad respecto al tiempo o $(a_t)$
+
 ```
+
+---
+
+### Ejemplo:
+
+```{figure} ../images/cinematica1d.png
+---
+width: 95%
+name: cienmatica1d
+---
+Movimiento de un vehiculo modelado como una partícula
+```
+
+**{numref}`cienmatica1d`**: Un vehículo va hacia adelante a lo largo de una línea recta, ya que nos interesa sólo el movimiento traslacional del automóvil, se le modela como una partícula. Se pueden varias representaciones para la información del movimiento del automóvil. Como una representación pictórica del movimiento del automóvil (arriba); una representación tabular de su posición y tiempo *(abajo a la izq.)*, y una representación gráfica *(posición vs tiempo)* del movimiento del automóvil *(abajo a la derecha)*.
+
+**Calcule:**
+
+<ol type="a">
+  <li>Posición de la partícula en el punto B y en el punto C</li>
+  <li>Distancia recorrida de la partícula desde A a B, desde B a C, dese C a D y desde A a D.</li>
+  <li>Desplazamiento desde A hasta B</li>
+  <li>Rapidez media desde B a C</li>
+  <li>Velocidad media desde A a D</li>
+</ol>
+
+**Desarrollo**
+
+
+a. $d_B= 120\vec{i}$ y $d_B=180\vec{i}$  
+b. ${d_AB}= 60m, d_{BC}=60m, d_{CD}=60m, d_{AD}=180m$  
+c. $\Delta \vec{d_{AB}}=\vec{r_A}-\vec{r_B} = 60\vec{i}m$  
+d. $\vec{v_{BC}}=\frac{d_{BC}}{\Delta t} = \frac{60}{180-120} = 1 \frac{m}{s}$  
+e. $\vec{v_{AD}}=\frac{d_{AD}}{\Delta t} = \frac{180}{19} = 9,47 \vec{j} \frac{m}{s}$  
 
 ---
 
@@ -299,31 +333,43 @@ Un movimiento rectilíneo uniforme ocurre cuando la velocidad es constante.
 
 ### Características
 
-- trayectoria recta;
-- velocidad constante;
-- aceleración nula.
+- Trayectoria recta.
+- Velocidad constante.
+- Aceleración nula.
 
 $$
 a = 0
 $$
 
-### Ecuación de posición
+### Ecuación de posición **(Ecuación itinerario)**
 
 $$
-x(t) = x_0 + vt
+x(t) = x_0 + v (t - t_0)
 $$
 
 donde:
 
-- $x_0$ es la posición inicial;
-- $v$ es la velocidad constante;
-- $t$ es el tiempo.
+- $x_0$ es la posición inicial de la partícula
+- $v$ es su velocidad
+- $t_0$ es el tiempo inicial
+
+```{figure} ../images/mru.png
+---
+width: 95%
+name: mru
+---
+Gráficos de movimiento MRU
+```
+
+
 
 ### Interpretación gráfica
 
-- gráfica $x$ vs $t$: una recta;
-- gráfica $v$ vs $t$: una línea horizontal;
-- gráfica $a$ vs $t$: una línea sobre cero.
+- Gráfica $x$ vs $t$: una recta;
+- Gráfica $v$ vs $t$: una línea horizontal;
+- Gráfica $a$ vs $t$: una línea sobre cero.
+
+
 
 ---
 
@@ -337,23 +383,31 @@ $$
 
 ### Ecuaciones fundamentales
 
+#### Posición en función del tiempo **(Ecuación itinerario)**
+
+$$
+x(t) = x_i+ v_i t + \frac{1}{2}a \Delta t^2
+$$
+
 #### Velocidad en función del tiempo
 
 $$
-v(t) = v_0 + at
-$$
-
-#### Posición en función del tiempo
-
-$$
-x(t) = x_0 + v_0 t + \frac{1}{2}at^2
+v(t) = v_i + a \Delta t
 $$
 
 #### Relación entre velocidad y posición
 
 $$
-v^2 = v_0^2 + 2a(x - x_0)
+v^2 = v_i^2 + 2a(x - x_i)
 $$
+
+```{figure} ../images/mrua.png
+---
+width: 95%
+name: mrua
+---
+Gráficos de movimiento MRUA
+```
 
 ### Interpretación gráfica
 

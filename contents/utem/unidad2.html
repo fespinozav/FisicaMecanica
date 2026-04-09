@@ -395,18 +395,19 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-instantanea">Aceleración instantánea</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniforme-mru">8. Movimiento rectilíneo uniforme (MRU)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion">Ecuación de posición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion-ecuacion-itinerario">Ecuación de posición <strong>(Ecuación itinerario)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniformemente-acelerado-mrua">9. Movimiento rectilíneo uniformemente acelerado (MRUA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-fundamentales">Ecuaciones fundamentales</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-en-funcion-del-tiempo-ecuacion-itinerario">Posición en función del tiempo <strong>(Ecuación itinerario)</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-en-funcion-del-tiempo">Velocidad en función del tiempo</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-en-funcion-del-tiempo">Posición en función del tiempo</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-velocidad-y-posicion">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
@@ -714,6 +715,32 @@ a(t) = \frac{d^2x}{dt^2}
 </figcaption>
 </figure>
 </section>
+<hr class="docutils" />
+<section id="ejemplo">
+<h3>Ejemplo:<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="cienmatica1d">
+<a class="reference internal image-reference" href="../../_images/cinematica1d.png"><img alt="../../_images/cinematica1d.png" src="../../_images/cinematica1d.png" style="width: 95%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 19 </span><span class="caption-text">Movimiento de un vehiculo modelado como una partícula</span><a class="headerlink" href="#cienmatica1d" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong><a class="reference internal" href="#cienmatica1d"><span class="std std-numref">Figura 19</span></a></strong>: Un vehículo va hacia adelante a lo largo de una línea recta, ya que nos interesa sólo el movimiento traslacional del automóvil, se le modela como una partícula. Se pueden varias representaciones para la información del movimiento del automóvil. Como una representación pictórica del movimiento del automóvil (arriba); una representación tabular de su posición y tiempo <em>(abajo a la izq.)</em>, y una representación gráfica <em>(posición vs tiempo)</em> del movimiento del automóvil <em>(abajo a la derecha)</em>.</p>
+<p><strong>Calcule:</strong></p>
+<ol type="a">
+  <li>Posición de la partícula en el punto B y en el punto C</li>
+  <li>Distancia recorrida de la partícula desde A a B, desde B a C, dese C a D y desde A a D.</li>
+  <li>Desplazamiento desde A hasta B</li>
+  <li>Rapidez media desde B a C</li>
+  <li>Velocidad media desde A a D</li>
+</ol>
+<p><strong>Desarrollo</strong></p>
+<p>a. <span class="math notranslate nohighlight">\(d_B= 120\vec{i}\)</span> y <span class="math notranslate nohighlight">\(d_B=180\vec{i}\)</span><br />
+b. <span class="math notranslate nohighlight">\({d_AB}= 60m, d_{BC}=60m, d_{CD}=60m, d_{AD}=180m\)</span><br />
+c. <span class="math notranslate nohighlight">\(\Delta \vec{d_{AB}}=\vec{r_A}-\vec{r_B} = 60\vec{i}m\)</span><br />
+d. <span class="math notranslate nohighlight">\(\vec{v_{BC}}=\frac{d_{BC}}{\Delta t} = \frac{60}{180-120} = 1 \frac{m}{s}\)</span><br />
+e. <span class="math notranslate nohighlight">\(\vec{v_{AD}}=\frac{d_{AD}}{\Delta t} = \frac{180}{19} = 9,47 \vec{j} \frac{m}{s}\)</span></p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="movimiento-rectilineo-uniforme-mru">
@@ -722,34 +749,41 @@ a(t) = \frac{d^2x}{dt^2}
 <section id="caracteristicas">
 <h3>Características<a class="headerlink" href="#caracteristicas" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>trayectoria recta;</p></li>
-<li><p>velocidad constante;</p></li>
-<li><p>aceleración nula.</p></li>
+<li><p>Trayectoria recta.</p></li>
+<li><p>Velocidad constante.</p></li>
+<li><p>Aceleración nula.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
 a = 0
 \]</div>
 </section>
-<section id="ecuacion-de-posicion">
-<h3>Ecuación de posición<a class="headerlink" href="#ecuacion-de-posicion" title="Link to this heading">#</a></h3>
+<section id="ecuacion-de-posicion-ecuacion-itinerario">
+<h3>Ecuación de posición <strong>(Ecuación itinerario)</strong><a class="headerlink" href="#ecuacion-de-posicion-ecuacion-itinerario" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
-x(t) = x_0 + vt
+x(t) = x_0 + v (t - t_0)
 \]</div>
 <p>donde:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x_0\)</span> es la posición inicial;</p></li>
-<li><p><span class="math notranslate nohighlight">\(v\)</span> es la velocidad constante;</p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span> es el tiempo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_0\)</span> es la posición inicial de la partícula</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> es su velocidad</p></li>
+<li><p><span class="math notranslate nohighlight">\(t_0\)</span> es el tiempo inicial</p></li>
 </ul>
+<figure class="align-default" id="mru">
+<a class="reference internal image-reference" href="../../_images/mru.png"><img alt="../../_images/mru.png" src="../../_images/mru.png" style="width: 95%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 20 </span><span class="caption-text">Gráficos de movimiento MRU</span><a class="headerlink" href="#mru" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="id3">
 <h3>Interpretación gráfica<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>gráfica <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una recta;</p></li>
-<li><p>gráfica <span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una línea horizontal;</p></li>
-<li><p>gráfica <span class="math notranslate nohighlight">\(a\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una línea sobre cero.</p></li>
+<li><p>Gráfica <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una recta;</p></li>
+<li><p>Gráfica <span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una línea horizontal;</p></li>
+<li><p>Gráfica <span class="math notranslate nohighlight">\(a\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>: una línea sobre cero.</p></li>
 </ul>
 </section>
 </section>
@@ -763,26 +797,33 @@ a = \text{constante}
 \]</div>
 <section id="ecuaciones-fundamentales">
 <h3>Ecuaciones fundamentales<a class="headerlink" href="#ecuaciones-fundamentales" title="Link to this heading">#</a></h3>
+<section id="posicion-en-funcion-del-tiempo-ecuacion-itinerario">
+<h4>Posición en función del tiempo <strong>(Ecuación itinerario)</strong><a class="headerlink" href="#posicion-en-funcion-del-tiempo-ecuacion-itinerario" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_i+ v_i t + \frac{1}{2}a \Delta t^2
+\]</div>
+</section>
 <section id="velocidad-en-funcion-del-tiempo">
 <h4>Velocidad en función del tiempo<a class="headerlink" href="#velocidad-en-funcion-del-tiempo" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
-v(t) = v_0 + at
-\]</div>
-</section>
-<section id="posicion-en-funcion-del-tiempo">
-<h4>Posición en función del tiempo<a class="headerlink" href="#posicion-en-funcion-del-tiempo" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[
-x(t) = x_0 + v_0 t + \frac{1}{2}at^2
+v(t) = v_i + a \Delta t
 \]</div>
 </section>
 <section id="relacion-entre-velocidad-y-posicion">
 <h4>Relación entre velocidad y posición<a class="headerlink" href="#relacion-entre-velocidad-y-posicion" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
-v^2 = v_0^2 + 2a(x - x_0)
+v^2 = v_i^2 + 2a(x - x_i)
 \]</div>
+<figure class="align-default" id="mrua">
+<a class="reference internal image-reference" href="../../_images/mrua.png"><img alt="../../_images/mrua.png" src="../../_images/mrua.png" style="width: 95%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 21 </span><span class="caption-text">Gráficos de movimiento MRUA</span><a class="headerlink" href="#mrua" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="id4">
@@ -1117,18 +1158,19 @@ v(t) = v_0 - gt
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aceleracion-instantanea">Aceleración instantánea</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Interpretación gráfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniforme-mru">8. Movimiento rectilíneo uniforme (MRU)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion">Ecuación de posición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuacion-de-posicion-ecuacion-itinerario">Ecuación de posición <strong>(Ecuación itinerario)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretación gráfica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo-uniformemente-acelerado-mrua">9. Movimiento rectilíneo uniformemente acelerado (MRUA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-fundamentales">Ecuaciones fundamentales</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-en-funcion-del-tiempo-ecuacion-itinerario">Posición en función del tiempo <strong>(Ecuación itinerario)</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-en-funcion-del-tiempo">Velocidad en función del tiempo</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-en-funcion-del-tiempo">Posición en función del tiempo</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-velocidad-y-posicion">Relación entre velocidad y posición</a></li>
 </ul>
 </li>
