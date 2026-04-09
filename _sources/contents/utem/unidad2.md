@@ -450,7 +450,7 @@ $$
 g \approx 9.8 \text{ m/s}^2
 $$
 
-### Si el eje positivo apunta hacia arriba
+#### Si el eje positivo apunta hacia arriba
 
 Entonces:
 
