@@ -247,12 +247,12 @@ Se representa gráficamente por una flecha.
 - La orientación representa la dirección.
 - La punta indica el sentido.
 
-```{figure} ../images/vector_A.png
+```{figure} ../images/vector_AB.png
 ---
 width: 60%
-name: vector_a
+name: vector_AB
 ---
-Vector A, desde el punto a, al punto b
+Vector AB, desde el punto A, al punto B
 
 ```
 
