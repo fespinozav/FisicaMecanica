@@ -489,9 +489,9 @@ $$
 width: 95%
 name: lv_up
 ---
-Ejemplo de lanzamiento vertical hacia arriba
+Ejemplo de lanzamiento vertical hacia arriba [^vishubcode.com]
 ```
-
+[^vishubcode.com]: https://vishubcode.org/webappscode/655/el_lanzamiento_vertical_hacia_arriba.html
 
 
 ---
