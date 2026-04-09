@@ -233,7 +233,7 @@ En una gráfica de posición versus tiempo, la velocidad instantánea correspond
 width: 60%
 name: vt
 ---
-Interpretación de la derivada de la velocidad instantánea
+Interpretación de derivada del vector de posición respecto al tiempo o $(v_t)$
 ```
 
 
@@ -281,7 +281,15 @@ $$
 
 ### Interpretación gráfica
 
-En una gráfica velocidad versus tiempo, la aceleración corresponde a la pendiente.
+En una gráfica **velocidad versus tiempo**, la aceleración corresponde a la **pendiente**.
+
+```{figure} ../images/at.png
+---
+width: 60%
+name: at
+---
+Interpretación de derivada del vector de velocidad respecto al tiempo o $(a_t)$
+```
 
 ---
 
