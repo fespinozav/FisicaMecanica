@@ -518,6 +518,8 @@ $$
 \theta_{^\circ} = \theta_{\text{rad}} \cdot \frac{180}{\pi}
 $$
 
+---
+
 ```{figure} ../images/G1.png
 ---
 width: 40%
