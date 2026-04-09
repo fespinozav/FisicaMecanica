@@ -31,7 +31,8 @@ Diagrama de un sistema cartesiano de una dimensión
 
 La cinemática estudia el movimiento de los cuerpos sin considerar las fuerzas que lo producen.
 
-En esta unidad se modela al cuerpo como una **partícula**, es decir, como un objeto cuyas dimensiones son despreciables respecto de las distancias involucradas en el problema.
+En esta unidad se modela al cuerpo como una **partícula**, decimos que un cuerpo (persona, objeto, planeta, etc.) se comporta como una partícula cuando sus
+dimensiones son pequeñas comparadas con otras dimensiones que intervienen en el problema.
 
 Para describir el movimiento se requiere:
 
@@ -41,7 +42,6 @@ Para describir el movimiento se requiere:
 - Una variable de tiempo.
 
 En una dimensión, el movimiento ocurre a lo largo de una recta, generalmente representada por el eje $x$.
-
 
 
 ---
@@ -66,6 +66,56 @@ Esto significa que la posición depende del tiempo.
 
 La posición no indica cuánto recorrió el móvil, sino solo dónde se encuentra en un instante.
 
+### Sistema de referencia
+
+Definimos un sistema de referencia como un sistema de coordenadas respecto del cual estudiamos un movimiento de un cuerpo. Este puede ser "Inercial" o "No Inercial".
+
+Un sistema de referencia, es **inercial** cuando el observador se encuentra en reposo o se mueve con velocidad constante respecto al objeto estudiado.
+
+```{figure} ../images/obs1.png
+---
+width: 80%
+name: Obs1
+---
+Observador mirando un vehiculo en movimiento
+```
+
+Por otro lado, un sistema de referencia, es **No inercial**, cuando el observador se encuentra en aceleración respecto al objeto bajo estudio.
+
+```{figure} ../images/obs3.png
+---
+width: 80%
+name: Obs3
+---
+Observador dentro de un vehículo en movimiento
+```
+En este curso siempre utilizaremos sistema de referencia **inerciales** descritos mediante un sistema de coordenadas cartesiano. El observador no se representa.
+
+#### Trayectoria
+
+La trayectoria se define como la curva que describe una partícula cuando se mueve en el espacio.
+
+```{figure} ../images/trayectoria.png
+---
+width: 60%
+name: trayectoria
+---
+Trayectoría de un mariposa en el sistema de coordenadas cartesiano
+```
+
+#### Posición
+
+la posición se define como el vector que une el origen del sistema de referencia, con un punto sobre la trayectoria en un tiempo determinado. Su unidad de medida en el S.I. es el metro.
+
+```{figure} ../images/posicion.png
+---
+width: 70%
+name: Pos
+---
+Posición de un cohete con su vector representativo
+```
+
+
 ---
 
 ## 3. Intervalo de tiempo
@@ -81,7 +131,7 @@ $$
 \Delta t = t_f - t_i
 $$
 
-La unidad SI del tiempo es el segundo, $s$.
+La unidad S.I. del tiempo es el segundo, $s$.
 
 ---
 
@@ -91,20 +141,29 @@ La unidad SI del tiempo es el segundo, $s$.
 
 Es la longitud total del camino efectivamente seguido por la partícula.
 
-Es una magnitud escalar y siempre es positiva o cero.
+Es una magnitud escalar y siempre es positiva o cero. **Es un escalar**. Su unidad de medida en S.I. es el metro. La distancia recorrida siempre es mayor o igual al desplazamiento. Se suele simbolizar por la letra $d$, ya sea minúscula o mayúscula.
 
-### Desplazamiento
+#### Desplazamiento
 
-El desplazamiento representa el cambio de posición entre dos instantes:
+Se define como el **vector** que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:
 
 $$
-\Delta x = x_f - x_i
+\Delta \vec{r} = \vec{r}_f - \vec{r}_i
 $$
 
 donde:
 
-- $x_i$ es la posición inicial;
-- $x_f$ es la posición final.
+- $r_i$ es la posición inicial;
+- $r_f$ es la posición final.
+- $\Delta$ se usa para destacar la diferencia, (resta) entre dos valores.
+
+```{figure} ../images/distrec.png
+---
+width: 60%
+name: distrec
+---
+Desplazamiento de un avión de papel
+```
 
 ### Observación importante
 
@@ -114,8 +173,8 @@ Ejemplo:
 
 Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vuelve a $x = 5 \text{ m}$:
 
-- distancia recorrida: $6 + 3 = 9 \text{ m}$
-- desplazamiento: $5 - 2 = 3 \text{ m}$
+- distancia recorrida $(\Delta x)$: $6 + 3 = 9 \text{ m}$
+- desplazamiento $(\Delta \vec{x})$: $5 - 2 = 3 \text{ m}$
 
 ---
 
@@ -126,20 +185,20 @@ Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vue
 La rapidez media se define como la distancia recorrida dividida por el tiempo transcurrido:
 
 $$
-\text{rapidez media} = \frac{\text{distancia recorrida}}{\Delta t}
+\bar{v} = \frac{d}{\Delta t} = \frac{d}{t_f - t_i}
 $$
 
-Es una magnitud escalar.
+Es una magnitud **escalar**.
 
 ### Velocidad media
 
 La velocidad media se define como el desplazamiento dividido por el intervalo de tiempo:
 
 $$
-\bar{v} = \frac{\Delta x}{\Delta t}
+\vec{v_m} = \frac{\Delta \vec{r}}{\Delta t}
 $$
 
-Es una magnitud vectorial en 1D, por lo que su signo indica el sentido del movimiento.
+Es un **vector**, por lo que su signo indica el sentido del movimiento. Su unidad de medida en el S.I. es m/s.
 
 ### Interpretación del signo
 
@@ -168,6 +227,16 @@ $$
 ### Interpretación gráfica
 
 En una gráfica de posición versus tiempo, la velocidad instantánea corresponde a la pendiente de la recta tangente a la curva en un punto.
+
+```{figure} ../images/vt.png
+---
+width: 60%
+name: vt
+---
+Interpretación de derivada del vector de posición respecto al tiempo o $(v_t)$
+```
+
+
 
 ---
 
@@ -212,7 +281,15 @@ $$
 
 ### Interpretación gráfica
 
-En una gráfica velocidad versus tiempo, la aceleración corresponde a la pendiente.
+En una gráfica **velocidad versus tiempo**, la aceleración corresponde a la **pendiente**.
+
+```{figure} ../images/at.png
+---
+width: 60%
+name: at
+---
+Interpretación de derivada del vector de velocidad respecto al tiempo o $(a_t)$
+```
 
 ---
 
@@ -303,7 +380,9 @@ El análisis gráfico es fundamental en cinemática.
 
 - el área bajo la curva representa el cambio de velocidad.
 
-Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+Estas relaciones son una idea central en el tratamiento moderno de la cinemática.  [^MIT-OpenCourseWare_4]
+
+[^MIT-OpenCourseWare_4]:https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com
 
 ---
 
@@ -370,8 +449,8 @@ Por ejemplo:
 
 En el enfoque formal de la cinemática:
 
-- la velocidad es la derivada de la posición;
-- la aceleración es la derivada de la velocidad.
+- la velocidad es la **derivada** de la **posición**;
+- la aceleración es la **derivada** de la **velocidad**.
 
 $$
 v(t) = \frac{dx}{dt}
@@ -386,7 +465,7 @@ Y en sentido inverso:
 - la posición puede obtenerse integrando la velocidad;
 - la velocidad puede obtenerse integrando la aceleración.
 
-Esto conecta la cinemática con las herramientas fundamentales del cálculo.  [oai_citation:2‡MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+Esto conecta la cinemática con las herramientas fundamentales del cálculo. [^MIT-OpenCourseWare_4]
 
 ---
 
