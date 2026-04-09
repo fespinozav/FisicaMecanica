@@ -322,7 +322,7 @@ Si ambos vectores parten del mismo punto, la diagonal del paralelogramo formado 
 ```{figure} ../images/suma_de_vectores2.png
 ---
 width: 60%
-name: suma_vect
+name: suma_vect2
 ---
 Suma de los vectores A y B
 
