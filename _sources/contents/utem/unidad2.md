@@ -145,7 +145,7 @@ Es una magnitud escalar y siempre es positiva o cero. **Es un escalar**. Su unid
 
 #### Desplazamiento
 
-Se define como el vector que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:
+Se define como el **vector** que une dos puntos sobre la trayectoria, en un intervalo de tiempo. Su unidad de medida en el S.I. es el metro. Analíticamente el desplazamiento se obtiene como:
 
 $$
 \Delta \vec{r} = \vec{r}_f - \vec{r}_i
@@ -429,8 +429,8 @@ Por ejemplo:
 
 En el enfoque formal de la cinemática:
 
-- la velocidad es la derivada de la posición;
-- la aceleración es la derivada de la velocidad.
+- la velocidad es la **derivada** de la **posición**;
+- la aceleración es la **derivada** de la **velocidad**.
 
 $$
 v(t) = \frac{dx}{dt}
@@ -445,7 +445,9 @@ Y en sentido inverso:
 - la posición puede obtenerse integrando la velocidad;
 - la velocidad puede obtenerse integrando la aceleración.
 
-Esto conecta la cinemática con las herramientas fundamentales del cálculo.  [oai_citation:2‡MIT OpenCourseWare](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
+Esto conecta la cinemática con las herramientas fundamentales del cálculo. [^MIT-OpenCourseWare_8]
+
+[^MIT-OpenCourseWare_8]:(https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter4.pdf?utm_source=chatgpt.com)
 
 ---
 
