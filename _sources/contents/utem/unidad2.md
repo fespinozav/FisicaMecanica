@@ -493,6 +493,184 @@ Ejemplo de lanzamiento vertical hacia arriba [^vishubcode.com]
 ```
 [^vishubcode.com]: https://vishubcode.org/webappscode/655/el_lanzamiento_vertical_hacia_arriba.html
 
+### Ejercicio resuelto
+
+#### Tiro vertical hacia arriba
+
+Una pelota es lanzada verticalmente hacia arriba desde el suelo con velocidad inicial:
+
+$$
+v_0 = 19.6\ \text{m/s}
+$$
+
+Se desprecia la resistencia del aire y se considera:
+
+$$
+g = 9.8\ \text{m/s}^2
+$$
+
+---
+
+#### Enunciado
+
+Calcular:
+
+1. Tiempo hasta la altura máxima  
+2. Altura máxima  
+3. Tiempo total de vuelo  
+4. Velocidad al regresar al suelo  
+5. Posición y velocidad en $t = 1\ \text{s}$  
+
+---
+
+#### Solución
+
+##### Paso 1: Ecuaciones del movimiento
+
+$$
+v = v_0 - gt
+$$
+
+$$
+y = v_0 t - \frac{1}{2}gt^2
+$$
+
+$$
+v^2 = v_0^2 - 2gy
+$$
+
+---
+
+##### Paso 2: Tiempo hasta la altura máxima
+
+En la altura máxima:
+
+$$
+v = 0
+$$
+
+Entonces:
+
+$$
+0 = 19.6 - 9.8t
+$$
+
+$$
+t = 2\ \text{s}
+$$
+
+---
+
+##### Paso 3: Altura máxima
+
+$$
+0 = (19.6)^2 - 2(9.8)y
+$$
+
+$$
+y = 19.6\ \text{m}
+$$
+
+---
+
+##### Paso 4: Tiempo total de vuelo
+
+$$
+t_{\text{total}} = 2 \times 2 = 4\ \text{s}
+$$
+
+---
+
+##### Paso 5: Velocidad al regresar al suelo
+
+$$
+v = 19.6 - 9.8(4)
+$$
+
+$$
+v = -19.6\ \text{m/s}
+$$
+
+---
+
+##### Paso 6: Posición y velocidad en $t = 1\ \text{s}$
+
+Posición:
+
+$$
+y = 19.6(1) - \frac{1}{2}(9.8)(1)^2
+$$
+
+$$
+y = 14.7\ \text{m}
+$$
+
+Velocidad:
+
+$$
+v = 19.6 - 9.8(1)
+$$
+
+$$
+v = 9.8\ \text{m/s}
+$$
+
+---
+
+##### Resultado final
+
+$$
+t_{\text{máx}} = 2\ \text{s}
+$$
+
+$$
+h_{\text{máx}} = 19.6\ \text{m}
+$$
+
+$$
+t_{\text{total}} = 4\ \text{s}
+$$
+
+$$
+v_{\text{final}} = -19.6\ \text{m/s}
+$$
+
+$$
+y(1s)=14.7\ \text{m}, \quad v(1s)=9.8\ \text{m/s}
+$$
+
+---
+
+##### Concepto clave
+
+Movimiento rectilíneo uniformemente acelerado (MRUA) en dirección vertical.
+
+---
+
+##### Explicación
+
+- La aceleración es constante:
+  
+  $$
+  a = -g
+  $$
+
+- En el punto más alto:
+
+  $$
+  v = 0
+  $$
+
+- El movimiento es simétrico si el objeto regresa al mismo nivel.
+
+---
+
+##### Ejercicios propuestos
+
+1. Resolver con $v_0 = 30\ \text{m/s}$  
+2. Caída libre desde $50\ \text{m}$  
+3. Tiro vertical desde una altura inicial distinta de cero  
+
 
 ---
 
