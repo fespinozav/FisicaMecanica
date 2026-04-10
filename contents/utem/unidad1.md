@@ -572,6 +572,336 @@ name: coordenadas polares
 ---
 Coordenadas polares
 ```
+---
+## Vectores en 2D y en 3D
+
+A continuación se presentan dos ejercicios resueltos:
+
+1. Operaciones con vectores en **2D**
+2. Operaciones con vectores en **3D**
+
+---
+
+### Ejercicio 1: Vectores en 2D
+
+Sean los vectores:
+
+$$
+\vec{A} = \left( 3, 4 \right)
+$$
+
+$$
+\vec{B} = \left( -1, 2 \right)
+$$
+
+Calcular:
+
+1. La suma $\vec{A} + \vec{B}$
+2. La resta $\vec{A} - \vec{B}$
+3. El módulo de $\vec{A}$
+4. El producto escalar $\vec{A} \cdot \vec{B}$
+
+---
+
+### Solución
+
+#### Paso 1: Suma de vectores
+
+La suma de vectores se realiza componente a componente:
+
+$$
+\vec{A} + \vec{B} = \left( 3,4 \right) + \left( -1,2 \right)
+$$
+
+$$
+\vec{A} + \vec{B} = \left( 3 + (-1),\ 4 + 2 \right)
+$$
+
+$$
+\vec{A} + \vec{B} = \left( 2,6 \right)
+$$
+
+---
+
+#### Paso 2: Resta de vectores
+
+La resta también se realiza componente a componente:
+
+$$
+\vec{A} - \vec{B} = \left( 3,4 \right) - \left( -1,2 \right)
+$$
+
+$$
+\vec{A} - \vec{B} = \left( 3 - (-1),\ 4 - 2 \right)
+$$
+
+$$
+\vec{A} - \vec{B} = \left( 4,2 \right)
+$$
+
+---
+
+#### Paso 3: Módulo de $\vec{A}$
+
+El módulo de un vector en 2D se calcula con:
+
+$$
+|\vec{A}| = \sqrt{x^2 + y^2}
+$$
+
+Sustituyendo los valores de $\vec{A} = \left( 3,4 \right)$:
+
+$$
+|\vec{A}| = \sqrt{3^2 + 4^2}
+$$
+
+$$
+|\vec{A}| = \sqrt{9 + 16}
+$$
+
+$$
+|\vec{A}| = \sqrt{25}
+$$
+
+$$
+|\vec{A}| = 5
+$$
+
+---
+
+#### Paso 4: Producto escalar
+
+El producto escalar entre dos vectores en 2D es:
+
+$$
+\vec{A} \cdot \vec{B} = A_xB_x + A_yB_y
+$$
+
+Sustituyendo:
+
+$$
+\vec{A} \cdot \vec{B} = (3)(-1) + (4)(2)
+$$
+
+$$
+\vec{A} \cdot \vec{B} = -3 + 8
+$$
+
+$$
+\vec{A} \cdot \vec{B} = 5
+$$
+
+---
+
+### Resultado final del ejercicio 2D
+
+$$
+\vec{A} + \vec{B} = \left( 2,6 \right)
+$$
+
+$$
+\vec{A} - \vec{B} = \left( 4,2 \right)
+$$
+
+$$
+|\vec{A}| = 5
+$$
+
+$$
+\vec{A} \cdot \vec{B} = 5
+$$
+
+---
+
+#### Concepto clave
+
+Un vector en 2D se representa mediante dos componentes, una en el eje $x$ y otra en el eje $y$.
+
+---
+
+### Explicación
+
+En dos dimensiones, un vector se escribe como:
+
+$$
+\vec{v} = \left( x,y \right)
+$$
+
+Las operaciones básicas son:
+
+- **Suma**: se suman las componentes correspondientes
+- **Resta**: se restan las componentes correspondientes
+- **Módulo**: representa la longitud del vector
+- **Producto escalar**: mide la relación entre dos vectores y puede usarse para encontrar ángulos o verificar perpendicularidad
+
+---
+
+## Ejercicio 2: Vectores en 3D
+
+Sean los vectores:
+
+$$
+\vec{U} = \left( 2,-1,3 \right)
+$$
+
+$$
+\vec{V} = \left( 1,4,-2 \right)
+$$
+
+Calcular:
+
+1. La suma $\vec{U} + \vec{V}$
+2. La resta $\vec{U} - \vec{V}$
+3. El módulo de $\vec{U}$
+4. El producto escalar $\vec{U} \cdot \vec{V}$
+
+---
+
+### Solución
+
+#### Paso 1: Suma de vectores
+
+Se suman las tres componentes:
+
+$$
+\vec{U} + \vec{V} = \left( 2,-1,3 \right) + \left( 1,4,-2 \right)
+$$
+
+$$
+\vec{U} + \vec{V} = \left( 2+1,\ -1+4,\ 3+(-2) \right)
+$$
+
+$$
+\vec{U} + \vec{V} = \left( 3,3,1 \right)
+$$
+
+---
+
+#### Paso 2: Resta de vectores
+
+Se restan las componentes correspondientes:
+
+$$
+\vec{U} - \vec{V} = \left( 2,-1,3 \right) - \left( 1,4,-2 \right)
+$$
+
+$$
+\vec{U} - \vec{V} = \left( 2-1,\ -1-4,\ 3-(-2) \right)
+$$
+
+$$
+\vec{U} - \vec{V} = \left( 1,-5,5 \right)
+$$
+
+---
+
+#### Paso 3: Módulo de $\vec{U}$
+
+El módulo de un vector en 3D se calcula como:
+
+$$
+|\vec{U}| = \sqrt{x^2 + y^2 + z^2}
+$$
+
+Sustituyendo:
+
+$$
+|\vec{U}| = \sqrt{2^2 + (-1)^2 + 3^2}
+$$
+
+$$
+|\vec{U}| = \sqrt{4 + 1 + 9}
+$$
+
+$$
+|\vec{U}| = \sqrt{14}
+$$
+
+---
+
+#### Paso 4: Producto escalar
+
+El producto escalar en 3D es:
+
+$$
+\vec{U} \cdot \vec{V} = U_xV_x + U_yV_y + U_zV_z
+$$
+
+Sustituyendo:
+
+$$
+\vec{U} \cdot \vec{V} = (2)(1) + (-1)(4) + (3)(-2)
+$$
+
+$$
+\vec{U} \cdot \vec{V} = 2 - 4 - 6
+$$
+
+$$
+\vec{U} \cdot \vec{V} = -8
+$$
+
+---
+
+### Resultado final del ejercicio 3D
+
+$$
+\vec{U} + \vec{V} = \left( 3,3,1 \right)
+$$
+
+$$
+\vec{U} - \vec{V} = \left( 1,-5,5 \right)
+$$
+
+$$
+|\vec{U}| = \sqrt{14}
+$$
+
+$$
+\vec{U} \cdot \vec{V} = -8
+$$
+
+---
+
+### Concepto clave
+
+Un vector en 3D se representa mediante tres componentes: una en $x$, una en $y$ y una en $z$.
+
+---
+
+### Explicación
+
+En tres dimensiones, un vector se expresa como:
+
+$$
+\vec{v} = \left( x,y,z \right)
+$$
+
+Las operaciones funcionan de forma similar al caso 2D, pero ahora hay una tercera componente.
+
+El módulo en 3D indica la longitud espacial del vector:
+
+$$
+|\vec{v}| = \sqrt{x^2+y^2+z^2}
+$$
+
+El producto escalar sirve para relacionar dos vectores y se define como:
+
+$$
+\vec{u}\cdot\vec{v} = u_xv_x + u_yv_y + u_zv_z
+$$
+
+Si el producto escalar es cero, entonces los vectores son perpendiculares.
+
+---
+
+### Ejercicios propuestos
+
+1. Calcular la suma y el módulo de dos vectores en 2D: $\left( 5,-2 \right)$ y $\left( -3,7 \right)$
+2. Hallar el producto escalar de $\left( 1,2,3 \right)$ y $\left( 4,-1,2 \right)$
+3. Verificar si dos vectores en 3D son perpendiculares usando el producto escalar
+
+---
 
 ### Ejemplo: suma de vectores en coordenadas polares
 

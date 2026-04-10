@@ -6,8 +6,8 @@ En esta unidad se estudia el movimiento de una partícula en dos dimensiones. A 
 
 Se abordarán dos casos fundamentales:
 
-- el movimiento parabólico;
-- el movimiento circunferencial.
+- El movimiento parabólico;
+- El movimiento circunferencial.
 
 ## Objetivo de aprendizaje
 
