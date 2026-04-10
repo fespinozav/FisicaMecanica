@@ -493,6 +493,8 @@ Ejemplo de lanzamiento vertical hacia arriba [^vishubcode.com]
 ```
 [^vishubcode.com]: https://vishubcode.org/webappscode/655/el_lanzamiento_vertical_hacia_arriba.html
 
+---
+
 ### Ejercicio resuelto
 
 #### Tiro vertical hacia arriba

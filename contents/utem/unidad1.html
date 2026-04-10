@@ -423,6 +423,14 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-vectores">16. Descomposición de vectores</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radianes">Radianes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-polares">Coordenadas polares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-suma-de-vectores-en-coordenadas-polares">Ejemplo: suma de vectores en coordenadas polares</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-convertir-cada-vector-a-coordenadas-cartesianas">Paso 1: convertir cada vector a coordenadas cartesianas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-sumar-las-componentes-cartesianas">Paso 2: sumar las componentes cartesianas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-convertir-el-resultado-a-coordenadas-polares">Paso 3: convertir el resultado a coordenadas polares</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado-final">Resultado final</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-en-2d-y-en-3d">Vectores en 2D y en 3D</a><ul class="nav section-nav flex-column">
@@ -453,14 +461,18 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Concepto clave</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Explicación</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-propuestos">Ejercicios propuestos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-suma-de-vectores-en-coordenadas-polares">Ejemplo: suma de vectores en coordenadas polares</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-convertir-cada-vector-a-coordenadas-cartesianas">Paso 1: convertir cada vector a coordenadas cartesianas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-sumar-las-componentes-cartesianas">Paso 2: sumar las componentes cartesianas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-convertir-el-resultado-a-coordenadas-polares">Paso 3: convertir el resultado a coordenadas polares</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado-final">Resultado final</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-resueltos-de-producto-cruz-de-vectores">Ejercicios resueltos de producto cruz de vectores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-producto-cruz-en-2d">Ejercicio 1: Producto cruz en 2D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Solución</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitud-del-producto-cruz">Magnitud del producto cruz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#respuesta-final-del-ejercicio-1">Respuesta final del ejercicio 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-producto-cruz-en-3d">Ejercicio 2: Producto cruz en 3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Solución</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Magnitud del producto cruz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Interpretación física</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#respuesta-final-del-ejercicio-2">Respuesta final del ejercicio 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observacion-general">Observación general</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-basicas-en-fisica">17. Aplicaciones básicas en física</a></li>
@@ -1237,6 +1249,109 @@ A = \sqrt{A_x^2 + A_y^2}
 </figcaption>
 </figure>
 </section>
+<hr class="docutils" />
+<section id="ejemplo-suma-de-vectores-en-coordenadas-polares">
+<h3>Ejemplo: suma de vectores en coordenadas polares<a class="headerlink" href="#ejemplo-suma-de-vectores-en-coordenadas-polares" title="Link to this heading">#</a></h3>
+<p>Supongamos que queremos sumar los siguientes dos vectores:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{A} = (10,\ 30^\circ)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{B} = (8,\ 120^\circ)
+\]</div>
+<p>donde la primera componente representa la magnitud y la segunda el ángulo medido desde el eje <span class="math notranslate nohighlight">\(x\)</span> positivo.</p>
+<section id="paso-1-convertir-cada-vector-a-coordenadas-cartesianas">
+<h4>Paso 1: convertir cada vector a coordenadas cartesianas<a class="headerlink" href="#paso-1-convertir-cada-vector-a-coordenadas-cartesianas" title="Link to this heading">#</a></h4>
+<p>Para el vector <span class="math notranslate nohighlight">\(\vec{A}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+A_x = 10 \cos 30^\circ = 10 \left(\frac{\sqrt{3}}{2}\right) \approx 8.66
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A_y = 10 \sin 30^\circ = 10 \left(\frac{1}{2}\right) = 5
+\]</div>
+<p>Por lo tanto,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{A} \approx 8.66 \hat{i} + 5 \hat{j}
+\]</div>
+<p>Para el vector <span class="math notranslate nohighlight">\(\vec{B}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+B_x = 8 \cos 120^\circ = 8 \left(-\frac{1}{2}\right) = -4
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+B_y = 8 \sin 120^\circ = 8 \left(\frac{\sqrt{3}}{2}\right) \approx 6.93
+\]</div>
+<p>Por lo tanto,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{B} \approx -4 \hat{i} + 6.93 \hat{j}
+\]</div>
+</section>
+<section id="paso-2-sumar-las-componentes-cartesianas">
+<h4>Paso 2: sumar las componentes cartesianas<a class="headerlink" href="#paso-2-sumar-las-componentes-cartesianas" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+R_x = A_x + B_x = 8.66 + (-4) = 4.66
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_y = A_y + B_y = 5 + 6.93 = 11.93
+\]</div>
+<p>Entonces el vector resultante es:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{R} \approx 4.66 \hat{i} + 11.93 \hat{j}
+\]</div>
+</section>
+<section id="paso-3-convertir-el-resultado-a-coordenadas-polares">
+<h4>Paso 3: convertir el resultado a coordenadas polares<a class="headerlink" href="#paso-3-convertir-el-resultado-a-coordenadas-polares" title="Link to this heading">#</a></h4>
+<p>La magnitud del vector resultante es:</p>
+<div class="math notranslate nohighlight">
+\[
+R = \sqrt{R_x^2 + R_y^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R = \sqrt{(4.66)^2 + (11.93)^2} \approx \sqrt{21.72 + 142.32} \approx \sqrt{164.04} \approx 12.81
+\]</div>
+<p>El ángulo del vector resultante es:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = \tan^{-1}\left(\frac{R_y}{R_x}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\theta = \tan^{-1}\left(\frac{11.93}{4.66}\right) \approx 68.7^\circ
+\]</div>
+</section>
+<section id="resultado-final">
+<h4>Resultado final<a class="headerlink" href="#resultado-final" title="Link to this heading">#</a></h4>
+<p>La suma de los vectores es aproximadamente:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{R} = (12.81,\ 68.7^\circ)
+\]</div>
+</section>
+<section id="conclusion">
+<h4>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h4>
+<p>Para sumar vectores dados en coordenadas polares, normalmente se sigue este procedimiento:</p>
+<ol class="arabic simple">
+<li><p>convertir cada vector a coordenadas cartesianas;</p></li>
+<li><p>sumar las componentes en <span class="math notranslate nohighlight">\(x\)</span> y en <span class="math notranslate nohighlight">\(y\)</span>;</p></li>
+<li><p>convertir el resultado nuevamente a coordenadas polares, si se desea expresar así.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Los vectores no se suman directamente en forma polar componente a componente como sí ocurre en forma cartesiana. Por eso casi siempre se pasa primero a <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</div>
+</section>
+</section>
 </section>
 <hr class="docutils" />
 <section id="vectores-en-2d-y-en-3d">
@@ -1549,107 +1664,303 @@ A = \sqrt{A_x^2 + A_y^2}
 </ol>
 </section>
 <hr class="docutils" />
-<section id="ejemplo-suma-de-vectores-en-coordenadas-polares">
-<h3>Ejemplo: suma de vectores en coordenadas polares<a class="headerlink" href="#ejemplo-suma-de-vectores-en-coordenadas-polares" title="Link to this heading">#</a></h3>
-<p>Supongamos que queremos sumar los siguientes dos vectores:</p>
+<section id="ejercicios-resueltos-de-producto-cruz-de-vectores">
+<h3>Ejercicios resueltos de producto cruz de vectores<a class="headerlink" href="#ejercicios-resueltos-de-producto-cruz-de-vectores" title="Link to this heading">#</a></h3>
+</section>
+<section id="ejercicio-1-producto-cruz-en-2d">
+<h3>Ejercicio 1: Producto cruz en 2D<a class="headerlink" href="#ejercicio-1-producto-cruz-en-2d" title="Link to this heading">#</a></h3>
+<p>Dados los vectores</p>
 <div class="math notranslate nohighlight">
 \[
-\vec{A} = (10,\ 30^\circ)
+\vec{A} = \left(3,-2\right), 
+\qquad
+\vec{B} = \left(1,4\right)
 \]</div>
+<p>como el producto cruz se define en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, los escribimos como</p>
 <div class="math notranslate nohighlight">
 \[
-\vec{B} = (8,\ 120^\circ)
+\vec{A} = \left(3,-2,0\right), 
+\qquad
+\vec{B} = \left(1,4,0\right)
 \]</div>
-<p>donde la primera componente representa la magnitud y la segunda el ángulo medido desde el eje <span class="math notranslate nohighlight">\(x\)</span> positivo.</p>
-<section id="paso-1-convertir-cada-vector-a-coordenadas-cartesianas">
-<h4>Paso 1: convertir cada vector a coordenadas cartesianas<a class="headerlink" href="#paso-1-convertir-cada-vector-a-coordenadas-cartesianas" title="Link to this heading">#</a></h4>
-<p>Para el vector <span class="math notranslate nohighlight">\(\vec{A}\)</span>:</p>
+<p>Calcular:</p>
 <div class="math notranslate nohighlight">
 \[
-A_x = 10 \cos 30^\circ = 10 \left(\frac{\sqrt{3}}{2}\right) \approx 8.66
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A_y = 10 \sin 30^\circ = 10 \left(\frac{1}{2}\right) = 5
-\]</div>
-<p>Por lo tanto,</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{A} \approx 8.66 \hat{i} + 5 \hat{j}
-\]</div>
-<p>Para el vector <span class="math notranslate nohighlight">\(\vec{B}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-B_x = 8 \cos 120^\circ = 8 \left(-\frac{1}{2}\right) = -4
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-B_y = 8 \sin 120^\circ = 8 \left(\frac{\sqrt{3}}{2}\right) \approx 6.93
-\]</div>
-<p>Por lo tanto,</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{B} \approx -4 \hat{i} + 6.93 \hat{j}
+\vec{A}\times\vec{B}
 \]</div>
 </section>
-<section id="paso-2-sumar-las-componentes-cartesianas">
-<h4>Paso 2: sumar las componentes cartesianas<a class="headerlink" href="#paso-2-sumar-las-componentes-cartesianas" title="Link to this heading">#</a></h4>
+<section id="id9">
+<h3>Solución<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Usamos el determinante:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{A}\times\vec{B}
+=
+\left|
+\begin{array}{ccc}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+3 &amp; -2 &amp; 0 \\
+1 &amp; 4 &amp; 0
+\end{array}
+\right|
+\end{split}\]</div>
+<p>Desarrollando por la primera fila:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{A}\times\vec{B}
+=
+\hat{i}
+\left|
+\begin{array}{cc}
+-2 &amp; 0 \\
+4 &amp; 0
+\end{array}
+\right|
+-
+\hat{j}
+\left|
+\begin{array}{cc}
+3 &amp; 0 \\
+1 &amp; 0
+\end{array}
+\right|
++
+\hat{k}
+\left|
+\begin{array}{cc}
+3 &amp; -2 \\
+1 &amp; 4
+\end{array}
+\right|
+\end{split}\]</div>
+<p>Calculamos cada menor:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left|
+\begin{array}{cc}
+-2 &amp; 0 \\
+4 &amp; 0
+\end{array}
+\right|
+= (-2)(0) - (0)(4) = 0
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left|
+\begin{array}{cc}
+3 &amp; 0 \\
+1 &amp; 0
+\end{array}
+\right|
+= (3)(0) - (0)(1) = 0
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left|
+\begin{array}{cc}
+3 &amp; -2 \\
+1 &amp; 4
+\end{array}
+\right|
+= (3)(4) - (-2)(1) = 12 + 2 = 14
+\end{split}\]</div>
+<p>Entonces,</p>
 <div class="math notranslate nohighlight">
 \[
-R_x = A_x + B_x = 8.66 + (-4) = 4.66
+\vec{A}\times\vec{B} = 0\hat{i} - 0\hat{j} + 14\hat{k}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-R_y = A_y + B_y = 5 + 6.93 = 11.93
-\]</div>
-<p>Entonces el vector resultante es:</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{R} \approx 4.66 \hat{i} + 11.93 \hat{j}
+\boxed{\vec{A}\times\vec{B} = \left(0,0,14\right)}
 \]</div>
 </section>
-<section id="paso-3-convertir-el-resultado-a-coordenadas-polares">
-<h4>Paso 3: convertir el resultado a coordenadas polares<a class="headerlink" href="#paso-3-convertir-el-resultado-a-coordenadas-polares" title="Link to this heading">#</a></h4>
-<p>La magnitud del vector resultante es:</p>
+<section id="magnitud-del-producto-cruz">
+<h3>Magnitud del producto cruz<a class="headerlink" href="#magnitud-del-producto-cruz" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
-R = \sqrt{R_x^2 + R_y^2}
+\left|\vec{A}\times\vec{B}\right| = \sqrt{0^2+0^2+14^2} = 14
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-R = \sqrt{(4.66)^2 + (11.93)^2} \approx \sqrt{21.72 + 142.32} \approx \sqrt{164.04} \approx 12.81
-\]</div>
-<p>El ángulo del vector resultante es:</p>
-<div class="math notranslate nohighlight">
-\[
-\theta = \tan^{-1}\left(\frac{R_y}{R_x}\right)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\theta = \tan^{-1}\left(\frac{11.93}{4.66}\right) \approx 68.7^\circ
+\boxed{\left|\vec{A}\times\vec{B}\right| = 14}
 \]</div>
 </section>
-<section id="resultado-final">
-<h4>Resultado final<a class="headerlink" href="#resultado-final" title="Link to this heading">#</a></h4>
-<p>La suma de los vectores es aproximadamente:</p>
+<section id="interpretacion-fisica">
+<h3>Interpretación física<a class="headerlink" href="#interpretacion-fisica" title="Link to this heading">#</a></h3>
+<p>En 2D, el producto cruz apunta en la dirección del eje <span class="math notranslate nohighlight">\(z\)</span>, perpendicular al plano <span class="math notranslate nohighlight">\(xy\)</span>. Como el resultado es positivo en <span class="math notranslate nohighlight">\(\hat{k}\)</span>, la dirección es hacia afuera del plano según la regla de la mano derecha.</p>
+<p>La magnitud</p>
 <div class="math notranslate nohighlight">
 \[
-\vec{R} = (12.81,\ 68.7^\circ)
+\left|\vec{A}\times\vec{B}\right| = 14
+\]</div>
+<p>representa el área del paralelogramo formado por <span class="math notranslate nohighlight">\(\vec{A}\)</span> y <span class="math notranslate nohighlight">\(\vec{B}\)</span>.</p>
+</section>
+<section id="respuesta-final-del-ejercicio-1">
+<h3>Respuesta final del ejercicio 1<a class="headerlink" href="#respuesta-final-del-ejercicio-1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\vec{A}\times\vec{B} = \left(0,0,14\right)}
+\qquad
+\boxed{\left|\vec{A}\times\vec{B}\right| = 14}
 \]</div>
 </section>
-<section id="conclusion">
-<h4>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h4>
-<p>Para sumar vectores dados en coordenadas polares, normalmente se sigue este procedimiento:</p>
-<ol class="arabic simple">
-<li><p>convertir cada vector a coordenadas cartesianas;</p></li>
-<li><p>sumar las componentes en <span class="math notranslate nohighlight">\(x\)</span> y en <span class="math notranslate nohighlight">\(y\)</span>;</p></li>
-<li><p>convertir el resultado nuevamente a coordenadas polares, si se desea expresar así.</p></li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Truco</p>
-<p>Los vectores no se suman directamente en forma polar componente a componente como sí ocurre en forma cartesiana. Por eso casi siempre se pasa primero a <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>.</p>
-</div>
+<hr class="docutils" />
+<section id="ejercicio-2-producto-cruz-en-3d">
+<h3>Ejercicio 2: Producto cruz en 3D<a class="headerlink" href="#ejercicio-2-producto-cruz-en-3d" title="Link to this heading">#</a></h3>
+<p>Dados los vectores</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{P} = \left(2,-1,3\right), 
+\qquad
+\vec{Q} = \left(-4,2,1\right)
+\]</div>
+<p>Calcular:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{P}\times\vec{Q}
+\]</div>
 </section>
+<section id="id10">
+<h3>Solución<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Usamos la definición por determinante:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{P}\times\vec{Q}
+=
+\left|
+\begin{array}{ccc}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+2 &amp; -1 &amp; 3 \\
+-4 &amp; 2 &amp; 1
+\end{array}
+\right|
+\end{split}\]</div>
+<p>Desarrollamos por la primera fila:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{P}\times\vec{Q}
+=
+\hat{i}
+\left|
+\begin{array}{cc}
+-1 &amp; 3 \\
+2 &amp; 1
+\end{array}
+\right|
+-
+\hat{j}
+\left|
+\begin{array}{cc}
+2 &amp; 3 \\
+-4 &amp; 1
+\end{array}
+\right|
++
+\hat{k}
+\left|
+\begin{array}{cc}
+2 &amp; -1 \\
+-4 &amp; 2
+\end{array}
+\right|
+\end{split}\]</div>
+<p>Calculamos cada menor:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left|
+\begin{array}{cc}
+-1 &amp; 3 \\
+2 &amp; 1
+\end{array}
+\right|
+= (-1)(1) - (3)(2) = -1 - 6 = -7
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left|
+\begin{array}{cc}
+2 &amp; 3 \\
+-4 &amp; 1
+\end{array}
+\right|
+= (2)(1) - (3)(-4) = 2 + 12 = 14
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left|
+\begin{array}{cc}
+2 &amp; -1 \\
+-4 &amp; 2
+\end{array}
+\right|
+= (2)(2) - (-1)(-4) = 4 - 4 = 0
+\end{split}\]</div>
+<p>Sustituyendo:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{P}\times\vec{Q} = -7\hat{i} - 14\hat{j} + 0\hat{k}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\vec{P}\times\vec{Q} = \left(-7,-14,0\right)}
+\]</div>
+</section>
+<section id="id11">
+<h3>Magnitud del producto cruz<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\left|\vec{P}\times\vec{Q}\right|
+=
+\sqrt{(-7)^2+(-14)^2+0^2}
+=
+\sqrt{49+196}
+=
+\sqrt{245}
+=
+7\sqrt{5}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\left|\vec{P}\times\vec{Q}\right| = 7\sqrt{5}}
+\]</div>
+</section>
+<section id="id12">
+<h3>Interpretación física<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>El vector <span class="math notranslate nohighlight">\(\vec{P}\times\vec{Q}\)</span> es perpendicular tanto a <span class="math notranslate nohighlight">\(\vec{P}\)</span> como a <span class="math notranslate nohighlight">\(\vec{Q}\)</span>.</p>
+<p>Su magnitud</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\vec{P}\times\vec{Q}\right| = 7\sqrt{5}
+\]</div>
+<p>representa el área del paralelogramo formado por los vectores <span class="math notranslate nohighlight">\(\vec{P}\)</span> y <span class="math notranslate nohighlight">\(\vec{Q}\)</span>.</p>
+<p>Por tanto, el área es</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{A = 7\sqrt{5}}
+\]</div>
+</section>
+<section id="respuesta-final-del-ejercicio-2">
+<h3>Respuesta final del ejercicio 2<a class="headerlink" href="#respuesta-final-del-ejercicio-2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\vec{P}\times\vec{Q} = \left(-7,-14,0\right)}
+\qquad
+\boxed{\left|\vec{P}\times\vec{Q}\right| = 7\sqrt{5}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="observacion-general">
+<h3>Observación general<a class="headerlink" href="#observacion-general" title="Link to this heading">#</a></h3>
+<p>Si dos vectores son <span class="math notranslate nohighlight">\(\vec{u}\)</span> y <span class="math notranslate nohighlight">\(\vec{v}\)</span>, entonces</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\vec{u}\times\vec{v}\right| = |\vec{u}|\,|\vec{v}|\,\sin\theta
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo entre ellos. Este resultado es muy importante en física mecánica, por ejemplo en el cálculo del torque:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{\tau} = \vec{r}\times\vec{F}
+\]</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -1865,6 +2176,14 @@ R = \sqrt{(4.66)^2 + (11.93)^2} \approx \sqrt{21.72 + 142.32} \approx \sqrt{164.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-vectores">16. Descomposición de vectores</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radianes">Radianes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-polares">Coordenadas polares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-suma-de-vectores-en-coordenadas-polares">Ejemplo: suma de vectores en coordenadas polares</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-convertir-cada-vector-a-coordenadas-cartesianas">Paso 1: convertir cada vector a coordenadas cartesianas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-sumar-las-componentes-cartesianas">Paso 2: sumar las componentes cartesianas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-convertir-el-resultado-a-coordenadas-polares">Paso 3: convertir el resultado a coordenadas polares</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado-final">Resultado final</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores-en-2d-y-en-3d">Vectores en 2D y en 3D</a><ul class="nav section-nav flex-column">
@@ -1895,14 +2214,18 @@ R = \sqrt{(4.66)^2 + (11.93)^2} \approx \sqrt{21.72 + 142.32} \approx \sqrt{164.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Concepto clave</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Explicación</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-propuestos">Ejercicios propuestos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-suma-de-vectores-en-coordenadas-polares">Ejemplo: suma de vectores en coordenadas polares</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-convertir-cada-vector-a-coordenadas-cartesianas">Paso 1: convertir cada vector a coordenadas cartesianas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-sumar-las-componentes-cartesianas">Paso 2: sumar las componentes cartesianas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-convertir-el-resultado-a-coordenadas-polares">Paso 3: convertir el resultado a coordenadas polares</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado-final">Resultado final</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-resueltos-de-producto-cruz-de-vectores">Ejercicios resueltos de producto cruz de vectores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-producto-cruz-en-2d">Ejercicio 1: Producto cruz en 2D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Solución</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitud-del-producto-cruz">Magnitud del producto cruz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica">Interpretación física</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#respuesta-final-del-ejercicio-1">Respuesta final del ejercicio 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-producto-cruz-en-3d">Ejercicio 2: Producto cruz en 3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Solución</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Magnitud del producto cruz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Interpretación física</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#respuesta-final-del-ejercicio-2">Respuesta final del ejercicio 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observacion-general">Observación general</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-basicas-en-fisica">17. Aplicaciones básicas en física</a></li>
