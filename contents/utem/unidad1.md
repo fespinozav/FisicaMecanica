@@ -573,6 +573,115 @@ name: coordenadas polares
 Coordenadas polares
 ```
 ---
+
+### Ejemplo: suma de vectores en coordenadas polares
+
+Supongamos que queremos sumar los siguientes dos vectores:
+
+$$
+\vec{A} = (10,\ 30^\circ)
+$$
+
+$$
+\vec{B} = (8,\ 120^\circ)
+$$
+
+donde la primera componente representa la magnitud y la segunda el ángulo medido desde el eje $x$ positivo.
+
+#### Paso 1: convertir cada vector a coordenadas cartesianas
+
+Para el vector $\vec{A}$:
+
+$$
+A_x = 10 \cos 30^\circ = 10 \left(\frac{\sqrt{3}}{2}\right) \approx 8.66
+$$
+
+$$
+A_y = 10 \sin 30^\circ = 10 \left(\frac{1}{2}\right) = 5
+$$
+
+Por lo tanto,
+
+$$
+\vec{A} \approx 8.66 \hat{i} + 5 \hat{j}
+$$
+
+Para el vector $\vec{B}$:
+
+$$
+B_x = 8 \cos 120^\circ = 8 \left(-\frac{1}{2}\right) = -4
+$$
+
+$$
+B_y = 8 \sin 120^\circ = 8 \left(\frac{\sqrt{3}}{2}\right) \approx 6.93
+$$
+
+Por lo tanto,
+
+$$
+\vec{B} \approx -4 \hat{i} + 6.93 \hat{j}
+$$
+
+#### Paso 2: sumar las componentes cartesianas
+
+$$
+R_x = A_x + B_x = 8.66 + (-4) = 4.66
+$$
+
+$$
+R_y = A_y + B_y = 5 + 6.93 = 11.93
+$$
+
+Entonces el vector resultante es:
+
+$$
+\vec{R} \approx 4.66 \hat{i} + 11.93 \hat{j}
+$$
+
+#### Paso 3: convertir el resultado a coordenadas polares
+
+La magnitud del vector resultante es:
+
+$$
+R = \sqrt{R_x^2 + R_y^2}
+$$
+
+$$
+R = \sqrt{(4.66)^2 + (11.93)^2} \approx \sqrt{21.72 + 142.32} \approx \sqrt{164.04} \approx 12.81
+$$
+
+El ángulo del vector resultante es:
+
+$$
+\theta = \tan^{-1}\left(\frac{R_y}{R_x}\right)
+$$
+
+$$
+\theta = \tan^{-1}\left(\frac{11.93}{4.66}\right) \approx 68.7^\circ
+$$
+
+#### Resultado final
+
+La suma de los vectores es aproximadamente:
+
+$$
+\vec{R} = (12.81,\ 68.7^\circ)
+$$
+
+#### Conclusión
+
+Para sumar vectores dados en coordenadas polares, normalmente se sigue este procedimiento:
+
+1. convertir cada vector a coordenadas cartesianas;
+2. sumar las componentes en $x$ y en $y$;
+3. convertir el resultado nuevamente a coordenadas polares, si se desea expresar así.
+
+```{tip}
+Los vectores no se suman directamente en forma polar componente a componente como sí ocurre en forma cartesiana. Por eso casi siempre se pasa primero a $x$ e $y$.
+```
+
+---
+
 ## Vectores en 2D y en 3D
 
 A continuación se presentan dos ejercicios resueltos:
@@ -903,112 +1012,315 @@ Si el producto escalar es cero, entonces los vectores son perpendiculares.
 
 ---
 
-### Ejemplo: suma de vectores en coordenadas polares
+### Ejercicios resueltos de producto cruz de vectores
 
-Supongamos que queremos sumar los siguientes dos vectores:
+### Ejercicio 1: Producto cruz en 2D
 
-$$
-\vec{A} = (10,\ 30^\circ)
-$$
+Dados los vectores
 
 $$
-\vec{B} = (8,\ 120^\circ)
+\vec{A} = \left(3,-2\right), 
+\qquad
+\vec{B} = \left(1,4\right)
 $$
 
-donde la primera componente representa la magnitud y la segunda el ángulo medido desde el eje $x$ positivo.
-
-#### Paso 1: convertir cada vector a coordenadas cartesianas
-
-Para el vector $\vec{A}$:
+como el producto cruz se define en $\mathbb{R}^3$, los escribimos como
 
 $$
-A_x = 10 \cos 30^\circ = 10 \left(\frac{\sqrt{3}}{2}\right) \approx 8.66
+\vec{A} = \left(3,-2,0\right), 
+\qquad
+\vec{B} = \left(1,4,0\right)
+$$
+
+Calcular:
+
+$$
+\vec{A}\times\vec{B}
+$$
+
+### Solución
+
+Usamos el determinante:
+
+$$
+\vec{A}\times\vec{B}
+=
+\left|
+\begin{array}{ccc}
+\hat{i} & \hat{j} & \hat{k} \\
+3 & -2 & 0 \\
+1 & 4 & 0
+\end{array}
+\right|
+$$
+
+Desarrollando por la primera fila:
+
+$$
+\vec{A}\times\vec{B}
+=
+\hat{i}
+\left|
+\begin{array}{cc}
+-2 & 0 \\
+4 & 0
+\end{array}
+\right|
+-
+\hat{j}
+\left|
+\begin{array}{cc}
+3 & 0 \\
+1 & 0
+\end{array}
+\right|
++
+\hat{k}
+\left|
+\begin{array}{cc}
+3 & -2 \\
+1 & 4
+\end{array}
+\right|
+$$
+
+Calculamos cada menor:
+
+$$
+\left|
+\begin{array}{cc}
+-2 & 0 \\
+4 & 0
+\end{array}
+\right|
+= (-2)(0) - (0)(4) = 0
 $$
 
 $$
-A_y = 10 \sin 30^\circ = 10 \left(\frac{1}{2}\right) = 5
-$$
-
-Por lo tanto,
-
-$$
-\vec{A} \approx 8.66 \hat{i} + 5 \hat{j}
-$$
-
-Para el vector $\vec{B}$:
-
-$$
-B_x = 8 \cos 120^\circ = 8 \left(-\frac{1}{2}\right) = -4
+\left|
+\begin{array}{cc}
+3 & 0 \\
+1 & 0
+\end{array}
+\right|
+= (3)(0) - (0)(1) = 0
 $$
 
 $$
-B_y = 8 \sin 120^\circ = 8 \left(\frac{\sqrt{3}}{2}\right) \approx 6.93
+\left|
+\begin{array}{cc}
+3 & -2 \\
+1 & 4
+\end{array}
+\right|
+= (3)(4) - (-2)(1) = 12 + 2 = 14
 $$
 
-Por lo tanto,
+Entonces,
 
 $$
-\vec{B} \approx -4 \hat{i} + 6.93 \hat{j}
-$$
-
-#### Paso 2: sumar las componentes cartesianas
-
-$$
-R_x = A_x + B_x = 8.66 + (-4) = 4.66
-$$
-
-$$
-R_y = A_y + B_y = 5 + 6.93 = 11.93
-$$
-
-Entonces el vector resultante es:
-
-$$
-\vec{R} \approx 4.66 \hat{i} + 11.93 \hat{j}
-$$
-
-#### Paso 3: convertir el resultado a coordenadas polares
-
-La magnitud del vector resultante es:
-
-$$
-R = \sqrt{R_x^2 + R_y^2}
+\vec{A}\times\vec{B} = 0\hat{i} - 0\hat{j} + 14\hat{k}
 $$
 
 $$
-R = \sqrt{(4.66)^2 + (11.93)^2} \approx \sqrt{21.72 + 142.32} \approx \sqrt{164.04} \approx 12.81
+\boxed{\vec{A}\times\vec{B} = \left(0,0,14\right)}
 $$
 
-El ángulo del vector resultante es:
+### Magnitud del producto cruz
 
 $$
-\theta = \tan^{-1}\left(\frac{R_y}{R_x}\right)
+\left|\vec{A}\times\vec{B}\right| = \sqrt{0^2+0^2+14^2} = 14
 $$
 
 $$
-\theta = \tan^{-1}\left(\frac{11.93}{4.66}\right) \approx 68.7^\circ
+\boxed{\left|\vec{A}\times\vec{B}\right| = 14}
 $$
 
-#### Resultado final
+### Interpretación física
 
-La suma de los vectores es aproximadamente:
+En 2D, el producto cruz apunta en la dirección del eje $z$, perpendicular al plano $xy$. Como el resultado es positivo en $\hat{k}$, la dirección es hacia afuera del plano según la regla de la mano derecha.
+
+La magnitud
 
 $$
-\vec{R} = (12.81,\ 68.7^\circ)
+\left|\vec{A}\times\vec{B}\right| = 14
 $$
 
-#### Conclusión
+representa el área del paralelogramo formado por $\vec{A}$ y $\vec{B}$.
 
-Para sumar vectores dados en coordenadas polares, normalmente se sigue este procedimiento:
+### Respuesta final del ejercicio 1
 
-1. convertir cada vector a coordenadas cartesianas;
-2. sumar las componentes en $x$ y en $y$;
-3. convertir el resultado nuevamente a coordenadas polares, si se desea expresar así.
+$$
+\boxed{\vec{A}\times\vec{B} = \left(0,0,14\right)}
+\qquad
+\boxed{\left|\vec{A}\times\vec{B}\right| = 14}
+$$
 
-```{tip}
-Los vectores no se suman directamente en forma polar componente a componente como sí ocurre en forma cartesiana. Por eso casi siempre se pasa primero a $x$ e $y$.
-```
+---
 
+### Ejercicio 2: Producto cruz en 3D
+
+Dados los vectores
+
+$$
+\vec{P} = \left(2,-1,3\right), 
+\qquad
+\vec{Q} = \left(-4,2,1\right)
+$$
+
+Calcular:
+
+$$
+\vec{P}\times\vec{Q}
+$$
+
+### Solución
+
+Usamos la definición por determinante:
+
+$$
+\vec{P}\times\vec{Q}
+=
+\left|
+\begin{array}{ccc}
+\hat{i} & \hat{j} & \hat{k} \\
+2 & -1 & 3 \\
+-4 & 2 & 1
+\end{array}
+\right|
+$$
+
+Desarrollamos por la primera fila:
+
+$$
+\vec{P}\times\vec{Q}
+=
+\hat{i}
+\left|
+\begin{array}{cc}
+-1 & 3 \\
+2 & 1
+\end{array}
+\right|
+-
+\hat{j}
+\left|
+\begin{array}{cc}
+2 & 3 \\
+-4 & 1
+\end{array}
+\right|
++
+\hat{k}
+\left|
+\begin{array}{cc}
+2 & -1 \\
+-4 & 2
+\end{array}
+\right|
+$$
+
+Calculamos cada menor:
+
+$$
+\left|
+\begin{array}{cc}
+-1 & 3 \\
+2 & 1
+\end{array}
+\right|
+= (-1)(1) - (3)(2) = -1 - 6 = -7
+$$
+
+$$
+\left|
+\begin{array}{cc}
+2 & 3 \\
+-4 & 1
+\end{array}
+\right|
+= (2)(1) - (3)(-4) = 2 + 12 = 14
+$$
+
+$$
+\left|
+\begin{array}{cc}
+2 & -1 \\
+-4 & 2
+\end{array}
+\right|
+= (2)(2) - (-1)(-4) = 4 - 4 = 0
+$$
+
+Sustituyendo:
+
+$$
+\vec{P}\times\vec{Q} = -7\hat{i} - 14\hat{j} + 0\hat{k}
+$$
+
+$$
+\boxed{\vec{P}\times\vec{Q} = \left(-7,-14,0\right)}
+$$
+
+### Magnitud del producto cruz
+
+$$
+\left|\vec{P}\times\vec{Q}\right|
+=
+\sqrt{(-7)^2+(-14)^2+0^2}
+=
+\sqrt{49+196}
+=
+\sqrt{245}
+=
+7\sqrt{5}
+$$
+
+$$
+\boxed{\left|\vec{P}\times\vec{Q}\right| = 7\sqrt{5}}
+$$
+
+### Interpretación física
+
+El vector $\vec{P}\times\vec{Q}$ es perpendicular tanto a $\vec{P}$ como a $\vec{Q}$.
+
+Su magnitud
+
+$$
+\left|\vec{P}\times\vec{Q}\right| = 7\sqrt{5}
+$$
+
+representa el área del paralelogramo formado por los vectores $\vec{P}$ y $\vec{Q}$.
+
+Por tanto, el área es
+
+$$
+\boxed{A = 7\sqrt{5}}
+$$
+
+### Respuesta final del ejercicio 2
+
+$$
+\boxed{\vec{P}\times\vec{Q} = \left(-7,-14,0\right)}
+\qquad
+\boxed{\left|\vec{P}\times\vec{Q}\right| = 7\sqrt{5}}
+$$
+
+---
+
+### Observación general
+
+Si dos vectores son $\vec{u}$ y $\vec{v}$, entonces
+
+$$
+\left|\vec{u}\times\vec{v}\right| = |\vec{u}|\,|\vec{v}|\,\sin\theta
+$$
+
+donde $\theta$ es el ángulo entre ellos. Este resultado es muy importante en física mecánica, por ejemplo en el cálculo del torque:
+
+$$
+\vec{\tau} = \vec{r}\times\vec{F}
+$$
 
 ---
 

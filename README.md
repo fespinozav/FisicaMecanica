@@ -25,14 +25,14 @@ La evaluacion oficial del curso se organiza de la siguiente manera:
 
 | Actividad | Sigla | Ponderacion | Fecha |
 | --- | --- | --- | --- |
-| Control 1 | C1 | 20% | Semana del 20 al 26 de abril de 2026 |
-| Prueba 1 | P1 | 30% | Viernes 15 de mayo de 2026 |
+| Control 1 | C1 | 20% | Viernes 24 de abril de 2026 |
+| Prueba 1 | P1 | 30% | Martes 12 de mayo de 2026 |
 | Semana de autoaprendizaje | - | - | Del 18 al 24 de mayo de 2026 |
-| Control 2 | C2 | 20% | Semana del 8 al 14 de junio de 2026 |
-| Prueba 2 | P2 | 30% | Viernes 3 de julio de 2026 |
-| Prueba recuperativa | - | - | Viernes 10 de julio de 2026 |
+| Control 2 | C2 | 20% | Viernes 12 de junio de 2026 |
+| Prueba 2 | P2 | 30% | Martes 30 de junio de 2026 |
+| Prueba recuperativa | - | - | Martes 7 de julio de 2026 |
 | Termino de clases | - | - | Viernes 17 de julio de 2026 |
-| Examen | - | 40% | Viernes 24 de julio de 2026 |
+| Examen | - | 40% | Martes 21 de julio de 2026 |
 
 Para el trabajo semanal dentro del repositorio, conviene combinar:
 
