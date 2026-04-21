@@ -74,6 +74,14 @@ $$
 
 por lo que las ecuaciones se simplifican.
 
+```{figure} ../images/2d_motion.jpeg
+---
+width: 40%
+name: 2d_motion
+---
+Ejemplo de lanzamiento de cinemática 2D
+```
+
 ---
 
 ## 3. Interpretación física
@@ -92,6 +100,14 @@ Esto permite resolver problemas complejos usando herramientas conocidas de cinem
 El movimiento parabólico es un caso particular de movimiento en dos dimensiones.
 
 Se produce cuando un cuerpo es lanzado con una velocidad inicial que forma un ángulo con la horizontal y luego queda sometido solamente a la aceleración de gravedad.
+
+```{figure} ../images/Moglfm0415_balística.jpg
+---
+width: 40%
+name: balística
+---
+Esquema de la trayectoria del movimiento balístico [Fuente: Wikipedia]
+```
 
 ### Consideraciones del modelo
 
@@ -271,6 +287,15 @@ $$
 $$
 
 Cuando es constante, las ecuaciones del movimiento angular son análogas a las del MRUA lineal.
+
+```{figure} ../images/Moviment_circular.jpg
+---
+width: 40%
+name: circ_mov
+---
+Dirección de magnitudes físicas en una trayectoria circular de radio 1
+[Fuente: Wikipedia]
+```
 
 ---
 
