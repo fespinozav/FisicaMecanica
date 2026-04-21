@@ -173,8 +173,8 @@ Ejemplo:
 
 Si una partícula va desde $x = 2 \text{ m}$ hasta $x = 8 \text{ m}$ y luego vuelve a $x = 5 \text{ m}$:
 
-- distancia recorrida $(\Delta x)$: $6 + 3 = 9 \text{ m}$
-- desplazamiento $(\Delta \vec{x})$: $5 - 2 = 3 \text{ m}$
+- distancia recorrida $(\Delta x)$: $|8-2| + |5-8| = 9 \text{ m}$
+- desplazamiento $(\Delta \vec{x})$: $5\vec(i) - 2\vec(i) = 3 \text{ m} \vec(i)$
 
 ---
 
@@ -320,10 +320,10 @@ Movimiento de un vehiculo modelado como una partícula
 
 
 a. $d_B= 120\vec{i}$ y $d_B=180\vec{i}$  
-b. ${d_AB}= 60m, d_{BC}=60m, d_{CD}=60m, d_{AD}=180m$  
+b. $d_{AB}= 60m, d_{BC}=60m, d_{CD}=60m, d_{AD}=180m$
 c. $\Delta \vec{d_{AB}}=\vec{r_A}-\vec{r_B} = 60\vec{i}m$  
-d. $\vec{v_{BC}}=\frac{d_{BC}}{\Delta t} = \frac{60}{180-120} = 1 \frac{m}{s}$  
-e. $\vec{v_{AD}}=\frac{d_{AD}}{\Delta t} = \frac{180}{19} = 9,47 \vec{j} \frac{m}{s}$  
+d. ${v_{BC}}=\frac{d_{BC}}{\Delta t} = \frac{180-120}{14-12} = 30 \frac{m}{s}$  
+e. $\vec{v_{AD}}=\frac{d_{AD}}{\Delta t} = \frac{240-60}{19-0} = 9,47 \vec{j} \frac{m}{s}$  
 
 ---
 
