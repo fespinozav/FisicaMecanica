@@ -63,7 +63,7 @@ Los materiales principales del curso se articulan en cuatro capas:
 Dentro del book y del repositorio, el recorrido principal queda organizado asi:
 
 - [Introduccion y objetivos del curso](contents/phy321/intro.md)
-- [Programacion oficial del curso](contents/phy321/schedule.md)
+- [Programacion oficial del curso](contents/presentations/PROGRAMACION_MECANICA_CLASICA.pdf)
 - [Fundamentos previos: vectores, coordenadas y operadores basicos](contents/phy321/fundamentos_previos.md)
 - [Unidad 0: Presentacion, reglamentos y politicas](contents/utem/unidad0.md)
 - [Unidad 1: Sistema de unidades, magnitudes y vectores](contents/utem/unidad1.md)
