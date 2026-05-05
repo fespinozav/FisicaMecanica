@@ -242,6 +242,11 @@ Esta es una de las aplicaciones más clásicas de la cinemática bidimensional.
 
 ## 10. Movimiento circunferencial
 
+[![Watch the video](https://www.youtube.com/watch?v=4L2wUfVdkf8)](https://www.youtube.com/watch?v=4L2wUfVdkf8)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4L2wUfVdkf8?si=mskMHthIjGQ0kw-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 Otro caso importante de movimiento bidimensional es el movimiento circunferencial, en el cual la partícula describe una trayectoria circular.
 
 En este tipo de movimiento se introducen magnitudes angulares para describir la posición y la rapidez de giro.
@@ -415,6 +420,18 @@ Se trabajaron dos modelos principales:
 - el movimiento circunferencial, donde aparecen magnitudes angulares y aceleraciones asociadas al cambio de dirección y de rapidez.
 
 Estos contenidos sirven de base para comprender trayectorias más complejas y preparar el estudio posterior de la dinámica.
+
+**Resumen MCU**
+
+- El ángulo barrido entre 2 instantes: $\Delta\theta=\theta_2-\theta_1$
+- El tiempo entre 2 instantes: $\Delta t=t_2-t_1$
+- Velocidad angular media: $\omega_m=\frac{\Delta\theta}{\Delta t}$
+- Ecuación horaria de MCU: $\theta=\theta_i+\omega_i\,t$
+- Relación con velocidad tangencial: $v_T=R\,\omega$
+- Tiempo de 1 ciclo – 1 vuelta: período $T$
+- Frecuencia: $f=\frac{\omega}{2\pi}=\frac{1}{T}$
+- Aceleración centrípeta: $a_C=\frac{v_T^2}{R}=\omega^2 R$
+- Y también: $a_{C} = \frac{4\pi^2 R}{T^2} = 4\pi^2 R f^2$
 
 ---
 
