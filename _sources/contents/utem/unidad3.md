@@ -246,6 +246,14 @@ Otro caso importante de movimiento bidimensional es el movimiento circunferencia
 
 En este tipo de movimiento se introducen magnitudes angulares para describir la posición y la rapidez de giro.
 
+```{figure} ../images/mcu.png
+---
+width: 40%
+name: mcu
+---
+Movimiento Circular Uniforme
+```
+
 ---
 
 ## 11. Arco recorrido y desplazamiento angular
