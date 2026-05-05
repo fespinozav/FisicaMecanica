@@ -242,9 +242,21 @@ Esta es una de las aplicaciones más clásicas de la cinemática bidimensional.
 
 ## 10. Movimiento circunferencial
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4L2wUfVdkf8?si=mskMHthIjGQ0kw-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 Otro caso importante de movimiento bidimensional es el movimiento circunferencial, en el cual la partícula describe una trayectoria circular.
 
 En este tipo de movimiento se introducen magnitudes angulares para describir la posición y la rapidez de giro.
+
+```{figure} ../images/mcu.png
+---
+width: 40%
+name: mcu
+---
+Movimiento Circular Uniforme
+```
 
 ---
 
@@ -407,6 +419,52 @@ Se trabajaron dos modelos principales:
 - el movimiento circunferencial, donde aparecen magnitudes angulares y aceleraciones asociadas al cambio de dirección y de rapidez.
 
 Estos contenidos sirven de base para comprender trayectorias más complejas y preparar el estudio posterior de la dinámica.
+
+**Resumen MCU**
+
+- El ángulo barrido entre 2 instantes: $\Delta\theta=\theta_2-\theta_1$
+- El tiempo entre 2 instantes: $\Delta t=t_2-t_1$
+- Velocidad angular media: $\omega_m=\frac{\Delta\theta}{\Delta t}$
+- Ecuación horaria de MCU: $\theta=\theta_i+\omega_i\,t$
+- Relación con velocidad tangencial: $v_T=R\,\omega$
+- Tiempo de 1 ciclo – 1 vuelta: período $T$
+- Frecuencia: $f=\frac{\omega}{2\pi}=\frac{1}{T}$
+- Aceleración centrípeta: $a_C=\frac{v_T^2}{R}=\omega^2 R$
+- Y también: $a_{C} = \frac{4\pi^2 R}{T^2} = 4\pi^2 R f^2$
+
+---
+
+## Ejercicios
+
+1. Una partícula realiza un movimiento circular con una velocidad angular de 18.85 rad/s. ¿Cuál es el número de revoluciones en 1 minuto?
+
+Los datos conocidos son:
+- $w=18,85rad/s$
+
+Para calcular la frecuencia, empleamos la fórmula ${w=2\pi}f$
+
+Sustituimos los datos conocidos en la fórmula y obtenemos:
+  $$18,85rad/s=(2\pi){rad}f$$
+  $$\frac{18,85rad/f}{2{\pi}{rad}}$$
+  $$3 rev/s=f$$
+  $$\therefore \frac{3rev}{s} *\frac{60s}{1min}=180 \frac{rev}{min}$$
+- El número de revoluciones en un minuto es: 180 $rev/min$
+
+
+2. Un coche gira en una rotonda de 8 m de radio con una velocidad de 50 km/h. Calcula su aceleración centrípeta.
+
+    Cuando un cuerpo cambia su velocidad decimos que tiene aceleración. La velocidad puede cambiar de dos modos:
+    
+    - Cambiando el módulo de la misma (lo rápido que va el cuerpo). Esta aceleración la denominamos lineal.
+    - Cambiando la dirección de la velocidad. Cuando el cuerpo toma una curva o lleva un movimiento circular, cambia la dirección del movimiento. Esta aceleración se llama normal o centrípeta. El cálculo de la misma la llevamos a cabo usando la
+siguiente expresión:
+
+$$a_c=\frac{v^2}{R}$$
+
+Primero cambiamos los Km/h a m/s: $\frac{50km}{1h}\times\frac{1h}{3600s}\times\frac{1000m}{1km}=13,9m/s$
+
+$$\therefore a_c = \frac{v^2}{R}=\frac{13,9^2}{8}=24,11m/s^2$$
+
 
 ---
 
