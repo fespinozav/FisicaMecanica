@@ -435,6 +435,40 @@ Estos contenidos sirven de base para comprender trayectorias más complejas y pr
 
 ---
 
+## Ejercicios
+
+1. Una partícula realiza un movimiento circular con una velocidad angular de 18.85 rad/s. ¿Cuál es el número de revoluciones en 1 minuto?
+
+Los datos conocidos son:
+- $w=18,85rad/s$
+
+Para calcular la frecuencia, empleamos la fórmula ${w=2\pi}f$
+
+Sustituimos los datos conocidos en la fórmula y obtenemos:
+  $$18,85rad/s=(2\pi){rad}f$$
+  $$\frac{18,85rad/f}{2{\pi}{rad}}$$
+  $$3 rev/s=f$$
+  $$\therefore \frac{3rev}{s} *\frac{60s}{1min}=180 \frac{rev}{min}$$
+- El número de revoluciones en un minuto es: 180 $rev/min$
+
+
+2. Un coche gira en una rotonda de 8 m de radio con una velocidad de 50 km/h. Calcula su aceleración centrípeta.
+
+    Cuando un cuerpo cambia su velocidad decimos que tiene aceleración. La velocidad puede cambiar de dos modos:
+    
+    - Cambiando el módulo de la misma (lo rápido que va el cuerpo). Esta aceleración la denominamos lineal.
+    - Cambiando la dirección de la velocidad. Cuando el cuerpo toma una curva o lleva un movimiento circular, cambia la dirección del movimiento. Esta aceleración se llama normal o centrípeta. El cálculo de la misma la llevamos a cabo usando la
+siguiente expresión:
+
+$$a_c=\frac{v^2}{R}$$
+
+Primero cambiamos los Km/h a m/s: $\frac{50km}{1h}\times\frac{1h}{3600s}\times\frac{1000m}{1km}=13,9m/s$
+
+$$\therefore a_c = \frac{v^2}{R}=\frac{13,9^2}{8}=24,11m/s^2$$
+
+
+---
+
 ## Conceptos clave
 
 - cinemática bidimensional
