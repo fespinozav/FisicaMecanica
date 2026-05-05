@@ -242,7 +242,6 @@ Esta es una de las aplicaciones más clásicas de la cinemática bidimensional.
 
 ## 10. Movimiento circunferencial
 
-[![Watch the video](https://www.youtube.com/watch?v=4L2wUfVdkf8)](https://www.youtube.com/watch?v=4L2wUfVdkf8)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4L2wUfVdkf8?si=mskMHthIjGQ0kw-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
