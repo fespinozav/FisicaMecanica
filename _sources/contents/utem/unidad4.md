@@ -127,7 +127,7 @@ Existen fuerzas que no **están descritas por una ley de fuerza previa**. sino q
 
 ```{figure} ../images/contac_forces.png
 ---
-width: 40%
+width: 80%
 name: contact_forces
 ---
 Movimientos restringidos: a) Partícula que se desliza hacia abajo por un plano inclinado, b) Particulas deslizandose hacia abajo por una esfera, c) Moleculas de gas en un espacio cerrado, d) Perla en varilla giratoria
@@ -142,7 +142,7 @@ donde N es la fuerza normal (perpendicular a la superficie) y f es la fuerza de 
 
 ```{figure} ../images/fuerzas_contacto.png
 ---
-width: 40%
+width: 60%
 name: force
 ---
 Bloque descansando en una mano (izq.) Fuerzas que actúan sobre el bloque (der.)
@@ -337,7 +337,7 @@ ii) ¿Cuál es la tensión en la cuerda?
 
 ```{figure} ../images/cart_on_atrack.png
 ---
-width: 40%
+width: 60%
 name: cart
 ---
 Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cuerta. El tensor de fuerza mide la tensión de la cuerda
@@ -346,7 +346,7 @@ Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cue
 
 ```{figure} ../images/dcl.png
 ---
-width: 40%
+width: 60%
 name: dcl1
 ---
 Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del contacto entre las fuerzas horizontales y verticales (componentes)
