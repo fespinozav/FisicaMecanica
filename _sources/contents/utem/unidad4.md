@@ -340,7 +340,7 @@ ii) ¿Cuál es la tensión en la cuerda?
 width: 40%
 name: cart
 ---
-Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cuerta. El tensor de fuerza meide la tensión de la cuerda
+Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cuerta. El tensor de fuerza mide la tensión de la cuerda
 ```
 
 
@@ -355,7 +355,8 @@ Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del 
 
 #### Paso 1 — Identificación del sistema y diagramas de cuerpo libre
 
-```{figure} ../images/ejemplo_8_8_sistema_completo.svg
+
+```{figure} ../images/ejemplo_8_8_sistema_completo.png
 ---
 width: 40%
 name: dcl
