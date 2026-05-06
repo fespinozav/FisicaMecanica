@@ -408,13 +408,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roce-estatico">Roce estático</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roce-cinetico">Roce cinético</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direccion-del-roce">Dirección del roce</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-cuerpo-libre-dcl">Diagrama de Cuerpo Libre (DCL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track">Ejemplo: Carrito sobre una pista (Cart moving on a Track)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre">Paso 1 — Identificación del sistema y diagramas de cuerpo libre</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-segunda-ley-de-newton-sobre-el-carrito">Paso 2 — Segunda Ley de Newton sobre el carrito</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-segunda-ley-de-newton-sobre-el-carrito">Paso 3 — Segunda Ley de Newton sobre el carrito</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerza-elastica-de-un-resorte">11. Fuerza elástica de un resorte</a><ul class="nav section-nav flex-column">
@@ -427,7 +420,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eleccion-del-sistema-de-ejes">13. Elección del sistema de ejes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos">Ejemplos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-ejemplo">Por ejemplo.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-tipicos-de-dinamica">14. Problemas típicos de dinámica</a></li>
@@ -436,8 +429,16 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-eje-vertical">En el eje vertical</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-fuerza-y-movimiento">16. Relación entre fuerza y movimiento</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">17. Síntesis de la unidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-fuerza-y-movimiento">16. Relación entre fuerza y movimiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track">17. Ejemplo: Carrito sobre una pista (Cart moving on a Track)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre">Paso 1 — Identificación del sistema y diagramas de cuerpo libre</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-segunda-ley-de-newton-sobre-el-carrito">Paso 2 — Segunda Ley de Newton sobre el carrito</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-segunda-ley-de-newton-sobre-el-carrito">Paso 3 — Segunda Ley de Newton sobre el carrito</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">18. Síntesis de la unidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
@@ -762,55 +763,6 @@ f_k = \mu_k N
 <h3>Dirección del roce<a class="headerlink" href="#direccion-del-roce" title="Link to this heading">#</a></h3>
 <p>La fricción siempre se opone al movimiento o a la tendencia de movimiento relativo entre superficies.</p>
 </section>
-<section id="diagrama-de-cuerpo-libre-dcl">
-<h3>Diagrama de Cuerpo Libre (DCL)<a class="headerlink" href="#diagrama-de-cuerpo-libre-dcl" title="Link to this heading">#</a></h3>
-</section>
-<section id="ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track">
-<h3>Ejemplo: Carrito sobre una pista (Cart moving on a Track)<a class="headerlink" href="#ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track" title="Link to this heading">#</a></h3>
-<p>Un carrito con un sensor de fuerza (masa total <span class="math notranslate nohighlight">\(m_C\)</span>) se desliza libremente sobre una pista horizontal con coeficiente de fricción cinética <span class="math notranslate nohighlight">\(\mu_k\)</span>​. Una cuerda conecta el sensor a un bloque de masa <span class="math notranslate nohighlight">\(m_B\)</span>​ que cuelga verticalmente a través de una polea. La cuerda y la polea son ideales (sin masa, sin fricción). Al soltar el bloque:</p>
-<p>i) ¿Cuál es la aceleración del sistema?
-ii) ¿Cuál es la tensión en la cuerda?</p>
-<figure class="align-default" id="cart">
-<a class="reference internal image-reference" href="../../_images/cart_on_atrack.png"><img alt="../../_images/cart_on_atrack.png" src="../../_images/cart_on_atrack.png" style="width: 60%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figura 31 </span><span class="caption-text">Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cuerta. El tensor de fuerza mide la tensión de la cuerda</span><a class="headerlink" href="#cart" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="dcl1">
-<a class="reference internal image-reference" href="../../_images/dcl.png"><img alt="../../_images/dcl.png" src="../../_images/dcl.png" style="width: 60%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figura 32 </span><span class="caption-text">Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del contacto entre las fuerzas horizontales y verticales (componentes)</span><a class="headerlink" href="#dcl1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre">
-<h4>Paso 1 — Identificación del sistema y diagramas de cuerpo libre<a class="headerlink" href="#paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre" title="Link to this heading">#</a></h4>
-<figure class="align-default" id="dcl2">
-<a class="reference internal image-reference" href="../../_images/ejemplo_8_8_sistema_completo.png"><img alt="../../_images/ejemplo_8_8_sistema_completo.png" src="../../_images/ejemplo_8_8_sistema_completo.png" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figura 33 </span><span class="caption-text">Escenario físico y diagramas de cuerpo libre</span><a class="headerlink" href="#dcl2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="paso-2-segunda-ley-de-newton-sobre-el-carrito">
-<h4>Paso 2 — Segunda Ley de Newton sobre el carrito<a class="headerlink" href="#paso-2-segunda-ley-de-newton-sobre-el-carrito" title="Link to this heading">#</a></h4>
-<p>Se elige <span class="math notranslate nohighlight">\(\hat{i}\)</span> positivo hacia la derecha y <span class="math notranslate nohighlight">\(\hat{j}\)</span> positivo hacia arriba.</p>
-<p>Dirección <span class="math notranslate nohighlight">\(\hat{j}\)</span>: El carrito no acelera verticalmente (<span class="math notranslate nohighlight">\(a_{c,y}=0\)</span>)</p>
-<div class="math notranslate nohighlight">
-\[N - m_{C}*g = 0 \Rightarrow \boxed{N=m_C * g}\]</div>
-<p>Entonces la fricción cinética vale:</p>
-<div class="math notranslate nohighlight">
-\[f_k=\mu_kN=\mu_k * m_c * g\]</div>
-<p>Dirección <span class="math notranslate nohighlight">\(\hat{i}\)</span>: EL carrito acelera horizontalmente con <span class="math notranslate nohighlight">\(a_{C,x}=a\)</span></p>
-<div class="math notranslate nohighlight">
-\[T-f_k=m_C * a_{C,x} \Rightarrow \boxed{T-\mu_k * m_c * g=m_C * a}\]</div>
-</section>
-<section id="paso-3-segunda-ley-de-newton-sobre-el-carrito">
-<h4>Paso 3 — Segunda Ley de Newton sobre el carrito<a class="headerlink" href="#paso-3-segunda-ley-de-newton-sobre-el-carrito" title="Link to this heading">#</a></h4>
-</section>
-</section>
 </section>
 <hr class="docutils" />
 <section id="fuerza-elastica-de-un-resorte">
@@ -863,8 +815,8 @@ F_x = -kx
 <section id="eleccion-del-sistema-de-ejes">
 <h2>13. Elección del sistema de ejes<a class="headerlink" href="#eleccion-del-sistema-de-ejes" title="Link to this heading">#</a></h2>
 <p>En muchos problemas de dinámica, elegir adecuadamente los ejes facilita enormemente el análisis.</p>
-<section id="ejemplos">
-<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Link to this heading">#</a></h3>
+<section id="por-ejemplo">
+<h3>Por ejemplo.<a class="headerlink" href="#por-ejemplo" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>en superficie horizontal: ejes horizontal y vertical;</p></li>
 <li><p>en plano inclinado: un eje paralelo al plano y otro perpendicular al plano;</p></li>
@@ -934,10 +886,57 @@ F_x = -kx
 <li><p>si apunta perpendicularmente a la velocidad, cambia la dirección del movimiento.</p></li>
 </ul>
 <p>Así, la fuerza neta controla la aceleración y, por tanto, el cambio de movimiento.</p>
+<hr class="docutils" />
+<section id="ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track">
+<h3>17. Ejemplo: Carrito sobre una pista (Cart moving on a Track)<a class="headerlink" href="#ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track" title="Link to this heading">#</a></h3>
+<p>Un carrito con un sensor de fuerza (masa total <span class="math notranslate nohighlight">\(m_C\)</span>) se desliza libremente sobre una pista horizontal con coeficiente de fricción cinética <span class="math notranslate nohighlight">\(\mu_k\)</span>​. Una cuerda conecta el sensor a un bloque de masa <span class="math notranslate nohighlight">\(m_B\)</span>​ que cuelga verticalmente a través de una polea. La cuerda y la polea son ideales (sin masa, sin fricción). Al soltar el bloque:</p>
+<p>i) ¿Cuál es la aceleración del sistema?
+ii) ¿Cuál es la tensión en la cuerda?</p>
+<figure class="align-default" id="cart">
+<a class="reference internal image-reference" href="../../_images/cart_on_atrack.png"><img alt="../../_images/cart_on_atrack.png" src="../../_images/cart_on_atrack.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 31 </span><span class="caption-text">Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cuerta. El tensor de fuerza mide la tensión de la cuerda</span><a class="headerlink" href="#cart" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="dcl1">
+<a class="reference internal image-reference" href="../../_images/dcl.png"><img alt="../../_images/dcl.png" src="../../_images/dcl.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 32 </span><span class="caption-text">Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del contacto entre las fuerzas horizontales y verticales (componentes)</span><a class="headerlink" href="#dcl1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre">
+<h4>Paso 1 — Identificación del sistema y diagramas de cuerpo libre<a class="headerlink" href="#paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre" title="Link to this heading">#</a></h4>
+<figure class="align-default" id="dcl2">
+<a class="reference internal image-reference" href="../../_images/ejemplo_8_8_sistema_completo.png"><img alt="../../_images/ejemplo_8_8_sistema_completo.png" src="../../_images/ejemplo_8_8_sistema_completo.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 33 </span><span class="caption-text">Escenario físico y diagramas de cuerpo libre</span><a class="headerlink" href="#dcl2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="paso-2-segunda-ley-de-newton-sobre-el-carrito">
+<h4>Paso 2 — Segunda Ley de Newton sobre el carrito<a class="headerlink" href="#paso-2-segunda-ley-de-newton-sobre-el-carrito" title="Link to this heading">#</a></h4>
+<p>Se elige <span class="math notranslate nohighlight">\(\hat{i}\)</span> positivo hacia la derecha y <span class="math notranslate nohighlight">\(\hat{j}\)</span> positivo hacia arriba.</p>
+<p>Dirección <span class="math notranslate nohighlight">\(\hat{j}\)</span>: El carrito no acelera verticalmente (<span class="math notranslate nohighlight">\(a_{c,y}=0\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[N - m_{C}*g = 0 \Rightarrow \boxed{N=m_C * g}\]</div>
+<p>Entonces la fricción cinética vale:</p>
+<div class="math notranslate nohighlight">
+\[f_k=\mu_kN=\mu_k * m_c * g\]</div>
+<p>Dirección <span class="math notranslate nohighlight">\(\hat{i}\)</span>: EL carrito acelera horizontalmente con <span class="math notranslate nohighlight">\(a_{C,x}=a\)</span></p>
+<div class="math notranslate nohighlight">
+\[T-f_k=m_C * a_{C,x} \Rightarrow \boxed{T-\mu_k * m_c * g=m_C * a}\]</div>
+</section>
+<section id="paso-3-segunda-ley-de-newton-sobre-el-carrito">
+<h4>Paso 3 — Segunda Ley de Newton sobre el carrito<a class="headerlink" href="#paso-3-segunda-ley-de-newton-sobre-el-carrito" title="Link to this heading">#</a></h4>
+</section>
+</section>
 </section>
 <hr class="docutils" />
 <section id="sintesis-de-la-unidad">
-<h2>17. Síntesis de la unidad<a class="headerlink" href="#sintesis-de-la-unidad" title="Link to this heading">#</a></h2>
+<h2>18. Síntesis de la unidad<a class="headerlink" href="#sintesis-de-la-unidad" title="Link to this heading">#</a></h2>
 <p>En esta unidad se introdujo el estudio dinámico del movimiento de una partícula a partir del concepto de fuerza.</p>
 <p>Se trabajaron:</p>
 <ul class="simple">
@@ -1133,13 +1132,6 @@ F_x = -kx
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roce-estatico">Roce estático</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roce-cinetico">Roce cinético</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direccion-del-roce">Dirección del roce</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-cuerpo-libre-dcl">Diagrama de Cuerpo Libre (DCL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track">Ejemplo: Carrito sobre una pista (Cart moving on a Track)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre">Paso 1 — Identificación del sistema y diagramas de cuerpo libre</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-segunda-ley-de-newton-sobre-el-carrito">Paso 2 — Segunda Ley de Newton sobre el carrito</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-segunda-ley-de-newton-sobre-el-carrito">Paso 3 — Segunda Ley de Newton sobre el carrito</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuerza-elastica-de-un-resorte">11. Fuerza elástica de un resorte</a><ul class="nav section-nav flex-column">
@@ -1152,7 +1144,7 @@ F_x = -kx
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eleccion-del-sistema-de-ejes">13. Elección del sistema de ejes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos">Ejemplos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-ejemplo">Por ejemplo.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-tipicos-de-dinamica">14. Problemas típicos de dinámica</a></li>
@@ -1161,8 +1153,16 @@ F_x = -kx
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-eje-vertical">En el eje vertical</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-fuerza-y-movimiento">16. Relación entre fuerza y movimiento</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">17. Síntesis de la unidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-fuerza-y-movimiento">16. Relación entre fuerza y movimiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-carrito-sobre-una-pista-cart-moving-on-a-track">17. Ejemplo: Carrito sobre una pista (Cart moving on a Track)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-del-sistema-y-diagramas-de-cuerpo-libre">Paso 1 — Identificación del sistema y diagramas de cuerpo libre</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-segunda-ley-de-newton-sobre-el-carrito">Paso 2 — Segunda Ley de Newton sobre el carrito</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-segunda-ley-de-newton-sobre-el-carrito">Paso 3 — Segunda Ley de Newton sobre el carrito</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">18. Síntesis de la unidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
