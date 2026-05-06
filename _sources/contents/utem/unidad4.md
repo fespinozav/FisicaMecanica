@@ -125,10 +125,10 @@ Esto permite analizar cada eje por separado.
 
 Existen fuerzas que no **están descritas por una ley de fuerza previa**. sino que son determinadas por el efecto que producen sobre el movimiento. Se distinguen 4 ejemplos mostrados a continuación:
 
-```{figure} ../images/contact_forces.png
+```{figure} ../images/contac_forces.png
 ---
 width: 40%
-name: mcu
+name: contact_forces
 ---
 Movimientos restringidos: a) Partícula que se desliza hacia abajo por un plano inclinado, b) Particulas deslizandose hacia abajo por una esfera, c) Moleculas de gas en un espacio cerrado, d) Perla en varilla giratoria
 ```
@@ -140,10 +140,10 @@ $$\vec{C}=\vec{C_\perp} + \vec{C_\parallel} = \vec{N}+\vec{f}$$
 
 donde N es la fuerza normal (perpendicular a la superficie) y f es la fuerza de fricción (tangencial a la superficie).
 
-```{figure} ../images/fuerza_contacto.png
+```{figure} ../images/fuerzas_contacto.png
 ---
 width: 40%
-name: mcu
+name: force
 ---
 Bloque descansando en una mano (izq.) Fuerzas que actúan sobre el bloque (der.)
 ```
@@ -347,7 +347,7 @@ Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cue
 ```{figure} ../images/dcl.png
 ---
 width: 40%
-name: dcl
+name: dcl1
 ---
 Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del contacto entre las fuerzas horizontales y verticales (componentes)
 
@@ -358,8 +358,8 @@ Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del 
 
 ```{figure} ../images/ejemplo_8_8_sistema_completo.png
 ---
-width: 40%
-name: dcl
+width: 80%
+name: dcl2
 ---
 Escenario físico y diagramas de cuerpo libre
 ```
