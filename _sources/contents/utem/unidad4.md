@@ -121,6 +121,32 @@ $$
 
 Esto permite analizar cada eje por separado.
 
+### 4.1 Fuerzas de Restricción (Constraint Forces)
+
+Existen fuerzas que no **están descritas por una ley de fuerza previa**. sino que son determinadas por el efecto que producen sobre el movimiento. Se distinguen 4 ejemplos mostrados a continuación:
+
+```{figure} ../images/contact_forces.png
+---
+width: 40%
+name: mcu
+---
+Movimientos restringidos: a) Partícula que se desliza hacia abajo por un plano inclinado, b) Particulas deslizandose hacia abajo por una esfera, c) Moleculas de gas en un espacio cerrado, d) Perla en varilla giratoria
+```
+### 4.1 Fuerzas de contacto
+
+Cuando dos superficies se tocan, surge una fuerza de contacto C que se descompone en dos componentes vectoriales perpendiculares entre sí:
+
+$$\vec{C}=\vec{C_\perp} + \vec{C_\parallel} = \vec{N}+\vec{f}$$
+
+donde N es la fuerza normal (perpendicular a la superficie) y f es la fuerza de fricción (tangencial a la superficie).
+
+```{figure} ../images/fuerza_contacto.png
+---
+width: 40%
+name: mcu
+---
+Bloque descansando en una mano (izq.) Fuerzas que actúan sobre el bloque (der.)
+```
 ---
 
 ## 5. Tercera Ley de Newton
@@ -299,6 +325,60 @@ donde:
 ### Dirección del roce
 
 La fricción siempre se opone al movimiento o a la tendencia de movimiento relativo entre superficies.
+
+### Diagrama de Cuerpo Libre (DCL)
+
+### Ejemplo: Carrito sobre una pista (Cart moving on a Track)
+
+Un carrito con un sensor de fuerza (masa total $m_C$) se desliza libremente sobre una pista horizontal con coeficiente de fricción cinética $\mu_k$​. Una cuerda conecta el sensor a un bloque de masa $m_B$​ que cuelga verticalmente a través de una polea. La cuerda y la polea son ideales (sin masa, sin fricción). Al soltar el bloque:
+
+i) ¿Cuál es la aceleración del sistema?
+ii) ¿Cuál es la tensión en la cuerda?
+
+```{figure} ../images/cart_on_atrack.png
+---
+width: 40%
+name: cart
+---
+Un carrito que cae acelerando sobre un pista por la fuerza empujadora de una cuerta. El tensor de fuerza meide la tensión de la cuerda
+```
+
+
+```{figure} ../images/dcl.png
+---
+width: 40%
+name: dcl
+---
+Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del contacto entre las fuerzas horizontales y verticales (componentes)
+
+```
+
+#### Paso 1 — Identificación del sistema y diagramas de cuerpo libre
+
+```{figure} ../images/ejemplo_8_8_sistema_completo.svg
+---
+width: 40%
+name: dcl
+---
+Escenario físico y diagramas de cuerpo libre
+```
+#### Paso 2 — Segunda Ley de Newton sobre el carrito
+
+Se elige $\hat{i}$ positivo hacia la derecha y $\hat{j}$ positivo hacia arriba.
+
+Dirección $\hat{j}$: El carrito no acelera verticalmente ($a_{c,y}=0$)
+
+$$N - m_{C}*g = 0 \Rightarrow \boxed{N=m_C * g}$$
+
+Entonces la fricción cinética vale:
+
+$$f_k=\mu_kN=\mu_k * m_c * g$$
+
+Dirección $\hat{i}$: EL carrito acelera horizontalmente con $a_{C,x}=a$
+
+$$T-f_k=m_C * a_{C,x} \Rightarrow \boxed{T-\mu_k * m_c * g=m_C * a}$$
+
+#### Paso 3 — Segunda Ley de Newton sobre el carrito
 
 ---
 
