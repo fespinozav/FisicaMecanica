@@ -447,6 +447,29 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-de-casos-limite">Verificación de casos límite</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-bloque-en-equilibrio-sobre-plano-inclinado-con-fuerza-horizontal">2.3 (Guía) - Bloque en equilibrio sobre plano inclinado con fuerza horizontal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-de-fuerzas-y-sistema-de-coordenadas">Paso 1 — Identificación de fuerzas y sistema de coordenadas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-condicion-de-equilibrio-estatico">Paso 2 — Condición de equilibrio estático</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-calculo-de-la-fuerza-normal">Paso 3 — Cálculo de la fuerza normal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-calculo-de-la-fuerza-horizontal">Paso 4 — Cálculo de la fuerza horizontal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-maquina-de-atwood">2.4 (Guía) - Máquina de Atwood</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-sistema-de-coordenadas-y-diagramas-de-cuerpo-libre">Paso 1 — Sistema de coordenadas y diagramas de cuerpo libre</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-segunda-ley-de-newton-sobre-cada-bloque">Paso 2 — Segunda Ley de Newton sobre cada bloque</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-condicion-de-restriccion-cinematica">Paso 3 — Condición de restricción cinemática</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-resolucion-del-sistema">Paso 4 — Resolución del sistema</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-caso-limite-masas-iguales-m-m">Paso 5 — Caso límite: masas iguales (<span class="math notranslate nohighlight">\(M = m\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constante-elastica-de-un-resorte-comprimido">4.2 Constante elástica de un resorte comprimido</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-del-sistema-y-fuerzas">Paso 1 — Identificación del sistema y fuerzas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-ley-de-hooke">Paso 2 — Ley de Hooke</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-equilibrio-estatico-del-bloque-superior-m">Paso 3 — Equilibrio estático del bloque superior <span class="math notranslate nohighlight">\(M\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-calculo-de-la-constante-elastica">Paso 4 — Cálculo de la constante elástica</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-equilibrio-del-bloque-inferior-m">Verificación — Equilibrio del bloque inferior <span class="math notranslate nohighlight">\(m\)</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">18. Síntesis de la unidad</a></li>
@@ -1113,6 +1136,238 @@ problema aparentemente bidimensional en un sistema de dos ecuaciones
 con dos incógnitas (<span class="math notranslate nohighlight">\(a_{b,x}\)</span> y <span class="math notranslate nohighlight">\(N\)</span>).</p>
 </section>
 </section>
+<hr class="docutils" />
+<section id="guia-bloque-en-equilibrio-sobre-plano-inclinado-con-fuerza-horizontal">
+<h3>2.3 (Guía) - Bloque en equilibrio sobre plano inclinado con fuerza horizontal<a class="headerlink" href="#guia-bloque-en-equilibrio-sobre-plano-inclinado-con-fuerza-horizontal" title="Link to this heading">#</a></h3>
+<p>Un bloque de masa <span class="math notranslate nohighlight">\(m = 4{,}0\ \text{kg}\)</span> se mantiene en equilibrio sobre un plano inclinado
+<strong>sin roce</strong> de ángulo <span class="math notranslate nohighlight">\(\alpha = 25°\)</span>, mediante la acción de una fuerza horizontal <span class="math notranslate nohighlight">\(\vec{F}\)</span>
+como muestra la figura.<a class="footnote-reference brackets" href="#guia-4" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<figure class="align-default" id="bloque-plano-inclinado-fh">
+<a class="reference internal image-reference" href="../../_images/guia4_2_3_setup.png"><img alt="../../_images/guia4_2_3_setup.png" src="../../_images/guia4_2_3_setup.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 37 </span><span class="caption-text">Bloque de masa <span class="math notranslate nohighlight">\(m\)</span> en equilibrio sobre plano inclinado sin roce,
+sometido a una fuerza horizontal <span class="math notranslate nohighlight">\(\vec{F}\)</span></span><a class="headerlink" href="#bloque-plano-inclinado-fh" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Determinar:</strong></p>
+<p>a) La magnitud de la fuerza <span class="math notranslate nohighlight">\(F\)</span></p>
+<p>b) La fuerza normal que ejerce el plano sobre el bloque</p>
+<section id="paso-1-identificacion-de-fuerzas-y-sistema-de-coordenadas">
+<h4>Paso 1 — Identificación de fuerzas y sistema de coordenadas<a class="headerlink" href="#paso-1-identificacion-de-fuerzas-y-sistema-de-coordenadas" title="Link to this heading">#</a></h4>
+<p>Se elige <span class="math notranslate nohighlight">\(\hat{i}\)</span> positivo hacia la derecha y <span class="math notranslate nohighlight">\(\hat{j}\)</span> positivo hacia arriba
+(ejes horizontal y vertical). Las fuerzas que actúan sobre el bloque son:</p>
+<ul class="simple">
+<li><p>Peso: <span class="math notranslate nohighlight">\(\vec{W} = -mg\,\hat{j}\)</span></p></li>
+<li><p>Fuerza normal: <span class="math notranslate nohighlight">\(\vec{N}\)</span> perpendicular a la superficie del plano (apunta en dirección <span class="math notranslate nohighlight">\((-\sin\alpha,\,\cos\alpha)\)</span>)</p></li>
+<li><p>Fuerza horizontal aplicada: <span class="math notranslate nohighlight">\(\vec{F} = F\,\hat{i}\)</span></p></li>
+</ul>
+</section>
+<section id="paso-2-condicion-de-equilibrio-estatico">
+<h4>Paso 2 — Condición de equilibrio estático<a class="headerlink" href="#paso-2-condicion-de-equilibrio-estatico" title="Link to this heading">#</a></h4>
+<p>Como el bloque está <strong>en reposo</strong>, la aceleración es nula: <span class="math notranslate nohighlight">\(\vec{a} = \vec{0}\)</span>.<br />
+Aplicando la Segunda Ley de Newton <span class="math notranslate nohighlight">\(\sum \vec{F} = \vec{0}\)</span>:</p>
+<p><strong>Dirección <span class="math notranslate nohighlight">\(\hat{i}\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[F - N\sin\alpha = 0 \implies F = N\sin\alpha \tag{2.3.1}\]</div>
+<p><strong>Dirección <span class="math notranslate nohighlight">\(\hat{j}\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[N\cos\alpha - mg = 0 \implies N = \frac{mg}{\cos\alpha} \tag{2.3.2}\]</div>
+</section>
+<section id="paso-3-calculo-de-la-fuerza-normal">
+<h4>Paso 3 — Cálculo de la fuerza normal<a class="headerlink" href="#paso-3-calculo-de-la-fuerza-normal" title="Link to this heading">#</a></h4>
+<p>Sustituyendo valores en <span class="math notranslate nohighlight">\((2.3.2)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{N = \frac{mg}{\cos\alpha} = \frac{4{,}0 \times 9{,}8}{\cos 25°} = \frac{39{,}2}{0{,}906} \approx 43{,}26\ \text{N}}\]</div>
+</section>
+<section id="paso-4-calculo-de-la-fuerza-horizontal">
+<h4>Paso 4 — Cálculo de la fuerza horizontal<a class="headerlink" href="#paso-4-calculo-de-la-fuerza-horizontal" title="Link to this heading">#</a></h4>
+<p>Sustituyendo <span class="math notranslate nohighlight">\(N\)</span> en <span class="math notranslate nohighlight">\((2.3.1)\)</span>, o equivalentemente usando <span class="math notranslate nohighlight">\(F = mg\tan\alpha\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F = N\sin\alpha = 43{,}26 \times \sin 25° \approx 43{,}26 \times 0{,}423\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{F = mg\tan\alpha = 4{,}0 \times 9{,}8 \times \tan 25° \approx 18{,}22\ \text{N}}\]</div>
+<p><strong>Respuestas:</strong><br />
+<span class="math notranslate nohighlight">\(a)\ F = 18{,}22\ \text{N}\)</span> <span class="math notranslate nohighlight">\(\qquad\)</span> <span class="math notranslate nohighlight">\(b)\ F_N = 43{,}26\ \text{N}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="guia-maquina-de-atwood">
+<h3>2.4 (Guía) - Máquina de Atwood<a class="headerlink" href="#guia-maquina-de-atwood" title="Link to this heading">#</a></h3>
+<p>La máquina de Atwood consiste en dos masas <span class="math notranslate nohighlight">\(M\)</span> y <span class="math notranslate nohighlight">\(m\)</span> conectadas por una cuerda
+inextensible de masa despreciable que pasa a través de una polea ideal (sin masa,
+sin roce). Se tiene <span class="math notranslate nohighlight">\(M \geq m\)</span>, con <span class="math notranslate nohighlight">\(M = 5\ \text{kg}\)</span> y <span class="math notranslate nohighlight">\(m = 3\ \text{kg}\)</span>.<a class="footnote-reference brackets" href="#guia-4" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<figure class="align-default" id="atwood-setup">
+<a class="reference internal image-reference" href="../../_images/guia4_2_4_setup.png"><img alt="../../_images/guia4_2_4_setup.png" src="../../_images/guia4_2_4_setup.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 38 </span><span class="caption-text">Máquina de Atwood: masas <span class="math notranslate nohighlight">\(M\)</span> y <span class="math notranslate nohighlight">\(m\)</span> conectadas por cuerda inextensible
+sobre polea ideal. La fuerza <span class="math notranslate nohighlight">\(T_1\)</span> actúa sobre el soporte de la polea.</span><a class="headerlink" href="#atwood-setup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Determinar:</strong></p>
+<p>a) La tensión en las cuerdas</p>
+<p>b) La aceleración de los bloques</p>
+<p>c) ¿Qué sucede si las masas son iguales?</p>
+<section id="paso-1-sistema-de-coordenadas-y-diagramas-de-cuerpo-libre">
+<h4>Paso 1 — Sistema de coordenadas y diagramas de cuerpo libre<a class="headerlink" href="#paso-1-sistema-de-coordenadas-y-diagramas-de-cuerpo-libre" title="Link to this heading">#</a></h4>
+<p>Como <span class="math notranslate nohighlight">\(M &gt; m\)</span>, el bloque <span class="math notranslate nohighlight">\(M\)</span> desciende y el bloque <span class="math notranslate nohighlight">\(m\)</span> asciende con la
+misma magnitud de aceleración <span class="math notranslate nohighlight">\(a\)</span> (cuerda inextensible).</p>
+<p>Se elige positivo <strong>hacia abajo</strong> para <span class="math notranslate nohighlight">\(M\)</span> y positivo <strong>hacia arriba</strong> para <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<figure class="align-default" id="atwood-dcl">
+<a class="reference internal image-reference" href="contents/images/guia4_2_4_dcl.png"><img alt="contents/images/guia4_2_4_dcl.png" src="contents/images/guia4_2_4_dcl.png" style="width: 55%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 39 </span><span class="caption-text">Diagramas de cuerpo libre: bloque <span class="math notranslate nohighlight">\(M\)</span> con peso <span class="math notranslate nohighlight">\(Mg\)</span> y tensión <span class="math notranslate nohighlight">\(T\)</span>
+hacia arriba; bloque <span class="math notranslate nohighlight">\(m\)</span> con peso <span class="math notranslate nohighlight">\(mg\)</span> y tensión <span class="math notranslate nohighlight">\(T\)</span> hacia arriba.
+La tensión <span class="math notranslate nohighlight">\(T_1 = 2T\)</span> actúa sobre el soporte de la polea.</span><a class="headerlink" href="#atwood-dcl" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="paso-2-segunda-ley-de-newton-sobre-cada-bloque">
+<h4>Paso 2 — Segunda Ley de Newton sobre cada bloque<a class="headerlink" href="#paso-2-segunda-ley-de-newton-sobre-cada-bloque" title="Link to this heading">#</a></h4>
+<p><strong>Bloque <span class="math notranslate nohighlight">\(M\)</span></strong> (positivo hacia abajo):</p>
+<div class="math notranslate nohighlight">
+\[Mg - T = Ma \tag{2.4.1}\]</div>
+<p><strong>Bloque <span class="math notranslate nohighlight">\(m\)</span></strong> (positivo hacia arriba):</p>
+<div class="math notranslate nohighlight">
+\[T - mg = ma \tag{2.4.2}\]</div>
+</section>
+<section id="paso-3-condicion-de-restriccion-cinematica">
+<h4>Paso 3 — Condición de restricción cinemática<a class="headerlink" href="#paso-3-condicion-de-restriccion-cinematica" title="Link to this heading">#</a></h4>
+<p>La cuerda inextensible impone que ambos bloques tengan la misma magnitud
+de aceleración:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{a_M = a_m \equiv a}\]</div>
+</section>
+<section id="paso-4-resolucion-del-sistema">
+<h4>Paso 4 — Resolución del sistema<a class="headerlink" href="#paso-4-resolucion-del-sistema" title="Link to this heading">#</a></h4>
+<p>Sumando <span class="math notranslate nohighlight">\((2.4.1)\)</span> y <span class="math notranslate nohighlight">\((2.4.2)\)</span> para eliminar <span class="math notranslate nohighlight">\(T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[Mg - mg = (M + m)\,a\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{a = \frac{(M - m)\,g}{M + m} = \frac{(5 - 3) \times 9{,}81}{5 + 3} = \frac{19{,}62}{8} \approx 2{,}45\ \text{m/s}^2} \tag{2.4.3}\]</div>
+<p>Sustituyendo <span class="math notranslate nohighlight">\((2.4.3)\)</span> en <span class="math notranslate nohighlight">\((2.4.2)\)</span> para obtener la tensión:</p>
+<div class="math notranslate nohighlight">
+\[T = m(g + a) = 3 \times (9{,}81 + 2{,}45) = 3 \times 12{,}26\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{T = \frac{2Mmg}{M + m} = \frac{2 \times 5 \times 3 \times 9{,}81}{5 + 3} \approx 36{,}79\ \text{N}} \tag{2.4.4}\]</div>
+<p>La fuerza sobre el soporte de la polea es el doble de la tensión
+(la cuerda tira de ambos lados):</p>
+<div class="math notranslate nohighlight">
+\[\boxed{T_1 = 2T \approx 73{,}58\ \text{N}}\]</div>
+</section>
+<section id="paso-5-caso-limite-masas-iguales-m-m">
+<h4>Paso 5 — Caso límite: masas iguales (<span class="math notranslate nohighlight">\(M = m\)</span>)<a class="headerlink" href="#paso-5-caso-limite-masas-iguales-m-m" title="Link to this heading">#</a></h4>
+<p>Si <span class="math notranslate nohighlight">\(M = m\)</span>, sustituyendo en <span class="math notranslate nohighlight">\((2.4.3)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[a = \frac{(M - m)\,g}{M + m} = \frac{0}{2M} = 0\]</div>
+<p>El sistema permanece en <strong>equilibrio estático</strong>: la aceleración es nula
+y la tensión en la cuerda es simplemente:</p>
+<div class="math notranslate nohighlight">
+\[T = mg = Mg\]</div>
+<p><strong>Respuestas:</strong><br />
+<span class="math notranslate nohighlight">\(a)\ T = 36{,}79\ \text{N},\ T_1 = 73{,}58\ \text{N}\)</span><br />
+<span class="math notranslate nohighlight">\(b)\ a = 2{,}45\ \text{m/s}^2\)</span><br />
+<span class="math notranslate nohighlight">\(c)\)</span> La aceleración de los bloques es nula; el sistema queda en equilibrio.</p>
+</section>
+</section>
+<section id="constante-elastica-de-un-resorte-comprimido">
+<h3>4.2 Constante elástica de un resorte comprimido<a class="headerlink" href="#constante-elastica-de-un-resorte-comprimido" title="Link to this heading">#</a></h3>
+<p>El sistema de la figura está en equilibrio apoyado sobre una mesa. El resorte está
+comprimido una distancia <span class="math notranslate nohighlight">\(\Delta l = 15\ \text{cm} = 0{,}15\ \text{m}\)</span>, la masa del bloque
+superior es <span class="math notranslate nohighlight">\(M = 4{,}0\ \text{kg}\)</span> y la del bloque inferior es <span class="math notranslate nohighlight">\(m = 2{,}0\ \text{kg}\)</span>.
+Calcule la constante elástica del resorte.</p>
+<figure class="align-default" id="hooke-setup">
+<a class="reference internal image-reference" href="../../_images/guia4_4_2_setup.png"><img alt="../../_images/guia4_4_2_setup.png" src="../../_images/guia4_4_2_setup.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 40 </span><span class="caption-text">Sistema en equilibrio: bloque <span class="math notranslate nohighlight">\(M\)</span> apoyado sobre un resorte de constante <span class="math notranslate nohighlight">\(k\)</span>,
+el cual descansa sobre el bloque <span class="math notranslate nohighlight">\(m\)</span> que está sobre la mesa.</span><a class="headerlink" href="#hooke-setup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Determinar:</strong></p>
+<ul class="simple">
+<li><p>La constante elástica <span class="math notranslate nohighlight">\(k\)</span> del resorte</p></li>
+</ul>
+<section id="paso-1-identificacion-del-sistema-y-fuerzas">
+<h4>Paso 1 — Identificación del sistema y fuerzas<a class="headerlink" href="#paso-1-identificacion-del-sistema-y-fuerzas" title="Link to this heading">#</a></h4>
+<p>Se elige <span class="math notranslate nohighlight">\(\hat{j}\)</span> positivo <strong>hacia arriba</strong>. El resorte está comprimido,
+por lo que ejerce una <strong>fuerza restauradora hacia arriba</strong> sobre el bloque <span class="math notranslate nohighlight">\(M\)</span>
+y una <strong>fuerza hacia abajo</strong> sobre el bloque <span class="math notranslate nohighlight">\(m\)</span> (Tercera Ley de Newton).</p>
+<p>Las fuerzas que actúan sobre cada cuerpo son:</p>
+<figure class="align-default" id="hooke-dcl">
+<a class="reference internal image-reference" href="contents/images/guia4_4_2_dcl.png"><img alt="contents/images/guia4_4_2_dcl.png" src="contents/images/guia4_4_2_dcl.png" style="width: 55%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 41 </span><span class="caption-text">Diagramas de cuerpo libre: sobre <span class="math notranslate nohighlight">\(M\)</span> actúan su peso <span class="math notranslate nohighlight">\(Mg\)</span> hacia abajo
+y la fuerza del resorte <span class="math notranslate nohighlight">\(F_k\)</span> hacia arriba. Sobre <span class="math notranslate nohighlight">\(m\)</span> actúan su peso <span class="math notranslate nohighlight">\(mg\)</span>,
+la fuerza del resorte <span class="math notranslate nohighlight">\(F_k\)</span> hacia abajo y la normal <span class="math notranslate nohighlight">\(N\)</span> de la mesa hacia arriba.</span><a class="headerlink" href="#hooke-dcl" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Sobre el bloque superior <span class="math notranslate nohighlight">\(M\)</span>:</strong></p>
+<ul class="simple">
+<li><p>Peso: <span class="math notranslate nohighlight">\(-Mg\,\hat{j}\)</span></p></li>
+<li><p>Fuerza del resorte (comprimido, empuja hacia arriba): <span class="math notranslate nohighlight">\(+F_k\,\hat{j}\)</span></p></li>
+</ul>
+<p><strong>Sobre el bloque inferior <span class="math notranslate nohighlight">\(m\)</span>:</strong></p>
+<ul class="simple">
+<li><p>Peso: <span class="math notranslate nohighlight">\(-mg\,\hat{j}\)</span></p></li>
+<li><p>Fuerza del resorte (empuja hacia abajo por la 3ª Ley): <span class="math notranslate nohighlight">\(-F_k\,\hat{j}\)</span></p></li>
+<li><p>Normal de la mesa: <span class="math notranslate nohighlight">\(+N\,\hat{j}\)</span></p></li>
+</ul>
+</section>
+<section id="paso-2-ley-de-hooke">
+<h4>Paso 2 — Ley de Hooke<a class="headerlink" href="#paso-2-ley-de-hooke" title="Link to this heading">#</a></h4>
+<p>La fuerza que ejerce un resorte comprimido o extendido una distancia
+<span class="math notranslate nohighlight">\(|\Delta l|\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{F_k = k\,|\Delta l|} \tag{4.2.1}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(k\)</span> es la constante elástica y <span class="math notranslate nohighlight">\(\Delta l\)</span> es la deformación respecto
+al largo de equilibrio.</p>
+</section>
+<section id="paso-3-equilibrio-estatico-del-bloque-superior-m">
+<h4>Paso 3 — Equilibrio estático del bloque superior <span class="math notranslate nohighlight">\(M\)</span><a class="headerlink" href="#paso-3-equilibrio-estatico-del-bloque-superior-m" title="Link to this heading">#</a></h4>
+<p>Como el sistema está en reposo, <span class="math notranslate nohighlight">\(\vec{a} = \vec{0}\)</span>.<br />
+Aplicando la Segunda Ley de Newton sobre <span class="math notranslate nohighlight">\(M\)</span> en dirección <span class="math notranslate nohighlight">\(\hat{j}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F_k - Mg = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{F_k = Mg} \tag{4.2.2}\]</div>
+<blockquote>
+<div><p><strong>Nota:</strong> Solo es necesario analizar el bloque <span class="math notranslate nohighlight">\(M\)</span>, ya que es la masa
+que comprime directamente el resorte. La ecuación <span class="math notranslate nohighlight">\((4.2.2)\)</span> relaciona
+directamente <span class="math notranslate nohighlight">\(k\)</span> con los datos del problema.</p>
+</div></blockquote>
+</section>
+<section id="paso-4-calculo-de-la-constante-elastica">
+<h4>Paso 4 — Cálculo de la constante elástica<a class="headerlink" href="#paso-4-calculo-de-la-constante-elastica" title="Link to this heading">#</a></h4>
+<p>Igualando <span class="math notranslate nohighlight">\((4.2.1)\)</span> y <span class="math notranslate nohighlight">\((4.2.2)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[k\,|\Delta l| = Mg\]</div>
+<p>Despejando <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[k = \frac{Mg}{|\Delta l|} = \frac{4{,}0 \times 9{,}8}{0{,}15} = \frac{39{,}2}{0{,}15}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{k \approx 261{,}6\ \text{N/m}}\]</div>
+</section>
+<section id="verificacion-equilibrio-del-bloque-inferior-m">
+<h4>Verificación — Equilibrio del bloque inferior <span class="math notranslate nohighlight">\(m\)</span><a class="headerlink" href="#verificacion-equilibrio-del-bloque-inferior-m" title="Link to this heading">#</a></h4>
+<p>Como comprobación, aplicando la Segunda Ley de Newton sobre <span class="math notranslate nohighlight">\(m\)</span>
+en dirección <span class="math notranslate nohighlight">\(\hat{j}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[N - mg - F_k = 0\]</div>
+<div class="math notranslate nohighlight">
+\[N = mg + F_k = mg + Mg = (m + M)g\]</div>
+<div class="math notranslate nohighlight">
+\[N = (2{,}0 + 4{,}0) \times 9{,}8 = 58{,}8\ \text{N}\]</div>
+<p>Esto es consistente: la mesa soporta el <strong>peso total</strong> del sistema,
+lo cual es físicamente correcto para un sistema en equilibrio estático.</p>
+<p><strong>Respuesta:</strong></p>
+<div class="math notranslate nohighlight">
+\[\boxed{k = 261{,}6\ \text{N/m}}\]</div>
+</section>
+</section>
 </section>
 <hr class="docutils" />
 <section id="sintesis-de-la-unidad">
@@ -1200,6 +1455,11 @@ F_x = -kx
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
 <p><a class="reference external" href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/online-textbook/">https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/online-textbook/</a></p>
+</aside>
+<aside class="footnote brackets" id="guia-4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id5">1</a>,<a role="doc-backlink" href="#id6">2</a>)</span>
+<p><a class="github reference external" href="https://github.com/fespinozav/FisicaMecanica/blob/main/contents/presentations/Guia4.pdf">fespinozav/FisicaMecanica</a></p>
 </aside>
 </aside>
 </section>
@@ -1357,6 +1617,29 @@ F_x = -kx
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-resolucion-del-sistema">Paso 5 — Resolución del sistema</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-caso-particular-phi-45">Paso 6 — Caso particular <span class="math notranslate nohighlight">\(\phi = 45°\)</span></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-de-casos-limite">Verificación de casos límite</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-bloque-en-equilibrio-sobre-plano-inclinado-con-fuerza-horizontal">2.3 (Guía) - Bloque en equilibrio sobre plano inclinado con fuerza horizontal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-de-fuerzas-y-sistema-de-coordenadas">Paso 1 — Identificación de fuerzas y sistema de coordenadas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-condicion-de-equilibrio-estatico">Paso 2 — Condición de equilibrio estático</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-calculo-de-la-fuerza-normal">Paso 3 — Cálculo de la fuerza normal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-calculo-de-la-fuerza-horizontal">Paso 4 — Cálculo de la fuerza horizontal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-maquina-de-atwood">2.4 (Guía) - Máquina de Atwood</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-sistema-de-coordenadas-y-diagramas-de-cuerpo-libre">Paso 1 — Sistema de coordenadas y diagramas de cuerpo libre</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-segunda-ley-de-newton-sobre-cada-bloque">Paso 2 — Segunda Ley de Newton sobre cada bloque</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-condicion-de-restriccion-cinematica">Paso 3 — Condición de restricción cinemática</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-resolucion-del-sistema">Paso 4 — Resolución del sistema</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-caso-limite-masas-iguales-m-m">Paso 5 — Caso límite: masas iguales (<span class="math notranslate nohighlight">\(M = m\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constante-elastica-de-un-resorte-comprimido">4.2 Constante elástica de un resorte comprimido</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-identificacion-del-sistema-y-fuerzas">Paso 1 — Identificación del sistema y fuerzas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-ley-de-hooke">Paso 2 — Ley de Hooke</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-equilibrio-estatico-del-bloque-superior-m">Paso 3 — Equilibrio estático del bloque superior <span class="math notranslate nohighlight">\(M\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-calculo-de-la-constante-elastica">Paso 4 — Cálculo de la constante elástica</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-equilibrio-del-bloque-inferior-m">Verificación — Equilibrio del bloque inferior <span class="math notranslate nohighlight">\(m\)</span></a></li>
 </ul>
 </li>
 </ul>

@@ -675,7 +675,266 @@ del bloque con la aceleración $A_{x,w}$ de la cuña, convirtiendo un
 problema aparentemente bidimensional en un sistema de dos ecuaciones 
 con dos incógnitas ($a_{b,x}$ y $N$).
 
+---
 
+### 2.3 (Guía) - Bloque en equilibrio sobre plano inclinado con fuerza horizontal
+
+Un bloque de masa $m = 4{,}0\ \text{kg}$ se mantiene en equilibrio sobre un plano inclinado 
+**sin roce** de ángulo $\alpha = 25°$, mediante la acción de una fuerza horizontal $\vec{F}$ 
+como muestra la figura.[^Guía_4]
+
+```{figure} ../images/guia4_2_3_setup.png
+---
+width: 100%
+name: bloque_plano_inclinado_fh
+---
+Bloque de masa $m$ en equilibrio sobre plano inclinado sin roce, 
+sometido a una fuerza horizontal $\vec{F}$
+```
+
+**Determinar:**
+
+a) La magnitud de la fuerza $F$
+
+b) La fuerza normal que ejerce el plano sobre el bloque
+
+#### Paso 1 — Identificación de fuerzas y sistema de coordenadas
+
+Se elige $\hat{i}$ positivo hacia la derecha y $\hat{j}$ positivo hacia arriba 
+(ejes horizontal y vertical). Las fuerzas que actúan sobre el bloque son:
+
+- Peso: $\vec{W} = -mg\,\hat{j}$
+- Fuerza normal: $\vec{N}$ perpendicular a la superficie del plano (apunta en dirección $(-\sin\alpha,\,\cos\alpha)$)
+- Fuerza horizontal aplicada: $\vec{F} = F\,\hat{i}$
+
+#### Paso 2 — Condición de equilibrio estático
+
+Como el bloque está **en reposo**, la aceleración es nula: $\vec{a} = \vec{0}$.  
+Aplicando la Segunda Ley de Newton $\sum \vec{F} = \vec{0}$:
+
+**Dirección $\hat{i}$:**
+
+$$F - N\sin\alpha = 0 \implies F = N\sin\alpha \tag{2.3.1}$$
+
+**Dirección $\hat{j}$:**
+
+$$N\cos\alpha - mg = 0 \implies N = \frac{mg}{\cos\alpha} \tag{2.3.2}$$
+
+#### Paso 3 — Cálculo de la fuerza normal
+
+Sustituyendo valores en $(2.3.2)$:
+
+$$\boxed{N = \frac{mg}{\cos\alpha} = \frac{4{,}0 \times 9{,}8}{\cos 25°} = \frac{39{,}2}{0{,}906} \approx 43{,}26\ \text{N}}$$
+
+#### Paso 4 — Cálculo de la fuerza horizontal
+
+Sustituyendo $N$ en $(2.3.1)$, o equivalentemente usando $F = mg\tan\alpha$:
+
+$$F = N\sin\alpha = 43{,}26 \times \sin 25° \approx 43{,}26 \times 0{,}423$$
+
+$$\boxed{F = mg\tan\alpha = 4{,}0 \times 9{,}8 \times \tan 25° \approx 18{,}22\ \text{N}}$$
+
+**Respuestas:**  
+$a)\ F = 18{,}22\ \text{N}$ $\qquad$ $b)\ F_N = 43{,}26\ \text{N}$
+
+---
+
+### 2.4 (Guía) - Máquina de Atwood
+
+La máquina de Atwood consiste en dos masas $M$ y $m$ conectadas por una cuerda 
+inextensible de masa despreciable que pasa a través de una polea ideal (sin masa, 
+sin roce). Se tiene $M \geq m$, con $M = 5\ \text{kg}$ y $m = 3\ \text{kg}$.[^Guía_4]
+
+```{figure} ../images/guia4_2_4_setup.png
+---
+width: 100%
+name: atwood_setup
+---
+Máquina de Atwood: masas $M$ y $m$ conectadas por cuerda inextensible 
+sobre polea ideal. La fuerza $T_1$ actúa sobre el soporte de la polea.
+```
+
+**Determinar:**
+
+a) La tensión en las cuerdas
+
+b) La aceleración de los bloques
+
+c) ¿Qué sucede si las masas son iguales?
+
+#### Paso 1 — Sistema de coordenadas y diagramas de cuerpo libre
+
+Como $M > m$, el bloque $M$ desciende y el bloque $m$ asciende con la 
+misma magnitud de aceleración $a$ (cuerda inextensible).
+
+Se elige positivo **hacia abajo** para $M$ y positivo **hacia arriba** para $m$.
+
+```{figure} ../images/guia4_2_4_dcl.png
+---
+width: 55%
+name: atwood_dcl
+---
+Diagramas de cuerpo libre: bloque $M$ con peso $Mg$ y tensión $T$ 
+hacia arriba; bloque $m$ con peso $mg$ y tensión $T$ hacia arriba. 
+La tensión $T_1 = 2T$ actúa sobre el soporte de la polea.
+```
+
+#### Paso 2 — Segunda Ley de Newton sobre cada bloque
+
+**Bloque $M$** (positivo hacia abajo):
+
+$$Mg - T = Ma \tag{2.4.1}$$
+
+**Bloque $m$** (positivo hacia arriba):
+
+$$T - mg = ma \tag{2.4.2}$$
+
+#### Paso 3 — Condición de restricción cinemática
+
+La cuerda inextensible impone que ambos bloques tengan la misma magnitud 
+de aceleración:
+
+$$\boxed{a_M = a_m \equiv a}$$
+
+#### Paso 4 — Resolución del sistema
+
+Sumando $(2.4.1)$ y $(2.4.2)$ para eliminar $T$:
+
+$$Mg - mg = (M + m)\,a$$
+
+$$\boxed{a = \frac{(M - m)\,g}{M + m} = \frac{(5 - 3) \times 9{,}81}{5 + 3} = \frac{19{,}62}{8} \approx 2{,}45\ \text{m/s}^2} \tag{2.4.3}$$
+
+Sustituyendo $(2.4.3)$ en $(2.4.2)$ para obtener la tensión:
+
+$$T = m(g + a) = 3 \times (9{,}81 + 2{,}45) = 3 \times 12{,}26$$
+
+$$\boxed{T = \frac{2Mmg}{M + m} = \frac{2 \times 5 \times 3 \times 9{,}81}{5 + 3} \approx 36{,}79\ \text{N}} \tag{2.4.4}$$
+
+La fuerza sobre el soporte de la polea es el doble de la tensión 
+(la cuerda tira de ambos lados):
+
+$$\boxed{T_1 = 2T \approx 73{,}58\ \text{N}}$$
+
+#### Paso 5 — Caso límite: masas iguales ($M = m$)
+
+Si $M = m$, sustituyendo en $(2.4.3)$:
+
+$$a = \frac{(M - m)\,g}{M + m} = \frac{0}{2M} = 0$$
+
+El sistema permanece en **equilibrio estático**: la aceleración es nula 
+y la tensión en la cuerda es simplemente:
+
+$$T = mg = Mg$$
+
+**Respuestas:**  
+$a)\ T = 36{,}79\ \text{N},\ T_1 = 73{,}58\ \text{N}$  
+$b)\ a = 2{,}45\ \text{m/s}^2$  
+$c)$ La aceleración de los bloques es nula; el sistema queda en equilibrio.
+
+[^Guía_4]: https://github.com/fespinozav/FisicaMecanica/blob/main/contents/presentations/Guia4.pdf
+
+
+### 4.2 Constante elástica de un resorte comprimido
+
+El sistema de la figura está en equilibrio apoyado sobre una mesa. El resorte está 
+comprimido una distancia $\Delta l = 15\ \text{cm} = 0{,}15\ \text{m}$, la masa del bloque 
+superior es $M = 4{,}0\ \text{kg}$ y la del bloque inferior es $m = 2{,}0\ \text{kg}$. 
+Calcule la constante elástica del resorte.
+
+```{figure} ../images/guia4_4_2_setup.png
+---
+width: 100%
+name: hooke_setup
+---
+Sistema en equilibrio: bloque $M$ apoyado sobre un resorte de constante $k$, 
+el cual descansa sobre el bloque $m$ que está sobre la mesa.
+```
+
+**Determinar:**
+
+- La constante elástica $k$ del resorte
+
+#### Paso 1 — Identificación del sistema y fuerzas
+
+Se elige $\hat{j}$ positivo **hacia arriba**. El resorte está comprimido, 
+por lo que ejerce una **fuerza restauradora hacia arriba** sobre el bloque $M$ 
+y una **fuerza hacia abajo** sobre el bloque $m$ (Tercera Ley de Newton).
+
+Las fuerzas que actúan sobre cada cuerpo son:
+
+```{figure} ../images/guia4_4_2_dcl.png
+---
+width: 55%
+name: hooke_dcl
+---
+Diagramas de cuerpo libre: sobre $M$ actúan su peso $Mg$ hacia abajo 
+y la fuerza del resorte $F_k$ hacia arriba. Sobre $m$ actúan su peso $mg$, 
+la fuerza del resorte $F_k$ hacia abajo y la normal $N$ de la mesa hacia arriba.
+```
+
+**Sobre el bloque superior $M$:**
+
+- Peso: $-Mg\,\hat{j}$
+- Fuerza del resorte (comprimido, empuja hacia arriba): $+F_k\,\hat{j}$
+
+**Sobre el bloque inferior $m$:**
+
+- Peso: $-mg\,\hat{j}$
+- Fuerza del resorte (empuja hacia abajo por la 3ª Ley): $-F_k\,\hat{j}$
+- Normal de la mesa: $+N\,\hat{j}$
+
+#### Paso 2 — Ley de Hooke
+
+La fuerza que ejerce un resorte comprimido o extendido una distancia 
+$|\Delta l|$ es:
+
+$$\boxed{F_k = k\,|\Delta l|} \tag{4.2.1}$$
+
+donde $k$ es la constante elástica y $\Delta l$ es la deformación respecto 
+al largo de equilibrio.
+
+#### Paso 3 — Equilibrio estático del bloque superior $M$
+
+Como el sistema está en reposo, $\vec{a} = \vec{0}$.  
+Aplicando la Segunda Ley de Newton sobre $M$ en dirección $\hat{j}$:
+
+$$F_k - Mg = 0$$
+
+$$\boxed{F_k = Mg} \tag{4.2.2}$$
+
+> **Nota:** Solo es necesario analizar el bloque $M$, ya que es la masa 
+> que comprime directamente el resorte. La ecuación $(4.2.2)$ relaciona 
+> directamente $k$ con los datos del problema.
+
+#### Paso 4 — Cálculo de la constante elástica
+
+Igualando $(4.2.1)$ y $(4.2.2)$:
+
+$$k\,|\Delta l| = Mg$$
+
+Despejando $k$:
+
+$$k = \frac{Mg}{|\Delta l|} = \frac{4{,}0 \times 9{,}8}{0{,}15} = \frac{39{,}2}{0{,}15}$$
+
+$$\boxed{k \approx 261{,}6\ \text{N/m}}$$
+
+#### Verificación — Equilibrio del bloque inferior $m$
+
+Como comprobación, aplicando la Segunda Ley de Newton sobre $m$ 
+en dirección $\hat{j}$:
+
+$$N - mg - F_k = 0$$
+
+$$N = mg + F_k = mg + Mg = (m + M)g$$
+
+$$N = (2{,}0 + 4{,}0) \times 9{,}8 = 58{,}8\ \text{N}$$
+
+Esto es consistente: la mesa soporta el **peso total** del sistema, 
+lo cual es físicamente correcto para un sistema en equilibrio estático.
+
+**Respuesta:**
+
+$$\boxed{k = 261{,}6\ \text{N/m}}$$
 ---
 
 ## 18. Síntesis de la unidad
