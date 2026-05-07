@@ -500,7 +500,7 @@ $$\boxed{1 rev/s: 1*2\pi = 2\pi rad/s \approx 6,283 rad/s}$$
 
 por ende $18,85rad/s$ serían:
 
-$$18,85 rad/s \approx 9,4* \frac{2\pi rad}{s} \approx 3rev/s $$
+$$18,85 rad/s \approx \frac{18,85}{2\pi} \frac{rad}{s} \approx 3rev/s $$
 
 Convirtiendo $RPS$ a $RPM$ tenemos:
 
