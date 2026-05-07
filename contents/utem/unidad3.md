@@ -290,6 +290,38 @@ $$
 \omega(t) = \omega_i + \alpha(t-t_i)
 $$
 
+### Velocidad Angular 
+
+El vector de velocidad angular ω se define a lo largo del eje z como:
+
+$$\vec{\omega}=\frac{d\theta}{dt}\vec{k}=\omega_z\vec{k}$$
+
+El signo de $\omega_z$ determina la dirección de rotación:
+
+- Si $dθ/dt > 0$ → rotación antihoraria → $\omega$ apunta en la dirección $+\vec{k}$
+- Si $dθ/dt < 0$ → rotación horaria → $\omega$ apunta en la dirección $-\vec{k}$
+
+La velocidad y la velocidad angular se relacionan mediante el producto vectorial:
+
+$$\vec{v}=\vec{\omega} \times \vec{r} = \frac{d\theta}{dt}\vec{k} \times r\vec{r}=r\frac{d\theta}{dt}\vec{\theta}$$
+
+
+```{figure} ../images/angular_vel1.png
+---
+width: 40%
+name: mcu
+---
+Diagrama de la velocidad angular
+```
+
+```{figure} ../images/angular_vel2.png
+---
+width: 40%
+name: mcu
+---
+Diagrama de la velocidad angular en sentido negativo
+```
+
 ### Aceleración angular
 
 La aceleración angular mide la variación de la rapidez angular:
@@ -419,6 +451,8 @@ Se trabajaron dos modelos principales:
 - el movimiento circunferencial, donde aparecen magnitudes angulares y aceleraciones asociadas al cambio de dirección y de rapidez.
 
 Estos contenidos sirven de base para comprender trayectorias más complejas y preparar el estudio posterior de la dinámica.
+
+
 
 **Resumen MCU**
 
