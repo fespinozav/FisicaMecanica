@@ -685,7 +685,7 @@ como muestra la figura.[^Guía_4]
 
 ```{figure} ../images/guia4_2_3_setup.png
 ---
-width: 100%
+width: 70%
 name: bloque_plano_inclinado_fh
 ---
 Bloque de masa $m$ en equilibrio sobre plano inclinado sin roce, 
@@ -747,7 +747,7 @@ sin roce). Se tiene $M \geq m$, con $M = 5\ \text{kg}$ y $m = 3\ \text{kg}$.[^Gu
 
 ```{figure} ../images/guia4_2_4_setup.png
 ---
-width: 100%
+width: 70%
 name: atwood_setup
 ---
 Máquina de Atwood: masas $M$ y $m$ conectadas por cuerda inextensible 
@@ -768,16 +768,6 @@ Como $M > m$, el bloque $M$ desciende y el bloque $m$ asciende con la
 misma magnitud de aceleración $a$ (cuerda inextensible).
 
 Se elige positivo **hacia abajo** para $M$ y positivo **hacia arriba** para $m$.
-
-```{figure} ../images/guia4_2_4_dcl.png
----
-width: 55%
-name: atwood_dcl
----
-Diagramas de cuerpo libre: bloque $M$ con peso $Mg$ y tensión $T$ 
-hacia arriba; bloque $m$ con peso $mg$ y tensión $T$ hacia arriba. 
-La tensión $T_1 = 2T$ actúa sobre el soporte de la polea.
-```
 
 #### Paso 2 — Segunda Ley de Newton sobre cada bloque
 
@@ -860,17 +850,6 @@ Se elige $\hat{j}$ positivo **hacia arriba**. El resorte está comprimido,
 por lo que ejerce una **fuerza restauradora hacia arriba** sobre el bloque $M$ 
 y una **fuerza hacia abajo** sobre el bloque $m$ (Tercera Ley de Newton).
 
-Las fuerzas que actúan sobre cada cuerpo son:
-
-```{figure} ../images/guia4_4_2_dcl.png
----
-width: 55%
-name: hooke_dcl
----
-Diagramas de cuerpo libre: sobre $M$ actúan su peso $Mg$ hacia abajo 
-y la fuerza del resorte $F_k$ hacia arriba. Sobre $m$ actúan su peso $mg$, 
-la fuerza del resorte $F_k$ hacia abajo y la normal $N$ de la mesa hacia arriba.
-```
 
 **Sobre el bloque superior $M$:**
 
