@@ -451,9 +451,12 @@ Así, la fuerza neta controla la aceleración y, por tanto, el cambio de movimie
 
 ---
 
-### 17. Ejemplo: Carrito sobre una pista (Cart moving on a Track)
+## 17 Ejercicios de ejemplo
 
-Un carrito con un sensor de fuerza (masa total $m_C$) se desliza libremente sobre una pista horizontal con coeficiente de fricción cinética $\mu_k$​. Una cuerda conecta el sensor a un bloque de masa $m_B$​ que cuelga verticalmente a través de una polea. La cuerda y la polea son ideales (sin masa, sin fricción). Al soltar el bloque:
+#### 17.a Ejemplo: Carrito sobre una pista (Cart moving on a Track)
+
+
+Un carrito con un sensor de fuerza (masa total $m_C$) se desliza libremente sobre una pista horizontal con coeficiente de fricción cinética $\mu_k$​. Una cuerda conecta el sensor a un bloque de masa $m_B$​ que cuelga verticalmente a través de una polea. La cuerda y la polea son ideales (sin masa, sin fricción). Al soltar el bloque:[^MIT-OpenCourseWare_8]
 
 i) ¿Cuál es la aceleración del sistema?
 ii) ¿Cuál es la tensión en la cuerda?
@@ -475,6 +478,8 @@ name: dcl1
 Diagrama de fuerza sobre el sensor/carrito con el vector de descomposición del contacto entre las fuerzas horizontales y verticales (componentes)
 
 ```
+
+[^MIT-OpenCourseWare_8]: https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/online-textbook/
 
 #### Paso 1 — Identificación del sistema y diagramas de cuerpo libre
 
@@ -500,9 +505,176 @@ $$f_k=\mu_kN=\mu_k * m_c * g$$
 
 Dirección $\hat{i}$: EL carrito acelera horizontalmente con $a_{C,x}=a$
 
-$$T-f_k=m_C * a_{C,x} \Rightarrow \boxed{T-\mu_k * m_c * g=m_C * a}$$
+$$T-f_k=m_C * a_{C,x} \Rightarrow \boxed{T-\mu_k * m_c * g=m_C * a} \space (17.a.1)$$
 
-#### Paso 3 — Segunda Ley de Newton sobre el carrito
+#### Paso 3 — Segunda Ley de Newton sobre el bloque
+
+Se elige $\hat{j}_B$ positivo **hacia abajo** (en el sentido del movimiento del bloque). El bloque acelera con $a_{B,y} = a$:
+
+$$m_B*g-T=m_B*a_{B,y} \Rightarrow \boxed{m_B*g-T=m_b*a} \space (17.a.2)$$
+
+### Paso 4 - Condición de restricción cinemática
+
+La cuerda es inextensible: ambos cuerpos tienen la misma magnitud de aceleración.
+
+$$\boxed{a = a_{C,x}=a_{B,y}}$$
+
+La tensión también es uniforme a lo largo de la cuerda (cuerda y polea sin masa):
+
+$$T_{R,B}=T_{R,C}=T$$
+
+### Paso 5 — Resolución del sistema de ecuaciones
+
+Sumando las dos ecuaciones de movimiento $(17.1)$ y $(17.2)$ para eliminar T:
+
+$$T- \mu_km_Cg + m_Bg - T = m_Ca + m_Ba $$
+
+$$ m_Bg - \mu_k m_Cg = (m_V + m_B ) a$$
+
+Finalmente:
+
+$$\boxed{a= \frac{m_Bg - \mu_Cg}{m_C+m_B} = \frac{(m_B - \mu_km_C)g}{m_C+m_B}}$$
+
+Sustituyendo $a$ en la ecuación del carrito $(17.1)$ para obtener $T$:
+
+$$T = \mu_km_Cg + m_Ca = \mu_k m_C g + m_C \frac{(m_B - \mu_k m_C)g}{m_C = m_B}$$
+
+$$\boxed{T= \frac{m_Cm_B(1+\mu_k)}{m_C+m_B}g}$$
+
+En este ejemplo aplicamos la Segunda Ley de Newton a dos objetos: uno compuesto, formado por el sensor y el carrito, y el otro, el bloque. Analizamos las fuerzas que actúan sobre cada objeto, así como las restricciones impuestas sobre la aceleración de cada uno. Empleamos las leyes de fuerza para la fricción cinética y la gravitación en cada sistema de cuerpo libre. Las tres ecuaciones de movimiento nos permiten determinar las fuerzas que dependen de los parámetros del ejemplo: la tensión en la cuerda, la aceleración de los objetos y la fuerza normal entre el carrito y la pista.
+
+### 17.b Ejemplo: Cuña acelerada (Accelerating Wedge)
+
+Una cuña de $45°$ es empujada a lo largo de una mesa con aceleración constante 
+$\vec{A}$ según un observador en reposo respecto a la mesa. Un bloque de masa $m$ 
+se desliza **sin fricción** sobre la cuña (Figura 8.42). Encuentre la aceleración 
+del bloque respecto a un observador en reposo respecto a la mesa.[^MIT-OpenCourseWare_8]
+
+```{figure} ../images/wedge_setup.png
+---
+width: 60%
+name: wedge_setup
+---
+Bloque de masa $m$ deslizándose sobre una cuña acelerada de $45°$
+```
+
+#### Paso 1 — Sistema de coordenadas y definición de variables
+
+```{figure} ../images/wedge_coordinates.png
+---
+width: 60%
+name: wedge_coords
+---
+Sistema de coordenadas para el bloque y la cuña: $\hat{i}$ hacia la derecha, 
+$\hat{j}$ hacia arriba. $x_b$, $y_b$ son las coordenadas del bloque; 
+$x_w$ es la coordenada horizontal de la cuña.
+```
+
+Se define la aceleración de la cuña como:
+
+$$\vec{A} = A_{x,w}\,\hat{i}$$
+
+donde $A_{x,w}$ es la componente $x$ de la aceleración de la cuña.
+
+#### Paso 2 — Condición de restricción cinemática
+
+La superficie de la cuña obliga al bloque a permanecer sobre ella en todo 
+momento. De la geometría (Figura 8.43 del texto) se tiene:
+
+$$\tan\phi = \frac{y_b}{l - (x_b - x_w)}$$
+
+por lo tanto:
+
+$$y_b = \bigl(l - (x_b - x_w)\bigr)\tan\phi$$
+
+Diferenciando dos veces respecto al tiempo (notando que $d^2l/dt^2 = 0$):
+
+$$\frac{d^2 y_b}{dt^2} = -\left(\frac{d^2 x_b}{dt^2} - \frac{d^2 x_w}{dt^2}\right)\tan\phi$$
+
+lo que entrega la **restricción de aceleración**:
+
+$$\boxed{a_{b,y} = -\left(a_{b,x} - A_{x,w}\right)\tan\phi} \tag{17.b.1}$$
+
+#### Paso 3 — Diagrama de cuerpo libre sobre el bloque
+
+```{figure} ../images/wedge_fbd.png
+---
+width: 40%
+name: wedge_fbd
+---
+Diagrama de cuerpo libre del bloque: fuerza normal $N$ perpendicular 
+a la superficie de la cuña y fuerza gravitacional $mg$ hacia abajo.
+```
+
+Sobre el bloque actúan únicamente dos fuerzas (sin fricción):
+
+- Fuerza normal $N$ perpendicular a la superficie de la cuña
+- Fuerza gravitacional $mg$ hacia abajo
+
+#### Paso 4 — Segunda Ley de Newton sobre el bloque
+
+**Dirección $\hat{i}$:**
+
+$$N\sin\phi = m\,a_{b,x} \tag{17.b.2}$$
+
+**Dirección $\hat{j}$:**
+
+$$N\cos\phi - mg = m\,a_{b,y} \tag{17.b.3}$$
+
+De la ecuación $(17.b.2)$ se despeja la fuerza normal:
+
+$$N = \frac{m\,a_{b,x}}{\sin\phi} \tag{17.b.4}$$
+
+#### Paso 5 — Resolución del sistema
+
+Sustituyendo $(17.b.1)$ y $(17.b.4)$ en $(17.b.3)$:
+
+$$\frac{m\,a_{b,x}\cos\phi}{\sin\phi} - mg = m\bigl(-(a_{b,x} - A_{x,w})\tan\phi\bigr)$$
+
+Simplificando:
+
+$$a_{b,x}\left(\cot\phi + \tan\phi\right) = g + A_{x,w}\tan\phi$$
+
+Despejando la componente $x$ de la aceleración del bloque:
+
+$$\boxed{a_{b,x} = \frac{g + A_{x,w}\tan\phi}{\cot\phi + \tan\phi}} \tag{17.b.5}$$
+
+Sustituyendo $(17.b.5)$ en la restricción $(17.b.1)$:
+
+$$\boxed{a_{b,y} = \frac{A_{x,w} - g\tan\phi}{\cot\phi + \tan\phi}} \tag{17.b.6}$$
+
+#### Paso 6 — Caso particular $\phi = 45°$
+
+Para $\phi = 45°$ se tiene $\cot 45° = \tan 45° = 1$, por lo que 
+$(17.b.5)$ y $(17.b.6)$ se reducen a:
+
+$$\boxed{a_{b,x} = \frac{g + A_{x,w}}{2}} \tag{17.b.7}$$
+
+$$\boxed{a_{b,y} = \frac{A_{x,w} - g}{2}} \tag{17.b.8}$$
+
+La **magnitud de la aceleración** del bloque es:
+
+$$|\vec{a}| = \sqrt{a_{b,x}^2 + a_{b,y}^2} 
+= \sqrt{\left(\frac{g + A_{x,w}}{2}\right)^2 + \left(\frac{A_{x,w} - g}{2}\right)^2}$$
+
+$$\boxed{|\vec{a}| = \sqrt{\frac{g^2 + A_{x,w}^2}{2}}} \tag{17.b.9}$$
+
+#### Verificación de casos límite
+
+| Condición | Resultado esperado | ¿Se cumple? |
+|---|---|---|
+| $A_{x,w} = 0$ (cuña en reposo) | $a_{b,x} = g/2$, $a_{b,y} = -g/2$, $\|\vec{a}\| = g/\sqrt{2}$ | ✓ Caída libre sobre plano inclinado a $45°$ |
+| $A_{x,w} = g$ | $a_{b,x} = g$, $a_{b,y} = 0$ | ✓ El bloque solo acelera horizontalmente |
+| $A_{x,w} \gg g$ | $\|\vec{a}\| \approx A_{x,w}/\sqrt{2}$ | ✓ La aceleración de la cuña domina |
+
+En este ejemplo aplicamos la Segunda Ley de Newton a un solo objeto 
+(el bloque), pero la clave estuvo en **derivar la restricción 
+cinemática** que impone la superficie de la cuña. 
+Esta restricción acopla las componentes $x$ e $y$ de la aceleración 
+del bloque con la aceleración $A_{x,w}$ de la cuña, convirtiendo un 
+problema aparentemente bidimensional en un sistema de dos ecuaciones 
+con dos incógnitas ($a_{b,x}$ y $N$).
+
 
 ---
 
