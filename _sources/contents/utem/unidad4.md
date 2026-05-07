@@ -685,7 +685,7 @@ como muestra la figura.[^Guía_4]
 
 ```{figure} ../images/guia4_2_3_setup.png
 ---
-width: 50%
+width: 30%
 name: bloque_plano_inclinado_fh
 ---
 Bloque de masa $m$ en equilibrio sobre plano inclinado sin roce, 
@@ -747,7 +747,7 @@ sin roce). Se tiene $M \geq m$, con $M = 5\ \text{kg}$ y $m = 3\ \text{kg}$.[^Gu
 
 ```{figure} ../images/guia4_2_4_setup.png
 ---
-width: 50%
+width: 30%
 name: atwood_setup
 ---
 Máquina de Atwood: masas $M$ y $m$ conectadas por cuerda inextensible 
@@ -833,7 +833,7 @@ Calcule la constante elástica del resorte.
 
 ```{figure} ../images/guia4_4_2_setup.png
 ---
-width: 60%
+width: 30%
 name: hooke_setup
 ---
 Sistema en equilibrio: bloque $M$ apoyado sobre un resorte de constante $k$, 
