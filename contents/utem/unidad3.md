@@ -461,7 +461,7 @@ Estos contenidos sirven de base para comprender trayectorias más complejas y pr
 - Velocidad angular media: $\omega_m=\frac{\Delta\theta}{\Delta t}$
 - Ecuación horaria de MCU: $\theta=\theta_i+\omega_i\,t$
 - Relación con velocidad tangencial: $v_T=R\,\omega$
-- Tiempo de 1 ciclo – 1 vuelta: período $T$
+- Tiempo de 1 ciclo – 1 vuelta - 1 revolución - 360° - $2\pi (rad)$ : período $T$
 - Frecuencia: $f=\frac{\omega}{2\pi}=\frac{1}{T}$
 - Aceleración centrípeta: $a_C=\frac{v_T^2}{R}=\omega^2 R$
 - Y también: $a_{C} = \frac{4\pi^2 R}{T^2} = 4\pi^2 R f^2$
@@ -470,22 +470,48 @@ Estos contenidos sirven de base para comprender trayectorias más complejas y pr
 
 ## Ejercicios
 
-1. Una partícula realiza un movimiento circular con una velocidad angular de 18.85 rad/s. ¿Cuál es el número de revoluciones en 1 minuto?
+1. Una partícula realiza un movimiento circular con una velocidad angular de 18.85 rad/s. 
+
+**Determine**:
+- ¿Cuál es su frecuencia?
+- ¿Cuál es el número de revoluciones en 1 minuto?
 
 Los datos conocidos son:
 - $w=18,85rad/s$
 
-Para calcular la frecuencia, empleamos la fórmula ${w=2\pi}f$
+Para calcular la frecuencia, empleamos la fórmula ${w=2\pi}f$, donde $f=\frac{1}{T}$
 
 Sustituimos los datos conocidos en la fórmula y obtenemos:
-  $$18,85rad/s=(2\pi){rad}f$$
-  $$\frac{18,85rad/f}{2{\pi}{rad}}$$
-  $$3 rev/s=f$$
-  $$\therefore \frac{3rev}{s} *\frac{60s}{1min}=180 \frac{rev}{min}$$
-- El número de revoluciones en un minuto es: 180 $rev/min$
+$$18,85 \frac{rad}{s}=(2\pi){rad}f$$
+
+$$f = \frac{18,85}{2\pi}$$
+
+por ende su periodo es: $T=\frac{2\pi}{18,85}$ o $0,106\pi$
+
+La frecuencia y el periodo cuando se trabaja en radianes podemos expresarla en funciones de $\pi$ o $2\pi$ para facilitar el entendimiento, donde $2\pi$ es un ciclo o una vuelta completa (360˜)
+
+Para convertir $rad/s$ a $rev/s$, mulplicamos la velocidad angular por $2\pi$ aproximadamente $6,283$. Esto se debe a que una revolución completa equivale a $2\pi$ radianes.
+
+$$\boxed{rad/s = RPS * 2\pi}$$
+
+Sabemos que:
+
+$$\boxed{1 rev/s: 1*2\pi = 2\pi rad/s \approx 6,283 rad/s}$$
+
+por ende $18,85rad/s$ serían:
+
+$$18,85 rad/s \approx \frac{18,85}{2\pi} \frac{rad}{s} \approx 3rev/s $$
+
+Convirtiendo $RPS$ a $RPM$ tenemos:
+
+$$\therefore 3\frac{rev}{s} *\frac{60s}{1min}=180 \frac{rev}{min}$$
+
+El número de revoluciones en un minuto es: 180 $rev/min$ o 180 $RPM$
+
+---
 
 
-2. Un coche gira en una rotonda de 8 m de radio con una velocidad de 50 km/h. Calcula su aceleración centrípeta.
+1. Un coche gira en una rotonda de 8 m de radio con una velocidad de 50 km/h. Calcula su aceleración centrípeta.
 
     Cuando un cuerpo cambia su velocidad decimos que tiene aceleración. La velocidad puede cambiar de dos modos:
     
