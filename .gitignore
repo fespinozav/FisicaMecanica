@@ -110,3 +110,7 @@ venv.bak/
 references
 .DS_Store
 
+# Claude Code
+CLAUDE.md
+.claude/
+
