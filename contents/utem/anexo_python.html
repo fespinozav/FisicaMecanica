@@ -417,8 +417,22 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-fisica">Síntesis Física</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-estudiantes">11. Buenas prácticas para estudiantes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-sugeridas-al-curso">12. Aplicaciones sugeridas al curso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-computacional-con-sympy">11. Álgebra computacional con <code class="docutils literal notranslate"><span class="pre">SymPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion-basica-y-simbolos">Notación básica y símbolos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-simbolicas-frecuentes">Operaciones simbólicas frecuentes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-e-integrales">Derivadas e integrales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolver-sistemas-de-ecuaciones">Resolver sistemas de ecuaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sistema-lineal">Ejemplo: sistema lineal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-ecuacion-no-lineal">Ejemplo: ecuación no lineal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sustitucion-y-evaluacion-numerica">Sustitución y evaluación numérica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-oscilador-armonico-simple">Ejemplo: oscilador armónico simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuando-usar-sympy-y-cuando-numpy">¿Cuándo usar <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> y cuándo <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-estudiantes">12. Buenas prácticas para estudiantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-sugeridas-al-curso">13. Aplicaciones sugeridas al curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
 </ul>
             </nav>
@@ -448,11 +462,11 @@
 <h2>Objetivo de aprendizaje<a class="headerlink" href="#objetivo-de-aprendizaje" title="Link to this heading">#</a></h2>
 <p>Al finalizar este anexo, el estudiante será capaz de:</p>
 <ul class="simple">
-<li><p>usar Google Colab para abrir, editar y ejecutar notebooks;</p></li>
-<li><p>escribir instrucciones básicas en Python;</p></li>
-<li><p>utilizar variables, operaciones aritméticas y funciones matemáticas;</p></li>
-<li><p>definir funciones simples para problemas de mecánica;</p></li>
-<li><p>generar gráficos básicos con Python;</p></li>
+<li><p>usar Google Colab para abrir, editar y ejecutar notebooks</p></li>
+<li><p>escribir instrucciones básicas en Python</p></li>
+<li><p>utilizar variables, operaciones aritméticas y funciones matemáticas</p></li>
+<li><p>definir funciones simples para problemas de mecánica</p></li>
+<li><p>generar gráficos básicos con Python</p></li>
 <li><p>interpretar visualmente relaciones físicas a partir de datos y funciones.</p></li>
 </ul>
 </section>
@@ -950,31 +964,170 @@ estable el esquema para pasos de tiempo pequeños.<a class="footnote-reference b
 </section>
 </section>
 <hr class="docutils" />
+<section id="algebra-computacional-con-sympy">
+<h2>11. Álgebra computacional con <code class="docutils literal notranslate"><span class="pre">SymPy</span></code><a class="headerlink" href="#algebra-computacional-con-sympy" title="Link to this heading">#</a></h2>
+<p>Hasta ahora hemos trabajado con cálculo <strong>numérico</strong>: Python entrega valores aproximados (por ejemplo, <span class="math notranslate nohighlight">\(\sqrt{2} \approx 1.4142\)</span>). La librería <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> permite hacer cálculo <strong>simbólico</strong>, es decir, manipular expresiones matemáticas de forma exacta, tal como se haría con lápiz y papel.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+</pre></div>
+</div>
+<section id="notacion-basica-y-simbolos">
+<h3>Notación básica y símbolos<a class="headerlink" href="#notacion-basica-y-simbolos" title="Link to this heading">#</a></h3>
+<p>Antes de operar con variables matemáticas hay que declararlas como <strong>símbolos</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x y t&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;m g v0&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Una vez declarados, los símbolos se combinan en expresiones algebraicas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">expr</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sp.Rational(1,</span> <span class="pre">2)</span></code> representa exactamente <span class="math notranslate nohighlight">\(\tfrac{1}{2}\)</span>, a diferencia de <code class="docutils literal notranslate"><span class="pre">0.5</span></code> que es un decimal aproximado.</p>
+</section>
+<section id="operaciones-simbolicas-frecuentes">
+<h3>Operaciones simbólicas frecuentes<a class="headerlink" href="#operaciones-simbolicas-frecuentes" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>         <span class="c1"># expandir</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># factorizar</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># simplificar</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>         <span class="c1"># raíces de una ecuación</span>
+</pre></div>
+</div>
+</section>
+<section id="derivadas-e-integrales">
+<h3>Derivadas e integrales<a class="headerlink" href="#derivadas-e-integrales" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> se integra muy bien con la mecánica porque permite derivar e integrar de forma exacta.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Posición de un MRUA: x(t) = x0 + v0 t + (1/2) a t^2</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x0 v0 a&quot;</span><span class="p">)</span>
+<span class="n">x_t</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">v0</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">v_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_t</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>         <span class="c1"># velocidad: derivada de la posición</span>
+<span class="n">a_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>      <span class="c1"># aceleración: segunda derivada</span>
+
+<span class="n">v_t</span><span class="p">,</span> <span class="n">a_t</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trabajo de una fuerza variable F(x) = -k x entre 0 y L</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;k L&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">F</span> <span class="o">=</span> <span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">x</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+<span class="n">W</span>
+</pre></div>
+</div>
+</section>
+<section id="resolver-sistemas-de-ecuaciones">
+<h3>Resolver sistemas de ecuaciones<a class="headerlink" href="#resolver-sistemas-de-ecuaciones" title="Link to this heading">#</a></h3>
+<p>Una de las aplicaciones más útiles en mecánica es resolver sistemas de ecuaciones que aparecen al aplicar las leyes de Newton o al estudiar colisiones.</p>
+<section id="ejemplo-sistema-lineal">
+<h4>Ejemplo: sistema lineal<a class="headerlink" href="#ejemplo-sistema-lineal" title="Link to this heading">#</a></h4>
+<p>Supongamos dos bloques conectados por una cuerda sobre una polea ideal, con masas <span class="math notranslate nohighlight">\(m_1\)</span> y <span class="math notranslate nohighlight">\(m_2\)</span>. Las ecuaciones de Newton dan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+m_1 a = T - m_1 g \\
+m_2 a = m_2 g - T
+\end{cases}
+\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;a T&quot;</span><span class="p">)</span>
+<span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;m1 m2 g&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">eq1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">m1</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="o">-</span> <span class="n">m1</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="n">eq2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">m2</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">m2</span><span class="o">*</span><span class="n">g</span> <span class="o">-</span> <span class="n">T</span><span class="p">)</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="p">])</span>
+<span class="n">sol</span>
+</pre></div>
+</div>
+<p>El resultado es la solución analítica para la aceleración del sistema y la tensión de la cuerda, expresada en función de <span class="math notranslate nohighlight">\(m_1\)</span>, <span class="math notranslate nohighlight">\(m_2\)</span> y <span class="math notranslate nohighlight">\(g\)</span>.</p>
+</section>
+<section id="ejemplo-ecuacion-no-lineal">
+<h4>Ejemplo: ecuación no lineal<a class="headerlink" href="#ejemplo-ecuacion-no-lineal" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tiempo de vuelo de un proyectil lanzado desde el suelo</span>
+<span class="n">v0</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">gsym</span><span class="p">,</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;v0 theta g t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">ts</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">gsym</span><span class="o">*</span><span class="n">ts</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sustitucion-y-evaluacion-numerica">
+<h3>Sustitución y evaluación numérica<a class="headerlink" href="#sustitucion-y-evaluacion-numerica" title="Link to this heading">#</a></h3>
+<p>Una vez obtenida la solución simbólica, podemos reemplazar valores y obtener un número concreto.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sol_a</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>                                  <span class="c1"># expresión simbólica</span>
+<span class="n">sol_a</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m1</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m2</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="mf">9.81</span><span class="p">})</span>             <span class="c1"># evaluación exacta</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">sol_a</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m1</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m2</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="mf">9.81</span><span class="p">}))</span>      <span class="c1"># como número flotante</span>
+</pre></div>
+</div>
+</section>
+<section id="ejemplo-oscilador-armonico-simple">
+<h3>Ejemplo: oscilador armónico simple<a class="headerlink" href="#ejemplo-oscilador-armonico-simple" title="Link to this heading">#</a></h3>
+<p>Como ejemplo más completo de <strong>álgebra computacional</strong>, resolvamos simbólicamente la ecuación diferencial del oscilador armónico simple,</p>
+<div class="math notranslate nohighlight">
+\[
+m\,\ddot{x}(t) + k\,x(t) = 0,
+\]</div>
+<p>con condiciones iniciales <span class="math notranslate nohighlight">\(x(0) = A\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0) = 0\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;m k A&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+
+<span class="n">ode</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span>
+    <span class="n">ode</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+    <span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="mi">0</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">sol</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> devuelve la solución exacta <span class="math notranslate nohighlight">\(x(t) = A\cos(\omega t)\)</span> con <span class="math notranslate nohighlight">\(\omega = \sqrt{k/m}\)</span>, sin necesidad de integrar a mano.</p>
+</section>
+<section id="cuando-usar-sympy-y-cuando-numpy">
+<h3>¿Cuándo usar <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> y cuándo <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?<a class="headerlink" href="#cuando-usar-sympy-y-cuando-numpy" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SymPy</span></code></strong> — cuando se busca una expresión analítica exacta: derivar, integrar, factorizar, resolver ecuaciones literales, verificar despejes hechos a mano.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></strong> — cuando se necesitan valores numéricos para muchos puntos, simulaciones o gráficos.</p></li>
+</ul>
+<p>A menudo conviene combinar ambos: obtener una fórmula con <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> y luego graficarla numéricamente con <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> y <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Para esto, <code class="docutils literal notranslate"><span class="pre">sp.lambdify</span></code> convierte una expresión simbólica en una función numérica:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">v0</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">t</span>  <span class="c1"># alcance horizontal x(t)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">theta</span><span class="p">),</span> <span class="n">expr</span><span class="p">,</span> <span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.785</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
 <section id="buenas-practicas-para-estudiantes">
-<h2>11. Buenas prácticas para estudiantes<a class="headerlink" href="#buenas-practicas-para-estudiantes" title="Link to this heading">#</a></h2>
+<h2>12. Buenas prácticas para estudiantes<a class="headerlink" href="#buenas-practicas-para-estudiantes" title="Link to this heading">#</a></h2>
 <p>Cuando trabajes en Colab, se recomienda:</p>
 <ul class="simple">
-<li><p>comentar el código;</p></li>
-<li><p>usar nombres de variables claros;</p></li>
-<li><p>incluir unidades en los gráficos;</p></li>
-<li><p>probar primero ejemplos simples;</p></li>
-<li><p>revisar si los resultados tienen sentido físico;</p></li>
+<li><p>comentar el código</p></li>
+<li><p>usar nombres de variables claros</p></li>
+<li><p>incluir unidades en los gráficos</p></li>
+<li><p>probar primero ejemplos simples</p></li>
+<li><p>revisar si los resultados tienen sentido físico</p></li>
 <li><p>separar el cálculo, el gráfico y la interpretación.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="aplicaciones-sugeridas-al-curso">
-<h2>12. Aplicaciones sugeridas al curso<a class="headerlink" href="#aplicaciones-sugeridas-al-curso" title="Link to this heading">#</a></h2>
+<h2>13. Aplicaciones sugeridas al curso<a class="headerlink" href="#aplicaciones-sugeridas-al-curso" title="Link to this heading">#</a></h2>
 <p>Este anexo puede usarse para apoyar contenidos como:</p>
 <ul class="simple">
-<li><p>conversiones de unidades;</p></li>
-<li><p>vectores y descomposición;</p></li>
-<li><p>cinemática 1D;</p></li>
-<li><p>tiro parabólico;</p></li>
-<li><p>movimiento circular;</p></li>
-<li><p>leyes de Newton;</p></li>
-<li><p>energía mecánica;</p></li>
-<li><p>momentum lineal.</p></li>
+<li><p>conversiones de unidades</p></li>
+<li><p>vectores y descomposición</p></li>
+<li><p>cinemática 1D</p></li>
+<li><p>tiro parabólico</p></li>
+<li><p>movimiento circular</p></li>
+<li><p>leyes de Newton</p></li>
+<li><p>energía mecánica</p></li>
+<li><p>momentum lineal</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -991,6 +1144,9 @@ estable el esquema para pasos de tiempo pequeños.<a class="footnote-reference b
 <li><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SymPy</span></code></p></li>
+<li><p>cálculo simbólico</p></li>
+<li><p>sistema de ecuaciones</p></li>
 <li><p>gráfico</p></li>
 <li><p>visualización de datos</p></li>
 </ul>
@@ -1129,8 +1285,22 @@ estable el esquema para pasos de tiempo pequeños.<a class="footnote-reference b
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-fisica">Síntesis Física</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-estudiantes">11. Buenas prácticas para estudiantes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-sugeridas-al-curso">12. Aplicaciones sugeridas al curso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-computacional-con-sympy">11. Álgebra computacional con <code class="docutils literal notranslate"><span class="pre">SymPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion-basica-y-simbolos">Notación básica y símbolos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-simbolicas-frecuentes">Operaciones simbólicas frecuentes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-e-integrales">Derivadas e integrales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolver-sistemas-de-ecuaciones">Resolver sistemas de ecuaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sistema-lineal">Ejemplo: sistema lineal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-ecuacion-no-lineal">Ejemplo: ecuación no lineal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sustitucion-y-evaluacion-numerica">Sustitución y evaluación numérica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-oscilador-armonico-simple">Ejemplo: oscilador armónico simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuando-usar-sympy-y-cuando-numpy">¿Cuándo usar <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> y cuándo <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-estudiantes">12. Buenas prácticas para estudiantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-sugeridas-al-curso">13. Aplicaciones sugeridas al curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
 </ul>
   </nav></div>

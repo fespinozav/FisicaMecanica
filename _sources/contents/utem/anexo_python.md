@@ -17,11 +17,11 @@ El enfoque de este anexo está inspirado en una serie de notebooks introductorio
 
 Al finalizar este anexo, el estudiante será capaz de:
 
-- usar Google Colab para abrir, editar y ejecutar notebooks;
-- escribir instrucciones básicas en Python;
-- utilizar variables, operaciones aritméticas y funciones matemáticas;
-- definir funciones simples para problemas de mecánica;
-- generar gráficos básicos con Python;
+- usar Google Colab para abrir, editar y ejecutar notebooks
+- escribir instrucciones básicas en Python
+- utilizar variables, operaciones aritméticas y funciones matemáticas
+- definir funciones simples para problemas de mecánica
+- generar gráficos básicos con Python
 - interpretar visualmente relaciones físicas a partir de datos y funciones.
 
 ---
@@ -511,31 +511,184 @@ estable el esquema para pasos de tiempo pequeños.[^Malthe2015]
 [^Malthe2015]: Malthe-Sørenssen, A. (2015). *Elementary mechanics using Python: A modern course combining analytical and numerical techniques* (pp. 99–103). Springer. https://doi.org/10.1007/978-3-319-19596-4
 ---
 
-## 11. Buenas prácticas para estudiantes
+## 11. Álgebra computacional con `SymPy`
+
+Hasta ahora hemos trabajado con cálculo **numérico**: Python entrega valores aproximados (por ejemplo, $\sqrt{2} \approx 1.4142$). La librería `SymPy` permite hacer cálculo **simbólico**, es decir, manipular expresiones matemáticas de forma exacta, tal como se haría con lápiz y papel.
+
+```python
+import sympy as sp
+```
+
+### Notación básica y símbolos
+
+Antes de operar con variables matemáticas hay que declararlas como **símbolos**.
+
+```python
+import sympy as sp
+
+x, y, t = sp.symbols("x y t")
+m, g, v0 = sp.symbols("m g v0", positive=True)
+```
+
+Una vez declarados, los símbolos se combinan en expresiones algebraicas:
+
+```python
+expr = m * g * x + sp.Rational(1, 2) * m * v0**2
+expr
+```
+
+`sp.Rational(1, 2)` representa exactamente $\tfrac{1}{2}$, a diferencia de `0.5` que es un decimal aproximado.
+
+### Operaciones simbólicas frecuentes
+
+```python
+sp.expand((x + y)**3)         # expandir
+sp.factor(x**2 - y**2)        # factorizar
+sp.simplify(sp.sin(x)**2 + sp.cos(x)**2)  # simplificar
+sp.solve(x**2 - 4, x)         # raíces de una ecuación
+```
+
+### Derivadas e integrales
+
+`SymPy` se integra muy bien con la mecánica porque permite derivar e integrar de forma exacta.
+
+```python
+# Posición de un MRUA: x(t) = x0 + v0 t + (1/2) a t^2
+x0, v0, a = sp.symbols("x0 v0 a")
+x_t = x0 + v0*t + sp.Rational(1, 2)*a*t**2
+
+v_t = sp.diff(x_t, t)         # velocidad: derivada de la posición
+a_t = sp.diff(x_t, t, 2)      # aceleración: segunda derivada
+
+v_t, a_t
+```
+
+```python
+# Trabajo de una fuerza variable F(x) = -k x entre 0 y L
+k, L = sp.symbols("k L", positive=True)
+F = -k*x
+W = sp.integrate(F, (x, 0, L))
+W
+```
+
+### Resolver sistemas de ecuaciones
+
+Una de las aplicaciones más útiles en mecánica es resolver sistemas de ecuaciones que aparecen al aplicar las leyes de Newton o al estudiar colisiones.
+
+#### Ejemplo: sistema lineal
+
+Supongamos dos bloques conectados por una cuerda sobre una polea ideal, con masas $m_1$ y $m_2$. Las ecuaciones de Newton dan:
+
+$$
+\begin{cases}
+m_1 a = T - m_1 g \\
+m_2 a = m_2 g - T
+\end{cases}
+$$
+
+```python
+import sympy as sp
+
+a, T = sp.symbols("a T")
+m1, m2, g = sp.symbols("m1 m2 g", positive=True)
+
+eq1 = sp.Eq(m1*a, T - m1*g)
+eq2 = sp.Eq(m2*a, m2*g - T)
+
+sol = sp.solve([eq1, eq2], [a, T])
+sol
+```
+
+El resultado es la solución analítica para la aceleración del sistema y la tensión de la cuerda, expresada en función de $m_1$, $m_2$ y $g$.
+
+#### Ejemplo: ecuación no lineal
+
+```python
+# Tiempo de vuelo de un proyectil lanzado desde el suelo
+v0, theta, gsym, ts = sp.symbols("v0 theta g t", positive=True)
+y = v0*sp.sin(theta)*ts - sp.Rational(1, 2)*gsym*ts**2
+sp.solve(sp.Eq(y, 0), ts)
+```
+
+### Sustitución y evaluación numérica
+
+Una vez obtenida la solución simbólica, podemos reemplazar valores y obtener un número concreto.
+
+```python
+sol_a = sol[a]                                  # expresión simbólica
+sol_a.subs({m1: 2, m2: 3, g: 9.81})             # evaluación exacta
+float(sol_a.subs({m1: 2, m2: 3, g: 9.81}))      # como número flotante
+```
+
+### Ejemplo: oscilador armónico simple
+
+Como ejemplo más completo de **álgebra computacional**, resolvamos simbólicamente la ecuación diferencial del oscilador armónico simple,
+
+$$
+m\,\ddot{x}(t) + k\,x(t) = 0,
+$$
+
+con condiciones iniciales $x(0) = A$ y $\dot{x}(0) = 0$.
+
+```python
+import sympy as sp
+
+t = sp.symbols("t")
+m, k, A = sp.symbols("m k A", positive=True)
+x = sp.Function("x")
+
+ode = sp.Eq(m*x(t).diff(t, 2) + k*x(t), 0)
+
+sol = sp.dsolve(
+    ode,
+    x(t),
+    ics={x(0): A, x(t).diff(t).subs(t, 0): 0},
+)
+sol
+```
+
+`SymPy` devuelve la solución exacta $x(t) = A\cos(\omega t)$ con $\omega = \sqrt{k/m}$, sin necesidad de integrar a mano.
+
+### ¿Cuándo usar `SymPy` y cuándo `NumPy`?
+
+- **`SymPy`** — cuando se busca una expresión analítica exacta: derivar, integrar, factorizar, resolver ecuaciones literales, verificar despejes hechos a mano.
+- **`NumPy`** — cuando se necesitan valores numéricos para muchos puntos, simulaciones o gráficos.
+
+A menudo conviene combinar ambos: obtener una fórmula con `SymPy` y luego graficarla numéricamente con `NumPy` y `matplotlib`. Para esto, `sp.lambdify` convierte una expresión simbólica en una función numérica:
+
+```python
+expr = v0*sp.cos(theta)*t  # alcance horizontal x(t)
+f = sp.lambdify((t, v0, theta), expr, "numpy")
+f(0.5, 20, 0.785)
+```
+
+---
+
+## 12. Buenas prácticas para estudiantes
 
 Cuando trabajes en Colab, se recomienda:
 
-- comentar el código;
-- usar nombres de variables claros;
-- incluir unidades en los gráficos;
-- probar primero ejemplos simples;
-- revisar si los resultados tienen sentido físico;
+- comentar el código
+- usar nombres de variables claros
+- incluir unidades en los gráficos
+- probar primero ejemplos simples
+- revisar si los resultados tienen sentido físico
 - separar el cálculo, el gráfico y la interpretación.
 
 ---
 
-## 12. Aplicaciones sugeridas al curso
+## 13. Aplicaciones sugeridas al curso
 
 Este anexo puede usarse para apoyar contenidos como:
 
-- conversiones de unidades;
-- vectores y descomposición;
-- cinemática 1D;
-- tiro parabólico;
-- movimiento circular;
-- leyes de Newton;
-- energía mecánica;
-- momentum lineal.
+- conversiones de unidades
+- vectores y descomposición
+- cinemática 1D
+- tiro parabólico
+- movimiento circular
+- leyes de Newton
+- energía mecánica
+- momentum lineal
 
 ---
 
@@ -551,5 +704,8 @@ Este anexo puede usarse para apoyar contenidos como:
 - `math`
 - `numpy`
 - `matplotlib`
+- `SymPy`
+- cálculo simbólico
+- sistema de ecuaciones
 - gráfico
 - visualización de datos
