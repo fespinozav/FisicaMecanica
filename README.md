@@ -6,6 +6,7 @@ El trabajo del curso se apoya en dos espacios principales:
 
 - Repositorio GitHub: [fespinozav/FisicaMecanica](https://github.com/fespinozav/FisicaMecanica)
 - Jupyter Book del curso: [https://fespinozav.github.io/FisicaMecanica/](https://fespinozav.github.io/FisicaMecanica/)
+- Drive compartido UTEM: [Drive-UTEM](https://drive.google.com/drive/folders/1pKLM33z13s3KHRl8ku9CtooqnnvwCbj6?usp=drive_link)
 
 Aqui encontraras una vista general del curso, con recursos, evaluacion, materiales y resultados de aprendizaje.
 
