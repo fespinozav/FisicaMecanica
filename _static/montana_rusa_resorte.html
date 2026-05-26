@@ -59,7 +59,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 
   <!-- Legend -->
   <g transform="translate(18,18)">
-    <rect width="208" height="94" rx="8" fill="var(--color-background-primary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+    <rect width="208" height="112" rx="8" fill="var(--color-background-primary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
     <text x="14" y="20" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">ENERGÍAS</text>
     <rect x="14" y="28" width="16" height="10" fill="#004EAA"/>
     <text x="38" y="38" style="font-size:11px;fill:var(--color-text-primary)">K — cinética</text>
@@ -67,17 +67,20 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
     <text x="38" y="54" style="font-size:11px;fill:var(--color-text-primary)">Uₘ — grav. = m g y</text>
     <rect x="14" y="60" width="16" height="10" fill="#F07F00"/>
     <text x="38" y="70" style="font-size:11px;fill:var(--color-text-primary)">Uₑ — elástica = ½ k x²</text>
-    <rect x="14" y="76" width="16" height="8" fill="none" stroke="#C0165A" stroke-width="1.5"/>
-    <text x="38" y="84" style="font-size:11px;fill:var(--color-text-primary)">Em = K + Uₘ + Uₑ (constante)</text>
+    <rect x="14" y="76" width="16" height="10" fill="#706F6F"/>
+    <text x="38" y="86" style="font-size:11px;fill:var(--color-text-primary)">Eᶠ — roce = μ·m·g·s</text>
+    <rect x="14" y="92" width="16" height="8" fill="none" stroke="#C0165A" stroke-width="1.5"/>
+    <text x="38" y="100" style="font-size:11px;fill:var(--color-text-primary)">Em = E₀ − Eᶠ (disminuye con roce)</text>
   </g>
 
   <!-- Energy distribution bar -->
   <g transform="translate(486,18)">
-    <text x="0" y="12" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">DISTRIBUCIÓN DE Em</text>
+    <text x="0" y="12" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">DISTRIBUCIÓN DE E₀</text>
     <rect x="0" y="20" width="196" height="16" fill="var(--color-background-secondary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
     <rect id="bar-K" x="0" y="20" width="0" height="16" fill="#004EAA"/>
     <rect id="bar-Ug" x="0" y="20" width="0" height="16" fill="#D62828"/>
     <rect id="bar-Ue" x="0" y="20" width="0" height="16" fill="#F07F00"/>
+    <rect id="bar-Ef" x="0" y="20" width="0" height="16" fill="#706F6F"/>
     <text id="bar-lbl" x="0" y="52" style="font-size:11px;fill:var(--color-text-secondary)"></text>
   </g>
 
@@ -132,18 +135,26 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
     <input type="range" min="0" max="5000" step="50" value="1500" id="sl-k" style="flex:1" oninput="reset()">
     <span class="sval" id="vl-k">1500 N/m</span>
   </div>
+  <div class="srow">
+    <span class="slbl">Coeficiente de roce μ</span>
+    <input type="range" min="0" max="0.5" step="0.01" value="0" id="sl-mu" style="flex:1" oninput="reset()">
+    <span class="sval" id="vl-mu">0.00</span>
+  </div>
 </div>
 
 <!-- Energy cards -->
-<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px">
-  <div class="fcard"><p class="flbl">Energía total  E</p><p class="fval" id="cv-E" style="color:#C0165A"></p></div>
+<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px">
+  <div class="fcard"><p class="flbl">Energía inicial  E₀</p><p class="fval" id="cv-E" style="color:#C0165A"></p></div>
   <div class="fcard"><p class="flbl">Cinética  K</p><p class="fval" id="cv-K" style="color:#004EAA"></p></div>
   <div class="fcard"><p class="flbl">Grav.  Uₘ</p><p class="fval" id="cv-Ug" style="color:#D62828"></p></div>
   <div class="fcard"><p class="flbl">Elástica  Uₑ</p><p class="fval" id="cv-Ue" style="color:#F07F00"></p></div>
+  <div class="fcard"><p class="flbl">Roce  Eᶠ</p><p class="fval" id="cv-Ef" style="color:#706F6F"></p></div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px">
-  <div class="fcard"><p class="flbl">Rapidez en la base  v(B) = √(v₀² + 2gH)</p><p class="fval" id="cv-vB" style="color:#004EAA"></p></div>
-  <div class="fcard"><p class="flbl">Compresión máxima  xₘₐₓ = √(2E / k)</p><p class="fval" id="cv-xm" style="color:#F07F00"></p></div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px">
+  <div class="fcard"><p class="flbl">Rapidez actual  v</p><p class="fval" id="cv-v" style="color:#004EAA"></p></div>
+  <div class="fcard"><p class="flbl">Compresión máxima  xₘₐₓ = √(2E₀ / k)</p><p class="fval" id="cv-xm" style="color:#F07F00"></p></div>
+  <div class="fcard"><p class="flbl">Distancia recorrida  s</p><p class="fval" id="cv-dist" style="color:#78BF26"></p></div>
+  <div class="fcard"><p class="flbl">Tiempo simulado  t</p><p class="fval" id="cv-simTime" style="color:#57606a"></p></div>
 </div>
 
 <script>
@@ -156,11 +167,11 @@ let pathPts = [], totalArc = 0, E = 0, cMax = 0, compPxPerM = 0;
 let t = 0, dir = 1;
 let H_m = 6, v0 = 0, k = 1500;
 let running = false, rafId = null;
+let mu = 0, Ef = 0, dist = 0, simTime = 0;
 
 function buildPath(Hm, xFlatEndPx){
   const pts = [];
   const NSLOPE = 80, NFLAT = 16, L_H_M = 8;
-  // Physical flat length scales with pixel width so animation speed stays consistent
   const L_F_M = 4 * (xFlatEndPx - X_BOT) / (X_SPR - X_BOT);
   for(let i=0; i<=NSLOPE; i++){
     const u = i/NSLOPE;
@@ -223,9 +234,11 @@ function reset(){
   H_m = +$('sl-H').value;
   v0 = +$('sl-v').value;
   k = +$('sl-k').value;
+  mu = +$('sl-mu').value;
   $('vl-H').textContent = H_m.toFixed(1)+' m';
   $('vl-v').textContent = v0.toFixed(1)+' m/s';
   $('vl-k').textContent = k > 0 ? k+' N/m' : 'Sin resorte';
+  $('vl-mu').textContent = mu.toFixed(2);
 
   const noSpring = (k === 0);
   pathPts = buildPath(H_m, noSpring ? X_WALL : X_SPR);
@@ -238,13 +251,12 @@ function reset(){
 
   t = 0;
   dir = (E > 1e-6) ? 1 : 0;
+  Ef = 0; dist = 0; simTime = 0;
 
-  // Draw track
   let d = `M ${pathPts[0].x_px.toFixed(1)} ${pathPts[0].y_px.toFixed(1)}`;
   for(let i=1;i<pathPts.length;i++) d += ` L ${pathPts[i].x_px.toFixed(1)} ${pathPts[i].y_px.toFixed(1)}`;
   $('track').setAttribute('d', d);
 
-  // Height marker
   if(H_m > 0.1){
     const topY = Y_G - H_m*H_PX;
     $('h-top').setAttribute('x1', X_TOP-12); $('h-top').setAttribute('y1', topY);
@@ -264,9 +276,11 @@ function reset(){
 
   $('cv-E').textContent = E.toFixed(1)+' J';
   $('cv-xm').textContent = k > 0 ? cMax.toFixed(3)+' m' : '—';
-  $('cv-vB').textContent = Math.sqrt(v0*v0 + 2*G*H_m).toFixed(2)+' m/s';
+  const vB = Math.sqrt(v0*v0 + 2*G*H_m).toFixed(2)+' m/s';
+  $('cv-Ef').textContent = '0.0 J';
+  $('cv-dist').textContent = '0.00 m';
+  $('cv-simTime').textContent = '0.00 s';
 
-  // Pause on parameter change and draw initial frame
   if(running){ running = false; updateBtn(); }
   step();
 }
@@ -298,32 +312,66 @@ function step(){
 
   const Ug = M*G*y_m;
   const Ue = 0.5*k*c*c;
-  const K = Math.max(0, E - Ug - Ue);
+  const K = Math.max(0, (E - Ef) - Ug - Ue);
   const v = Math.sqrt(2*K/M);
 
   if(dir !== 0){
     const tMax = totalArc + cMax;
-    t += dir * Math.max(v, 0.05) * DT;
+    const v_step = Math.max(v, 0.05);
+    const ds = v_step * DT;
+    t += dir * ds;
+    // Accumulate real distance and friction only when actually running
+    if(running){
+      dist += ds;
+      simTime += DT;
+      const dEf = mu * M * G * Math.max(v, 0) * DT;  // use real v (not min) for friction
+      Ef = Math.min(Ef + dEf, E);
+    }
     if(t >= tMax){ t = tMax; dir = -1; }
     if(t <= 0){ t = 0; dir = 1; }
+    // Stop cart if friction consumed all energy
+    if(mu > 0 && (E - Ef) < 0.05){
+      dir = 0;
+      Ef = E;
+      if(running){
+        running = false; updateBtn();
+        $('sdot').style.background = '#706F6F';
+        $('stxt').textContent = 'Carro detenido por roce';
+        $('scnd').textContent = `s = ${dist.toFixed(2)} m   ·   t = ${simTime.toFixed(2)} s`;
+      }
+    }
+    // 60-second limit
+    if(running && simTime >= 60){
+      running = false; updateBtn();
+      $('sdot').style.background = '#888';
+      $('stxt').textContent = 'Tiempo límite (60 s)';
+      $('scnd').textContent = `s = ${dist.toFixed(2)} m`;
+    }
   }
 
   $('cart').setAttribute('transform', `translate(${cart_x.toFixed(1)},${cart_y.toFixed(1)})`);
   if(k > 0) drawSpring(X_SPR + c*compPxPerM);
 
-  $('cv-K').textContent = K.toFixed(1)+' J';
+  $('cv-K').textContent  = K.toFixed(1)+' J';
   $('cv-Ug').textContent = Ug.toFixed(1)+' J';
   $('cv-Ue').textContent = Ue.toFixed(1)+' J';
+  $('cv-Ef').textContent = Ef.toFixed(1)+' J';
+  $('cv-v').textContent  = v.toFixed(2)+' m/s';
+  $('cv-dist').textContent = dist.toFixed(2)+' m';
+  $('cv-simTime').textContent = simTime >= 60 ? '60.00 s (límite)' : simTime.toFixed(2)+' s';
 
   const total = Math.max(E, 0.01), W = 196;
-  const wK = (K/total)*W, wUg = (Ug/total)*W, wUe = (Ue/total)*W;
+  const wK = (K/total)*W, wUg = (Ug/total)*W, wUe = (Ue/total)*W, wEf = (Ef/total)*W;
   $('bar-K').setAttribute('width', wK.toFixed(1));
   $('bar-Ug').setAttribute('x', wK.toFixed(1));
   $('bar-Ug').setAttribute('width', wUg.toFixed(1));
   $('bar-Ue').setAttribute('x', (wK+wUg).toFixed(1));
   $('bar-Ue').setAttribute('width', wUe.toFixed(1));
-  const pK = Math.round(100*K/total), pUg = Math.round(100*Ug/total), pUe = Math.round(100*Ue/total);
-  $('bar-lbl').textContent = `K ${pK}%  ·  Uₘ ${pUg}%  ·  Uₑ ${pUe}%`;
+  $('bar-Ef').setAttribute('x', (wK+wUg+wUe).toFixed(1));
+  $('bar-Ef').setAttribute('width', wEf.toFixed(1));
+  const pK = Math.round(100*K/total), pUg = Math.round(100*Ug/total);
+  const pUe = Math.round(100*Ue/total), pEf = Math.round(100*Ef/total);
+  $('bar-lbl').textContent = `K ${pK}%  ·  Uₘ ${pUg}%  ·  Uₑ ${pUe}%  ·  Eᶠ ${pEf}%`;
 
   let status, dotColor;
   if(dir === 0){

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Simulador: centro de masa de un sistema de partículas</title>
+<style>
+:root{
+  --blue:#004EAA; --green:#78BF26; --red:#D62828;
+  --orange:#F07F00; --magenta:#C0165A;
+  --text:#1f2328; --text2:#57606a; --text3:#8c959f;
+  --bg:#fff; --bg2:#f6f8fa; --border:#d0d7de; --border2:#eaeef2;
+  --radius:6px;
+}
+html,body{margin:0;padding:14px;background:#fff;color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.5}
+h3{margin:0 0 12px;font-size:16px;font-weight:600}
+canvas{display:block;border:1px solid var(--border2);border-radius:var(--radius);background:#fafbfc}
+.row{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.lbl{font-size:12px;color:var(--text2);min-width:120px}
+.val{font-size:13px;font-weight:500;min-width:52px;text-align:right}
+.fcard{background:var(--bg2);border-radius:var(--radius);padding:9px 13px;min-width:0}
+.flbl{font-size:11px;color:var(--text2);margin:0 0 2px}
+.fval{font-size:15px;font-weight:600;margin:0}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:7px 18px;
+  font-size:13px;font-weight:600;cursor:pointer;border-radius:var(--radius);
+  border:none;transition:background .15s}
+.btn.go{background:var(--blue);color:#fff}
+.btn.go:hover{background:#003882}
+.btn.stop{background:var(--bg2);color:var(--red);border:1px solid var(--border)}
+.btn.stop:hover{background:#fff5f5}
+.ptable{border-collapse:collapse;font-size:12px;width:100%;margin-top:8px}
+.ptable th{text-align:left;padding:4px 8px;background:var(--bg2);
+  border-bottom:1px solid var(--border);color:var(--text2);font-weight:500}
+.ptable td{padding:4px 8px;border-bottom:1px solid var(--border2);vertical-align:middle}
+.ptable input[type=range]{width:80px}
+.ptable .num{font-variant-numeric:tabular-nums;font-size:12px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+select,input[type=number]{font-size:13px;padding:3px 6px;border:1px solid var(--border);
+  border-radius:4px;background:#fff;color:var(--text)}
+</style>
+</head>
+<body>
+
+<h3>Centro de masa — sistema de partículas</h3>
+
+<!-- Status bar -->
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+  <span id="sdot" style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0"></span>
+  <span id="stxt" style="font-size:13px;font-weight:500">Listo — presiona Iniciar</span>
+  <span id="scnd" style="font-size:12px;color:var(--text2);margin-left:6px"></span>
+</div>
+
+<!-- Canvas -->
+<canvas id="cv" width="680" height="340" style="width:100%;max-width:680px"></canvas>
+
+<!-- Controls -->
+<div style="margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+  <button id="btn" class="btn go" onclick="toggleRun()">▶ Iniciar</button>
+  <button class="btn go" style="background:var(--text3)" onclick="resetSim()">↺ Reiniciar</button>
+  <label style="font-size:12px;color:var(--text2)">Partículas:
+    <select id="sel-n" onchange="setN(+this.value)">
+      <option value="2">2</option>
+      <option value="3" selected>3</option>
+      <option value="4">4</option>
+    </select>
+  </label>
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2)">
+    <input type="checkbox" id="chk-trail" checked> Traza CM
+  </label>
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2)">
+    <input type="checkbox" id="chk-vel" checked> Vectores velocidad
+  </label>
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2)">
+    <input type="checkbox" id="chk-walls"> Rebote en paredes
+  </label>
+</div>
+
+<!-- Particle table -->
+<table class="ptable" style="margin-top:14px;max-width:680px">
+<thead>
+<tr>
+  <th>Part.</th><th>Masa m (kg)</th><th>vₓ (m/s)</th><th>vy (m/s)</th>
+  <th>x₀ (px)</th><th>y₀ (px)</th>
+</tr>
+</thead>
+<tbody id="ptbody"></tbody>
+</table>
+
+<!-- Equations box -->
+<div style="background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);
+     padding:12px 16px;margin-top:14px;max-width:680px;font-size:13px">
+  <div style="font-weight:600;margin-bottom:6px;color:var(--text2);font-size:11px;letter-spacing:.8px">ECUACIONES EN TIEMPO REAL</div>
+  <div id="eq-rcm" style="margin-bottom:4px"></div>
+  <div id="eq-vcm" style="margin-bottom:4px"></div>
+  <div id="eq-pcm" style="color:var(--text2)"></div>
+</div>
+
+<!-- Cards -->
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:14px;max-width:680px">
+  <div class="fcard" style="border-left:3px solid var(--magenta)">
+    <p class="flbl">Masa total M (kg)</p>
+    <p class="fval" id="cv-M" style="color:var(--magenta)">—</p>
+  </div>
+  <div class="fcard" style="border-left:3px solid var(--magenta)">
+    <p class="flbl">x<sub>cm</sub> (px)</p>
+    <p class="fval" id="cv-xcm" style="color:var(--magenta)">—</p>
+  </div>
+  <div class="fcard" style="border-left:3px solid var(--magenta)">
+    <p class="flbl">y<sub>cm</sub> (px)</p>
+    <p class="fval" id="cv-ycm" style="color:var(--magenta)">—</p>
+  </div>
+  <div class="fcard" style="border-left:3px solid var(--orange)">
+    <p class="flbl">v<sub>cm,x</sub> (px/s)</p>
+    <p class="fval" id="cv-vxcm" style="color:var(--orange)">—</p>
+  </div>
+  <div class="fcard" style="border-left:3px solid var(--orange)">
+    <p class="flbl">v<sub>cm,y</sub> (px/s)</p>
+    <p class="fval" id="cv-vycm" style="color:var(--orange)">—</p>
+  </div>
+  <div class="fcard" style="border-left:3px solid var(--blue)">
+    <p class="flbl">|p<sub>total</sub>| (kg·px/s)</p>
+    <p class="fval" id="cv-ptot" style="color:var(--blue)">—</p>
+  </div>
+</div>
+
+<script>
+const COLORS = ['#004EAA','#D62828','#78BF26','#F07F00'];
+const NAMES  = ['1','2','3','4'];
+const $ = id => document.getElementById(id);
+const W = 680, H = 340;
+const DT = 1/60, T_MAX = 120;
+
+// Default initial conditions (canvas pixels, origin top-left)
+const DEFAULTS = [
+  {m:3, vx: 60, vy: 20,  x:160, y:100},
+  {m:2, vx:-40, vy: 70,  x:480, y:80},
+  {m:5, vx: 20, vy:-50,  x:320, y:250},
+  {m:1, vx: 80, vy:-30,  x:100, y:220},
+];
+
+let N = 3;
+let parts = [];      // [{m,x,y,vx,vy}]
+let cm = {x:0,y:0,vx:0,vy:0};
+let trail = [];      // [{x,y}] CM trail
+let running = false, rafId = null, simTime = 0;
+
+/* ---------- Init ---------- */
+function makeParts(){
+  parts = DEFAULTS.slice(0,N).map(d=>({...d}));
+}
+
+function buildTable(){
+  const tb = $('ptbody');
+  tb.innerHTML = '';
+  for(let i=0;i<N;i++){
+    const c = COLORS[i], d = DEFAULTS[i];
+    tb.innerHTML += `
+    <tr>
+      <td><span class="dot" style="background:${c}"></span><b>${NAMES[i]}</b></td>
+      <td><input type="range" id="sl-m${i}" min="0.5" max="10" step="0.5" value="${d.m}"
+           oninput="updateParam(${i})" style="width:80px">
+          <span class="num" id="vl-m${i}">${d.m} kg</span></td>
+      <td><input type="range" id="sl-vx${i}" min="-120" max="120" step="5" value="${d.vx}"
+           oninput="updateParam(${i})" style="width:80px">
+          <span class="num" id="vl-vx${i}">${d.vx}</span></td>
+      <td><input type="range" id="sl-vy${i}" min="-120" max="120" step="5" value="${d.vy}"
+           oninput="updateParam(${i})" style="width:80px">
+          <span class="num" id="vl-vy${i}">${d.vy}</span></td>
+      <td><span class="num" id="pos-x${i}">—</span></td>
+      <td><span class="num" id="pos-y${i}">—</span></td>
+    </tr>`;
+  }
+}
+
+function updateParam(i){
+  parts[i].m  = +$(`sl-m${i}`).value;
+  parts[i].vx = +$(`sl-vx${i}`).value;
+  parts[i].vy = +$(`sl-vy${i}`).value;
+  $(`vl-m${i}`).textContent  = parts[i].m+' kg';
+  $(`vl-vx${i}`).textContent = parts[i].vx;
+  $(`vl-vy${i}`).textContent = parts[i].vy;
+  // If stopped, re-draw initial state
+  if(!running){ computeCM(); drawFrame(); updateUI(); }
+}
+
+function setN(n){ N = n; resetSim(); }
+
+function resetSim(){
+  if(running){ running=false; updateBtn(); cancelAnimationFrame(rafId); }
+  makeParts();
+  // Reset positions from defaults (sliders might have changed m/v)
+  for(let i=0;i<N;i++){
+    parts[i].x  = DEFAULTS[i].x;
+    parts[i].y  = DEFAULTS[i].y;
+    parts[i].vx = +($(`sl-vx${i}`)||{value:DEFAULTS[i].vx}).value;
+    parts[i].vy = +($(`sl-vy${i}`)||{value:DEFAULTS[i].vy}).value;
+    parts[i].m  = +($(`sl-m${i}`)||{value:DEFAULTS[i].m}).value;
+  }
+  trail = [];
+  simTime = 0;
+  computeCM();
+  drawFrame();
+  updateUI();
+  $('stxt').textContent = 'Listo — presiona Iniciar';
+  $('scnd').textContent = '';
+  $('sdot').style.background = 'var(--green)';
+}
+
+/* ---------- Physics ---------- */
+function computeCM(){
+  let Mx=0, My=0, Mvx=0, Mvy=0, M=0;
+  for(const p of parts){
+    M   += p.m;
+    Mx  += p.m * p.x;
+    My  += p.m * p.y;
+    Mvx += p.m * p.vx;
+    Mvy += p.m * p.vy;
+  }
+  cm.x  = Mx/M;  cm.y  = My/M;
+  cm.vx = Mvx/M; cm.vy = Mvy/M;
+  cm.M  = M;
+}
+
+function physicsStep(){
+  const walls = $('chk-walls').checked;
+  for(const p of parts){
+    p.x += p.vx * DT * 60;  // scale: 1 px/s per unit → 60px/s at 60fps
+    p.y += p.vy * DT * 60;
+    const R = radius(p.m);
+    if(walls){
+      if(p.x < R)       { p.x = R;   p.vx = Math.abs(p.vx);  }
+      if(p.x > W-R)     { p.x=W-R;   p.vx=-Math.abs(p.vx);   }
+      if(p.y < R)       { p.y = R;   p.vy = Math.abs(p.vy);  }
+      if(p.y > H-R)     { p.y=H-R;   p.vy=-Math.abs(p.vy);   }
+    }
+  }
+  computeCM();
+  if($('chk-trail').checked){
+    trail.push({x:cm.x, y:cm.y});
+    if(trail.length > 600) trail.shift();
+  } else {
+    trail = [];
+  }
+  simTime += DT;
+}
+
+function radius(m){ return 8 + m*2; }
+
+/* ---------- Drawing ---------- */
+function drawArrow(ctx, x1,y1, x2,y2, color, lw=1.5){
+  const dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy);
+  if(len < 2) return;
+  const ux=dx/len, uy=dy/len;
+  const hs=7;
+  ctx.save();
+  ctx.strokeStyle=color; ctx.fillStyle=color;
+  ctx.lineWidth=lw;
+  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hs*ux + hs*0.4*uy, y2 - hs*uy - hs*0.4*ux);
+  ctx.lineTo(x2 - hs*ux - hs*0.4*uy, y2 - hs*uy + hs*0.4*ux);
+  ctx.closePath(); ctx.fill();
+  ctx.restore();
+}
+
+function drawFrame(){
+  const canvas = $('cv');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,W,H);
+
+  // Trail
+  if(trail.length > 1){
+    ctx.save();
+    ctx.strokeStyle='#C0165A'; ctx.lineWidth=1.5;
+    ctx.setLineDash([3,3]);
+    ctx.beginPath();
+    ctx.moveTo(trail[0].x, trail[0].y);
+    for(let i=1;i<trail.length;i++) ctx.lineTo(trail[i].x, trail[i].y);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Velocity vectors
+  const showVel = $('chk-vel').checked;
+  const VEL_SCALE = 0.5;
+
+  for(let i=0;i<N;i++){
+    const p = parts[i], R = radius(p.m);
+    // draw particle
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, R, 0, 2*Math.PI);
+    ctx.fillStyle = COLORS[i]+'33';
+    ctx.fill();
+    ctx.strokeStyle = COLORS[i]; ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.restore();
+
+    // label
+    ctx.save();
+    ctx.font = `bold ${11+p.m*0.5}px sans-serif`;
+    ctx.fillStyle = COLORS[i];
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('m'+NAMES[i], p.x, p.y);
+    ctx.restore();
+
+    // velocity arrow
+    if(showVel){
+      drawArrow(ctx, p.x, p.y,
+        p.x + p.vx*VEL_SCALE, p.y + p.vy*VEL_SCALE, COLORS[i], 1.5);
+    }
+  }
+
+  // CM velocity arrow (orange, thicker)
+  if(showVel){
+    const V_CM_SCALE = 0.7;
+    drawArrow(ctx, cm.x, cm.y,
+      cm.x + cm.vx*V_CM_SCALE, cm.y + cm.vy*V_CM_SCALE, '#F07F00', 2.5);
+    // label vcm
+    ctx.save();
+    ctx.font='bold 11px sans-serif';
+    ctx.fillStyle='#F07F00';
+    ctx.textAlign='left'; ctx.textBaseline='bottom';
+    ctx.fillText('v̄cm', cm.x + cm.vx*V_CM_SCALE + 5, cm.y + cm.vy*V_CM_SCALE);
+    ctx.restore();
+  }
+
+  // CM marker (star / crosshair)
+  const cmx=cm.x, cmy=cm.y;
+  ctx.save();
+  ctx.strokeStyle='#C0165A'; ctx.lineWidth=2;
+  const CS=14;
+  ctx.beginPath();
+  ctx.moveTo(cmx-CS,cmy); ctx.lineTo(cmx+CS,cmy);
+  ctx.moveTo(cmx,cmy-CS); ctx.lineTo(cmx,cmy+CS);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cmx,cmy,5,0,2*Math.PI);
+  ctx.fillStyle='#C0165A'; ctx.fill();
+  ctx.restore();
+  // CM label
+  ctx.save();
+  ctx.font='bold 12px sans-serif';
+  ctx.fillStyle='#C0165A';
+  ctx.textAlign='left'; ctx.textBaseline='bottom';
+  ctx.fillText('CM', cmx+8, cmy-4);
+  ctx.restore();
+
+  // Lines from each particle to CM
+  ctx.save();
+  ctx.setLineDash([4,4]); ctx.lineWidth=1;
+  for(let i=0;i<N;i++){
+    ctx.strokeStyle=COLORS[i]+'88';
+    ctx.beginPath();
+    ctx.moveTo(parts[i].x, parts[i].y);
+    ctx.lineTo(cmx, cmy);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  // Time stamp
+  ctx.save();
+  ctx.font='11px sans-serif';
+  ctx.fillStyle='var(--text3)';
+  ctx.textAlign='right'; ctx.textBaseline='bottom';
+  ctx.fillText(`t = ${simTime.toFixed(2)} s`, W-6, H-4);
+  ctx.restore();
+}
+
+/* ---------- UI ---------- */
+function fmt(v,d=2){ return v.toFixed(d); }
+
+function updateUI(){
+  const M = cm.M;
+  $('cv-M').textContent   = fmt(M,1)+' kg';
+  $('cv-xcm').textContent = fmt(cm.x,1);
+  $('cv-ycm').textContent = fmt(cm.y,1);
+  $('cv-vxcm').textContent= fmt(cm.vx,1);
+  $('cv-vycm').textContent= fmt(cm.vy,1);
+  const ptot = M * Math.hypot(cm.vx, cm.vy);
+  $('cv-ptot').textContent= fmt(ptot,1);
+
+  // Position columns
+  for(let i=0;i<N;i++){
+    if($(`pos-x${i}`)) $(`pos-x${i}`).textContent = fmt(parts[i].x,1);
+    if($(`pos-y${i}`)) $(`pos-y${i}`).textContent = fmt(parts[i].y,1);
+  }
+
+  // Equation strings
+  const sumMiXi = parts.map(p=>`${fmt(p.m,1)}·${fmt(p.x,1)}`).join(' + ');
+  const sumMiVxi= parts.map(p=>`${fmt(p.m,1)}·${fmt(p.vx,0)}`).join(' + ');
+  const sumMiVyi= parts.map(p=>`${fmt(p.m,1)}·${fmt(p.vy,0)}`).join(' + ');
+  $('eq-rcm').innerHTML =
+    `<b style="color:#C0165A">x<sub>cm</sub></b> = (${sumMiXi}) / ${fmt(M,1)} = <b>${fmt(cm.x,2)}</b> px`;
+  $('eq-vcm').innerHTML =
+    `<b style="color:#F07F00">v<sub>cm,x</sub></b> = (${sumMiVxi}) / ${fmt(M,1)} = <b>${fmt(cm.vx,2)}</b> &nbsp;|&nbsp; `+
+    `<b style="color:#F07F00">v<sub>cm,y</sub></b> = (${sumMiVyi}) / ${fmt(M,1)} = <b>${fmt(cm.vy,2)}</b>`;
+  $('eq-pcm').innerHTML =
+    `<b>p<sub>total</sub></b> = M·v<sub>cm</sub> = ${fmt(M,1)} · ${fmt(Math.hypot(cm.vx,cm.vy),2)} = <b>${fmt(ptot,2)}</b> kg·px/s`;
+}
+
+/* ---------- Loop ---------- */
+function loop(){
+  if(!running) return;
+  physicsStep();
+  drawFrame();
+  updateUI();
+  $('scnd').textContent = `t = ${simTime.toFixed(2)} s`;
+  if(simTime >= T_MAX){
+    running=false; updateBtn();
+    $('sdot').style.background='#888';
+    $('stxt').textContent='Tiempo límite alcanzado (120 s)';
+    return;
+  }
+  rafId = requestAnimationFrame(loop);
+}
+
+function toggleRun(){
+  running = !running;
+  updateBtn();
+  if(running){
+    $('sdot').style.background='var(--green)';
+    $('stxt').textContent='Simulando…';
+    loop();
+  }
+}
+
+function updateBtn(){
+  const btn=$('btn');
+  if(running){ btn.textContent='⏹ Detener'; btn.className='btn stop'; }
+  else        { btn.textContent='▶ Iniciar'; btn.className='btn go';   }
+}
+
+/* ---------- Bootstrap ---------- */
+$('sel-n').value = N;
+buildTable();
+makeParts();
+computeCM();
+drawFrame();
+updateUI();
+</script>
+</body>
+</html>
