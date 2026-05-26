@@ -63,7 +63,9 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 
 <!-- Equations -->
 <div class="eqbox" id="eqbox">
-  <div class="eqrow"><span class="eqlbl">x(t)</span><span class="eqval" id="eq-x"></span></div>
+  <div class="eqrow"><span class="eqlbl">θ₀</span><span class="eqval" id="eq-theta0" style="color:#004EAA"></span></div>
+  <div class="eqrow" style="border-top:1px solid var(--color-border-tertiary);margin-top:6px;padding-top:6px">
+    <span class="eqlbl">x(t)</span><span class="eqval" id="eq-x"></span></div>
   <div class="eqrow"><span class="eqlbl">y(t)</span><span class="eqval" id="eq-y"></span></div>
   <div class="eqrow" id="row-itinerario" style="display:none"><span class="eqlbl">y(x)</span><span class="eqval" id="eq-itin" style="color:#C0165A"></span></div>
   <div class="eqrow"><span class="eqlbl">vₓ(t)</span><span class="eqval" id="eq-vx"></span></div>
@@ -94,8 +96,23 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
   </div>
 </div>
 
+<!-- Angle cards -->
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px">
+  <div class="fcard">
+    <p class="flbl">Ángulo de lanzamiento  θ₀ = arctan(v<sub>y0</sub> / v<sub>x0</sub>)</p>
+    <p class="fval" id="cv-th0-deg" style="color:#004EAA"></p>
+  </div>
+  <div class="fcard">
+    <p class="flbl">θ₀ en radianes</p>
+    <p class="fval" id="cv-th0-rad" style="color:#004EAA"></p>
+  </div>
+  <div class="fcard">
+    <p class="flbl">Rapidez inicial  |v₀| = √(v<sub>x0</sub>² + v<sub>y0</sub>²)</p>
+    <p class="fval" id="cv-v0" style="color:#78BF26"></p>
+  </div>
+</div>
 <!-- Info cards -->
-<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px">
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:8px">
   <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#004EAA"></p></div>
   <div class="fcard"><p class="flbl">Posición  (x, y)</p><p class="fval" id="cv-pos"></p></div>
   <div class="fcard"><p class="flbl">Velocidad  (vₓ, vᵧ)</p><p class="fval" id="cv-vel"></p></div>
@@ -273,8 +290,43 @@ function drawScene(){
   ctx.fillStyle='#004EAA'; ctx.fill();
   ctx.strokeStyle='#003882'; ctx.lineWidth=2; ctx.stroke();
 
-  // Launch marker
+  // Launch marker + initial velocity vector + angle arc
   const {cx:ox,cy:oy}=toCanvas(0,0);
+
+  const v0=Math.hypot(vx0,vy0);
+  if(v0 > 0.1){
+    const theta0=Math.atan2(vy0,vx0);
+    const vPxLen=Math.min(v0*3.5, 72);  // pixel length of v0 arrow
+
+    // Horizontal reference dashed line
+    ctx.save();
+    ctx.strokeStyle='#8c959f'; ctx.lineWidth=1; ctx.setLineDash([4,3]);
+    ctx.beginPath(); ctx.moveTo(ox,oy); ctx.lineTo(ox+vPxLen+10,oy); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.restore();
+
+    // Angle arc (from horizontal to v0 direction)
+    if(Math.abs(theta0)>0.02){
+      const arcR=32;
+      ctx.beginPath();
+      ctx.arc(ox, oy, arcR, 0, -theta0, theta0>0);
+      ctx.strokeStyle='#004EAA'; ctx.lineWidth=1.5; ctx.stroke();
+      // Arc label at midpoint angle
+      const midA=theta0/2;
+      ctx.fillStyle='#004EAA'; ctx.font='bold 11px system-ui'; ctx.textAlign='center';
+      ctx.fillText('θ₀', ox+(arcR+13)*Math.cos(midA), oy-(arcR+13)*Math.sin(midA));
+    }
+
+    // v0 arrow
+    const vex=ox+Math.cos(theta0)*vPxLen;
+    const vey=oy-Math.sin(theta0)*vPxLen;
+    drawArrow(ctx, ox, oy, vex, vey, '#78BF26', 2);
+    // v0 label
+    ctx.fillStyle='#78BF26'; ctx.font='bold 11px system-ui';
+    ctx.textAlign = vx0<1e-9 ? 'right' : 'left';
+    ctx.fillText('v₀', vex+(vx0<1e-9?-6:6), vey-5);
+  }
+
   ctx.beginPath(); ctx.arc(ox,oy,4,0,2*Math.PI);
   ctx.fillStyle='#F07F00'; ctx.fill();
 }
@@ -340,7 +392,29 @@ function buildEqStr(c0, coeff1, var1, coeff2, var2){
   return parts.join(' ')||'0';
 }
 
+function updateAngle(){
+  const v0=Math.hypot(vx0,vy0);
+  $('cv-v0').textContent = fmt(v0)+' m/s';
+  if(v0 < 1e-9){
+    $('eq-theta0').textContent='— (velocidad inicial nula)';
+    $('cv-th0-deg').textContent='—';
+    $('cv-th0-rad').textContent='—';
+    return;
+  }
+  const th_rad = Math.atan2(vy0, vx0);
+  const th_deg = th_rad * 180 / Math.PI;
+  // Formula string
+  let formula;
+  if(Math.abs(vx0)<1e-9)       formula='arctan(∞) = 90.0°';
+  else if(Math.abs(vy0)<1e-9)  formula='arctan(0) = 0.0°';
+  else formula=`arctan(${fmt(vy0)} / ${fmt(vx0)}) = ${th_deg.toFixed(1)}°`;
+  $('eq-theta0').textContent = formula + '  =  ' + th_rad.toFixed(4) + ' rad';
+  $('cv-th0-deg').textContent = th_deg.toFixed(2) + '°';
+  $('cv-th0-rad').textContent = th_rad.toFixed(4) + ' rad';
+}
+
 function updateEquations(){
+  updateAngle();
   // x(t)
   $('eq-x').textContent  = buildEqStr(0,   vx0, 't', ax/2, 't²');
   $('eq-y').textContent  = buildEqStr(0,   vy0, 't', ay/2, 't²');
