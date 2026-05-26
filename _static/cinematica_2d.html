@@ -135,23 +135,32 @@ function computeRange(){
     if(tt>tEnd) break;
     const x=vx0*tt+0.5*ax*tt*tt;
     const y=vy0*tt+0.5*ay*tt*tt;
+    // Stop trajectory at ground (y=0); interpolate landing point
+    if(tt>dt && y<0){
+      const ttPrev=tt-dt;
+      const yPrev=vy0*ttPrev+0.5*ay*ttPrev*ttPrev;
+      const xPrev=vx0*ttPrev+0.5*ax*ttPrev*ttPrev;
+      const frac=yPrev/(yPrev-y);            // linear interp fraction
+      pts.push({x:xPrev+frac*(x-xPrev), y:0, tt:ttPrev+frac*dt});
+      break;
+    }
     pts.push({x,y,tt});
     tt+=dt;
   }
   const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
   let xMin=Math.min(0,...xs), xMax=Math.max(0,...xs);
-  let yMin=Math.min(0,...ys), yMax=Math.max(0,...ys);
+  let yMin=0;                                // ground is always y=0 — never show negative
+  let yMax=Math.max(0,...ys);
 
-  // Guarantee a minimum visible span so degenerate (horizontal/vertical-only) cases
-  // don't collapse the canvas to a line.
+  // Guarantee a minimum visible span.
   const MIN_SPAN=4;
   if(xMax-xMin<MIN_SPAN){ const c=(xMax+xMin)/2; xMin=c-MIN_SPAN/2; xMax=c+MIN_SPAN/2; }
-  if(yMax-yMin<MIN_SPAN){ const c=(yMax+yMin)/2; yMin=c-MIN_SPAN/2; yMax=c+MIN_SPAN/2; }
+  if(yMax-yMin<MIN_SPAN){ yMax=yMin+MIN_SPAN; }
 
-  // Add a small breathing margin (8%) so the particle isn't glued to the edges.
+  // Breathing margin — only on top and right, never below the ground.
   const xPad=(xMax-xMin)*0.08, yPad=(yMax-yMin)*0.08;
   xMin-=xPad*0.3; xMax+=xPad;
-  yMin-=yPad*0.3; yMax+=yPad;
+  yMax+=yPad;
 
   return {xMin,xMax,yMin,yMax,tMax:tEnd,pts};
 }
@@ -417,18 +426,22 @@ function loop(){
   t+=DT;
   const px=vx0*t+0.5*ax*t*t;
   const py=vy0*t+0.5*ay*t*t;
-  trail.push({x:px,y:py});
+  // Clamp y to ground: never push trail points below y=0
+  trail.push({x:px, y:Math.max(py,0)});
   if(trail.length>600) trail.shift();
 
-  // Stop when the particle exits the visible viewport (with a small margin)
-  const xSpan=range.xMax-range.xMin, ySpan=range.yMax-range.yMin;
-  const offscreen = px>range.xMax+xSpan*0.1 || px<range.xMin-xSpan*0.1
-                  || py>range.yMax+ySpan*0.1 || py<range.yMin-ySpan*0.1;
-  if(t>0.5 && offscreen){
+  // Stop when the ball reaches or crosses the ground (y=0), only if gravity is active
+  if(ay < -1e-6 && py <= 0 && t > DT){
     running=false; updateBtn();
-    $('stxt').textContent='Simulación completada';
-    $('sdot').style.background='#888';
-  } else if(t>range.tMax+1){
+    $('stxt').textContent='La partícula tocó el suelo (y = 0)';
+    $('sdot').style.background='#F07F00';
+    drawScene(); updateCards();
+    return;
+  }
+
+  // Fallback: stop if particle exits the visible viewport horizontally or time exceeded
+  const xSpan=range.xMax-range.xMin;
+  if(t>range.tMax+1 || px>range.xMax+xSpan*0.15 || px<range.xMin-xSpan*0.15){
     running=false; updateBtn();
     $('stxt').textContent='Simulación completada';
     $('sdot').style.background='#888';
