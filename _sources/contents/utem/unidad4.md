@@ -917,7 +917,7 @@ $$\boxed{k = 261{,}6\ \text{N/m}}$$
 ---
 
 ```{raw} html
-<iframe src="../_static/simulador_plano.html"
+<iframe src="../../_static/plano_inclinado_fuerzas.html"
         width="100%"
         height="720"
         style="border:none; border-radius:8px;">
