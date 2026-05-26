@@ -25,6 +25,8 @@ parts:
   chapters:
   - file: contents/mechanics/problemas_aplicados
   - file: contents/utem/pruebas_anteriores
+  - file: contents/utem/sim_plano_inclinado
+  - file: contents/utem/sim_montana_rusa
 - caption: "Bases de la mecanica"
   numbered: False
   chapters:

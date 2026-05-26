@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Simulador: montaña rusa con resorte</title>
+<style>
+:root{
+  --color-text-primary:#1f2328;
+  --color-text-secondary:#57606a;
+  --color-text-tertiary:#8c959f;
+  --color-text-danger:#cf222e;
+  --color-text-success:#1a7f37;
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#f6f8fa;
+  --color-border-secondary:#d0d7de;
+  --color-border-tertiary:#eaeef2;
+  --border-radius-md:6px;
+}
+html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.4}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.srow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.slbl{font-size:13px;color:var(--color-text-secondary);min-width:180px}
+.sval{font-size:14px;font-weight:500;min-width:70px;text-align:right;color:var(--color-text-primary)}
+.fcard{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px}
+.flbl{font-size:11px;color:var(--color-text-secondary);margin:0 0 3px}
+.fval{font-size:17px;font-weight:500;margin:0}
+.btn-run{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
+  font-size:14px;font-weight:600;cursor:pointer;border-radius:var(--border-radius-md);
+  border:none;transition:background .15s,color .15s}
+.btn-run.stopped{background:#2980B9;color:#fff}
+.btn-run.stopped:hover{background:#1a6499}
+.btn-run.running{background:#f6f8fa;color:#cf222e;border:1px solid #d0d7de}
+.btn-run.running:hover{background:#fff5f5}
+</style>
+</head>
+<body>
+
+<h2 class="sr-only">Simulador de montaña rusa con resorte — conservación de la energía mecánica</h2>
+
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#1D9E75;transition:background .25s"></span>
+  <span id="stxt" style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Listo</span>
+  <span id="scnd" style="font-size:12px;color:var(--color-text-secondary);margin-left:4px"></span>
+</div>
+
+<svg width="100%" viewBox="0 0 700 460" role="img" style="margin-bottom:16px">
+  <title>Montaña rusa con resorte: conservación de la energía mecánica</title>
+  <desc>Un carro de masa fija desciende desde una altura H con velocidad inicial v₀, recorre un tramo horizontal y comprime un resorte de constante k. Las barras de energía muestran la conversión entre energía cinética, potencial gravitatoria y potencial elástica.</desc>
+  <defs>
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="var(--color-border-secondary)" stroke-width="1.2"/>
+    </pattern>
+    <marker id="tip" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--color-text-secondary)"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <g transform="translate(18,18)">
+    <rect width="208" height="94" rx="8" fill="var(--color-background-primary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+    <text x="14" y="20" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">ENERGÍAS</text>
+    <rect x="14" y="28" width="16" height="10" fill="#2980B9"/>
+    <text x="38" y="38" style="font-size:11px;fill:var(--color-text-primary)">K — cinética</text>
+    <rect x="14" y="44" width="16" height="10" fill="#E24B4A"/>
+    <text x="38" y="54" style="font-size:11px;fill:var(--color-text-primary)">Uₘ — grav. = m g y</text>
+    <rect x="14" y="60" width="16" height="10" fill="#BA7517"/>
+    <text x="38" y="70" style="font-size:11px;fill:var(--color-text-primary)">Uₑ — elástica = ½ k x²</text>
+    <rect x="14" y="76" width="16" height="8" fill="none" stroke="#7F77DD" stroke-width="1.5"/>
+    <text x="38" y="84" style="font-size:11px;fill:var(--color-text-primary)">Em = K + Uₘ + Uₑ (constante)</text>
+  </g>
+
+  <!-- Energy distribution bar -->
+  <g transform="translate(486,18)">
+    <text x="0" y="12" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">DISTRIBUCIÓN DE Em</text>
+    <rect x="0" y="20" width="196" height="16" fill="var(--color-background-secondary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+    <rect id="bar-K" x="0" y="20" width="0" height="16" fill="#2980B9"/>
+    <rect id="bar-Ug" x="0" y="20" width="0" height="16" fill="#E24B4A"/>
+    <rect id="bar-Ue" x="0" y="20" width="0" height="16" fill="#BA7517"/>
+    <text id="bar-lbl" x="0" y="52" style="font-size:11px;fill:var(--color-text-secondary)"></text>
+  </g>
+
+  <!-- Ground -->
+  <rect x="20" y="400" width="660" height="22" fill="url(#hatch)"/>
+  <line x1="20" y1="400" x2="680" y2="400" stroke="var(--color-border-secondary)" stroke-width="2"/>
+
+  <!-- Wall -->
+  <rect x="660" y="320" width="14" height="80" fill="var(--color-background-secondary)" stroke="var(--color-border-secondary)" stroke-width="1.5"/>
+  <line x1="660" y1="320" x2="660" y2="400" stroke="var(--color-border-secondary)" stroke-width="2"/>
+
+  <!-- Height marker -->
+  <line id="h-top" stroke="var(--color-border-tertiary)" stroke-width="1" stroke-dasharray="4,3"/>
+  <line id="h-bot" stroke="var(--color-border-tertiary)" stroke-width="1" stroke-dasharray="4,3"/>
+  <line id="h-arrow" stroke="var(--color-text-secondary)" stroke-width="1.2" marker-start="url(#tip)" marker-end="url(#tip)"/>
+  <text id="h-lbl" text-anchor="middle" style="font-size:12px;font-weight:500;fill:var(--color-text-primary)"></text>
+
+  <!-- Track -->
+  <path id="track" fill="none" stroke="var(--color-text-tertiary)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Spring -->
+  <path id="spring" fill="none" stroke="var(--color-text-primary)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Cart -->
+  <g id="cart">
+    <rect x="-22" y="-28" width="44" height="22" rx="3" fill="#AED6F1" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="0" y="-15" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#1A5276">m</text>
+    <circle cx="-12" cy="-3" r="4" fill="#2C3E50"/>
+    <circle cx="12" cy="-3" r="4" fill="#2C3E50"/>
+  </g>
+</svg>
+
+<!-- Run/Stop button -->
+<div style="margin-bottom:14px">
+  <button id="btn-run" class="btn-run stopped" onclick="toggleRun()">▶ Iniciar</button>
+</div>
+
+<!-- Sliders -->
+<div style="padding:0 2px">
+  <div class="srow">
+    <span class="slbl">Altura H (m)</span>
+    <input type="range" min="0" max="10" step="0.5" value="6" id="sl-H" style="flex:1" oninput="reset()">
+    <span class="sval" id="vl-H">6.0 m</span>
+  </div>
+  <div class="srow">
+    <span class="slbl">Velocidad inicial v₀ (m/s)</span>
+    <input type="range" min="0" max="5" step="0.1" value="0" id="sl-v" style="flex:1" oninput="reset()">
+    <span class="sval" id="vl-v">0.0 m/s</span>
+  </div>
+  <div class="srow">
+    <span class="slbl">Constante del resorte k (N/m)</span>
+    <input type="range" min="0" max="5000" step="50" value="1500" id="sl-k" style="flex:1" oninput="reset()">
+    <span class="sval" id="vl-k">1500 N/m</span>
+  </div>
+</div>
+
+<!-- Energy cards -->
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px">
+  <div class="fcard"><p class="flbl">Energía total  E</p><p class="fval" id="cv-E" style="color:#7F77DD"></p></div>
+  <div class="fcard"><p class="flbl">Cinética  K</p><p class="fval" id="cv-K" style="color:#2980B9"></p></div>
+  <div class="fcard"><p class="flbl">Grav.  Uₘ</p><p class="fval" id="cv-Ug" style="color:#E24B4A"></p></div>
+  <div class="fcard"><p class="flbl">Elástica  Uₑ</p><p class="fval" id="cv-Ue" style="color:#BA7517"></p></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px">
+  <div class="fcard"><p class="flbl">Rapidez en la base  v(B) = √(v₀² + 2gH)</p><p class="fval" id="cv-vB" style="color:#2980B9"></p></div>
+  <div class="fcard"><p class="flbl">Compresión máxima  xₘₐₓ = √(2E / k)</p><p class="fval" id="cv-xm" style="color:#BA7517"></p></div>
+</div>
+
+<script>
+const M = 10, G = 9.8, DT = 0.012;
+const Y_G = 400, X_TOP = 80, X_BOT = 340, X_SPR = 470, X_WALL = 660;
+const H_PX = 28, COMP_PX_BUDGET = 175;
+const $ = id => document.getElementById(id);
+
+let pathPts = [], totalArc = 0, E = 0, cMax = 0, compPxPerM = 0;
+let t = 0, dir = 1;
+let H_m = 6, v0 = 0, k = 1500;
+let running = false, rafId = null;
+
+function buildPath(Hm, xFlatEndPx){
+  const pts = [];
+  const NSLOPE = 80, NFLAT = 16, L_H_M = 8;
+  // Physical flat length scales with pixel width so animation speed stays consistent
+  const L_F_M = 4 * (xFlatEndPx - X_BOT) / (X_SPR - X_BOT);
+  for(let i=0; i<=NSLOPE; i++){
+    const u = i/NSLOPE;
+    const x_m = u * L_H_M;
+    const y_m = Hm * 0.5 * (1 + Math.cos(Math.PI*u));
+    const x_px = X_TOP + u*(X_BOT - X_TOP);
+    const y_px = Y_G - y_m*H_PX;
+    pts.push({x_m, y_m, x_px, y_px, s:0});
+  }
+  for(let i=1; i<=NFLAT; i++){
+    const u = i/NFLAT;
+    pts.push({
+      x_m: L_H_M + u*L_F_M, y_m: 0,
+      x_px: X_BOT + u*(xFlatEndPx - X_BOT), y_px: Y_G, s:0
+    });
+  }
+  let s = 0;
+  for(let i=1; i<pts.length; i++){
+    const dx = pts[i].x_m - pts[i-1].x_m;
+    const dy = pts[i].y_m - pts[i-1].y_m;
+    s += Math.hypot(dx, dy);
+    pts[i].s = s;
+  }
+  return pts;
+}
+
+function pathAt(s){
+  if(s <= 0) return pathPts[0];
+  if(s >= totalArc) return pathPts[pathPts.length-1];
+  let lo=0, hi=pathPts.length-1;
+  while(hi-lo > 1){
+    const mid = (lo+hi)>>1;
+    if(pathPts[mid].s < s) lo = mid; else hi = mid;
+  }
+  const a=pathPts[lo], b=pathPts[hi];
+  const f = (b.s === a.s) ? 0 : (s - a.s) / (b.s - a.s);
+  return {
+    y_m: a.y_m + f*(b.y_m - a.y_m),
+    x_px: a.x_px + f*(b.x_px - a.x_px),
+    y_px: a.y_px + f*(b.y_px - a.y_px)
+  };
+}
+
+function drawSpring(x_free){
+  const N = 12, amp = 9, margin = 6;
+  let d = `M ${x_free.toFixed(1)} ${Y_G}`;
+  d += ` L ${(x_free+margin).toFixed(1)} ${Y_G}`;
+  const innerL = X_WALL - x_free - 2*margin;
+  for(let i=0; i<N; i++){
+    const u = (i+0.5)/N;
+    const x = x_free + margin + u*innerL;
+    const y = Y_G + (i%2===0 ? -amp : amp);
+    d += ` L ${x.toFixed(1)} ${y.toFixed(1)}`;
+  }
+  d += ` L ${(X_WALL-margin).toFixed(1)} ${Y_G} L ${X_WALL} ${Y_G}`;
+  $('spring').setAttribute('d', d);
+}
+
+function reset(){
+  H_m = +$('sl-H').value;
+  v0 = +$('sl-v').value;
+  k = +$('sl-k').value;
+  $('vl-H').textContent = H_m.toFixed(1)+' m';
+  $('vl-v').textContent = v0.toFixed(1)+' m/s';
+  $('vl-k').textContent = k > 0 ? k+' N/m' : 'Sin resorte';
+
+  const noSpring = (k === 0);
+  pathPts = buildPath(H_m, noSpring ? X_WALL : X_SPR);
+  totalArc = pathPts[pathPts.length-1].s;
+  E = 0.5*M*v0*v0 + M*G*H_m;
+  cMax = (!noSpring && E > 1e-9) ? Math.sqrt(2*E/k) : 0;
+  compPxPerM = cMax > 0.001 ? Math.min(COMP_PX_BUDGET/cMax, 280) : 280;
+
+  $('spring').style.visibility = noSpring ? 'hidden' : 'visible';
+
+  t = 0;
+  dir = (E > 1e-6) ? 1 : 0;
+
+  // Draw track
+  let d = `M ${pathPts[0].x_px.toFixed(1)} ${pathPts[0].y_px.toFixed(1)}`;
+  for(let i=1;i<pathPts.length;i++) d += ` L ${pathPts[i].x_px.toFixed(1)} ${pathPts[i].y_px.toFixed(1)}`;
+  $('track').setAttribute('d', d);
+
+  // Height marker
+  if(H_m > 0.1){
+    const topY = Y_G - H_m*H_PX;
+    $('h-top').setAttribute('x1', X_TOP-12); $('h-top').setAttribute('y1', topY);
+    $('h-top').setAttribute('x2', 40);       $('h-top').setAttribute('y2', topY);
+    $('h-bot').setAttribute('x1', X_TOP-12); $('h-bot').setAttribute('y1', Y_G);
+    $('h-bot').setAttribute('x2', 40);       $('h-bot').setAttribute('y2', Y_G);
+    $('h-arrow').setAttribute('x1', 50); $('h-arrow').setAttribute('y1', topY+4);
+    $('h-arrow').setAttribute('x2', 50); $('h-arrow').setAttribute('y2', Y_G-4);
+    $('h-lbl').setAttribute('x', 62);
+    $('h-lbl').setAttribute('y', (topY+Y_G)/2 + 4);
+    $('h-lbl').setAttribute('text-anchor','start');
+    $('h-lbl').textContent = `H = ${H_m.toFixed(1)} m`;
+    ['h-top','h-bot','h-arrow','h-lbl'].forEach(id=>$(id).style.visibility='visible');
+  } else {
+    ['h-top','h-bot','h-arrow','h-lbl'].forEach(id=>$(id).style.visibility='hidden');
+  }
+
+  $('cv-E').textContent = E.toFixed(1)+' J';
+  $('cv-xm').textContent = k > 0 ? cMax.toFixed(3)+' m' : '—';
+  $('cv-vB').textContent = Math.sqrt(v0*v0 + 2*G*H_m).toFixed(2)+' m/s';
+
+  // Pause on parameter change and draw initial frame
+  if(running){ running = false; updateBtn(); }
+  step();
+}
+
+function updateBtn(){
+  const btn = $('btn-run');
+  if(running){ btn.textContent = '⏹ Detener'; btn.className = 'btn-run running'; }
+  else        { btn.textContent = '▶ Iniciar'; btn.className = 'btn-run stopped'; }
+}
+
+function toggleRun(){
+  running = !running;
+  updateBtn();
+  if(running) loop();
+}
+
+function step(){
+  let y_m, c, cart_x, cart_y;
+  if(t <= totalArc){
+    const p = pathAt(t);
+    y_m = p.y_m; c = 0;
+    cart_x = p.x_px; cart_y = p.y_px;
+  } else {
+    y_m = 0;
+    c = t - totalArc;
+    cart_x = X_SPR + c*compPxPerM;
+    cart_y = Y_G;
+  }
+
+  const Ug = M*G*y_m;
+  const Ue = 0.5*k*c*c;
+  const K = Math.max(0, E - Ug - Ue);
+  const v = Math.sqrt(2*K/M);
+
+  if(dir !== 0){
+    const tMax = totalArc + cMax;
+    t += dir * Math.max(v, 0.05) * DT;
+    if(t >= tMax){ t = tMax; dir = -1; }
+    if(t <= 0){ t = 0; dir = 1; }
+  }
+
+  $('cart').setAttribute('transform', `translate(${cart_x.toFixed(1)},${cart_y.toFixed(1)})`);
+  if(k > 0) drawSpring(X_SPR + c*compPxPerM);
+
+  $('cv-K').textContent = K.toFixed(1)+' J';
+  $('cv-Ug').textContent = Ug.toFixed(1)+' J';
+  $('cv-Ue').textContent = Ue.toFixed(1)+' J';
+
+  const total = Math.max(E, 0.01), W = 196;
+  const wK = (K/total)*W, wUg = (Ug/total)*W, wUe = (Ue/total)*W;
+  $('bar-K').setAttribute('width', wK.toFixed(1));
+  $('bar-Ug').setAttribute('x', wK.toFixed(1));
+  $('bar-Ug').setAttribute('width', wUg.toFixed(1));
+  $('bar-Ue').setAttribute('x', (wK+wUg).toFixed(1));
+  $('bar-Ue').setAttribute('width', wUe.toFixed(1));
+  const pK = Math.round(100*K/total), pUg = Math.round(100*Ug/total), pUe = Math.round(100*Ue/total);
+  $('bar-lbl').textContent = `K ${pK}%  ·  Uₘ ${pUg}%  ·  Uₑ ${pUe}%`;
+
+  let status, dotColor;
+  if(dir === 0){
+    status = 'Sistema en reposo'; dotColor = '#888';
+  } else if(c > 0.001){
+    status = dir > 0 ? 'Comprimiendo el resorte' : 'Resorte empujando el carro';
+    dotColor = '#BA7517';
+  } else if(t < totalArc - 0.001 && y_m > 0.05){
+    status = dir > 0 ? 'Bajando por la pista' : 'Subiendo por la pista';
+    dotColor = dir > 0 ? '#1D9E75' : '#E24B4A';
+  } else {
+    const destino = k > 0 ? 'hacia el resorte' : 'hacia la pared';
+    status = dir > 0 ? `Tramo horizontal ${destino}` : 'Tramo horizontal de regreso';
+    dotColor = '#2980B9';
+  }
+  $('sdot').style.background = dotColor;
+  $('stxt').textContent = status;
+  $('scnd').textContent = k > 0
+    ? `v = ${v.toFixed(2)} m/s   ·   compresión = ${c.toFixed(3)} m`
+    : `v = ${v.toFixed(2)} m/s`;
+}
+
+function loop(){
+  if(!running) return;
+  step();
+  rafId = requestAnimationFrame(loop);
+}
+
+reset();
+</script>
+</body>
+</html>
