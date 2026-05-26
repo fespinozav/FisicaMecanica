@@ -916,6 +916,17 @@ lo cual es físicamente correcto para un sistema en equilibrio estático.
 $$\boxed{k = 261{,}6\ \text{N/m}}$$
 ---
 
+```{raw} html
+<iframe src="../_static/simulador_plano.html"
+        width="100%"
+        height="720"
+        style="border:none; border-radius:8px;">
+</iframe>
+```
+
+
+---
+
 ## 18. Síntesis de la unidad
 
 En esta unidad se introdujo el estudio dinámico del movimiento de una partícula a partir del concepto de fuerza.
