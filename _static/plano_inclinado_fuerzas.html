@@ -1,7 +1,25 @@
-
-<h2 class="sr-only">Simulador interactivo de fuerzas en plano inclinado — ajusta ángulo, masa y coeficiente de roce</h2>
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Simulador: fuerzas en plano inclinado</title>
 <style>
+:root{
+  --color-text-primary:#1f2328;
+  --color-text-secondary:#57606a;
+  --color-text-tertiary:#8c959f;
+  --color-text-danger:#cf222e;
+  --color-text-success:#1a7f37;
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#f6f8fa;
+  --color-border-secondary:#d0d7de;
+  --color-border-tertiary:#eaeef2;
+  --border-radius-md:6px;
+}
+html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.4}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .srow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .slbl{font-size:13px;color:var(--color-text-secondary);min-width:158px}
 .sval{font-size:14px;font-weight:500;min-width:54px;text-align:right;color:var(--color-text-primary)}
@@ -9,6 +27,10 @@
 .flbl{font-size:11px;color:var(--color-text-secondary);margin:0 0 3px}
 .fval{font-size:17px;font-weight:500;margin:0}
 </style>
+</head>
+<body>
+
+<h2 class="sr-only">Simulador interactivo de fuerzas en plano inclinado — ajusta ángulo, masa y coeficiente de roce</h2>
 
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
   <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;transition:background .25s"></span>
@@ -210,3 +232,5 @@ function render(){
 }
 render();
 </script>
+</body>
+</html>
