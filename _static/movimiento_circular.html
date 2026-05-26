@@ -77,6 +77,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
       <div class="eqrow" id="row-at" style="display:none"><span class="eqlbl">aₜ(t)</span><span class="eqval" id="eq-at"></span></div>
       <div class="eqrow"><span class="eqlbl">vₜ</span><span class="eqval" id="eq-vt"></span></div>
       <div class="eqrow"><span class="eqlbl">aₙ</span><span class="eqval" id="eq-an"></span></div>
+      <div class="eqrow"><span class="eqlbl" style="color:#C0165A">aᶜᶠ</span><span class="eqval" id="eq-acf" style="color:#C0165A"></span></div>
     </div>
 
     <!-- Live values -->
@@ -88,6 +89,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
       <div class="fcard"><p class="flbl">Vel. tangencial vₜ (m/s)</p><p class="fval" id="cv-vt" style="color:#78BF26"></p></div>
       <div class="fcard"><p class="flbl">Ac. centrípeta aₙ (m/s²)</p><p class="fval" id="cv-an" style="color:#F07F00"></p></div>
       <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
+      <div class="fcard" style="grid-column:2;border-left:3px solid #C0165A"><p class="flbl">Ac. centrífuga aᶜᶠ (m/s²)</p><p class="fval" id="cv-acf" style="color:#C0165A"></p></div>
       <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#57606a"></p></div>
     </div>
   </div>
@@ -187,8 +189,9 @@ function updateEquations(){
     $('eq-omega').textContent = w0.toFixed(2)+(alpha>=0?' + ':' − ')+Math.abs(alpha).toFixed(2)+' t  (rad/s)';
     $('eq-at').textContent = (alpha*r).toFixed(3)+' m/s²  (constante)';
   }
-  $('eq-vt').textContent = 'ω · r  =  ω · '+r.toFixed(1)+'  (m/s)';
-  $('eq-an').textContent = 'ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [hacia el centro]';
+  $('eq-vt').textContent  = 'ω · r  =  ω · '+r.toFixed(1)+'  (m/s)';
+  $('eq-an').textContent  = 'ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [hacia el centro]';
+  $('eq-acf').textContent = 'ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [alejándose del centro]';
 }
 
 function updateCards(){
@@ -204,9 +207,10 @@ function updateCards(){
   $('cv-vuelt').textContent = vueltas.toString();
   $('cv-omega').textContent = fmt2(effW)+' rad/s';
   $('cv-vt').textContent = fmt2(vt)+' m/s';
-  $('cv-an').textContent = fmt2(an)+' m/s²';
-  $('cv-at').textContent = fmt2(Math.abs(at))+' m/s²';
-  $('cv-t').textContent = t.toFixed(2)+' s';
+  $('cv-an').textContent  = fmt2(an)+' m/s²';
+  $('cv-at').textContent  = fmt2(Math.abs(at))+' m/s²';
+  $('cv-acf').textContent = fmt2(an)+' m/s²';   // same magnitude as centripetal
+  $('cv-t').textContent   = t.toFixed(2)+' s';
 
   $('stxt').textContent = running?'Simulando…':'Listo';
   $('sdot').style.background = running?'#004EAA':'#78BF26';
@@ -247,12 +251,22 @@ function drawScene(){
   // Centripetal acceleration vector (toward center)
   const an=effW*effW*r;
   const anScale=Math.min(an*scale*0.18,70);
+  const dx_to_c=cx-px, dy_to_c=cy-py;
+  const distPC=Math.hypot(dx_to_c,dy_to_c)||1;
   if(anScale>4){
-    const acx=cx-px, acy=cy-py;
-    const len=Math.hypot(acx,acy);
-    drawArrow(ctx,px,py,px+acx/len*anScale,py+acy/len*anScale,'#F07F00',2);
+    const ex=px+dx_to_c/distPC*anScale, ey=py+dy_to_c/distPC*anScale;
+    drawArrow(ctx,px,py,ex,ey,'#F07F00',2);
     ctx.fillStyle='#F07F00'; ctx.font='11px system-ui'; ctx.textAlign='left';
-    ctx.fillText('aₙ',px+acx/len*anScale+6,py+acy/len*anScale);
+    ctx.fillText('aₙ',ex+5,ey);
+  }
+
+  // Centrifugal acceleration vector (away from center — same magnitude, opposite direction)
+  if(anScale>4){
+    const ex=px-dx_to_c/distPC*anScale, ey=py-dy_to_c/distPC*anScale;
+    drawArrow(ctx,px,py,ex,ey,'#C0165A',2);
+    ctx.fillStyle='#C0165A'; ctx.font='11px system-ui';
+    ctx.textAlign = ex>=px ? 'left' : 'right';
+    ctx.fillText('aᶜᶠ', ex+(ex>=px?5:-5), ey-4);
   }
 
   // Tangential velocity vector (perpendicular to radius, in direction of motion)
@@ -322,9 +336,12 @@ function drawArrow(ctx,x1,y1,x2,y2,color,lw){
   ctx.restore();
 }
 
+const T_MAX = 60;   // límite de simulación en segundos
+
 function loop(){
   if(!running) return;
   t+=DT;
+
   if(mode==='mcu'){
     theta = w0*t;
     omega = w0;
@@ -335,6 +352,15 @@ function loop(){
     if(w0>0 && omega<0 && alpha<0){ running=false; updateBtn(); }
     if(w0<0 && omega>0 && alpha>0){ running=false; updateBtn(); }
   }
+
+  // 60-second time limit
+  if(t >= T_MAX){
+    t = T_MAX;
+    running=false; updateBtn();
+    $('stxt').textContent='Tiempo límite alcanzado (60 s)';
+    $('sdot').style.background='#F07F00';
+  }
+
   drawScene(); updateCards();
   if(running) rafId=requestAnimationFrame(loop);
 }
