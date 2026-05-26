@@ -68,7 +68,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/utem/sim_montana_rusa';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Fundamentos previos: vectores, coordenadas y operadores basicos" href="../phy321/fundamentos_previos.html" />
+    <link rel="next" title="Simulación: centro de masa de un sistema de partículas" href="sim_sistema_particulas.html" />
     <link rel="prev" title="Simulación plano inclinado de fuerzas" href="sim_plano_inclinado.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -180,11 +180,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problemas y proyectos</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../mechanics/problemas_aplicados.html">Problemas aplicados, tareas y proyectos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sim_sistema_particulas.html">Simulación: centro de masa de un sistema de partículas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sim_cinematica_2d.html">Simulación: cinemática en dos dimensiones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sim_movimiento_circular.html">Simulación: movimiento circular</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sim_plano_inclinado.html">Simulación plano inclinado de fuerzas</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Simulación montaña rusa con resorte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim_sistema_particulas.html">Simulación: centro de masa de un sistema de partículas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
 <ul class="nav bd-sidenav">
@@ -368,23 +368,33 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simulacion-montana-rusa-con-resorte">
 <h1>Simulación montaña rusa con resorte<a class="headerlink" href="#simulacion-montana-rusa-con-resorte" title="Link to this heading">#</a></h1>
-<p>Esta simulación interactiva corresponde a los contenidos de la <strong>Unidad 5: Trabajo y energía mecánica</strong>. Un carro de masa fija (<span class="math notranslate nohighlight">\(m = 10\)</span> kg) parte desde una altura <span class="math notranslate nohighlight">\(H\)</span> con velocidad inicial <span class="math notranslate nohighlight">\(v_0\)</span>, desciende sin roce por una pista curva y comprime un resorte de constante <span class="math notranslate nohighlight">\(k\)</span> ubicado al final del tramo horizontal.</p>
-<p>Presiona <strong>▶ Iniciar</strong> para correr la simulación. Modifica los parámetros y observa cómo la energía se redistribuye entre las formas cinética (<span class="math notranslate nohighlight">\(K\)</span>), potencial gravitatoria (<span class="math notranslate nohighlight">\(U_m\)</span>) y potencial elástica (<span class="math notranslate nohighlight">\(U_e\)</span>), manteniendo constante la energía mecánica total:</p>
+<p>Esta simulación interactiva corresponde a los contenidos de la <strong>Unidad 5: Trabajo y energía mecánica</strong>. Un carro de masa fija (<span class="math notranslate nohighlight">\(m = 10\)</span> kg) parte desde una altura <span class="math notranslate nohighlight">\(H\)</span> con velocidad inicial <span class="math notranslate nohighlight">\(v_0\)</span>, desciende por una pista curva y comprime un resorte de constante <span class="math notranslate nohighlight">\(k\)</span> ubicado al final del tramo horizontal.</p>
+<p>Presiona <strong>▶ Iniciar</strong> para correr la simulación. Modifica los parámetros y observa cómo varía la distribución de energía.</p>
+<p><strong>Sin roce</strong> (<span class="math notranslate nohighlight">\(\mu = 0\)</span>): la energía mecánica total se conserva en todo instante:</p>
 <div class="math notranslate nohighlight">
-\[E = K + U_m + U_e = \tfrac{1}{2}mv^2 + mgy + \tfrac{1}{2}kx^2 = \text{cte.}\]</div>
+\[E_0 = K + U_m + U_e = \tfrac{1}{2}mv^2 + mgy + \tfrac{1}{2}kx^2 = \text{cte.}\]</div>
+<p><strong>Con roce</strong> (<span class="math notranslate nohighlight">\(\mu &gt; 0\)</span>): la fricción cinética realiza trabajo negativo a razón de <span class="math notranslate nohighlight">\(dE^f = \mu\,m\,g\,ds\)</span>, de modo que la energía mecánica <strong>disminuye</strong> con la distancia recorrida <span class="math notranslate nohighlight">\(s\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[E^f = \mu\,m\,g\,s \qquad \Rightarrow \qquad E_m(s) = E_0 - E^f\]</div>
+<p>y la ecuación de energía toma la forma:</p>
+<div class="math notranslate nohighlight">
+\[K + U_m + U_e = E_0 - \mu\,m\,g\,s\]</div>
+<p>El carro se detiene cuando <span class="math notranslate nohighlight">\(E_m \to 0\)</span>, es decir, cuando toda la energía inicial ha sido disipada por roce.</p>
 <p><strong>Parámetros ajustables:</strong></p>
 <ul class="simple">
-<li><p>Altura inicial H</p></li>
-<li><p>Velocidad inicial v₀</p></li>
-<li><p>Constante del resorte k</p></li>
+<li><p>Altura inicial <span class="math notranslate nohighlight">\(H\)</span></p></li>
+<li><p>Velocidad inicial <span class="math notranslate nohighlight">\(v_0\)</span></p></li>
+<li><p>Constante del resorte <span class="math notranslate nohighlight">\(k\)</span></p></li>
+<li><p>Coeficiente de roce <span class="math notranslate nohighlight">\(\mu\)</span></p></li>
 </ul>
 <iframe src="../../_static/montana_rusa_resorte.html"
         width="100%"
         height="860"
         style="border:none; border-radius:8px;">
-</iframe><p>La compresión máxima ocurre cuando toda la energía mecánica es potencial elástica:</p>
+</iframe><p>La compresión máxima ocurre cuando toda la energía mecánica disponible es potencial elástica. <strong>Sin roce</strong> se tiene la expresión exacta:</p>
 <div class="math notranslate nohighlight">
 \[x_{\max} = \sqrt{\dfrac{m v_0^2 + 2 m g H}{k}}\]</div>
+<p><strong>Con roce</strong>, la energía disponible al llegar al resorte es <span class="math notranslate nohighlight">\(E_0 - \mu\,m\,g\,s_0\)</span> (donde <span class="math notranslate nohighlight">\(s_0\)</span> es la distancia recorrida hasta el punto de contacto), por lo que la compresión real es menor que el valor anterior.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,11 +437,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../phy321/fundamentos_previos.html"
+       href="sim_sistema_particulas.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Fundamentos previos: vectores, coordenadas y operadores basicos</p>
+        <p class="prev-next-title">Simulación: centro de masa de un sistema de partículas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
