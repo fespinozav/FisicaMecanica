@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="stylesheet" href="https://jsdelivr.net" integrity="sha384-JiRokOoBRtGZKmzmKHhNJ6uLZUGZviNTVm6DcFijYnHqThtG7IXKnflh9MhBM1J/" crossorigin="anonymous">
+<script defer src="https://jsdelivr.net" integrity="sha384-cpW21h6AZH/phNyDlUPIT1y3x9lJYDWupTMeV9rZe+La9RZkOykav8upogHXtAWa" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Simulador: movimiento circular</title>
 <style>
@@ -88,9 +90,9 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
       <div class="fcard"><p class="flbl">Vel. angular ω (rad/s)</p><p class="fval" id="cv-omega" style="color:#D62828"></p></div>
       <div class="fcard"><p class="flbl">Vel. tangencial vₜ (m/s)</p><p class="fval" id="cv-vt" style="color:#78BF26"></p></div>
       <div class="fcard"><p class="flbl">Ac. centrípeta aₙ (m/s²)</p><p class="fval" id="cv-an" style="color:#F07F00"></p></div>
-      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
-      <div class="fcard" style="grid-column:2;border-left:3px solid #C0165A"><p class="flbl">Ac. centrífuga aᶜᶠ (m/s²)</p><p class="fval" id="cv-acf" style="color:#C0165A"></p></div>
       <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#57606a"></p></div>
+      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
+      <div class="fcard" style="grid-column:2;border-left:3px solid #C0165A"><p class="flbl">Ac. centrífuga $a_{cf}$ (m/s²)</p><p class="fval" id="cv-acf" style="color:#C0165A"></p></div>
     </div>
   </div>
 </div>
