@@ -49,7 +49,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 
   <!-- Legend -->
   <g transform="translate(18,18)">
-    <rect width="192" height="116" rx="8" fill="var(--color-background-primary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+    <rect width="192" height="139" rx="8" fill="var(--color-background-primary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
     <text x="14" y="20" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">LEYENDA</text>
     <line x1="14" y1="38" x2="40" y2="38" stroke="#D62828" stroke-width="2.5" marker-end="url(#arw)"/>
     <text x="46" y="42" style="font-size:11px;fill:var(--color-text-primary)">Peso  P = mg</text>
@@ -59,6 +59,8 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
     <text x="46" y="88" style="font-size:11px;fill:var(--color-text-primary)">Roce  fₖ = μN</text>
     <line x1="14" y1="107" x2="40" y2="107" stroke="#F07F00" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arw)"/>
     <text x="46" y="111" style="font-size:11px;fill:var(--color-text-primary)">Comp. paralela  Px</text>
+    <line x1="14" y1="130" x2="40" y2="130" stroke="#7950F2" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arw)"/>
+    <text x="46" y="134" style="font-size:11px;fill:var(--color-text-primary)">Comp. perpendicular  Py</text>
   </g>
 
   <!-- Dynamic: ground -->
@@ -78,11 +80,13 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
   <line id="aN"  stroke="#78BF26" stroke-width="2.5" marker-end="url(#arw)"/>
   <line id="afk" stroke="#C0165A" stroke-width="2.5" marker-end="url(#arw)"/>
   <line id="aPx" stroke="#F07F00" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arw)"/>
+  <line id="aPy" stroke="#7950F2" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arw)"/>
   <!-- Arrow labels -->
   <text id="tlP"  text-anchor="start" style="font-size:12px;font-weight:500;fill:#D62828"></text>
   <text id="tlN"  text-anchor="end"   style="font-size:12px;font-weight:500;fill:#78BF26"></text>
   <text id="tlfk" text-anchor="start" style="font-size:12px;font-weight:500;fill:#C0165A"></text>
   <text id="tlPx" text-anchor="end"   style="font-size:11px;fill:#F07F00"></text>
+  <text id="tlPy" text-anchor="start" style="font-size:11px;fill:#7950F2"></text>
 </svg>
 
 <!-- Sliders -->
@@ -105,10 +109,11 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 </div>
 
 <!-- Force cards -->
-<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px">
+<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px">
   <div class="fcard"><p class="flbl">Peso  P</p><p class="fval" id="cv-P" style="color:#D62828"></p></div>
   <div class="fcard"><p class="flbl">Normal  N</p><p class="fval" id="cv-N" style="color:#78BF26"></p></div>
   <div class="fcard"><p class="flbl">Comp. ∥  Px</p><p class="fval" id="cv-Px" style="color:#F07F00"></p></div>
+  <div class="fcard"><p class="flbl">Comp. ⊥  Py</p><p class="fval" id="cv-Py" style="color:#7950F2"></p></div>
   <div class="fcard"><p class="flbl">Roce  fₖ</p><p class="fval" id="cv-fk" style="color:#C0165A"></p></div>
 </div>
 
@@ -183,7 +188,7 @@ function render(){
   }
 
   // Physics
-  const P=m*G, N=P*ct, Px=P*st, fk=mu*N;
+  const P=m*G, N=P*ct, Px=P*st, Py=N, fk=mu*N;
   const slides=Px>fk+0.01;
   const alen=f=>Math.min(AMAX,f*ASC);
 
@@ -217,6 +222,16 @@ function render(){
     setLabel('tlPx',0,0,'');
   }
 
+  // Py (↘ into surface: sinθ, cosθ) dashed
+  if(Py>0.5){
+    const pyL=alen(Py), pyTx=bx+st*pyL, pyTy=by+ct*pyL;
+    setArrow('aPy', bx, by, pyTx, pyTy);
+    setLabel('tlPy', pyTx+8, pyTy-5, 'Py');
+  } else {
+    setArrow('aPy',bx,by,bx,by);
+    setLabel('tlPy',0,0,'');
+  }
+
   // Status
   const tanTh=deg<89?Math.tan(th).toFixed(2):'∞';
   $('sdot').style.background=slides?'#D62828':'#78BF26';
@@ -228,6 +243,7 @@ function render(){
   $('cv-P').textContent=P.toFixed(1)+' N';
   $('cv-N').textContent=N.toFixed(1)+' N';
   $('cv-Px').textContent=Px.toFixed(1)+' N';
+  $('cv-Py').textContent=Py.toFixed(1)+' N';
   $('cv-fk').textContent=fk.toFixed(1)+' N';
 }
 render();
