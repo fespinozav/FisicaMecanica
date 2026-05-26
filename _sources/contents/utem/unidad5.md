@@ -6,6 +6,14 @@ En esta unidad se estudia el movimiento desde un punto de vista energético. A d
 
 Se introducirán los conceptos de trabajo mecánico, energía cinética, energía potencial, potencia y conservación de la energía mecánica.
 
+```{figure} ../images/trabajo-y-energia.png
+---
+width: 60%
+name: trabajo-y-energia
+---
+
+```
+
 ## Objetivo de aprendizaje
 
 Al finalizar esta unidad, el estudiante será capaz de:
