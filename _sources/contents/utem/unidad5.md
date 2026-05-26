@@ -18,11 +18,11 @@ name: trabajo-y-energia
 
 Al finalizar esta unidad, el estudiante será capaz de:
 
-- interpretar el trabajo como un mecanismo de transferencia de energía;
-- calcular el trabajo realizado por fuerzas constantes y por la fuerza neta;
-- relacionar el trabajo neto con el cambio de energía cinética;
-- comprender el significado físico de la energía potencial;
-- aplicar el principio de conservación de la energía mecánica;
+- interpretar el trabajo como un mecanismo de transferencia de energía.
+- calcular el trabajo realizado por fuerzas constantes y por la fuerza neta.
+- relacionar el trabajo neto con el cambio de energía cinética.
+- comprender el significado físico de la energía potencial.
+- aplicar el principio de conservación de la energía mecánica.
 - resolver problemas de movimiento usando métodos energéticos.
 
 ---
@@ -35,8 +35,8 @@ Esto permite analizar el movimiento sin tener que trabajar siempre con ecuacione
 
 En mecánica clásica, dos formas fundamentales de energía son:
 
-- la energía cinética;
-- la energía potencial.
+- La energía cinética.
+- La energía potencial.
 
 Ambas se relacionan mediante el trabajo mecánico.
 
@@ -46,10 +46,18 @@ Ambas se relacionan mediante el trabajo mecánico.
 
 El trabajo mecánico es una forma de transferir energía a un cuerpo mediante la acción de una fuerza durante un desplazamiento.
 
+```{figure} ../images/trabajo_mecanico.png
+---
+width: 60%
+name: trabajo_mecanico
+---
+
+```
+
 Si una fuerza constante $\vec{F}$ actúa sobre un cuerpo que se desplaza una cantidad $\Delta \vec{r}$, el trabajo realizado es:
 
 $$
-W = F \, \Delta r \cos\theta
+W = \vec{F} * \vec{r}=F \, \Delta r \cos\theta
 $$
 
 donde:
@@ -57,6 +65,13 @@ donde:
 - $F$ es la magnitud de la fuerza;
 - $\Delta r$ es la magnitud del desplazamiento;
 - $\theta$ es el ángulo entre la fuerza y el desplazamiento.
+
+```{note}
+- El trabajo es nulo si $r=0$ y/o la fuerza es perpendicular al desplazamiento. ej: el realizado por el peso sobre un cuerpo en una superficie horizontal
+- El trabajo el positivo si la fuerza es favorable al movimiento ($cos \theta > 0$).
+- El trabajo es negativo si la fuerza se opone al movimiento ($cos \theta < 0$). ej: el realizado por la fuerza de roce
+
+```
 
 ### Unidad de medida
 
@@ -112,6 +127,20 @@ $$
 
 En este caso, la fuerza no transfiere energía al cuerpo.
 
+### Relación entre trabajo y producto escalar
+
+El trabajo puede interpretarse como un producto escalar entre fuerza y desplazamiento:
+
+$$
+W = \vec{F} \cdot \Delta \vec{r}
+$$
+
+Esto explica por qué el trabajo depende de:
+
+- la magnitud de la fuerza;
+- la magnitud del desplazamiento;
+- el ángulo entre ambas.
+
 ---
 
 ## 4. Trabajo de fuerzas frecuentes
@@ -144,16 +173,46 @@ $$
 
 Representa la transferencia neta de energía hacia o desde el cuerpo.
 
+### Ejemplo: Subir un bloque por un plano inclinado rugoso (con rozamiento).
+
+
+```{figure} ../images/bloque_up.png
+---
+width: 60%
+name: bloque_que_sube
+---
+DCL de bloque que sube por un plano inclinado
+```
+$$
+W_{g} = - mg \sin \theta d 
+$$
+
+$$
+W_{F} = \vec{F} \vec{d} = F*d
+$$
+
+$$
+W_{R} = -F_r*d = - \mu m g \cos \theta d 
+$$
+
+$$
+W = Wg + W_F + W_R = \vec{R} * \vec{d} = R_T d
+$$
+
+$$
+R_T = F-mg \sin \theta - \mu  mg \cos \theta
+$$
+
 ---
 
 ## 6. Energía cinética
 
-La energía cinética es la energía asociada al movimiento de un cuerpo.
+La energía cinética es la energía asociada al movimiento de un cuerpo. Siendo este un escalar con las mismas unidades que el trabajo.
 
 Se define como:
 
 $$
-K = \frac{1}{2}mv^2
+E_c = K = \frac{1}{2}mv^2
 $$
 
 donde:
@@ -163,13 +222,33 @@ donde:
 
 ### Propiedades
 
-- es una magnitud escalar;
-- siempre es positiva o nula;
+- es una magnitud escalar.
+- siempre es positiva o nula.
 - depende del cuadrado de la rapidez.
 
 ### Unidad de medida
 
 Su unidad en el Sistema Internacional es el joule.
+
+### Ejemplo: Energía Cinética (K)
+
+Supongamos una partícula de masa m bajo la acción de una fuerza resultante F  que la desplaza a lo largo de una trayectoria:
+
+![alt text](/contents/images/image-1.png)
+
+
+$$
+\begin{align}
+W &= \int_A^B \vec{F} \cdot d\vec{r}
+   = \int_A^B m\vec{a} \cdot d\vec{r}
+   = \int_A^B m\vec{a} \cdot \vec{v}\, dt
+   = \int_A^B m\frac{d\vec{v}}{dt} \cdot \vec{v}\, dt
+   = \int_A^B m\vec{v} \cdot d\vec{v} \\
+  &= \left[\frac{1}{2}m\vec{v} \cdot \vec{v}\right]_A^B
+   = \left[\frac{1}{2}mv^2\right]_A^B
+   = \frac{1}{2}mv_B^2 - \frac{1}{2}mv_A^2
+\end{align}
+$$
 
 ---
 
@@ -178,21 +257,21 @@ Su unidad en el Sistema Internacional es el joule.
 Uno de los resultados más importantes de esta unidad es el teorema trabajo–energía cinética:
 
 $$
-W_{\text{neto}} = \Delta K
+W_{\text{neto}} = \Delta E_c
 $$
 
 donde:
 
 $$
-\Delta K = K_f - K_i
+\Delta E_c = E_{cf} - E_{ci} = K_f - K_i
 $$
 
 Esto significa que el trabajo neto realizado sobre un cuerpo es igual al cambio de su energía cinética.
 
 ### Interpretación física
 
-- si el trabajo neto es positivo, la energía cinética aumenta;
-- si el trabajo neto es negativo, la energía cinética disminuye;
+- si el trabajo neto es positivo, la energía cinética aumenta.
+- si el trabajo neto es negativo, la energía cinética disminuye.
 - si el trabajo neto es cero, la energía cinética permanece constante.
 
 ---
@@ -234,8 +313,36 @@ La energía potencial es la energía asociada a la posición o configuración de
 
 En esta unidad se estudiarán principalmente dos formas:
 
-- energía potencial gravitatoria;
+- energía potencial gravitatoria.
 - energía potencial elástica.
+
+
+### Ejemplo: 
+
+Supongamos la fuerza de la gravedad y calculemos el $W$ realizado *sólo por
+esta fuerza* ($mg$) al mover un objeto a lo largo de dos caminos diferentes
+que unan el punto inicial $A$ y el final $B$:
+
+![alt text](/contents/images/pot_e.png)
+
+**Camino 1:** De $A$ hasta $B$ por el plano inclinado,
+
+$$
+W_{AB} = mgd \sin \theta = mgh
+$$
+
+**Camino 2:** De $A$ hasta $B$ pasando por $C$,
+
+$$
+\left.\begin{aligned}
+W_{AC} &= mgh \\
+W_{CB} &= 0 \quad (\vec{F} \perp \vec{r})
+\end{aligned}\right\}
+\quad W_{ACB} = W_{AC} + W_{CB} = mgh
+$$
+
+Vemos que **el trabajo es el mismo**. Se puede probar que, aunque elijamos
+otro camino, $W$ sólo depende de la diferencia de altura $h$ entre $A$ y $B$.
 
 ---
 
@@ -243,8 +350,27 @@ En esta unidad se estudiarán principalmente dos formas:
 
 Cerca de la superficie terrestre, la energía potencial gravitatoria de un cuerpo se expresa como:
 
+![alt text](/contents/images/grav_pot.png)
+
 $$
-U_g = mgy
+\vec{F} = -mg\,\hat{j}
+$$
+
+$$
+\begin{align}
+W_{AB} &= \int_A^B \vec{F} \cdot d\vec{r}
+        = -\int_A^B mg\,\hat{j} \cdot (dx\,\hat{i} + dy\,\hat{j}) \\
+       &= -\int_A^B mg\, dy
+        = -(mgy_B - mgy_A)
+\end{align}
+$$
+
+$$
+W_{AB} = U_A - U_B \quad \Rightarrow \quad U(y) = mgy
+$$
+
+$$
+\boxed{ U_g = mgy}
 $$
 
 donde:
@@ -272,6 +398,8 @@ $$
 
 Cuando un resorte ideal se deforma, almacena energía potencial elástica.
 
+![alt text](/contents/images/elast.png)
+
 Se define como:
 
 $$
@@ -297,7 +425,7 @@ Son aquellas para las cuales el trabajo entre dos puntos no depende de la trayec
 
 Ejemplos:
 
-- fuerza gravitatoria;
+- fuerza gravitatoria.
 - fuerza elástica del resorte.
 
 Estas fuerzas permiten definir una energía potencial asociada.
@@ -324,8 +452,8 @@ $$
 
 Dependiendo del problema, $U$ puede incluir:
 
-- energía potencial gravitatoria;
-- energía potencial elástica;
+- energía potencial gravitatoria
+- energía potencial elástica
 - o ambas.
 
 ---
@@ -380,30 +508,156 @@ Cuando hay roce:
 
 El enfoque energético permite resolver con facilidad problemas como:
 
-- caída libre;
-- lanzamiento vertical;
-- bloques sobre superficies con o sin roce;
-- resortes comprimidos o estirados;
-- planos inclinados;
-- sistemas con variación de altura.
+- caída libre
+- lanzamiento vertical
+- bloques sobre superficies con o sin roce
+- resortes comprimidos o estirados
+- planos inclinados
+- sistemas con variación de altura
 
 En muchos casos, usar energía resulta más directo que aplicar Newton en cada etapa del movimiento.
 
+## Aplicación: ritmo cardíaco y leyes de escala
+
+A partir del concepto de tasa metabólica y utilizando las leyes de escala
+se puede calcular **cómo varía el ritmo cardíaco con el tamaño de los individuos**.
+
+Como la energía consumida acaba disipándose en forma de calor que escapa a
+través de la piel, se encuentra que $P_{\text{met}}$ (potencia metabólica) es proporcional al área
+del cuerpo de un animal.
+
+Establecemos una *hipótesis biológica* considerando que el $\text{O}_2$ necesario
+para el metabolismo es proporcionado por la sangre y ésta es bombeada por el corazón.
+
+Una $P_{\text{met}}$ elevada se producirá cuanto más grande sea el corazón y más
+rápido pueda bombear. Por tanto, podemos suponer que la $P_{\text{met}}$ es
+proporcional al volumen del corazón $V$ por la frecuencia de bombeo $f$
+(pulsaciones por segundo),
+
+$$
+P_{\text{met}} \propto V\, f
+$$
+
+Sea $k$ el factor de escala entre dos animales semejantes, según el modelo
+de semejanza geométrica ($k = L'/L$;\ $k^2 = A'/A$;\ $k^3 = V'/V$):
+
+$$
+\left.\begin{aligned}
+\dfrac{P_{\text{met}}'}{P_{\text{met}}} &= k^2 \\[10pt]
+\dfrac{P_{\text{met}}'}{P_{\text{met}}} &= \dfrac{V'\,f'}{V\,f} = k^3\,\dfrac{f'}{f}
+\end{aligned}\right\}
+\quad \Rightarrow \quad f' = \frac{1}{k}\,f
+$$
+
+Así que **el corazón de un animal mayor late más lentamente que el de uno pequeño**.
+
+Puede comprobarse cómo el ritmo cardíaco en bebés es superior. En ratones también
+se aprecia claramente. El mamífero con mayor ritmo cardíaco que existe es la musaraña.
+
+Por ejemplo, si comparamos a seres humanos (adultos) con el mono (rhesus) con un
+factor de escala entre ambos de $2.5$:
+
+$$
+f_{\text{corazón humano}} = \frac{1}{2.5}\,f_{\text{mono}} = 0.4\,f_{\text{mono}}
+\qquad (\text{experimentalmente se obtiene } 0.5)
+$$
+
 ---
 
-## 17. Relación entre trabajo y producto escalar
+## 17. Ejercicios de ejemplo
 
-El trabajo puede interpretarse como un producto escalar entre fuerza y desplazamiento:
+## Ejemplo 1 — Simple: Caída libre desde altura $h$
+
+```{figure} ../images/caida_simple.png
+---
+width: 40%
+name: ejemplo_1
+---
+```
+
+**Situación:** Una masa $m$ se suelta desde el reposo a una altura $h$
+sobre el suelo. No hay rozamiento.
+
+**Estado inicial $A$ (en la cima):**
 
 $$
-W = \vec{F} \cdot \Delta \vec{r}
+K_A = 0, \qquad U_A = mgh, \qquad E_A = mgh
 $$
 
-Esto explica por qué el trabajo depende de:
+**Estado final $B$ (en el suelo):**
 
-- la magnitud de la fuerza;
-- la magnitud del desplazamiento;
-- el ángulo entre ambas.
+$$
+K_B = \frac{1}{2}mv_B^2, \qquad U_B = 0, \qquad E_B = \frac{1}{2}mv_B^2
+$$
+
+**Aplicando conservación de energía mecánica:**
+
+$$
+E_A = E_B \quad \Rightarrow \quad mgh = \frac{1}{2}mv_B^2
+\quad \Rightarrow \quad \boxed{v_B = \sqrt{2gh}}
+$$
+
+---
+
+## Ejemplo 2: Plano inclinado con rozamiento y potencia
+
+
+```{figure} ..images/plano_simple.png
+---
+width: 40%
+name: ejemplo_2
+---
+
+```
+
+**Situación:** Una masa $m$ parte del reposo y desliza una distancia $d$
+sobre un plano inclinado un ángulo $\theta$, con coeficiente de rozamiento
+cinético $\mu_k$.
+
+### Paso 1 — Trabajo de cada fuerza
+
+$$
+W_{\text{grav}} = mg\,d\sin\theta
+$$
+
+$$
+W_{\text{roz}} = -f_k\,d = -\mu_k\,mg\cos\theta\cdot d
+$$
+
+$$
+W_{\text{normal}} = 0 \qquad (\vec{N} \perp d\vec{r})
+$$
+
+### Paso 2 — Teorema trabajo-energía cinética
+
+$$
+W_{\text{total}} = \Delta K \quad \Rightarrow \quad
+mg\,d\sin\theta - \mu_k\,mg\cos\theta\,d = \frac{1}{2}mv_B^2
+$$
+
+$$
+\boxed{v_B^2 = 2g\,d\left(\sin\theta - \mu_k\cos\theta\right)}
+$$
+
+### Paso 3 — Balance energético con fuerzas disipativas
+
+$$
+\frac{1}{2}mv_B^2 = mgh - \Delta E_{\text{térmica}}
+$$
+
+$$
+\frac{1}{2}mv_B^2 = mg\,d\sin\theta - \mu_k\,mg\cos\theta\cdot d
+$$
+
+### Paso 4 — Potencia instantánea al llegar a $B$
+
+$$
+P_{\text{grav}} = \vec{F}_{\text{grav}}\cdot\vec{v}_B = mg\sin\theta\cdot v_B
+$$
+
+$$
+\boxed{P_{\text{grav}} = mg\sin\theta\sqrt{2g\,d\left(\sin\theta - \mu_k\cos\theta\right)}}
+$$
 
 ---
 
@@ -428,13 +682,13 @@ En esta unidad se estudió el trabajo mecánico como mecanismo de transferencia 
 
 Se analizaron:
 
-- el trabajo realizado por fuerzas;
-- el trabajo neto;
-- la energía cinética;
-- el teorema trabajo–energía;
-- la potencia;
-- la energía potencial gravitatoria;
-- la energía potencial elástica;
+- el trabajo realizado por fuerzas
+- el trabajo neto
+- la energía cinética
+- el teorema trabajo–energía
+- la potencia
+- la energía potencial gravitatoria
+- la energía potencial elástica
 - la conservación de la energía mecánica.
 
 Estos conceptos constituyen una herramienta central para resolver problemas de mecánica de manera más eficiente y conceptual.
