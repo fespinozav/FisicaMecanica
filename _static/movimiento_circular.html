@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Simulador: movimiento circular</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css" integrity="sha384-vlBdW0r3AcZO/HboRPznQNowvexd3fY8qHOWkBi5q7KGgqJ+F48+DceybYmrVbmB" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js" integrity="sha384-AtrdNsnxl/75rvBneBVH7DtOvCxSVahR2zWqle1coBKd8DEmLoviqNeJSx64gNAs" crossorigin="anonymous"></script>
 <style>
 :root{
   --color-text-primary:#1f2328;
@@ -31,6 +33,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 .eqbox .eqrow{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
 .eqbox .eqlbl{color:var(--color-text-secondary);min-width:50px;font-size:12px}
 .eqbox .eqval{font-weight:500;color:var(--color-text-primary)}
+.eqbox .katex{font-size:1em}
 .badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:600;margin-left:6px}
 .btn-run{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
   font-size:14px;font-weight:600;cursor:pointer;border-radius:var(--border-radius-md);
@@ -77,6 +80,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
       <div class="eqrow" id="row-at" style="display:none"><span class="eqlbl">aₜ(t)</span><span class="eqval" id="eq-at"></span></div>
       <div class="eqrow"><span class="eqlbl">vₜ</span><span class="eqval" id="eq-vt"></span></div>
       <div class="eqrow"><span class="eqlbl">aₙ</span><span class="eqval" id="eq-an"></span></div>
+      <div class="eqrow"><span class="eqlbl" style="color:#C0165A">a<sub>cf</sub></span><span class="eqval" id="eq-acf" style="color:#C0165A"></span></div>
     </div>
 
     <!-- Live values -->
@@ -87,8 +91,9 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
       <div class="fcard"><p class="flbl">Vel. angular ω (rad/s)</p><p class="fval" id="cv-omega" style="color:#D62828"></p></div>
       <div class="fcard"><p class="flbl">Vel. tangencial vₜ (m/s)</p><p class="fval" id="cv-vt" style="color:#78BF26"></p></div>
       <div class="fcard"><p class="flbl">Ac. centrípeta aₙ (m/s²)</p><p class="fval" id="cv-an" style="color:#F07F00"></p></div>
-      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
       <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#57606a"></p></div>
+      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
+      <div class="fcard" style="border-left:3px solid #C0165A"><p class="flbl">Ac. centrífuga a<sub>cf</sub>(m/s²)</p><p class="fval" id="cv-acf" style="color:#C0165A"></p></div>
     </div>
   </div>
 </div>
@@ -126,8 +131,9 @@ canvas.width=CW; canvas.height=CH;
 
 let r=3, w0=2, alpha=0.5, mode='mcu';
 let theta=0, omega=2, t=0;
-let running=false, rafId=null;
-const DT=1/60;
+let running=false, rafId=null, lastFrameTs=null;
+const MAX_DT=0.1;
+const T_MAX = 60;   // límite de simulación en segundos
 
 function setMode(m){
   mode=m;
@@ -152,7 +158,12 @@ function onParam(){
 }
 
 function doReset(){
-  if(running){running=false;updateBtn();}
+  if(running) stopRun();
+  if(rafId!==null){
+    cancelAnimationFrame(rafId);
+    rafId=null;
+  }
+  lastFrameTs=null;
   theta=0; omega=w0; t=0;
   updateEquations();
   drawScene();
@@ -160,8 +171,28 @@ function doReset(){
 }
 
 function toggleRun(){
-  running=!running; updateBtn();
-  if(running) loop();
+  if(running) stopRun();
+  else startRun();
+}
+
+function startRun(){
+  if(running) return;
+  running=true;
+  lastFrameTs=null;
+  updateBtn();
+  updateStatus();
+  if(rafId===null) rafId=requestAnimationFrame(loop);
+}
+
+function stopRun(){
+  running=false;
+  if(rafId!==null){
+    cancelAnimationFrame(rafId);
+    rafId=null;
+  }
+  lastFrameTs=null;
+  updateBtn();
+  updateStatus();
 }
 
 function updateBtn(){
@@ -170,25 +201,82 @@ function updateBtn(){
   else{btn.textContent='▶ Iniciar';btn.className='btn-run stopped';}
 }
 
+function updateStatus(){
+  if(running){
+    $('stxt').textContent='Simulando…';
+    $('sdot').style.background='#004EAA';
+  } else if(t>=T_MAX){
+    $('stxt').textContent='Tiempo límite alcanzado (60 s)';
+    $('sdot').style.background='#F07F00';
+  } else {
+    $('stxt').textContent='Listo';
+    $('sdot').style.background='#78BF26';
+  }
+}
+
 function fmt2(v){
   if(Math.abs(v)>=100) return v.toFixed(1);
   if(Math.abs(v)>=10) return v.toFixed(2);
   return v.toFixed(3);
 }
 
-function updateEquations(){
-  const eff_alpha = mode==='mcu'?0:alpha;
-  if(mode==='mcu'){
-    $('eq-theta').textContent = w0.toFixed(2)+' · t  (rad)';
-    $('eq-omega').textContent = w0.toFixed(2)+' rad/s  (constante)';
+function setMath(id, tex, fallback){
+  const el=$(id);
+  if(window.katex){
+    katex.render(tex, el, {
+      throwOnError:false
+    });
   } else {
-    const sign=alpha>=0?'+ ':'− ';
-    $('eq-theta').textContent = w0.toFixed(2)+' t '+sign+Math.abs(alpha/2).toFixed(3)+' t²  (rad)';
-    $('eq-omega').textContent = w0.toFixed(2)+(alpha>=0?' + ':' − ')+Math.abs(alpha).toFixed(2)+' t  (rad/s)';
-    $('eq-at').textContent = (alpha*r).toFixed(3)+' m/s²  (constante)';
+    el.textContent=fallback || tex;
   }
-  $('eq-vt').textContent = 'ω · r  =  ω · '+r.toFixed(1)+'  (m/s)';
-  $('eq-an').textContent = 'ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [hacia el centro]';
+}
+
+function updateEquations(){
+  if(mode==='mcu'){
+    setMath(
+      'eq-theta',
+      String.raw`= ${w0.toFixed(2)}\,t\ \mathrm{rad}`,
+      '= '+w0.toFixed(2)+' · t  (rad)'
+    );
+    setMath(
+      'eq-omega',
+      String.raw`= ${w0.toFixed(2)}\ \mathrm{rad/s}\quad(\mathrm{constante})`,
+      '= '+w0.toFixed(2)+' rad/s  (constante)'
+    );
+  } else {
+    const texSign=alpha>=0?'+':'-';
+    const textSign=alpha>=0?'+ ':'− ';
+    setMath(
+      'eq-theta',
+      String.raw`= ${w0.toFixed(2)}\,t ${texSign} ${Math.abs(alpha/2).toFixed(3)}\,t^2\ \mathrm{rad}`,
+      '= '+w0.toFixed(2)+' t '+textSign+Math.abs(alpha/2).toFixed(3)+' t²  (rad)'
+    );
+    setMath(
+      'eq-omega',
+      String.raw`= ${w0.toFixed(2)} ${texSign} ${Math.abs(alpha).toFixed(2)}\,t\ \mathrm{rad/s}`,
+      '= '+w0.toFixed(2)+(alpha>=0?' + ':' − ')+Math.abs(alpha).toFixed(2)+' t  (rad/s)'
+    );
+    setMath(
+      'eq-at',
+      String.raw`= ${(alpha*r).toFixed(3)}\ \mathrm{m/s^2}\quad(\mathrm{constante})`,
+      '= '+(alpha*r).toFixed(3)+' m/s²  (constante)'
+    );
+  }
+  setMath(
+    'eq-vt',
+    String.raw`= \omega r = \omega \cdot ${r.toFixed(1)}\ \mathrm{m/s}`,
+    '= ω · r  =  ω · '+r.toFixed(1)+'  (m/s)'
+  );
+  setMath(
+    'eq-an',
+    String.raw`= \omega^2 r = \omega^2 \cdot ${r.toFixed(1)}\ \mathrm{m/s^2}\quad[\mathrm{hacia\ el\ centro}]`,
+    '= ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [hacia el centro]'
+  );
+  setMath(
+    'eq-acf',
+    String.raw`= \omega^2 r = \omega^2 \cdot ${r.toFixed(1)}\ \mathrm{m/s^2}\quad[\mathrm{alejándose\ del\ centro}]`,
+    '= ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [alejándose del centro]'
+  );
 }
 
 function updateCards(){
@@ -204,12 +292,12 @@ function updateCards(){
   $('cv-vuelt').textContent = vueltas.toString();
   $('cv-omega').textContent = fmt2(effW)+' rad/s';
   $('cv-vt').textContent = fmt2(vt)+' m/s';
-  $('cv-an').textContent = fmt2(an)+' m/s²';
-  $('cv-at').textContent = fmt2(Math.abs(at))+' m/s²';
-  $('cv-t').textContent = t.toFixed(2)+' s';
+  $('cv-an').textContent  = fmt2(an)+' m/s²';
+  $('cv-at').textContent  = fmt2(Math.abs(at))+' m/s²';
+  $('cv-acf').textContent = fmt2(an)+' m/s²';   // same magnitude as centripetal
+  $('cv-t').textContent   = t.toFixed(2)+' s';
 
-  $('stxt').textContent = running?'Simulando…':'Listo';
-  $('sdot').style.background = running?'#004EAA':'#78BF26';
+  updateStatus();
 }
 
 function drawScene(){
@@ -247,12 +335,22 @@ function drawScene(){
   // Centripetal acceleration vector (toward center)
   const an=effW*effW*r;
   const anScale=Math.min(an*scale*0.18,70);
+  const dx_to_c=cx-px, dy_to_c=cy-py;
+  const distPC=Math.hypot(dx_to_c,dy_to_c)||1;
   if(anScale>4){
-    const acx=cx-px, acy=cy-py;
-    const len=Math.hypot(acx,acy);
-    drawArrow(ctx,px,py,px+acx/len*anScale,py+acy/len*anScale,'#F07F00',2);
+    const ex=px+dx_to_c/distPC*anScale, ey=py+dy_to_c/distPC*anScale;
+    drawArrow(ctx,px,py,ex,ey,'#F07F00',2);
     ctx.fillStyle='#F07F00'; ctx.font='11px system-ui'; ctx.textAlign='left';
-    ctx.fillText('aₙ',px+acx/len*anScale+6,py+acy/len*anScale);
+    ctx.fillText('aₙ',ex+5,ey);
+  }
+
+  // Centrifugal acceleration vector (away from center — same magnitude, opposite direction)
+  if(anScale>4){
+    const ex=px-dx_to_c/distPC*anScale, ey=py-dy_to_c/distPC*anScale;
+    drawArrow(ctx,px,py,ex,ey,'#C0165A',2);
+    ctx.fillStyle='#C0165A'; ctx.font='11px system-ui';
+    ctx.textAlign = ex>=px ? 'left' : 'right';
+    ctx.fillText('aᶜᶠ', ex+(ex>=px?5:-5), ey-4);
   }
 
   // Tangential velocity vector (perpendicular to radius, in direction of motion)
@@ -280,13 +378,13 @@ function drawScene(){
   }
 
   // Angle arc
-  if(Math.abs(theta)>0.05){
+  const arcTheta = theta % (2*Math.PI);
+  if(Math.abs(arcTheta)>0.05){
     const arcR=rpx*0.22;
     ctx.beginPath();
-    if(theta>0) ctx.arc(cx,cy,arcR,0,-theta,theta<0);
-    else ctx.arc(cx,cy,arcR,0,-theta,true);
+    ctx.arc(cx,cy,arcR,0,-arcTheta,arcTheta>0);
     ctx.strokeStyle='#57606a'; ctx.lineWidth=1.2; ctx.stroke();
-    const midA=-theta/2;
+    const midA=-arcTheta/2;
     ctx.fillStyle='#57606a'; ctx.font='11px system-ui'; ctx.textAlign='center';
     ctx.fillText('θ',cx+(arcR+12)*Math.cos(midA),cy+(arcR+12)*Math.sin(midA));
   }
@@ -322,18 +420,51 @@ function drawArrow(ctx,x1,y1,x2,y2,color,lw){
   ctx.restore();
 }
 
-function loop(){
-  if(!running) return;
-  t+=DT;
+function updateKinematics(){
   if(mode==='mcu'){
     theta = w0*t;
     omega = w0;
   } else {
     omega = w0 + alpha*t;
     theta = w0*t + 0.5*alpha*t*t;
-    // Stop if omega reverses past zero (avoids bouncing)
-    if(w0>0 && omega<0 && alpha<0){ running=false; updateBtn(); }
-    if(w0<0 && omega>0 && alpha>0){ running=false; updateBtn(); }
+  }
+}
+
+function loop(frameTime){
+  if(!running) return;
+  rafId=null;
+
+  if(lastFrameTs===null) lastFrameTs=frameTime;
+  let dt=(frameTime-lastFrameTs)/1000;
+  if(!Number.isFinite(dt) || dt<0) dt=0;
+  dt=Math.min(dt,MAX_DT);
+  lastFrameTs=frameTime;
+
+  const nextT = Math.min(t+dt,T_MAX);
+  let shouldStop=false;
+
+  // Stop at the instant omega reaches zero when acceleration would reverse motion.
+  if(mode==='mcua' && alpha!==0 && ((w0>0 && alpha<0) || (w0<0 && alpha>0))){
+    const zeroT=-w0/alpha;
+    if(zeroT>=t && zeroT<=nextT){
+      t=zeroT;
+      shouldStop=true;
+    } else {
+      t=nextT;
+    }
+  } else {
+    t=nextT;
+  }
+
+  if(t>=T_MAX){
+    t=T_MAX;
+    shouldStop=true;
+  }
+
+  updateKinematics();
+  if(shouldStop){
+    if(Math.abs(omega)<1e-9) omega=0;
+    stopRun();
   }
   drawScene(); updateCards();
   if(running) rafId=requestAnimationFrame(loop);
@@ -343,7 +474,7 @@ function loop(){
 $('row-alpha').style.display='none';
 $('row-at').style.display='none';
 $('card-at').style.display='none';
-onParam();
+window.addEventListener('DOMContentLoaded', onParam);
 </script>
 </body>
 </html>
