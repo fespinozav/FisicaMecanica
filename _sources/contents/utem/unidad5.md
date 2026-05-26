@@ -602,12 +602,11 @@ $$
 ## Ejemplo 2: Plano inclinado con rozamiento y potencia
 
 
-```{figure} ..images/plano_simple.png
+```{figure} ../images/plano_simple.png
 ---
 width: 40%
 name: ejemplo_2
 ---
-
 ```
 
 **Situación:** Una masa $m$ parte del reposo y desliza una distancia $d$
