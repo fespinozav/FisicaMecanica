@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Simulador: movimiento circular</title>
+<style>
+:root{
+  --color-text-primary:#1f2328;
+  --color-text-secondary:#57606a;
+  --color-text-tertiary:#8c959f;
+  --color-text-danger:#cf222e;
+  --color-text-success:#1a7f37;
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#f6f8fa;
+  --color-border-secondary:#d0d7de;
+  --color-border-tertiary:#eaeef2;
+  --border-radius-md:6px;
+}
+html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.4}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.srow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.slbl{font-size:13px;color:var(--color-text-secondary);min-width:220px}
+.sval{font-size:14px;font-weight:500;min-width:70px;text-align:right;color:var(--color-text-primary)}
+.fcard{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px}
+.flbl{font-size:11px;color:var(--color-text-secondary);margin:0 0 3px}
+.fval{font-size:15px;font-weight:500;margin:0}
+.eqbox{background:var(--color-background-secondary);border:1px solid var(--color-border-tertiary);
+  border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:12px;font-size:13px;line-height:1.8}
+.eqbox .eqrow{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.eqbox .eqlbl{color:var(--color-text-secondary);min-width:50px;font-size:12px}
+.eqbox .eqval{font-weight:500;color:var(--color-text-primary)}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:600;margin-left:6px}
+.btn-run{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
+  font-size:14px;font-weight:600;cursor:pointer;border-radius:var(--border-radius-md);
+  border:none;transition:background .15s,color .15s;margin-right:8px}
+.btn-run.stopped{background:#004EAA;color:#fff}
+.btn-run.stopped:hover{background:#003882}
+.btn-run.running{background:#f6f8fa;color:#cf222e;border:1px solid #d0d7de}
+.btn-run.running:hover{background:#fff5f5}
+.btn-reset{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;
+  font-size:14px;cursor:pointer;border-radius:var(--border-radius-md);
+  border:1px solid var(--color-border-secondary);background:#fff;color:var(--color-text-primary)}
+.btn-reset:hover{background:var(--color-background-secondary)}
+.tabs{display:flex;gap:4px;margin-bottom:14px}
+.tab{padding:5px 14px;border-radius:var(--border-radius-md);font-size:13px;font-weight:500;
+  cursor:pointer;border:1px solid var(--color-border-secondary);background:#fff;color:var(--color-text-secondary)}
+.tab.active{background:#004EAA;color:#fff;border-color:#004EAA}
+</style>
+</head>
+<body>
+<h2 class="sr-only">Simulador interactivo de movimiento circular — MCU y MCUA</h2>
+
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#78BF26"></span>
+  <span id="stxt" style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Listo</span>
+  <span id="sbadge" class="badge" style="background:#004EAA22;color:#004EAA">MCU</span>
+</div>
+
+<!-- Mode tabs -->
+<div class="tabs">
+  <button class="tab active" id="tab-mcu" onclick="setMode('mcu')">Movimiento Circular Uniforme (MCU)</button>
+  <button class="tab" id="tab-mcua" onclick="setMode('mcua')">MCU Acelerado (MCUA)</button>
+</div>
+
+<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+  <!-- Canvas -->
+  <canvas id="cvs" width="420" height="420" style="width:100%;max-width:420px;border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);display:block;flex-shrink:0"></canvas>
+
+  <!-- Right panel -->
+  <div style="flex:1;min-width:220px">
+    <!-- Equations -->
+    <div class="eqbox">
+      <div class="eqrow"><span class="eqlbl">θ(t)</span><span class="eqval" id="eq-theta"></span></div>
+      <div class="eqrow"><span class="eqlbl">ω(t)</span><span class="eqval" id="eq-omega"></span></div>
+      <div class="eqrow" id="row-at" style="display:none"><span class="eqlbl">aₜ(t)</span><span class="eqval" id="eq-at"></span></div>
+      <div class="eqrow"><span class="eqlbl">vₜ</span><span class="eqval" id="eq-vt"></span></div>
+      <div class="eqrow"><span class="eqlbl">aₙ</span><span class="eqval" id="eq-an"></span></div>
+    </div>
+
+    <!-- Live values -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div class="fcard"><p class="flbl">Ángulo θ (rad)</p><p class="fval" id="cv-th-rad" style="color:#004EAA"></p></div>
+      <div class="fcard"><p class="flbl">Ángulo θ (°)</p><p class="fval" id="cv-th-deg" style="color:#004EAA"></p></div>
+      <div class="fcard"><p class="flbl">Vueltas completas</p><p class="fval" id="cv-vuelt" style="color:#C0165A"></p></div>
+      <div class="fcard"><p class="flbl">Vel. angular ω (rad/s)</p><p class="fval" id="cv-omega" style="color:#D62828"></p></div>
+      <div class="fcard"><p class="flbl">Vel. tangencial vₜ (m/s)</p><p class="fval" id="cv-vt" style="color:#78BF26"></p></div>
+      <div class="fcard"><p class="flbl">Ac. centrípeta aₙ (m/s²)</p><p class="fval" id="cv-an" style="color:#F07F00"></p></div>
+      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
+      <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#57606a"></p></div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-bottom:14px">
+  <button id="btn-run" class="btn-run stopped" onclick="toggleRun()">▶ Iniciar</button>
+  <button class="btn-reset" onclick="doReset()">↺ Reiniciar</button>
+</div>
+
+<!-- Sliders -->
+<div style="padding:0 2px">
+  <div class="srow">
+    <span class="slbl">Radio  r (m)</span>
+    <input type="range" min="0.5" max="10" step="0.5" value="3" id="sl-r" style="flex:1" oninput="onParam()">
+    <span class="sval" id="vl-r">3.0 m</span>
+  </div>
+  <div class="srow">
+    <span class="slbl">Vel. angular inicial  ω₀ (rad/s)</span>
+    <input type="range" min="0" max="10" step="0.1" value="2" id="sl-w0" style="flex:1" oninput="onParam()">
+    <span class="sval" id="vl-w0">2.0 rad/s</span>
+  </div>
+  <div class="srow" id="row-alpha">
+    <span class="slbl">Aceleración angular  α (rad/s²)</span>
+    <input type="range" min="-4" max="4" step="0.1" value="0.5" id="sl-alpha" style="flex:1" oninput="onParam()">
+    <span class="sval" id="vl-alpha">0.5 rad/s²</span>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const canvas = $('cvs');
+const ctx = canvas.getContext('2d');
+const CW=420, CH=420;
+canvas.width=CW; canvas.height=CH;
+
+let r=3, w0=2, alpha=0.5, mode='mcu';
+let theta=0, omega=2, t=0;
+let running=false, rafId=null;
+const DT=1/60;
+
+function setMode(m){
+  mode=m;
+  $('tab-mcu').className='tab'+(m==='mcu'?' active':'');
+  $('tab-mcua').className='tab'+(m==='mcua'?' active':'');
+  $('row-alpha').style.display=m==='mcua'?'flex':'none';
+  $('row-at').style.display=m==='mcua'?'flex':'none';
+  $('card-at').style.display=m==='mcua'?'block':'none';
+  const b=$('sbadge');
+  b.textContent=m==='mcu'?'MCU':'MCUA';
+  doReset();
+}
+
+function onParam(){
+  r=+$('sl-r').value;
+  w0=+$('sl-w0').value;
+  alpha=+$('sl-alpha').value;
+  $('vl-r').textContent=r.toFixed(1)+' m';
+  $('vl-w0').textContent=w0.toFixed(1)+' rad/s';
+  $('vl-alpha').textContent=(alpha>=0?'':'-')+Math.abs(alpha).toFixed(1)+' rad/s²';
+  doReset();
+}
+
+function doReset(){
+  if(running){running=false;updateBtn();}
+  theta=0; omega=w0; t=0;
+  updateEquations();
+  drawScene();
+  updateCards();
+}
+
+function toggleRun(){
+  running=!running; updateBtn();
+  if(running) loop();
+}
+
+function updateBtn(){
+  const btn=$('btn-run');
+  if(running){btn.textContent='⏹ Detener';btn.className='btn-run running';}
+  else{btn.textContent='▶ Iniciar';btn.className='btn-run stopped';}
+}
+
+function fmt2(v){
+  if(Math.abs(v)>=100) return v.toFixed(1);
+  if(Math.abs(v)>=10) return v.toFixed(2);
+  return v.toFixed(3);
+}
+
+function updateEquations(){
+  const eff_alpha = mode==='mcu'?0:alpha;
+  if(mode==='mcu'){
+    $('eq-theta').textContent = w0.toFixed(2)+' · t  (rad)';
+    $('eq-omega').textContent = w0.toFixed(2)+' rad/s  (constante)';
+  } else {
+    const sign=alpha>=0?'+ ':'− ';
+    $('eq-theta').textContent = w0.toFixed(2)+' t '+sign+Math.abs(alpha/2).toFixed(3)+' t²  (rad)';
+    $('eq-omega').textContent = w0.toFixed(2)+(alpha>=0?' + ':' − ')+Math.abs(alpha).toFixed(2)+' t  (rad/s)';
+    $('eq-at').textContent = (alpha*r).toFixed(3)+' m/s²  (constante)';
+  }
+  $('eq-vt').textContent = 'ω · r  =  ω · '+r.toFixed(1)+'  (m/s)';
+  $('eq-an').textContent = 'ω² · r  =  ω² · '+r.toFixed(1)+'  (m/s²)  [hacia el centro]';
+}
+
+function updateCards(){
+  const effW = mode==='mcu'? w0 : omega;
+  const vt = effW * r;
+  const an = effW*effW*r;
+  const at = mode==='mcua'? alpha*r : 0;
+  const vueltas = Math.floor(Math.abs(theta)/(2*Math.PI));
+  const thDeg = theta*180/Math.PI;
+
+  $('cv-th-rad').textContent = theta.toFixed(3)+' rad';
+  $('cv-th-deg').textContent = thDeg.toFixed(1)+'°';
+  $('cv-vuelt').textContent = vueltas.toString();
+  $('cv-omega').textContent = fmt2(effW)+' rad/s';
+  $('cv-vt').textContent = fmt2(vt)+' m/s';
+  $('cv-an').textContent = fmt2(an)+' m/s²';
+  $('cv-at').textContent = fmt2(Math.abs(at))+' m/s²';
+  $('cv-t').textContent = t.toFixed(2)+' s';
+
+  $('stxt').textContent = running?'Simulando…':'Listo';
+  $('sdot').style.background = running?'#004EAA':'#78BF26';
+}
+
+function drawScene(){
+  ctx.clearRect(0,0,CW,CH);
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,CW,CH);
+
+  const cx=CW/2, cy=CH/2;
+  const effW = mode==='mcu'? w0 : omega;
+  const scale = Math.min(cx,cy)*0.78/Math.max(r,1);
+  const rpx = r*scale;
+
+  // Grid circles
+  ctx.strokeStyle='#eaeef2'; ctx.lineWidth=1;
+  for(let ri=1;ri<=3;ri++){
+    ctx.beginPath(); ctx.arc(cx,cy,rpx*ri/3,0,2*Math.PI); ctx.stroke();
+  }
+  // Axes
+  ctx.strokeStyle='#d0d7de'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(cx-rpx-16,cy); ctx.lineTo(cx+rpx+16,cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx,cy-rpx-16); ctx.lineTo(cx,cy+rpx+16); ctx.stroke();
+
+  // Circle
+  ctx.beginPath(); ctx.arc(cx,cy,rpx,0,2*Math.PI);
+  ctx.strokeStyle='#8c959f'; ctx.lineWidth=1.8; ctx.setLineDash([5,4]); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Particle position
+  const px=cx+rpx*Math.cos(theta);
+  const py=cy-rpx*Math.sin(theta);
+
+  // Radius line
+  ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,py);
+  ctx.strokeStyle='#d0d7de'; ctx.lineWidth=1.5; ctx.stroke();
+
+  // Centripetal acceleration vector (toward center)
+  const an=effW*effW*r;
+  const anScale=Math.min(an*scale*0.18,70);
+  if(anScale>4){
+    const acx=cx-px, acy=cy-py;
+    const len=Math.hypot(acx,acy);
+    drawArrow(ctx,px,py,px+acx/len*anScale,py+acy/len*anScale,'#F07F00',2);
+    ctx.fillStyle='#F07F00'; ctx.font='11px system-ui'; ctx.textAlign='left';
+    ctx.fillText('aₙ',px+acx/len*anScale+6,py+acy/len*anScale);
+  }
+
+  // Tangential velocity vector (perpendicular to radius, in direction of motion)
+  const vt=effW*r;
+  const vtScale=Math.min(Math.abs(vt)*scale*0.18,70);
+  if(vtScale>4){
+    const sign=effW>=0?1:-1;
+    const tx=-Math.sin(theta)*sign, ty=Math.cos(theta)*sign;
+    drawArrow(ctx,px,py,px+tx*vtScale,py-ty*vtScale,'#78BF26',2);
+    ctx.fillStyle='#78BF26'; ctx.font='11px system-ui'; ctx.textAlign='left';
+    ctx.fillText('vₜ',px+tx*vtScale+6,py-ty*vtScale);
+  }
+
+  // Tangential acceleration vector (if MCUA)
+  if(mode==='mcua' && Math.abs(alpha)>1e-9){
+    const at=Math.abs(alpha*r);
+    const atScale=Math.min(at*scale*0.2,50);
+    if(atScale>4){
+      const sign=alpha>=0?1:-1;
+      const tx=-Math.sin(theta)*sign, ty=Math.cos(theta)*sign;
+      drawArrow(ctx,px,py,px+tx*atScale*0.7,py-ty*atScale*0.7,'#D62828',2);
+      ctx.fillStyle='#D62828'; ctx.font='11px system-ui'; ctx.textAlign='left';
+      ctx.fillText('aₜ',px+tx*atScale*0.7+6,py-ty*atScale*0.7);
+    }
+  }
+
+  // Angle arc
+  if(Math.abs(theta)>0.05){
+    const arcR=rpx*0.22;
+    ctx.beginPath();
+    if(theta>0) ctx.arc(cx,cy,arcR,0,-theta,theta<0);
+    else ctx.arc(cx,cy,arcR,0,-theta,true);
+    ctx.strokeStyle='#57606a'; ctx.lineWidth=1.2; ctx.stroke();
+    const midA=-theta/2;
+    ctx.fillStyle='#57606a'; ctx.font='11px system-ui'; ctx.textAlign='center';
+    ctx.fillText('θ',cx+(arcR+12)*Math.cos(midA),cy+(arcR+12)*Math.sin(midA));
+  }
+
+  // Center dot
+  ctx.beginPath(); ctx.arc(cx,cy,4,0,2*Math.PI);
+  ctx.fillStyle='#8c959f'; ctx.fill();
+
+  // Particle
+  ctx.beginPath(); ctx.arc(px,py,10,0,2*Math.PI);
+  ctx.fillStyle='#004EAA'; ctx.fill();
+  ctx.strokeStyle='#003882'; ctx.lineWidth=2; ctx.stroke();
+
+  // Radius label
+  ctx.fillStyle='#57606a'; ctx.font='12px system-ui'; ctx.textAlign='center';
+  const mlx=cx+(px-cx)*0.55, mly=cy+(py-cy)*0.55;
+  ctx.fillText('r = '+r.toFixed(1)+' m', mlx+8, mly-6);
+}
+
+function drawArrow(ctx,x1,y1,x2,y2,color,lw){
+  const angle=Math.atan2(y2-y1,x2-x1);
+  const len=Math.hypot(x2-x1,y2-y1);
+  if(len<4) return;
+  ctx.save();
+  ctx.strokeStyle=color; ctx.fillStyle=color; ctx.lineWidth=lw;
+  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  const hw=7;
+  ctx.beginPath();
+  ctx.moveTo(x2,y2);
+  ctx.lineTo(x2-hw*Math.cos(angle-0.4),y2-hw*Math.sin(angle-0.4));
+  ctx.lineTo(x2-hw*Math.cos(angle+0.4),y2-hw*Math.sin(angle+0.4));
+  ctx.closePath(); ctx.fill();
+  ctx.restore();
+}
+
+function loop(){
+  if(!running) return;
+  t+=DT;
+  if(mode==='mcu'){
+    theta = w0*t;
+    omega = w0;
+  } else {
+    omega = w0 + alpha*t;
+    theta = w0*t + 0.5*alpha*t*t;
+    // Stop if omega reverses past zero (avoids bouncing)
+    if(w0>0 && omega<0 && alpha<0){ running=false; updateBtn(); }
+    if(w0<0 && omega>0 && alpha>0){ running=false; updateBtn(); }
+  }
+  drawScene(); updateCards();
+  if(running) rafId=requestAnimationFrame(loop);
+}
+
+// Init
+$('row-alpha').style.display='none';
+$('row-at').style.display='none';
+$('card-at').style.display='none';
+onParam();
+</script>
+</body>
+</html>

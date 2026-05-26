@@ -29,8 +29,8 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 .btn-run{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
   font-size:14px;font-weight:600;cursor:pointer;border-radius:var(--border-radius-md);
   border:none;transition:background .15s,color .15s}
-.btn-run.stopped{background:#2980B9;color:#fff}
-.btn-run.stopped:hover{background:#1a6499}
+.btn-run.stopped{background:#004EAA;color:#fff}
+.btn-run.stopped:hover{background:#003882}
 .btn-run.running{background:#f6f8fa;color:#cf222e;border:1px solid #d0d7de}
 .btn-run.running:hover{background:#fff5f5}
 </style>
@@ -40,7 +40,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 <h2 class="sr-only">Simulador de montaña rusa con resorte — conservación de la energía mecánica</h2>
 
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
-  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#1D9E75;transition:background .25s"></span>
+  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#78BF26;transition:background .25s"></span>
   <span id="stxt" style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Listo</span>
   <span id="scnd" style="font-size:12px;color:var(--color-text-secondary);margin-left:4px"></span>
 </div>
@@ -61,13 +61,13 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
   <g transform="translate(18,18)">
     <rect width="208" height="94" rx="8" fill="var(--color-background-primary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
     <text x="14" y="20" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">ENERGÍAS</text>
-    <rect x="14" y="28" width="16" height="10" fill="#2980B9"/>
+    <rect x="14" y="28" width="16" height="10" fill="#004EAA"/>
     <text x="38" y="38" style="font-size:11px;fill:var(--color-text-primary)">K — cinética</text>
-    <rect x="14" y="44" width="16" height="10" fill="#E24B4A"/>
+    <rect x="14" y="44" width="16" height="10" fill="#D62828"/>
     <text x="38" y="54" style="font-size:11px;fill:var(--color-text-primary)">Uₘ — grav. = m g y</text>
-    <rect x="14" y="60" width="16" height="10" fill="#BA7517"/>
+    <rect x="14" y="60" width="16" height="10" fill="#F07F00"/>
     <text x="38" y="70" style="font-size:11px;fill:var(--color-text-primary)">Uₑ — elástica = ½ k x²</text>
-    <rect x="14" y="76" width="16" height="8" fill="none" stroke="#7F77DD" stroke-width="1.5"/>
+    <rect x="14" y="76" width="16" height="8" fill="none" stroke="#C0165A" stroke-width="1.5"/>
     <text x="38" y="84" style="font-size:11px;fill:var(--color-text-primary)">Em = K + Uₘ + Uₑ (constante)</text>
   </g>
 
@@ -75,9 +75,9 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
   <g transform="translate(486,18)">
     <text x="0" y="12" style="font-size:10px;letter-spacing:.8px;font-weight:500;fill:var(--color-text-secondary)">DISTRIBUCIÓN DE Em</text>
     <rect x="0" y="20" width="196" height="16" fill="var(--color-background-secondary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
-    <rect id="bar-K" x="0" y="20" width="0" height="16" fill="#2980B9"/>
-    <rect id="bar-Ug" x="0" y="20" width="0" height="16" fill="#E24B4A"/>
-    <rect id="bar-Ue" x="0" y="20" width="0" height="16" fill="#BA7517"/>
+    <rect id="bar-K" x="0" y="20" width="0" height="16" fill="#004EAA"/>
+    <rect id="bar-Ug" x="0" y="20" width="0" height="16" fill="#D62828"/>
+    <rect id="bar-Ue" x="0" y="20" width="0" height="16" fill="#F07F00"/>
     <text id="bar-lbl" x="0" y="52" style="font-size:11px;fill:var(--color-text-secondary)"></text>
   </g>
 
@@ -103,10 +103,10 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 
   <!-- Cart -->
   <g id="cart">
-    <rect x="-22" y="-28" width="44" height="22" rx="3" fill="#AED6F1" stroke="#2980B9" stroke-width="1.5"/>
-    <text x="0" y="-15" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#1A5276">m</text>
-    <circle cx="-12" cy="-3" r="4" fill="#2C3E50"/>
-    <circle cx="12" cy="-3" r="4" fill="#2C3E50"/>
+    <rect x="-22" y="-28" width="44" height="22" rx="3" fill="#C8DEFF" stroke="#004EAA" stroke-width="1.5"/>
+    <text x="0" y="-15" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#003882">m</text>
+    <circle cx="-12" cy="-3" r="4" fill="#3C3C3B"/>
+    <circle cx="12" cy="-3" r="4" fill="#3C3C3B"/>
   </g>
 </svg>
 
@@ -136,14 +136,14 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 
 <!-- Energy cards -->
 <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px">
-  <div class="fcard"><p class="flbl">Energía total  E</p><p class="fval" id="cv-E" style="color:#7F77DD"></p></div>
-  <div class="fcard"><p class="flbl">Cinética  K</p><p class="fval" id="cv-K" style="color:#2980B9"></p></div>
-  <div class="fcard"><p class="flbl">Grav.  Uₘ</p><p class="fval" id="cv-Ug" style="color:#E24B4A"></p></div>
-  <div class="fcard"><p class="flbl">Elástica  Uₑ</p><p class="fval" id="cv-Ue" style="color:#BA7517"></p></div>
+  <div class="fcard"><p class="flbl">Energía total  E</p><p class="fval" id="cv-E" style="color:#C0165A"></p></div>
+  <div class="fcard"><p class="flbl">Cinética  K</p><p class="fval" id="cv-K" style="color:#004EAA"></p></div>
+  <div class="fcard"><p class="flbl">Grav.  Uₘ</p><p class="fval" id="cv-Ug" style="color:#D62828"></p></div>
+  <div class="fcard"><p class="flbl">Elástica  Uₑ</p><p class="fval" id="cv-Ue" style="color:#F07F00"></p></div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px">
-  <div class="fcard"><p class="flbl">Rapidez en la base  v(B) = √(v₀² + 2gH)</p><p class="fval" id="cv-vB" style="color:#2980B9"></p></div>
-  <div class="fcard"><p class="flbl">Compresión máxima  xₘₐₓ = √(2E / k)</p><p class="fval" id="cv-xm" style="color:#BA7517"></p></div>
+  <div class="fcard"><p class="flbl">Rapidez en la base  v(B) = √(v₀² + 2gH)</p><p class="fval" id="cv-vB" style="color:#004EAA"></p></div>
+  <div class="fcard"><p class="flbl">Compresión máxima  xₘₐₓ = √(2E / k)</p><p class="fval" id="cv-xm" style="color:#F07F00"></p></div>
 </div>
 
 <script>
@@ -330,14 +330,14 @@ function step(){
     status = 'Sistema en reposo'; dotColor = '#888';
   } else if(c > 0.001){
     status = dir > 0 ? 'Comprimiendo el resorte' : 'Resorte empujando el carro';
-    dotColor = '#BA7517';
+    dotColor = '#F07F00';
   } else if(t < totalArc - 0.001 && y_m > 0.05){
     status = dir > 0 ? 'Bajando por la pista' : 'Subiendo por la pista';
-    dotColor = dir > 0 ? '#1D9E75' : '#E24B4A';
+    dotColor = dir > 0 ? '#78BF26' : '#D62828';
   } else {
     const destino = k > 0 ? 'hacia el resorte' : 'hacia la pared';
     status = dir > 0 ? `Tramo horizontal ${destino}` : 'Tramo horizontal de regreso';
-    dotColor = '#2980B9';
+    dotColor = '#004EAA';
   }
   $('sdot').style.background = dotColor;
   $('stxt').textContent = status;
