@@ -35,8 +35,8 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 .btn-run{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
   font-size:14px;font-weight:600;cursor:pointer;border-radius:var(--border-radius-md);
   border:none;transition:background .15s,color .15s;margin-right:8px}
-.btn-run.stopped{background:#2980B9;color:#fff}
-.btn-run.stopped:hover{background:#1a6499}
+.btn-run.stopped{background:#004EAA;color:#fff}
+.btn-run.stopped:hover{background:#003882}
 .btn-run.running{background:#f6f8fa;color:#cf222e;border:1px solid #d0d7de}
 .btn-run.running:hover{background:#fff5f5}
 .btn-reset{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;
@@ -46,16 +46,16 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 .tabs{display:flex;gap:4px;margin-bottom:14px}
 .tab{padding:5px 14px;border-radius:var(--border-radius-md);font-size:13px;font-weight:500;
   cursor:pointer;border:1px solid var(--color-border-secondary);background:#fff;color:var(--color-text-secondary)}
-.tab.active{background:#2980B9;color:#fff;border-color:#2980B9}
+.tab.active{background:#004EAA;color:#fff;border-color:#004EAA}
 </style>
 </head>
 <body>
 <h2 class="sr-only">Simulador interactivo de movimiento circular — MCU y MCUA</h2>
 
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
-  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#1D9E75"></span>
+  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#78BF26"></span>
   <span id="stxt" style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Listo</span>
-  <span id="sbadge" class="badge" style="background:#2980B922;color:#2980B9">MCU</span>
+  <span id="sbadge" class="badge" style="background:#004EAA22;color:#004EAA">MCU</span>
 </div>
 
 <!-- Mode tabs -->
@@ -81,13 +81,13 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 
     <!-- Live values -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-      <div class="fcard"><p class="flbl">Ángulo θ (rad)</p><p class="fval" id="cv-th-rad" style="color:#2980B9"></p></div>
-      <div class="fcard"><p class="flbl">Ángulo θ (°)</p><p class="fval" id="cv-th-deg" style="color:#2980B9"></p></div>
-      <div class="fcard"><p class="flbl">Vueltas completas</p><p class="fval" id="cv-vuelt" style="color:#7F77DD"></p></div>
-      <div class="fcard"><p class="flbl">Vel. angular ω (rad/s)</p><p class="fval" id="cv-omega" style="color:#E24B4A"></p></div>
-      <div class="fcard"><p class="flbl">Vel. tangencial vₜ (m/s)</p><p class="fval" id="cv-vt" style="color:#1D9E75"></p></div>
-      <div class="fcard"><p class="flbl">Ac. centrípeta aₙ (m/s²)</p><p class="fval" id="cv-an" style="color:#BA7517"></p></div>
-      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#E24B4A"></p></div>
+      <div class="fcard"><p class="flbl">Ángulo θ (rad)</p><p class="fval" id="cv-th-rad" style="color:#004EAA"></p></div>
+      <div class="fcard"><p class="flbl">Ángulo θ (°)</p><p class="fval" id="cv-th-deg" style="color:#004EAA"></p></div>
+      <div class="fcard"><p class="flbl">Vueltas completas</p><p class="fval" id="cv-vuelt" style="color:#C0165A"></p></div>
+      <div class="fcard"><p class="flbl">Vel. angular ω (rad/s)</p><p class="fval" id="cv-omega" style="color:#D62828"></p></div>
+      <div class="fcard"><p class="flbl">Vel. tangencial vₜ (m/s)</p><p class="fval" id="cv-vt" style="color:#78BF26"></p></div>
+      <div class="fcard"><p class="flbl">Ac. centrípeta aₙ (m/s²)</p><p class="fval" id="cv-an" style="color:#F07F00"></p></div>
+      <div class="fcard" id="card-at" style="display:none"><p class="flbl">Ac. tangencial aₜ (m/s²)</p><p class="fval" id="cv-at" style="color:#D62828"></p></div>
       <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#57606a"></p></div>
     </div>
   </div>
@@ -209,7 +209,7 @@ function updateCards(){
   $('cv-t').textContent = t.toFixed(2)+' s';
 
   $('stxt').textContent = running?'Simulando…':'Listo';
-  $('sdot').style.background = running?'#2980B9':'#1D9E75';
+  $('sdot').style.background = running?'#004EAA':'#78BF26';
 }
 
 function drawScene(){
@@ -250,8 +250,8 @@ function drawScene(){
   if(anScale>4){
     const acx=cx-px, acy=cy-py;
     const len=Math.hypot(acx,acy);
-    drawArrow(ctx,px,py,px+acx/len*anScale,py+acy/len*anScale,'#BA7517',2);
-    ctx.fillStyle='#BA7517'; ctx.font='11px system-ui'; ctx.textAlign='left';
+    drawArrow(ctx,px,py,px+acx/len*anScale,py+acy/len*anScale,'#F07F00',2);
+    ctx.fillStyle='#F07F00'; ctx.font='11px system-ui'; ctx.textAlign='left';
     ctx.fillText('aₙ',px+acx/len*anScale+6,py+acy/len*anScale);
   }
 
@@ -261,8 +261,8 @@ function drawScene(){
   if(vtScale>4){
     const sign=effW>=0?1:-1;
     const tx=-Math.sin(theta)*sign, ty=Math.cos(theta)*sign;
-    drawArrow(ctx,px,py,px+tx*vtScale,py-ty*vtScale,'#1D9E75',2);
-    ctx.fillStyle='#1D9E75'; ctx.font='11px system-ui'; ctx.textAlign='left';
+    drawArrow(ctx,px,py,px+tx*vtScale,py-ty*vtScale,'#78BF26',2);
+    ctx.fillStyle='#78BF26'; ctx.font='11px system-ui'; ctx.textAlign='left';
     ctx.fillText('vₜ',px+tx*vtScale+6,py-ty*vtScale);
   }
 
@@ -273,8 +273,8 @@ function drawScene(){
     if(atScale>4){
       const sign=alpha>=0?1:-1;
       const tx=-Math.sin(theta)*sign, ty=Math.cos(theta)*sign;
-      drawArrow(ctx,px,py,px+tx*atScale*0.7,py-ty*atScale*0.7,'#E24B4A',2);
-      ctx.fillStyle='#E24B4A'; ctx.font='11px system-ui'; ctx.textAlign='left';
+      drawArrow(ctx,px,py,px+tx*atScale*0.7,py-ty*atScale*0.7,'#D62828',2);
+      ctx.fillStyle='#D62828'; ctx.font='11px system-ui'; ctx.textAlign='left';
       ctx.fillText('aₜ',px+tx*atScale*0.7+6,py-ty*atScale*0.7);
     }
   }
@@ -297,8 +297,8 @@ function drawScene(){
 
   // Particle
   ctx.beginPath(); ctx.arc(px,py,10,0,2*Math.PI);
-  ctx.fillStyle='#2980B9'; ctx.fill();
-  ctx.strokeStyle='#1A5276'; ctx.lineWidth=2; ctx.stroke();
+  ctx.fillStyle='#004EAA'; ctx.fill();
+  ctx.strokeStyle='#003882'; ctx.lineWidth=2; ctx.stroke();
 
   // Radius label
   ctx.fillStyle='#57606a'; ctx.font='12px system-ui'; ctx.textAlign='center';

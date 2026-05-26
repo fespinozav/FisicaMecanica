@@ -35,8 +35,8 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 .btn-run{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;
   font-size:14px;font-weight:600;cursor:pointer;border-radius:var(--border-radius-md);
   border:none;transition:background .15s,color .15s;margin-right:8px}
-.btn-run.stopped{background:#2980B9;color:#fff}
-.btn-run.stopped:hover{background:#1a6499}
+.btn-run.stopped{background:#004EAA;color:#fff}
+.btn-run.stopped:hover{background:#003882}
 .btn-run.running{background:#f6f8fa;color:#cf222e;border:1px solid #d0d7de}
 .btn-run.running:hover{background:#fff5f5}
 .btn-reset{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;
@@ -49,7 +49,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 <h2 class="sr-only">Simulador interactivo de cinemática 2D — tiro vertical, horizontal y parabólico</h2>
 
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
-  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#1D9E75"></span>
+  <span id="sdot" style="width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;background:#78BF26"></span>
   <span id="stxt" style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Listo</span>
   <span id="sbadge" class="badge"></span>
 </div>
@@ -65,7 +65,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 <div class="eqbox" id="eqbox">
   <div class="eqrow"><span class="eqlbl">x(t)</span><span class="eqval" id="eq-x"></span></div>
   <div class="eqrow"><span class="eqlbl">y(t)</span><span class="eqval" id="eq-y"></span></div>
-  <div class="eqrow" id="row-itinerario" style="display:none"><span class="eqlbl">y(x)</span><span class="eqval" id="eq-itin" style="color:#7F77DD"></span></div>
+  <div class="eqrow" id="row-itinerario" style="display:none"><span class="eqlbl">y(x)</span><span class="eqval" id="eq-itin" style="color:#C0165A"></span></div>
   <div class="eqrow"><span class="eqlbl">vₓ(t)</span><span class="eqval" id="eq-vx"></span></div>
   <div class="eqrow"><span class="eqlbl">vᵧ(t)</span><span class="eqval" id="eq-vy"></span></div>
 </div>
@@ -74,32 +74,32 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
 <div style="padding:0 2px">
   <div class="srow">
     <span class="slbl">Vel. inicial X  v<sub>x0</sub> (m/s)</span>
-    <input type="range" min="-20" max="20" step="0.5" value="10" id="sl-vx" style="flex:1" oninput="onParam()">
+    <input type="range" min="0" max="20" step="0.5" value="10" id="sl-vx" style="flex:1" oninput="onParam()">
     <span class="sval" id="vl-vx">10.0</span>
   </div>
   <div class="srow">
     <span class="slbl">Vel. inicial Y  v<sub>y0</sub> (m/s)</span>
-    <input type="range" min="-20" max="20" step="0.5" value="15" id="sl-vy" style="flex:1" oninput="onParam()">
+    <input type="range" min="0" max="20" step="0.5" value="15" id="sl-vy" style="flex:1" oninput="onParam()">
     <span class="sval" id="vl-vy">15.0</span>
   </div>
   <div class="srow">
     <span class="slbl">Aceleración X  aₓ (m/s²)</span>
-    <input type="range" min="-15" max="15" step="0.5" value="0" id="sl-ax" style="flex:1" oninput="onParam()">
+    <input type="range" min="0" max="15" step="0.5" value="0" id="sl-ax" style="flex:1" oninput="onParam()">
     <span class="sval" id="vl-ax">0.0</span>
   </div>
   <div class="srow">
-    <span class="slbl">Aceleración Y  aᵧ (m/s²)</span>
-    <input type="range" min="-15" max="0" step="0.5" value="-9.8" id="sl-ay" style="flex:1" oninput="onParam()">
-    <span class="sval" id="vl-ay">−9.8</span>
+    <span class="slbl">Gravedad  g (m/s²) → aᵧ = −g</span>
+    <input type="range" min="0" max="15" step="0.1" value="9.8" id="sl-g" style="flex:1" oninput="onParam()">
+    <span class="sval" id="vl-g">9.8</span>
   </div>
 </div>
 
 <!-- Info cards -->
 <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px">
-  <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#2980B9"></p></div>
+  <div class="fcard"><p class="flbl">Tiempo  t</p><p class="fval" id="cv-t" style="color:#004EAA"></p></div>
   <div class="fcard"><p class="flbl">Posición  (x, y)</p><p class="fval" id="cv-pos"></p></div>
   <div class="fcard"><p class="flbl">Velocidad  (vₓ, vᵧ)</p><p class="fval" id="cv-vel"></p></div>
-  <div class="fcard"><p class="flbl">Rapidez  |v|</p><p class="fval" id="cv-spd" style="color:#1D9E75"></p></div>
+  <div class="fcard"><p class="flbl">Rapidez  |v|</p><p class="fval" id="cv-spd" style="color:#78BF26"></p></div>
 </div>
 
 <script>
@@ -119,20 +119,41 @@ function computeRange(){
   const pts=[];
   const dt=0.02;
   let tt=0;
-  for(let i=0;i<2000;i++){
+  // Decide a sensible tEnd:
+  //  - parabolic / vertical with gravity: until trajectory comes back to y=0
+  //  - horizontal (g=0): scale with horizontal travel
+  let tEnd=10;
+  if(ay<-1e-6 && vy0>=0){
+    // time to fall back: t = 2 vy0 / g  (or short positive time if vy0=0)
+    tEnd = Math.max(2*vy0/(-ay) * 1.05, 1.5);
+  } else if(Math.abs(ay)<1e-6){
+    // horizontal motion only — pick a time based on x travel
+    const vmax = Math.max(vx0 + ax*5, 1);
+    tEnd = Math.max(20/Math.max(vmax,1), 2);
+  }
+  for(let i=0;i<3000;i++){
+    if(tt>tEnd) break;
     const x=vx0*tt+0.5*ax*tt*tt;
     const y=vy0*tt+0.5*ay*tt*tt;
     pts.push({x,y,tt});
-    if(tt>0 && y<-0.01 && vy0+ay*tt<0 && (ay<0 || vy0<0)) break;
-    if(tt>60) break;
     tt+=dt;
   }
-  if(pts.length===0) return {xMin:-5,xMax:5,yMin:-5,yMax:15,tMax:5};
   const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
-  const xMin=Math.min(...xs), xMax=Math.max(...xs);
-  const yMin=Math.min(0,...ys), yMax=Math.max(0,...ys);
-  const tMax=pts[pts.length-1].tt;
-  return {xMin,xMax,yMin,yMax,tMax,pts};
+  let xMin=Math.min(0,...xs), xMax=Math.max(0,...xs);
+  let yMin=Math.min(0,...ys), yMax=Math.max(0,...ys);
+
+  // Guarantee a minimum visible span so degenerate (horizontal/vertical-only) cases
+  // don't collapse the canvas to a line.
+  const MIN_SPAN=4;
+  if(xMax-xMin<MIN_SPAN){ const c=(xMax+xMin)/2; xMin=c-MIN_SPAN/2; xMax=c+MIN_SPAN/2; }
+  if(yMax-yMin<MIN_SPAN){ const c=(yMax+yMin)/2; yMin=c-MIN_SPAN/2; yMax=c+MIN_SPAN/2; }
+
+  // Add a small breathing margin (8%) so the particle isn't glued to the edges.
+  const xPad=(xMax-xMin)*0.08, yPad=(yMax-yMin)*0.08;
+  xMin-=xPad*0.3; xMax+=xPad;
+  yMin-=yPad*0.3; yMax+=yPad;
+
+  return {xMin,xMax,yMin,yMax,tMax:tEnd,pts};
 }
 
 let range={xMin:-5,xMax:5,yMin:-5,yMax:15,tMax:5};
@@ -211,7 +232,7 @@ function drawScene(){
   // Trail
   if(trail.length>1){
     ctx.beginPath();
-    ctx.strokeStyle='#2980B9'; ctx.lineWidth=2.5;
+    ctx.strokeStyle='#004EAA'; ctx.lineWidth=2.5;
     const p0=toCanvas(trail[0].x,trail[0].y);
     ctx.moveTo(p0.cx,p0.cy);
     for(let i=1;i<trail.length;i++){
@@ -234,19 +255,19 @@ function drawScene(){
   if(vLen>0.1){
     const vexC=bx+(pvx/vLen)*Math.min(vLen*4,60);
     const veyC=by-(pvy/vLen)*Math.min(vLen*4,60);
-    drawArrow(ctx,bx,by,vexC,veyC,'#E24B4A',2);
+    drawArrow(ctx,bx,by,vexC,veyC,'#D62828',2);
   }
 
   // Particle dot
   ctx.beginPath();
   ctx.arc(bx,by,8,0,2*Math.PI);
-  ctx.fillStyle='#2980B9'; ctx.fill();
-  ctx.strokeStyle='#1A5276'; ctx.lineWidth=2; ctx.stroke();
+  ctx.fillStyle='#004EAA'; ctx.fill();
+  ctx.strokeStyle='#003882'; ctx.lineWidth=2; ctx.stroke();
 
   // Launch marker
   const {cx:ox,cy:oy}=toCanvas(0,0);
   ctx.beginPath(); ctx.arc(ox,oy,4,0,2*Math.PI);
-  ctx.fillStyle='#BA7517'; ctx.fill();
+  ctx.fillStyle='#F07F00'; ctx.fill();
 }
 
 function drawArrow(ctx,x1,y1,x2,y2,color,lw){
@@ -288,27 +309,34 @@ function fmtEq(v, varname, label){
 }
 
 function buildEqStr(c0, coeff1, var1, coeff2, var2){
+  const hasT  = Math.abs(coeff1)>1e-9;
+  const hasT2 = Math.abs(coeff2)>1e-9;
   let parts=[];
-  const a=fmt(c0); parts.push(a);
-  if(Math.abs(coeff1)>1e-9){
-    const s=coeff1>0?'+ ':'− ';
-    const v=Math.abs(coeff1)===1?'':Math.abs(coeff1)===Math.round(Math.abs(coeff1))?Math.abs(coeff1).toFixed(0)+' ':Math.abs(coeff1).toFixed(2)+' ';
+
+  if(Math.abs(c0)>1e-9 || (!hasT && !hasT2))
+    parts.push(fmt(c0));
+
+  if(hasT){
+    const s = parts.length>0 ? (coeff1>0?'+ ':'− ') : (coeff1<0?'−':'');
+    const absC=Math.abs(coeff1);
+    const v = absC===1?'' : (absC===Math.round(absC)?absC.toFixed(0)+' ':absC.toFixed(2)+' ');
     parts.push(s+v+var1);
   }
-  if(Math.abs(coeff2)>1e-9){
-    const s=coeff2>0?'+ ':'− ';
-    const v=Math.abs(coeff2)===0.5?'½ ':Math.abs(coeff2).toFixed(2)+' ';
+  if(hasT2){
+    const s = parts.length>0 ? (coeff2>0?'+ ':'− ') : (coeff2<0?'−':'');
+    const absC=Math.abs(coeff2);
+    const v = absC===0.5?'½ ':(absC===Math.round(absC)?absC.toFixed(0)+' ':absC.toFixed(2)+' ');
     parts.push(s+v+var2);
   }
-  return parts.join(' ');
+  return parts.join(' ')||'0';
 }
 
 function updateEquations(){
   // x(t)
-  $('eq-x').textContent = buildEqStr(0, vx0, 't', ax/2, 'ax·t²').replace('0 +','') || '0';
-  $('eq-y').textContent = buildEqStr(0, vy0, 't', ay/2, 'ay·t²').replace('0 +','') || '0';
-  $('eq-vx').textContent = buildEqStr(vx0, ax, 't', 0, '') || '0';
-  $('eq-vy').textContent = buildEqStr(vy0, ay, 't', 0, '') || '0';
+  $('eq-x').textContent  = buildEqStr(0,   vx0, 't', ax/2, 't²');
+  $('eq-y').textContent  = buildEqStr(0,   vy0, 't', ay/2, 't²');
+  $('eq-vx').textContent = buildEqStr(vx0, ax,  't', 0,    '');
+  $('eq-vy').textContent = buildEqStr(vy0, ay,  't', 0,    '');
 
   // Ecuación de itinerario y(x): eliminate t if vx0≠0 and ax=0
   const itRow=$('row-itinerario');
@@ -317,7 +345,7 @@ function updateEquations(){
     const m=vy0/vx0, q=ay/(2*vx0*vx0);
     let s='';
     if(Math.abs(m)>1e-9) s+=fmt(m)+' x';
-    if(Math.abs(q)>1e-9) s+=(q>0?' + ':' − ')+Math.abs(fmt(q))+' x²';
+    if(Math.abs(q)>1e-9) s+=(s?(q>0?' + ':' − '):(q<0?'−':''))+fmt(Math.abs(q))+' x²';
     if(!s) s='0';
     $('eq-itin').textContent=s;
     itRow.style.display='flex';
@@ -330,10 +358,10 @@ function updateEquations(){
   const noY=Math.abs(vy0)<0.01&&Math.abs(ay)<0.01;
   let tipo, col;
   if(noX&&noY){tipo='Reposo';col='#888';}
-  else if(noX){tipo='Tiro vertical';col='#E24B4A';}
-  else if(noY){tipo='Movimiento horizontal';col='#1D9E75';}
-  else if(Math.abs(ay)<0.01&&Math.abs(ax)<0.01){tipo='MRU diagonal';col='#2980B9';}
-  else{tipo='Movimiento parabólico';col='#7F77DD';}
+  else if(noX){tipo='Tiro vertical';col='#D62828';}
+  else if(noY){tipo='Movimiento horizontal';col='#78BF26';}
+  else if(Math.abs(ay)<0.01&&Math.abs(ax)<0.01){tipo='MRU diagonal';col='#004EAA';}
+  else{tipo='Movimiento parabólico';col='#C0165A';}
   const b=$('sbadge');
   b.textContent=tipo; b.style.background=col+'22'; b.style.color=col;
 }
@@ -351,11 +379,13 @@ function updateCards(){
 
 function onParam(){
   vx0=+$('sl-vx').value; vy0=+$('sl-vy').value;
-  ax=+$('sl-ax').value; ay=+$('sl-ay').value;
+  ax=+$('sl-ax').value;
+  const g=+$('sl-g').value;
+  ay=-g;
   $('vl-vx').textContent=vx0.toFixed(1);
   $('vl-vy').textContent=vy0.toFixed(1);
   $('vl-ax').textContent=ax.toFixed(1);
-  $('vl-ay').textContent=(ay<0?'−':'')+Math.abs(ay).toFixed(1);
+  $('vl-g').textContent=g.toFixed(1);
   doReset();
 }
 
@@ -367,7 +397,7 @@ function doReset(){
   drawScene();
   updateCards();
   $('stxt').textContent='Listo';
-  $('sdot').style.background='#1D9E75';
+  $('sdot').style.background='#78BF26';
 }
 
 function toggleRun(){
@@ -390,13 +420,15 @@ function loop(){
   trail.push({x:px,y:py});
   if(trail.length>600) trail.shift();
 
-  // Stop when below origin going down (if ay<0 or vy<0 at launch)
-  if(t>0.5 && py<range.yMin-1){
+  // Stop when the particle exits the visible viewport (with a small margin)
+  const xSpan=range.xMax-range.xMin, ySpan=range.yMax-range.yMin;
+  const offscreen = px>range.xMax+xSpan*0.1 || px<range.xMin-xSpan*0.1
+                  || py>range.yMax+ySpan*0.1 || py<range.yMin-ySpan*0.1;
+  if(t>0.5 && offscreen){
     running=false; updateBtn();
     $('stxt').textContent='Simulación completada';
     $('sdot').style.background='#888';
-  }
-  if(t>range.tMax+2){
+  } else if(t>range.tMax+1){
     running=false; updateBtn();
     $('stxt').textContent='Simulación completada';
     $('sdot').style.background='#888';
