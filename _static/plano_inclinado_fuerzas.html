@@ -75,7 +75,8 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
     <rect x="-23" y="-15" width="46" height="30" rx="4" fill="#C8DEFF" stroke="#004EAA" stroke-width="1.5"/>
     <text x="0" y="1" text-anchor="middle" dominant-baseline="central" style="font-size:12px;font-weight:500;fill:#003882">m</text>
   </g>
-  <!-- Arrow lines -->
+  <!-- Arrow lines and labels (toggled via #vectors-group) -->
+  <g id="vectors-group">
   <line id="aP"  stroke="#D62828" stroke-width="2.5" marker-end="url(#arw)"/>
   <line id="aN"  stroke="#78BF26" stroke-width="2.5" marker-end="url(#arw)"/>
   <line id="afk" stroke="#C0165A" stroke-width="2.5" marker-end="url(#arw)"/>
@@ -87,6 +88,7 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
   <text id="tlfk" text-anchor="start" style="font-size:12px;font-weight:500;fill:#C0165A"></text>
   <text id="tlPx" text-anchor="end"   style="font-size:11px;fill:#F07F00"></text>
   <text id="tlPy" text-anchor="start" style="font-size:11px;fill:#7950F2"></text>
+  </g>
 </svg>
 
 <!-- Sliders -->
@@ -106,6 +108,13 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
     <input type="range" min="0" max="1" step="0.01" value="0.30" id="sl-mu" style="flex:1" oninput="render()">
     <span class="sval" id="vl-mu">0.30</span>
   </div>
+</div>
+
+<!-- Vector toggle -->
+<div style="margin-top:10px;display:flex;align-items:center">
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary)">
+    <input type="checkbox" id="chk-vectors" checked onchange="render()"> Vectores DCL
+  </label>
 </div>
 
 <!-- Force cards -->
@@ -245,6 +254,8 @@ function render(){
   $('cv-Px').textContent=Px.toFixed(1)+' N';
   $('cv-Py').textContent=Py.toFixed(1)+' N';
   $('cv-fk').textContent=fk.toFixed(1)+' N';
+
+  $('vectors-group').style.display = $('chk-vectors').checked ? '' : 'none';
 }
 render();
 </script>
