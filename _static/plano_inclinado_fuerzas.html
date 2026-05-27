@@ -91,6 +91,13 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
   </g>
 </svg>
 
+<!-- Vector toggle -->
+<div style="margin-top:10px;display:flex;align-items:center">
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary)">
+    <input type="checkbox" id="chk-vectors" checked onchange="render()"> Vectores DCL
+  </label>
+</div>
+
 <!-- Sliders -->
 <div style="padding:0 2px">
   <div class="srow">
@@ -108,13 +115,6 @@ html,body{margin:0;padding:14px;background:#ffffff;color:#1f2328;
     <input type="range" min="0" max="1" step="0.01" value="0.30" id="sl-mu" style="flex:1" oninput="render()">
     <span class="sval" id="vl-mu">0.30</span>
   </div>
-</div>
-
-<!-- Vector toggle -->
-<div style="margin-top:10px;display:flex;align-items:center">
-  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary)">
-    <input type="checkbox" id="chk-vectors" checked onchange="render()"> Vectores DCL
-  </label>
 </div>
 
 <!-- Force cards -->
