@@ -660,6 +660,212 @@ $$
 
 ---
 
+## Ejercicio 1.2 — Trabajo de la Gravedad y Energía Cinética en Caída Libre
+
+```{admonition} Enunciado
+:class: tip
+
+Una masa de $2.0 \ \text{kg}$ cae $400 \ \text{cm}$. ¿Cuánto trabajo fue realizado sobre la masa
+por la fuerza de gravedad? Si se trata de una caída libre, es decir, si no hay otras fuerzas
+que actúen sobre la masa, determine el cambio de energía cinética y la rapidez de la masa
+tras caer $400 \ \text{cm}$ si partió del reposo.
+```
+
+**Datos del problema**
+
+| Cantidad | Símbolo | Valor |
+|---|---|---|
+| Masa | $m$ | $2.0 \ \text{kg}$ |
+| Distancia de caída | $h$ | $400 \ \text{cm} = 4.00 \ \text{m}$ |
+| Velocidad inicial | $v_0$ | $0 \ \text{m/s}$ (reposo) |
+| Aceleración de gravedad | $g$ | $9.8 \ \text{m/s}^2$ |
+
+---
+
+### Marco conceptual — Teorema Trabajo-Energía
+
+La gravedad es una **fuerza constante** $\vec{G} = -mg\hat{j}$. Para una fuerza constante,
+el trabajo depende únicamente del desplazamiento[^Malthe-Sorensen_10]:
+
+$$W = \vec{F} \cdot \Delta\vec{r} \tag{1.2.1}$$
+
+El **Teorema Trabajo-Energía** relaciona ese trabajo con el cambio en energía cinética:
+
+$$W_{\text{neto}} = \Delta K = K_1 - K_0 \tag{1.2.2}$$
+
+---
+
+### Paso 1 — Diagrama de cuerpo libre
+
+En caída libre, la **única** fuerza que actúa y realiza trabajo es el peso:
+
+| Fuerza | Dirección | ¿Hace trabajo? |
+|---|---|---|
+| Peso $G = mg$ | $-\hat{j}$ (hacia abajo) | ✅ Sí — paralela al desplazamiento |
+
+La fuerza normal y la fricción están **ausentes** en caída libre.
+
+---
+
+### Parte (a) — Trabajo realizado por la gravedad
+
+La fuerza gravitacional actúa en la misma dirección del desplazamiento:
+
+$$W_G = mg \cdot h \tag{1.2.3}$$
+
+$$W_G = (2.0 \ \text{kg})(9.8 \ \text{m/s}^2)(4.00 \ \text{m})$$
+
+$$\boxed{W_G = 78.4 \ \text{J}}$$
+
+---
+
+### Parte (b) — Cambio en energía cinética
+
+En caída libre $W_{\text{neto}} = W_G$, por lo tanto:
+
+$$\Delta K = W_{\text{neto}} = W_G \tag{1.2.4}$$
+
+$$\boxed{\Delta K = +78.4 \ \text{J}}$$
+
+El signo positivo indica que la masa **gana** energía cinética al descender.
+
+---
+
+### Parte (c) — Rapidez final
+
+Como la masa parte del reposo, $K_0 = \frac{1}{2}mv_0^2 = 0$, entonces $\Delta K = K_1$:
+
+$$\Delta K = \frac{1}{2}mv_1^2 \tag{1.2.5}$$
+
+Despejando $v_1$:
+
+$$v_1 = \sqrt{\frac{2\,\Delta K}{m}} = \sqrt{\frac{2\,W_G}{m}} \tag{1.2.6}$$
+
+$$v_1 = \sqrt{\frac{2(78.4 \ \text{J})}{2.0 \ \text{kg}}} = \sqrt{78.4 \ \text{m}^2/\text{s}^2}$$
+
+$$\boxed{v_1 \approx 8.85 \ \text{m/s}}$$
+
+---
+
+### Verificación — Cinemática independiente
+
+$$v_1 = \sqrt{2gh} = \sqrt{2(9.8 \ \text{m/s}^2)(4.00 \ \text{m})} = \sqrt{78.4} \approx 8.85 \ \text{m/s} \checkmark$$
+
+Ambos métodos son consistentes, confirmando la validez del Teorema Trabajo-Energía.
+
+---
+
+### Verificación — Análisis de casos límite
+
+| $h \ (\text{m})$ | $W_G \ (\text{J})$ | $v_1 \ (\text{m/s})$ | Interpretación |
+|---|---|---|---|
+| $0$ | $0$ | $0$ | Sin caída, sin trabajo |
+| $1$ | $19.6$ | $4.43$ | Caída pequeña |
+| $4$ | $78.4$ | $8.85$ | **Este problema** |
+| $9$ | $176.4$ | $13.3$ | $v_1$ crece como $\sqrt{h}$ |
+
+---
+
+### Interpretación física
+
+La gravedad realiza un trabajo positivo de $78.4 \ \text{J}$, íntegramente convertido en
+energía cinética dado que no existe ninguna fuerza disipativa. La rapidez final de
+$8.85 \ \text{m/s}$ escala como $\sqrt{h}$: duplicar la altura de caída no duplica la
+velocidad, sino que la multiplica por $\sqrt{2}$, consecuencia directa de la relación
+cuadrática entre energía cinética y velocidad.
+
+## Ejercicio 2.4 — Saco en Riel sin Fricción (A → B)
+
+```{admonition} Enunciado
+:class: tip
+
+Un saco es descargado por un riel sin fricción desde el punto A como muestra la figura,
+de tal forma que una persona los recibe en el punto B. Si el saco es liberado con rapidez
+inicial $v_A$ a una altura $h = 5 \ \text{m}$ y llega al punto B con rapidez $10 \ \text{m/s}$,
+determine el valor de $v_A$.
+```
+
+**Datos del problema**
+
+| Cantidad | Símbolo | Valor |
+|---|---|---|
+| Altura inicial respecto a B | $h$ | $5 \ \text{m}$ |
+| Rapidez en B (final) | $v_B$ | $10 \ \text{m/s}$ |
+| Rapidez en A (inicial) | $v_A$ | ? |
+| Fricción | — | nula |
+
+---
+
+### Marco conceptual — Conservación de Energía Mecánica
+
+El riel es **sin fricción** y la fuerza normal es siempre perpendicular al movimiento,
+por lo tanto **no realiza trabajo**. Las únicas fuerzas son conservativas (gravedad).
+Se aplica conservación de energía mecánica[^Malthe-Sorensen_11]:
+
+$$E_A = E_B \tag{2.4.1}$$
+
+$$K_A + U_A = K_B + U_B \tag{2.4.2}$$
+
+Tomando el punto B como referencia de energía potencial ($U_B = 0$):
+
+$$\frac{1}{2}mv_A^2 + mgh = \frac{1}{2}mv_B^2 \tag{2.4.3}$$
+
+---
+
+### Paso 1 — La masa cancela
+
+Dividiendo toda la ecuación por $m$:
+
+$$\frac{1}{2}v_A^2 + gh = \frac{1}{2}v_B^2 \tag{2.4.4}$$
+
+---
+
+### Paso 2 — Despejar $v_A$
+
+$$\frac{1}{2}v_A^2 = \frac{1}{2}v_B^2 - gh \tag{2.4.5}$$
+
+$$v_A = \sqrt{v_B^2 - 2gh} \tag{2.4.6}$$
+
+---
+
+### Paso 3 — Sustitución numérica
+
+$$v_A = \sqrt{(10 \ \text{m/s})^2 - 2(9.81 \ \text{m/s}^2)(5 \ \text{m})}$$
+
+$$v_A = \sqrt{100 - 98.1} = \sqrt{1.9 \ \text{m}^2/\text{s}^2}$$
+
+$$\boxed{v_A \approx 1.38 \ \text{m/s}}$$
+
+---
+
+### Verificación — Análisis de casos límite
+
+| $v_B \ (\text{m/s})$ | $h \ (\text{m})$ | $v_A \ (\text{m/s})$ | Interpretación |
+|---|---|---|---|
+| $\sqrt{2gh} \approx 9.90$ | $5$ | $0$ | El saco parte del reposo |
+| $10$ | $0$ | $10$ | Sin desnivel: $v_A = v_B$ |
+| $10$ | $5$ | $1.38$ | **Este problema** |
+| $10$ | $6$ | Sin solución real | $v_B$ insuficiente para superar $h$ |
+
+---
+
+### Interpretación física
+
+La energía total del sistema se conserva a lo largo del riel. La energía potencial
+gravitacional en A (altura $h = 5 \ \text{m}$) se transforma casi completamente en
+energía cinética en B. El saco necesita solo $1.38 \ \text{m/s}$ en A porque la
+gravedad aporta casi toda la energía cinética en B. Nótese que si $v_A = 0$,
+el saco llegaría a B con $v_B = \sqrt{2gh} \approx 9.90 \ \text{m/s}$; el pequeño
+aporte de $v_A$ eleva esa rapidez hasta exactamente $10 \ \text{m/s}$.
+La forma de la trayectoria del riel es irrelevante para el resultado: solo importa
+la diferencia de altura $h$ entre A y B.
+
+[^Malthe-Sorensen_11]: Malthe-Sørenssen, A. (2015). *Elementary Mechanics Using Python:
+A Modern Course Combining Analytical and Numerical Techniques*. Springer.
+Cap. 11, §11.2, Ecs. (11.44)–(11.46).
+
+---
+
 ## 18. Interpretación física global
 
 La energía ofrece una forma poderosa de entender los fenómenos mecánicos.
