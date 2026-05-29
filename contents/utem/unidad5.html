@@ -435,12 +435,32 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-tipicas-del-metodo-energetico">16. Aplicaciones típicas del método energético</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-ritmo-cardiaco-y-leyes-de-escala">Aplicación: ritmo cardíaco y leyes de escala</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-ejemplo">17. Ejercicios de ejemplo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1-simple-caida-libre-desde-altura-h">Ejemplo 1 — Simple: Caída libre desde altura <span class="math notranslate nohighlight">\(h\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1-caida-libre-desde-altura-h">Ejemplo 1: Caída libre desde altura <span class="math notranslate nohighlight">\(h\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2-plano-inclinado-con-rozamiento-y-potencia">Ejemplo 2: Plano inclinado con rozamiento y potencia</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-trabajo-de-cada-fuerza">Paso 1 — Trabajo de cada fuerza</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-teorema-trabajo-energia-cinetica">Paso 2 — Teorema trabajo-energía cinética</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-balance-energetico-con-fuerzas-disipativas">Paso 3 — Balance energético con fuerzas disipativas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-potencia-instantanea-al-llegar-a-b">Paso 4 — Potencia instantánea al llegar a <span class="math notranslate nohighlight">\(B\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-2-trabajo-de-la-gravedad-y-energia-cinetica-en-caida-libre">Ejercicio 1.2 — Trabajo de la Gravedad y Energía Cinética en Caída Libre</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-conceptual-teorema-trabajo-energia">Marco conceptual — Teorema Trabajo-Energía</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-diagrama-de-cuerpo-libre">Paso 1 — Diagrama de cuerpo libre</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajo-realizado-por-la-gravedad">Trabajo realizado por la gravedad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-en-energia-cinetica">Cambio en energía cinética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rapidez-final">Rapidez final</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-por-cinematica-independiente">Verificación por Cinemática independiente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-limite">Análisis de casos límite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-4-masa-en-riel-sin-friccion-a-b">Ejercicio 2.4 - Masa en Riel sin Fricción (A → B)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-inicial-conservacion-de-energia-mecanica">Análisis Inicial - Conservación de Energía Mecánica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-la-masa-cancela">Paso 1 — La masa cancela</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-despejar-v-a">Paso 2 — Despejar <span class="math notranslate nohighlight">\(v_A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-sustitucion-numerica">Paso 3 — Sustitución numérica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-limite-como-metodo-de-verificacion">Análisis de casos límite como método de verificación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Interpretación física</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica-global">18. Interpretación física global</a></li>
@@ -650,12 +670,13 @@ R_T = F-mg \sin \theta - \mu  mg \cos \theta
 <p>Se define como:</p>
 <div class="math notranslate nohighlight">
 \[
-E_c = K = \frac{1}{2}mv^2
+E_c = E_k = \frac{1}{2}mv^2
 \]</div>
 <p>donde:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(m\)</span> es la masa del cuerpo;</p></li>
 <li><p><span class="math notranslate nohighlight">\(v\)</span> es la rapidez del cuerpo.</p></li>
+<li><p>La Energía cinética se denota como <span class="math notranslate nohighlight">\(E_k\)</span> (Kinnetic Energy) o <span class="math notranslate nohighlight">\(E_c\)</span> o simplemente <span class="math notranslate nohighlight">\(K\)</span></p></li>
 </ul>
 <section id="propiedades">
 <h3>Propiedades<a class="headerlink" href="#propiedades" title="Link to this heading">#</a></h3>
@@ -691,11 +712,10 @@ W &amp;= \int_A^B \vec{F} \cdot d\vec{r}
 <hr class="docutils" />
 <section id="teorema-trabajoenergia-cinetica">
 <h2>7. Teorema trabajo–energía cinética<a class="headerlink" href="#teorema-trabajoenergia-cinetica" title="Link to this heading">#</a></h2>
-<p>Uno de los resultados más importantes de esta unidad es el teorema trabajo–energía cinética:</p>
+<p>Uno de los resultados más importantes de esta unidad es el <strong>teorema trabajo–energía cinética:</strong></p>
+<p><strong>Marco Conceptual</strong>:</p>
 <div class="math notranslate nohighlight">
-\[
-W_{\text{neto}} = \Delta E_c
-\]</div>
+\[\boxed{W_{neto} = \Delta K = \Delta E_c= \frac{1}{2}m(v_f^2-v_i^2)} \tag{3}\]</div>
 <p>donde:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -705,9 +725,9 @@ W_{\text{neto}} = \Delta E_c
 <section id="interpretacion-fisica">
 <h3>Interpretación física<a class="headerlink" href="#interpretacion-fisica" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>si el trabajo neto es positivo, la energía cinética aumenta.</p></li>
-<li><p>si el trabajo neto es negativo, la energía cinética disminuye.</p></li>
-<li><p>si el trabajo neto es cero, la energía cinética permanece constante.</p></li>
+<li><p>Si el trabajo neto es positivo, la energía cinética aumenta.</p></li>
+<li><p>Si el trabajo neto es negativo, la energía cinética disminuye.</p></li>
+<li><p>Si el trabajo neto es cero, la energía cinética permanece constante.</p></li>
 </ul>
 </section>
 </section>
@@ -871,12 +891,12 @@ U_e = \frac{1}{2}kx^2
 <p>La energía mecánica de un sistema es la suma de su energía cinética y su energía potencial:</p>
 <div class="math notranslate nohighlight">
 \[
-E_m = K + U
+\boxed{E_m = K + U}
 \]</div>
 <p>Dependiendo del problema, <span class="math notranslate nohighlight">\(U\)</span> puede incluir:</p>
 <ul class="simple">
-<li><p>energía potencial gravitatoria</p></li>
-<li><p>energía potencial elástica</p></li>
+<li><p>Energía potencial gravitatoria</p></li>
+<li><p>Energía potencial elástica</p></li>
 <li><p>o ambas.</p></li>
 </ul>
 </section>
@@ -886,7 +906,7 @@ E_m = K + U
 <p>Si en un sistema solo actúan fuerzas conservativas, entonces la energía mecánica permanece constante:</p>
 <div class="math notranslate nohighlight">
 \[
-E_{m,i} = E_{m,f}
+\boxed{E_m=E_{m,i} = E_{m,f} = cte}
 \]</div>
 <p>o equivalentemente:</p>
 <div class="math notranslate nohighlight">
@@ -897,8 +917,8 @@ K_i + U_i = K_f + U_f
 <h3>Interpretación<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>La energía puede transformarse de una forma a otra:</p>
 <ul class="simple">
-<li><p>de potencial a cinética;</p></li>
-<li><p>de cinética a potencial;</p></li>
+<li><p>de potencial a cinética</p></li>
+<li><p>de cinética a potencial</p></li>
 </ul>
 <p>pero la suma total permanece constante.</p>
 </section>
@@ -906,7 +926,7 @@ K_i + U_i = K_f + U_f
 <hr class="docutils" />
 <section id="cambio-de-energia-mecanica-con-roce">
 <h2>15. Cambio de energía mecánica con roce<a class="headerlink" href="#cambio-de-energia-mecanica-con-roce" title="Link to this heading">#</a></h2>
-<p>Si actúan fuerzas no conservativas, como el roce, la energía mecánica ya no se conserva.</p>
+<p>Si actúan fuerzas no conservativas (<span class="math notranslate nohighlight">\(F_{nc}\)</span>), como el roce, la energía mecánica ya no se conserva.</p>
 <p>En ese caso:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -917,8 +937,8 @@ W_{\text{nc}} = \Delta E_m
 <h3>Interpretación<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>Cuando hay roce:</p>
 <ul class="simple">
-<li><p>parte de la energía mecánica se transforma en energía térmica;</p></li>
-<li><p>la energía mecánica final es menor que la inicial.</p></li>
+<li><p>Parte de la energía mecánica se transforma en energía térmica;</p></li>
+<li><p>La energía mecánica final es menor que la inicial.</p></li>
 </ul>
 </section>
 </section>
@@ -927,12 +947,12 @@ W_{\text{nc}} = \Delta E_m
 <h2>16. Aplicaciones típicas del método energético<a class="headerlink" href="#aplicaciones-tipicas-del-metodo-energetico" title="Link to this heading">#</a></h2>
 <p>El enfoque energético permite resolver con facilidad problemas como:</p>
 <ul class="simple">
-<li><p>caída libre</p></li>
-<li><p>lanzamiento vertical</p></li>
-<li><p>bloques sobre superficies con o sin roce</p></li>
-<li><p>resortes comprimidos o estirados</p></li>
-<li><p>planos inclinados</p></li>
-<li><p>sistemas con variación de altura</p></li>
+<li><p>Caída libre</p></li>
+<li><p>Lanzamiento vertical</p></li>
+<li><p>Bloques sobre superficies con o sin roce</p></li>
+<li><p>Resortes comprimidos o estirados</p></li>
+<li><p>Planos inclinados</p></li>
+<li><p>Sistemas con variación de altura</p></li>
 </ul>
 <p>En muchos casos, usar energía resulta más directo que aplicar Newton en cada etapa del movimiento.</p>
 </section>
@@ -978,8 +998,8 @@ f_{\text{corazón humano}} = \frac{1}{2.5}\,f_{\text{mono}} = 0.4\,f_{\text{mono
 <section id="ejercicios-de-ejemplo">
 <h2>17. Ejercicios de ejemplo<a class="headerlink" href="#ejercicios-de-ejemplo" title="Link to this heading">#</a></h2>
 </section>
-<section id="ejemplo-1-simple-caida-libre-desde-altura-h">
-<h2>Ejemplo 1 — Simple: Caída libre desde altura <span class="math notranslate nohighlight">\(h\)</span><a class="headerlink" href="#ejemplo-1-simple-caida-libre-desde-altura-h" title="Link to this heading">#</a></h2>
+<section id="ejemplo-1-caida-libre-desde-altura-h">
+<h2>Ejemplo 1: Caída libre desde altura <span class="math notranslate nohighlight">\(h\)</span><a class="headerlink" href="#ejemplo-1-caida-libre-desde-altura-h" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="ejemplo-1">
 <a class="reference internal image-reference" href="../../_images/caida_simple.png"><img alt="../../_images/caida_simple.png" src="../../_images/caida_simple.png" style="width: 40%;" />
 </a>
@@ -1064,15 +1084,300 @@ P_{\text{grav}} = \vec{F}_{\text{grav}}\cdot\vec{v}_B = mg\sin\theta\cdot v_B
 </section>
 </section>
 <hr class="docutils" />
+<section id="ejercicio-1-2-trabajo-de-la-gravedad-y-energia-cinetica-en-caida-libre">
+<h2>Ejercicio 1.2 — Trabajo de la Gravedad y Energía Cinética en Caída Libre<a class="headerlink" href="#ejercicio-1-2-trabajo-de-la-gravedad-y-energia-cinetica-en-caida-libre" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Enunciado</p>
+<p>Una masa de <span class="math notranslate nohighlight">\(2.0 \ \text{kg}\)</span> cae <span class="math notranslate nohighlight">\(400 \ \text{cm}\)</span>. ¿Cuánto trabajo fue realizado sobre la masa
+por la fuerza de gravedad? Si se trata de una caída libre, es decir, si no hay otras fuerzas
+que actúen sobre la masa, determine el cambio de energía cinética y la rapidez de la masa
+tras caer <span class="math notranslate nohighlight">\(400 \ \text{cm}\)</span> si partió del reposo.</p>
+</div>
+<p><strong>Datos del problema</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cantidad</p></th>
+<th class="head"><p>Símbolo</p></th>
+<th class="head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Masa</p></td>
+<td><p><span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.0 \ \text{kg}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Distancia de caída</p></td>
+<td><p><span class="math notranslate nohighlight">\(h\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(400 \ \text{cm} = 4.00 \ \text{m}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Velocidad inicial</p></td>
+<td><p><span class="math notranslate nohighlight">\(v_0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0 \ \text{m/s}\)</span> (reposo)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aceleración de gravedad</p></td>
+<td><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(9.8 \ \text{m/s}^2\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="marco-conceptual-teorema-trabajo-energia">
+<h3>Marco conceptual — Teorema Trabajo-Energía<a class="headerlink" href="#marco-conceptual-teorema-trabajo-energia" title="Link to this heading">#</a></h3>
+<p>La gravedad es una <strong>fuerza constante</strong> <span class="math notranslate nohighlight">\(\vec{G} = -mg\hat{j}\)</span>. Para una fuerza constante,
+el trabajo depende únicamente del desplazamiento[^Malthe-Sorensen_10]:</p>
+<div class="math notranslate nohighlight">
+\[W = \vec{F} \cdot \Delta\vec{r} \tag{1.2.1}\]</div>
+<p>El <strong>Teorema Trabajo-Energía</strong> relaciona ese trabajo con el cambio en energía cinética:</p>
+<div class="math notranslate nohighlight">
+\[W_{\text{neto}} = \Delta K = K_1 - K_0 \tag{1.2.2}\]</div>
+</section>
+<hr class="docutils" />
+<section id="paso-1-diagrama-de-cuerpo-libre">
+<h3>Paso 1 — Diagrama de cuerpo libre<a class="headerlink" href="#paso-1-diagrama-de-cuerpo-libre" title="Link to this heading">#</a></h3>
+<p>En caída libre, la <strong>única</strong> fuerza que actúa y realiza trabajo es el peso:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fuerza</p></th>
+<th class="head"><p>Dirección</p></th>
+<th class="head"><p>¿Hace trabajo?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Peso <span class="math notranslate nohighlight">\(G = mg\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\hat{j}\)</span> (hacia abajo)</p></td>
+<td><p>✅ Sí — paralela al desplazamiento</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La fuerza normal y la fricción están <strong>ausentes</strong> en caída libre.</p>
+</section>
+<hr class="docutils" />
+<section id="trabajo-realizado-por-la-gravedad">
+<h3>Trabajo realizado por la gravedad<a class="headerlink" href="#trabajo-realizado-por-la-gravedad" title="Link to this heading">#</a></h3>
+<p>La fuerza gravitacional actúa en la misma dirección del desplazamiento:</p>
+<div class="math notranslate nohighlight">
+\[W_G = mg \cdot h \tag{1.2.3}\]</div>
+<div class="math notranslate nohighlight">
+\[W_G = (2.0 \ \text{kg})(9.8 \ \text{m/s}^2)(4.00 \ \text{m})\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{W_G = 78.4 \ \text{J}}\]</div>
+</section>
+<hr class="docutils" />
+<section id="cambio-en-energia-cinetica">
+<h3>Cambio en energía cinética<a class="headerlink" href="#cambio-en-energia-cinetica" title="Link to this heading">#</a></h3>
+<p>En caída libre <span class="math notranslate nohighlight">\(W_{\text{neto}} = W_G\)</span>, por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[\Delta K = W_{\text{neto}} = W_G \tag{1.2.4}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{\Delta K = +78.4 \ \text{J}}\]</div>
+<p>El signo positivo indica que la masa <strong>gana</strong> energía cinética al descender.</p>
+</section>
+<hr class="docutils" />
+<section id="rapidez-final">
+<h3>Rapidez final<a class="headerlink" href="#rapidez-final" title="Link to this heading">#</a></h3>
+<p>Como la masa parte del reposo, <span class="math notranslate nohighlight">\(K_0 = \frac{1}{2}mv_0^2 = 0\)</span>, entonces <span class="math notranslate nohighlight">\(\Delta K = K_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta K = \frac{1}{2}mv_1^2 \tag{1.2.5}\]</div>
+<p>Despejando <span class="math notranslate nohighlight">\(v_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[v_1 = \sqrt{\frac{2\,\Delta K}{m}} = \sqrt{\frac{2\,W_G}{m}} \tag{1.2.6}\]</div>
+<div class="math notranslate nohighlight">
+\[v_1 = \sqrt{\frac{2(78.4 \ \text{J})}{2.0 \ \text{kg}}} = \sqrt{78.4 \ \text{m}^2/\text{s}^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{v_1 \approx 8.85 \ \text{m/s}}\]</div>
+</section>
+<hr class="docutils" />
+<section id="verificacion-por-cinematica-independiente">
+<h3>Verificación por Cinemática independiente<a class="headerlink" href="#verificacion-por-cinematica-independiente" title="Link to this heading">#</a></h3>
+<p>Esto lo podemos relacionar con las ecuaciones vistas en la unidad 4 de cinemática y dinámica de la partícula.</p>
+<div class="math notranslate nohighlight">
+\[v_1 = \sqrt{2gh} = \sqrt{2(9.8 \ \text{m/s}^2)(4.00 \ \text{m})} = \sqrt{78.4} \approx 8.85 \ \text{m/s} \checkmark\]</div>
+<p>Ambos métodos son consistentes, confirmando la validez del Teorema Trabajo-Energía.</p>
+</section>
+<hr class="docutils" />
+<section id="analisis-de-casos-limite">
+<h3>Análisis de casos límite<a class="headerlink" href="#analisis-de-casos-limite" title="Link to this heading">#</a></h3>
+<p>Podemos analizar este fenómeno en base a sus casos límite, eso donde podemos ver que efectivamente <span class="math notranslate nohighlight">\(v_1\)</span> crece a razón de <span class="math notranslate nohighlight">\(\sqrt{h}\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(h \ (\text{m})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(W_G \ (\text{J})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(v_1 \ (\text{m/s})\)</span></p></th>
+<th class="head"><p>Interpretación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p>Sin caída, sin trabajo</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(19.6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4.43\)</span></p></td>
+<td><p>Caída pequeña</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(78.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(8.85\)</span></p></td>
+<td><p><strong>Este problema</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(176.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(13.3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(v_1\)</span> crece como <span class="math notranslate nohighlight">\(\sqrt{h}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h3>Interpretación física<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>La gravedad realiza un trabajo positivo de <span class="math notranslate nohighlight">\(78.4 \ \text{J}\)</span>, íntegramente convertido en
+energía cinética dado que no existe ninguna fuerza disipativa. La rapidez final de
+<span class="math notranslate nohighlight">\(8.85 \ \text{m/s}\)</span> escala como <span class="math notranslate nohighlight">\(\sqrt{h}\)</span>: duplicar la altura de caída no duplica la
+velocidad, sino que la multiplica por <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>, consecuencia directa de la relación
+cuadrática entre energía cinética y velocidad.</p>
+</section>
+</section>
+<section id="ejercicio-2-4-masa-en-riel-sin-friccion-a-b">
+<h2>Ejercicio 2.4 - Masa en Riel sin Fricción (A → B)<a class="headerlink" href="#ejercicio-2-4-masa-en-riel-sin-friccion-a-b" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Enunciado</p>
+<p>Un saco es descargado por un riel sin fricción desde el punto A como muestra la figura,
+de tal forma que una persona los recibe en el punto B. Si el saco es liberado con rapidez
+inicial <span class="math notranslate nohighlight">\(v_A\)</span> a una altura <span class="math notranslate nohighlight">\(h = 5 \ \text{m}\)</span> y llega al punto B con rapidez <span class="math notranslate nohighlight">\(10 \ \text{m/s}\)</span>,
+determine el valor de <span class="math notranslate nohighlight">\(v_A\)</span>.</p>
+</div>
+<p><strong>Datos del problema</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cantidad</p></th>
+<th class="head"><p>Símbolo</p></th>
+<th class="head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Altura inicial respecto a B</p></td>
+<td><p><span class="math notranslate nohighlight">\(h\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5 \ \text{m}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Rapidez en B (final)</p></td>
+<td><p><span class="math notranslate nohighlight">\(v_B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10 \ \text{m/s}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Rapidez en A (inicial)</p></td>
+<td><p><span class="math notranslate nohighlight">\(v_A\)</span></p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fricción</p></td>
+<td><p>—</p></td>
+<td><p>nula</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="analisis-inicial-conservacion-de-energia-mecanica">
+<h3>Análisis Inicial - Conservación de Energía Mecánica<a class="headerlink" href="#analisis-inicial-conservacion-de-energia-mecanica" title="Link to this heading">#</a></h3>
+<p>El riel es <strong>sin fricción</strong> y la fuerza normal es siempre perpendicular al movimiento,
+por lo tanto <strong>no realiza trabajo</strong>. Las únicas fuerzas son conservativas (gravedad).
+Se aplica conservación de energía mecánica<a class="footnote-reference brackets" href="#malthe-sorensen-11" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[E_A = E_B \tag{2.4.1}\]</div>
+<div class="math notranslate nohighlight">
+\[K_A + U_A = K_B + U_B \tag{2.4.2}\]</div>
+<p>Tomando el punto B como referencia de energía potencial (<span class="math notranslate nohighlight">\(U_B = 0\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}mv_A^2 + mgh = \frac{1}{2}mv_B^2 \tag{2.4.3}\]</div>
+</section>
+<hr class="docutils" />
+<section id="paso-1-la-masa-cancela">
+<h3>Paso 1 — La masa cancela<a class="headerlink" href="#paso-1-la-masa-cancela" title="Link to this heading">#</a></h3>
+<p>Dividiendo toda la ecuación por <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}v_A^2 + gh = \frac{1}{2}v_B^2 \tag{2.4.4}\]</div>
+</section>
+<hr class="docutils" />
+<section id="paso-2-despejar-v-a">
+<h3>Paso 2 — Despejar <span class="math notranslate nohighlight">\(v_A\)</span><a class="headerlink" href="#paso-2-despejar-v-a" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}v_A^2 = \frac{1}{2}v_B^2 - gh \tag{2.4.5}\]</div>
+<div class="math notranslate nohighlight">
+\[v_A = \sqrt{v_B^2 - 2gh} \tag{2.4.6}\]</div>
+</section>
+<hr class="docutils" />
+<section id="paso-3-sustitucion-numerica">
+<h3>Paso 3 — Sustitución numérica<a class="headerlink" href="#paso-3-sustitucion-numerica" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[v_A = \sqrt{(10 \ \text{m/s})^2 - 2(9.81 \ \text{m/s}^2)(5 \ \text{m})}\]</div>
+<div class="math notranslate nohighlight">
+\[v_A = \sqrt{100 - 98.1} = \sqrt{1.9 \ \text{m}^2/\text{s}^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{v_A \approx 1.38 \ \text{m/s}}\]</div>
+</section>
+<hr class="docutils" />
+<section id="analisis-de-casos-limite-como-metodo-de-verificacion">
+<h3>Análisis de casos límite como método de verificación<a class="headerlink" href="#analisis-de-casos-limite-como-metodo-de-verificacion" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(v_B \ (\text{m/s})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(h \ (\text{m})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(v_A \ (\text{m/s})\)</span></p></th>
+<th class="head"><p>Interpretación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sqrt{2gh} \approx 9.90\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p>El saco parte del reposo</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td><p>Sin desnivel: <span class="math notranslate nohighlight">\(v_A = v_B\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.38\)</span></p></td>
+<td><p><strong>Este problema</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6\)</span></p></td>
+<td><p>Sin solución real</p></td>
+<td><p><span class="math notranslate nohighlight">\(v_B\)</span> insuficiente para superar <span class="math notranslate nohighlight">\(h\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id10">
+<h3>Interpretación física<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>La energía total del sistema se conserva a lo largo del riel. La energía potencial
+gravitacional en A (altura <span class="math notranslate nohighlight">\(h = 5 \ \text{m}\)</span>) se transforma casi completamente en
+energía cinética en B. El saco necesita solo <span class="math notranslate nohighlight">\(1.38 \ \text{m/s}\)</span> en A porque la
+gravedad aporta casi toda la energía cinética en B. Nótese que si <span class="math notranslate nohighlight">\(v_A = 0\)</span>,
+el saco llegaría a B con <span class="math notranslate nohighlight">\(v_B = \sqrt{2gh} \approx 9.90 \ \text{m/s}\)</span>; el pequeño
+aporte de <span class="math notranslate nohighlight">\(v_A\)</span> eleva esa rapidez hasta exactamente <span class="math notranslate nohighlight">\(10 \ \text{m/s}\)</span>.
+La forma de la trayectoria del riel es irrelevante para el resultado: solo importa
+la diferencia de altura <span class="math notranslate nohighlight">\(h\)</span> entre A y B.</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="interpretacion-fisica-global">
 <h2>18. Interpretación física global<a class="headerlink" href="#interpretacion-fisica-global" title="Link to this heading">#</a></h2>
 <p>La energía ofrece una forma poderosa de entender los fenómenos mecánicos.</p>
 <p>Permite describir:</p>
 <ul class="simple">
-<li><p>cómo cambia el movimiento de un cuerpo;</p></li>
-<li><p>cómo se almacena energía;</p></li>
-<li><p>cómo se transfiere entre cuerpos o sistemas;</p></li>
-<li><p>cómo parte de la energía puede disiparse.</p></li>
+<li><p>Cómo cambia el movimiento de un cuerpo</p></li>
+<li><p>Cómo se almacena energía</p></li>
+<li><p>Cómo se transfiere entre cuerpos o sistemas</p></li>
+<li><p>Cómo parte de la energía puede disiparse</p></li>
 </ul>
 <p>Así, el análisis energético complementa y en muchos casos simplifica el análisis dinámico.</p>
 </section>
@@ -1172,6 +1477,15 @@ W = \vec{F} \cdot \Delta \vec{r}
 <ul class="simple">
 <li><p><strong>Guía 5</strong>: Trabajo y energía mecánica</p></li>
 </ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="malthe-sorensen-11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">1</a><span class="fn-bracket">]</span></span>
+<p>Malthe-Sørenssen, A. (2015). <em>Elementary Mechanics Using Python:
+A Modern Course Combining Analytical and Numerical Techniques</em>. Springer.
+Cap. 11, §11.2, Ecs. (11.44)–(11.46).</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -1312,12 +1626,32 @@ W = \vec{F} \cdot \Delta \vec{r}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-tipicas-del-metodo-energetico">16. Aplicaciones típicas del método energético</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-ritmo-cardiaco-y-leyes-de-escala">Aplicación: ritmo cardíaco y leyes de escala</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-ejemplo">17. Ejercicios de ejemplo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1-simple-caida-libre-desde-altura-h">Ejemplo 1 — Simple: Caída libre desde altura <span class="math notranslate nohighlight">\(h\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1-caida-libre-desde-altura-h">Ejemplo 1: Caída libre desde altura <span class="math notranslate nohighlight">\(h\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2-plano-inclinado-con-rozamiento-y-potencia">Ejemplo 2: Plano inclinado con rozamiento y potencia</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-trabajo-de-cada-fuerza">Paso 1 — Trabajo de cada fuerza</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-teorema-trabajo-energia-cinetica">Paso 2 — Teorema trabajo-energía cinética</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-balance-energetico-con-fuerzas-disipativas">Paso 3 — Balance energético con fuerzas disipativas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-potencia-instantanea-al-llegar-a-b">Paso 4 — Potencia instantánea al llegar a <span class="math notranslate nohighlight">\(B\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-2-trabajo-de-la-gravedad-y-energia-cinetica-en-caida-libre">Ejercicio 1.2 — Trabajo de la Gravedad y Energía Cinética en Caída Libre</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marco-conceptual-teorema-trabajo-energia">Marco conceptual — Teorema Trabajo-Energía</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-diagrama-de-cuerpo-libre">Paso 1 — Diagrama de cuerpo libre</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajo-realizado-por-la-gravedad">Trabajo realizado por la gravedad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-en-energia-cinetica">Cambio en energía cinética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rapidez-final">Rapidez final</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-por-cinematica-independiente">Verificación por Cinemática independiente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-limite">Análisis de casos límite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Interpretación física</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-4-masa-en-riel-sin-friccion-a-b">Ejercicio 2.4 - Masa en Riel sin Fricción (A → B)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-inicial-conservacion-de-energia-mecanica">Análisis Inicial - Conservación de Energía Mecánica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-la-masa-cancela">Paso 1 — La masa cancela</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-despejar-v-a">Paso 2 — Despejar <span class="math notranslate nohighlight">\(v_A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-sustitucion-numerica">Paso 3 — Sustitución numérica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-limite-como-metodo-de-verificacion">Análisis de casos límite como método de verificación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Interpretación física</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica-global">18. Interpretación física global</a></li>

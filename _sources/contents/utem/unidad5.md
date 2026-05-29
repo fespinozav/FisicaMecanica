@@ -212,13 +212,14 @@ La energía cinética es la energía asociada al movimiento de un cuerpo. Siendo
 Se define como:
 
 $$
-E_c = K = \frac{1}{2}mv^2
+E_c = E_k = \frac{1}{2}mv^2
 $$
 
 donde:
 
 - $m$ es la masa del cuerpo;
 - $v$ es la rapidez del cuerpo.
+- La Energía cinética se denota como $E_k$ (Kinnetic Energy) o $E_c$ o simplemente $K$
 
 ### Propiedades
 
@@ -254,11 +255,11 @@ $$
 
 ## 7. Teorema trabajo–energía cinética
 
-Uno de los resultados más importantes de esta unidad es el teorema trabajo–energía cinética:
+Uno de los resultados más importantes de esta unidad es el **teorema trabajo–energía cinética:**
 
-$$
-W_{\text{neto}} = \Delta E_c
-$$
+**Marco Conceptual**:
+
+$$\boxed{W_{neto} = \Delta K = \Delta E_c= \frac{1}{2}m(v_f^2-v_i^2)} \tag{3}$$
 
 donde:
 
@@ -266,13 +267,14 @@ $$
 \Delta E_c = E_{cf} - E_{ci} = K_f - K_i
 $$
 
+
 Esto significa que el trabajo neto realizado sobre un cuerpo es igual al cambio de su energía cinética.
 
 ### Interpretación física
 
-- si el trabajo neto es positivo, la energía cinética aumenta.
-- si el trabajo neto es negativo, la energía cinética disminuye.
-- si el trabajo neto es cero, la energía cinética permanece constante.
+- Si el trabajo neto es positivo, la energía cinética aumenta.
+- Si el trabajo neto es negativo, la energía cinética disminuye.
+- Si el trabajo neto es cero, la energía cinética permanece constante.
 
 ---
 
@@ -447,13 +449,13 @@ Estas fuerzas suelen disipar energía mecánica en otras formas, como calor.
 La energía mecánica de un sistema es la suma de su energía cinética y su energía potencial:
 
 $$
-E_m = K + U
+\boxed{E_m = K + U}
 $$
 
 Dependiendo del problema, $U$ puede incluir:
 
-- energía potencial gravitatoria
-- energía potencial elástica
+- Energía potencial gravitatoria
+- Energía potencial elástica
 - o ambas.
 
 ---
@@ -463,7 +465,7 @@ Dependiendo del problema, $U$ puede incluir:
 Si en un sistema solo actúan fuerzas conservativas, entonces la energía mecánica permanece constante:
 
 $$
-E_{m,i} = E_{m,f}
+\boxed{E_m=E_{m,i} = E_{m,f} = cte}
 $$
 
 o equivalentemente:
@@ -476,8 +478,8 @@ $$
 
 La energía puede transformarse de una forma a otra:
 
-- de potencial a cinética;
-- de cinética a potencial;
+- de potencial a cinética
+- de cinética a potencial
 
 pero la suma total permanece constante.
 
@@ -485,7 +487,7 @@ pero la suma total permanece constante.
 
 ## 15. Cambio de energía mecánica con roce
 
-Si actúan fuerzas no conservativas, como el roce, la energía mecánica ya no se conserva.
+Si actúan fuerzas no conservativas ($F_{nc}$), como el roce, la energía mecánica ya no se conserva.
 
 En ese caso:
 
@@ -499,8 +501,8 @@ donde $W_{\text{nc}}$ es el trabajo realizado por fuerzas no conservativas.
 
 Cuando hay roce:
 
-- parte de la energía mecánica se transforma en energía térmica;
-- la energía mecánica final es menor que la inicial.
+- Parte de la energía mecánica se transforma en energía térmica;
+- La energía mecánica final es menor que la inicial.
 
 ---
 
@@ -508,12 +510,12 @@ Cuando hay roce:
 
 El enfoque energético permite resolver con facilidad problemas como:
 
-- caída libre
-- lanzamiento vertical
-- bloques sobre superficies con o sin roce
-- resortes comprimidos o estirados
-- planos inclinados
-- sistemas con variación de altura
+- Caída libre
+- Lanzamiento vertical
+- Bloques sobre superficies con o sin roce
+- Resortes comprimidos o estirados
+- Planos inclinados
+- Sistemas con variación de altura
 
 En muchos casos, usar energía resulta más directo que aplicar Newton en cada etapa del movimiento.
 
@@ -566,7 +568,7 @@ $$
 
 ## 17. Ejercicios de ejemplo
 
-## Ejemplo 1 — Simple: Caída libre desde altura $h$
+## Ejemplo 1: Caída libre desde altura $h$
 
 ```{figure} ../images/caida_simple.png
 ---
@@ -660,16 +662,226 @@ $$
 
 ---
 
+## Ejercicio 1.2 — Trabajo de la Gravedad y Energía Cinética en Caída Libre
+
+```{admonition} Enunciado
+:class: tip
+
+Una masa de $2.0 \ \text{kg}$ cae $400 \ \text{cm}$. ¿Cuánto trabajo fue realizado sobre la masa
+por la fuerza de gravedad? Si se trata de una caída libre, es decir, si no hay otras fuerzas
+que actúen sobre la masa, determine el cambio de energía cinética y la rapidez de la masa
+tras caer $400 \ \text{cm}$ si partió del reposo.
+```
+
+**Datos del problema**
+
+| Cantidad | Símbolo | Valor |
+|---|---|---|
+| Masa | $m$ | $2.0 \ \text{kg}$ |
+| Distancia de caída | $h$ | $400 \ \text{cm} = 4.00 \ \text{m}$ |
+| Velocidad inicial | $v_0$ | $0 \ \text{m/s}$ (reposo) |
+| Aceleración de gravedad | $g$ | $9.8 \ \text{m/s}^2$ |
+
+---
+
+### Marco conceptual — Teorema Trabajo-Energía
+
+La gravedad es una **fuerza constante** $\vec{G} = -mg\hat{j}$. Para una fuerza constante,
+el trabajo depende únicamente del desplazamiento[^Malthe-Sorensen_10]:
+
+$$W = \vec{F} \cdot \Delta\vec{r} \tag{1.2.1}$$
+
+El **Teorema Trabajo-Energía** relaciona ese trabajo con el cambio en energía cinética:
+
+$$W_{\text{neto}} = \Delta K = K_1 - K_0 \tag{1.2.2}$$
+
+---
+
+### Paso 1 — Diagrama de cuerpo libre
+
+En caída libre, la **única** fuerza que actúa y realiza trabajo es el peso:
+
+| Fuerza | Dirección | ¿Hace trabajo? |
+|---|---|---|
+| Peso $G = mg$ | $-\hat{j}$ (hacia abajo) | ✅ Sí — paralela al desplazamiento |
+
+La fuerza normal y la fricción están **ausentes** en caída libre.
+
+---
+
+### Trabajo realizado por la gravedad
+
+La fuerza gravitacional actúa en la misma dirección del desplazamiento:
+
+$$W_G = mg \cdot h \tag{1.2.3}$$
+
+$$W_G = (2.0 \ \text{kg})(9.8 \ \text{m/s}^2)(4.00 \ \text{m})$$
+
+$$\boxed{W_G = 78.4 \ \text{J}}$$
+
+---
+
+### Cambio en energía cinética
+
+En caída libre $W_{\text{neto}} = W_G$, por lo tanto:
+
+$$\Delta K = W_{\text{neto}} = W_G \tag{1.2.4}$$
+
+$$\boxed{\Delta K = +78.4 \ \text{J}}$$
+
+El signo positivo indica que la masa **gana** energía cinética al descender.
+
+---
+
+### Rapidez final
+
+Como la masa parte del reposo, $K_0 = \frac{1}{2}mv_0^2 = 0$, entonces $\Delta K = K_1$:
+
+$$\Delta K = \frac{1}{2}mv_1^2 \tag{1.2.5}$$
+
+Despejando $v_1$:
+
+$$v_1 = \sqrt{\frac{2\,\Delta K}{m}} = \sqrt{\frac{2\,W_G}{m}} \tag{1.2.6}$$
+
+$$v_1 = \sqrt{\frac{2(78.4 \ \text{J})}{2.0 \ \text{kg}}} = \sqrt{78.4 \ \text{m}^2/\text{s}^2}$$
+
+$$\boxed{v_1 \approx 8.85 \ \text{m/s}}$$
+
+---
+
+### Verificación por Cinemática independiente
+
+Esto lo podemos relacionar con las ecuaciones vistas en la unidad 4 de cinemática y dinámica de la partícula.
+
+$$v_1 = \sqrt{2gh} = \sqrt{2(9.8 \ \text{m/s}^2)(4.00 \ \text{m})} = \sqrt{78.4} \approx 8.85 \ \text{m/s} \checkmark$$
+
+Ambos métodos son consistentes, confirmando la validez del Teorema Trabajo-Energía.
+
+---
+
+### Análisis de casos límite
+
+Podemos analizar este fenómeno en base a sus casos límite, eso donde podemos ver que efectivamente $v_1$ crece a razón de $\sqrt{h}$.
+
+| $h \ (\text{m})$ | $W_G \ (\text{J})$ | $v_1 \ (\text{m/s})$ | Interpretación |
+|---|---|---|---|
+| $0$ | $0$ | $0$ | Sin caída, sin trabajo |
+| $1$ | $19.6$ | $4.43$ | Caída pequeña |
+| $4$ | $78.4$ | $8.85$ | **Este problema** |
+| $9$ | $176.4$ | $13.3$ | $v_1$ crece como $\sqrt{h}$ |
+
+---
+
+### Interpretación física
+
+La gravedad realiza un trabajo positivo de $78.4 \ \text{J}$, íntegramente convertido en
+energía cinética dado que no existe ninguna fuerza disipativa. La rapidez final de
+$8.85 \ \text{m/s}$ escala como $\sqrt{h}$: duplicar la altura de caída no duplica la
+velocidad, sino que la multiplica por $\sqrt{2}$, consecuencia directa de la relación
+cuadrática entre energía cinética y velocidad.
+
+## Ejercicio 2.4 - Masa en Riel sin Fricción (A → B)
+
+```{admonition} Enunciado
+:class: tip
+
+Un saco es descargado por un riel sin fricción desde el punto A como muestra la figura,
+de tal forma que una persona los recibe en el punto B. Si el saco es liberado con rapidez
+inicial $v_A$ a una altura $h = 5 \ \text{m}$ y llega al punto B con rapidez $10 \ \text{m/s}$,
+determine el valor de $v_A$.
+```
+
+**Datos del problema**
+
+| Cantidad | Símbolo | Valor |
+|---|---|---|
+| Altura inicial respecto a B | $h$ | $5 \ \text{m}$ |
+| Rapidez en B (final) | $v_B$ | $10 \ \text{m/s}$ |
+| Rapidez en A (inicial) | $v_A$ | ? |
+| Fricción | — | nula |
+
+---
+
+### Análisis Inicial - Conservación de Energía Mecánica
+
+El riel es **sin fricción** y la fuerza normal es siempre perpendicular al movimiento,
+por lo tanto **no realiza trabajo**. Las únicas fuerzas son conservativas (gravedad).
+Se aplica conservación de energía mecánica[^Malthe-Sorensen_11]:
+
+$$E_A = E_B \tag{2.4.1}$$
+
+$$K_A + U_A = K_B + U_B \tag{2.4.2}$$
+
+Tomando el punto B como referencia de energía potencial ($U_B = 0$):
+
+$$\frac{1}{2}mv_A^2 + mgh = \frac{1}{2}mv_B^2 \tag{2.4.3}$$
+
+---
+
+### Paso 1 — La masa cancela
+
+Dividiendo toda la ecuación por $m$:
+
+$$\frac{1}{2}v_A^2 + gh = \frac{1}{2}v_B^2 \tag{2.4.4}$$
+
+---
+
+### Paso 2 — Despejar $v_A$
+
+$$\frac{1}{2}v_A^2 = \frac{1}{2}v_B^2 - gh \tag{2.4.5}$$
+
+$$v_A = \sqrt{v_B^2 - 2gh} \tag{2.4.6}$$
+
+---
+
+### Paso 3 — Sustitución numérica
+
+$$v_A = \sqrt{(10 \ \text{m/s})^2 - 2(9.81 \ \text{m/s}^2)(5 \ \text{m})}$$
+
+$$v_A = \sqrt{100 - 98.1} = \sqrt{1.9 \ \text{m}^2/\text{s}^2}$$
+
+$$\boxed{v_A \approx 1.38 \ \text{m/s}}$$
+
+---
+
+### Análisis de casos límite como método de verificación
+
+| $v_B \ (\text{m/s})$ | $h \ (\text{m})$ | $v_A \ (\text{m/s})$ | Interpretación |
+|---|---|---|---|
+| $\sqrt{2gh} \approx 9.90$ | $5$ | $0$ | El saco parte del reposo |
+| $10$ | $0$ | $10$ | Sin desnivel: $v_A = v_B$ |
+| $10$ | $5$ | $1.38$ | **Este problema** |
+| $10$ | $6$ | Sin solución real | $v_B$ insuficiente para superar $h$ |
+
+---
+
+### Interpretación física
+
+La energía total del sistema se conserva a lo largo del riel. La energía potencial
+gravitacional en A (altura $h = 5 \ \text{m}$) se transforma casi completamente en
+energía cinética en B. El saco necesita solo $1.38 \ \text{m/s}$ en A porque la
+gravedad aporta casi toda la energía cinética en B. Nótese que si $v_A = 0$,
+el saco llegaría a B con $v_B = \sqrt{2gh} \approx 9.90 \ \text{m/s}$; el pequeño
+aporte de $v_A$ eleva esa rapidez hasta exactamente $10 \ \text{m/s}$.
+La forma de la trayectoria del riel es irrelevante para el resultado: solo importa
+la diferencia de altura $h$ entre A y B.
+
+[^Malthe-Sorensen_11]: Malthe-Sørenssen, A. (2015). *Elementary Mechanics Using Python:
+A Modern Course Combining Analytical and Numerical Techniques*. Springer.
+Cap. 11, §11.2, Ecs. (11.44)–(11.46).
+
+---
+
 ## 18. Interpretación física global
 
 La energía ofrece una forma poderosa de entender los fenómenos mecánicos.
 
 Permite describir:
 
-- cómo cambia el movimiento de un cuerpo;
-- cómo se almacena energía;
-- cómo se transfiere entre cuerpos o sistemas;
-- cómo parte de la energía puede disiparse.
+- Cómo cambia el movimiento de un cuerpo
+- Cómo se almacena energía
+- Cómo se transfiere entre cuerpos o sistemas
+- Cómo parte de la energía puede disiparse
 
 Así, el análisis energético complementa y en muchos casos simplifica el análisis dinámico.
 
