@@ -30,6 +30,7 @@ parts:
   - file: contents/utem/sim_plano_inclinado
   - file: contents/utem/sim_montana_rusa
   - file: contents/utem/sim_sistema_particulas
+  - file: contents/utem/sim_colisiones
 - caption: "Bases de la mecanica"
   numbered: False
   chapters:
