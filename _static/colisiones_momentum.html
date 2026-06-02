@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Simulador: Colisiones y momentum lineal</title>
+<style>
+:root{
+  --blue:#004EAA; --green:#78BF26; --red:#D62828;
+  --orange:#F07F00; --magenta:#C0165A;
+  --text:#1f2328; --text2:#57606a; --text3:#8c959f;
+  --bg:#fff; --bg2:#f6f8fa; --border:#d0d7de; --border2:#eaeef2;
+  --radius:6px;
+}
+html,body{margin:0;padding:14px;background:#fff;color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.5}
+h3{margin:0 0 12px;font-size:16px;font-weight:600}
+canvas{display:block;border:1px solid var(--border2);border-radius:var(--radius);background:#fafbfc}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:7px 18px;
+  font-size:13px;font-weight:600;cursor:pointer;border-radius:var(--radius);
+  border:none;transition:background .15s}
+.btn.go{background:var(--blue);color:#fff}
+.btn.go:hover{background:#003882}
+.btn.stop{background:var(--bg2);color:var(--red);border:1px solid var(--border)}
+.btn.stop:hover{background:#fff5f5}
+.fcard{background:var(--bg2);border-radius:var(--radius);padding:9px 13px;min-width:0}
+.flbl{font-size:11px;color:var(--text2);margin:0 0 2px}
+.fval{font-size:15px;font-weight:600;margin:0}
+.param-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.param-lbl{font-size:12px;color:var(--text2);min-width:130px}
+.num{font-variant-numeric:tabular-nums;font-size:12px}
+.ba-card{background:var(--bg2);border-radius:var(--radius);padding:10px 14px}
+.ba-title{font-size:11px;font-weight:600;letter-spacing:.8px;color:var(--text2);margin-bottom:8px}
+.ba-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px}
+.ba-label{color:var(--text2)}
+.ba-value{font-weight:600;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;font-weight:600}
+</style>
+</head>
+<body>
+
+<h3>Colisiones y conservación del momentum lineal</h3>
+
+<!-- Status bar -->
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+  <span id="sdot" style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0"></span>
+  <span id="stxt" style="font-size:13px;font-weight:500">Listo — presiona Iniciar</span>
+  <span id="sbadge" class="badge" style="background:#e8f4ff;color:var(--blue)"></span>
+</div>
+
+<!-- Canvas -->
+<canvas id="cv" width="680" height="230" style="width:100%;max-width:680px"></canvas>
+
+<!-- Controls -->
+<div style="margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+  <button id="btnRun" class="btn go" onclick="toggleRun()">▶ Iniciar</button>
+  <button class="btn go" style="background:var(--text3)" onclick="resetSim()">↺ Reiniciar</button>
+</div>
+
+<!-- Parameters -->
+<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:680px">
+  <div style="background:var(--bg2);border-radius:var(--radius);padding:10px 14px;border-left:3px solid var(--blue)">
+    <div style="font-size:12px;font-weight:600;color:var(--blue);margin-bottom:8px">Bloque 1 (azul)</div>
+    <div class="param-row">
+      <span class="param-lbl">Masa m₁ (kg)</span>
+      <input type="range" id="sl-m1" min="0.5" max="10" step="0.5" value="2" oninput="onParam()" style="width:90px">
+      <span class="num" id="vl-m1">2.0 kg</span>
+    </div>
+    <div class="param-row" style="margin-bottom:0">
+      <span class="param-lbl">Velocidad v₁ (m/s)</span>
+      <input type="range" id="sl-v1" min="-10" max="10" step="0.5" value="4" oninput="onParam()" style="width:90px">
+      <span class="num" id="vl-v1">+4.0 m/s</span>
+    </div>
+  </div>
+  <div style="background:var(--bg2);border-radius:var(--radius);padding:10px 14px;border-left:3px solid var(--red)">
+    <div style="font-size:12px;font-weight:600;color:var(--red);margin-bottom:8px">Bloque 2 (rojo)</div>
+    <div class="param-row">
+      <span class="param-lbl">Masa m₂ (kg)</span>
+      <input type="range" id="sl-m2" min="0.5" max="10" step="0.5" value="3" oninput="onParam()" style="width:90px">
+      <span class="num" id="vl-m2">3.0 kg</span>
+    </div>
+    <div class="param-row" style="margin-bottom:0">
+      <span class="param-lbl">Velocidad v₂ (m/s)</span>
+      <input type="range" id="sl-v2" min="-10" max="10" step="0.5" value="-1" oninput="onParam()" style="width:90px">
+      <span class="num" id="vl-v2">−1.0 m/s</span>
+    </div>
+  </div>
+</div>
+
+<!-- Restitution slider -->
+<div style="margin-top:10px;max-width:680px;background:var(--bg2);border-radius:var(--radius);padding:10px 14px">
+  <div class="param-row" style="margin-bottom:0">
+    <span class="param-lbl">Coef. restitución <i>e</i></span>
+    <input type="range" id="sl-e" min="0" max="1" step="0.05" value="1" oninput="onParam()" style="width:130px">
+    <span class="num" id="vl-e">1.00</span>
+    <span id="e-badge" class="badge" style="background:#e8f4ff;color:var(--blue)">Elástica</span>
+  </div>
+</div>
+
+<!-- Before / After cards -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;max-width:680px">
+  <div class="ba-card" style="border-top:3px solid var(--blue)">
+    <div class="ba-title">ANTES DE LA COLISIÓN</div>
+    <div class="ba-row"><span class="ba-label">p₁ = m₁·v₁</span><span class="ba-value" id="p1i">—</span></div>
+    <div class="ba-row"><span class="ba-label">p₂ = m₂·v₂</span><span class="ba-value" id="p2i">—</span></div>
+    <div class="ba-row" style="border-top:1px solid var(--border2);padding-top:4px;margin-top:4px">
+      <span class="ba-label"><b>P_total</b></span>
+      <span class="ba-value" id="Pti" style="color:var(--magenta)">—</span>
+    </div>
+    <div class="ba-row" style="margin-top:6px"><span class="ba-label">EC₁</span><span class="ba-value" id="KE1i">—</span></div>
+    <div class="ba-row"><span class="ba-label">EC₂</span><span class="ba-value" id="KE2i">—</span></div>
+    <div class="ba-row" style="border-top:1px solid var(--border2);padding-top:4px;margin-top:4px">
+      <span class="ba-label"><b>EC_total</b></span><span class="ba-value" id="KEti">—</span>
+    </div>
+  </div>
+  <div class="ba-card" style="border-top:3px solid var(--red)">
+    <div class="ba-title">DESPUÉS DE LA COLISIÓN</div>
+    <div class="ba-row"><span class="ba-label">p₁' = m₁·v₁'</span><span class="ba-value" id="p1f">—</span></div>
+    <div class="ba-row"><span class="ba-label">p₂' = m₂·v₂'</span><span class="ba-value" id="p2f">—</span></div>
+    <div class="ba-row" style="border-top:1px solid var(--border2);padding-top:4px;margin-top:4px">
+      <span class="ba-label"><b>P_total</b></span>
+      <span class="ba-value" id="Ptf" style="color:var(--magenta)">—</span>
+    </div>
+    <div class="ba-row" style="margin-top:6px"><span class="ba-label">EC₁'</span><span class="ba-value" id="KE1f">—</span></div>
+    <div class="ba-row"><span class="ba-label">EC₂'</span><span class="ba-value" id="KE2f">—</span></div>
+    <div class="ba-row" style="border-top:1px solid var(--border2);padding-top:4px;margin-top:4px">
+      <span class="ba-label"><b>ΔEC (pérdida)</b></span>
+      <span class="ba-value" id="DKE" style="color:var(--orange)">—</span>
+    </div>
+  </div>
+</div>
+
+<!-- Equations box -->
+<div style="background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);
+     padding:12px 16px;margin-top:10px;max-width:680px;font-size:13px">
+  <div style="font-weight:600;margin-bottom:6px;color:var(--text2);font-size:11px;letter-spacing:.8px">ECUACIONES EN TIEMPO REAL</div>
+  <div id="eq-p"   style="margin-bottom:4px"></div>
+  <div id="eq-v1f" style="margin-bottom:4px"></div>
+  <div id="eq-v2f"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const W = 680, H = 230;
+const TRACK_Y = 158;
+const BLOCK_H = 52;
+const PX_PER_M = 45;   // visual px per metre
+const P_ARROW  = 9;    // px per kg·m/s for momentum arrows
+const DT = 1/60;
+
+const C1 = '#004EAA', C2 = '#D62828', CM = '#C0165A', CO = '#F07F00';
+
+let m1, m2, v1i, v2i, eCoef;
+let x1, x2, v1, v2;
+let collided = false, flashTimer = 0;
+let running = false, rafId = null;
+
+function blockW(m){ return 32 + m * 5; }
+
+/* ---- helpers ---- */
+function fmtV(v){ return (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(1); }
+function fmtP(v, d=2){ return (v >= 0 ? '' : '−') + Math.abs(v).toFixed(d); }
+
+function rr(ctx, x, y, w, h, r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+
+function arrow(ctx, x1,y1, x2,y2, color, lw){
+  const dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy);
+  if(len<3) return;
+  const ux=dx/len, uy=dy/len, hs=8;
+  ctx.save();
+  ctx.strokeStyle=color; ctx.fillStyle=color; ctx.lineWidth=lw;
+  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2,y2);
+  ctx.lineTo(x2-hs*ux+hs*0.4*uy, y2-hs*uy-hs*0.4*ux);
+  ctx.lineTo(x2-hs*ux-hs*0.4*uy, y2-hs*uy+hs*0.4*ux);
+  ctx.closePath(); ctx.fill();
+  ctx.restore();
+}
+
+/* ---- collision formula ---- */
+function collide(m1,m2,u1,u2,e){
+  const v1f = (m1*u1 + m2*u2 - m2*e*(u1-u2)) / (m1+m2);
+  const v2f = (m1*u1 + m2*u2 + m1*e*(u1-u2)) / (m1+m2);
+  return {v1f, v2f};
+}
+
+/* ---- collision type label ---- */
+function cType(){
+  if(eCoef >= 0.99) return 'Elástica';
+  if(eCoef < 0.01)  return 'Perfectamente inelástica';
+  return 'Inelástica';
+}
+
+function badgeStyle(type){
+  if(type==='Elástica')                    return ['#e8f4ff', C1];
+  if(type==='Perfectamente inelástica')    return ['#fff0f0', C2];
+  return ['#fff8e8', CO];
+}
+
+/* ---- read sliders ---- */
+function readParams(){
+  m1    = +$('sl-m1').value;
+  m2    = +$('sl-m2').value;
+  v1i   = +$('sl-v1').value;
+  v2i   = +$('sl-v2').value;
+  eCoef = +$('sl-e').value;
+}
+
+function onParam(){
+  readParams();
+  $('vl-m1').textContent = m1.toFixed(1)+' kg';
+  $('vl-m2').textContent = m2.toFixed(1)+' kg';
+  $('vl-v1').textContent = fmtV(v1i)+' m/s';
+  $('vl-v2').textContent = fmtV(v2i)+' m/s';
+  $('vl-e').textContent  = eCoef.toFixed(2);
+
+  const type = cType();
+  const [bg, fg] = badgeStyle(type);
+  $('e-badge').textContent = type;
+  $('e-badge').style.background = bg;
+  $('e-badge').style.color = fg;
+
+  if(!running){ initPositions(); updateCards(); drawFrame(); }
+}
+
+/* ---- positions ---- */
+function initPositions(){
+  x1 = W * 0.28;
+  x2 = W * 0.72;
+  v1 = v1i;
+  v2 = v2i;
+  collided = false;
+  flashTimer = 0;
+}
+
+/* ---- update cards & equations ---- */
+function updateCards(){
+  const {v1f, v2f} = collide(m1, m2, v1i, v2i, eCoef);
+
+  const p1i_ = m1*v1i, p2i_ = m2*v2i, Pti_ = p1i_+p2i_;
+  const KE1i = 0.5*m1*v1i**2, KE2i = 0.5*m2*v2i**2, KEti = KE1i+KE2i;
+
+  const p1f_ = m1*v1f, p2f_ = m2*v2f, Ptf_ = p1f_+p2f_;
+  const KE1f = 0.5*m1*v1f**2, KE2f = 0.5*m2*v2f**2, KEtf = KE1f+KE2f;
+  const DKE_ = KEti - KEtf;
+
+  $('p1i').textContent = fmtP(p1i_)+' kg·m/s';
+  $('p2i').textContent = fmtP(p2i_)+' kg·m/s';
+  $('Pti').textContent = fmtP(Pti_)+' kg·m/s';
+  $('KE1i').textContent = KE1i.toFixed(2)+' J';
+  $('KE2i').textContent = KE2i.toFixed(2)+' J';
+  $('KEti').textContent = KEti.toFixed(2)+' J';
+
+  $('p1f').textContent = fmtP(p1f_)+' kg·m/s';
+  $('p2f').textContent = fmtP(p2f_)+' kg·m/s';
+  $('Ptf').textContent = fmtP(Ptf_)+' kg·m/s';
+  $('KE1f').textContent = KE1f.toFixed(2)+' J';
+  $('KE2f').textContent = KE2f.toFixed(2)+' J';
+  $('DKE').textContent  = DKE_.toFixed(2)+' J';
+
+  const e = eCoef.toFixed(2);
+  $('eq-p').innerHTML =
+    `<b>Conservación del momentum:</b> `+
+    `m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'&nbsp;&nbsp;`+
+    `→&nbsp;<b>${fmtP(Pti_,2)} ≈ ${fmtP(Ptf_,2)} kg·m/s</b>`;
+  $('eq-v1f').innerHTML =
+    `<b style="color:${C1}">v₁'</b> = `+
+    `(m₁v₁ + m₂v₂ − m₂·e·(v₁−v₂)) / (m₁+m₂) = `+
+    `<b>${fmtP(v1f)} m/s</b>`;
+  $('eq-v2f').innerHTML =
+    `<b style="color:${C2}">v₂'</b> = `+
+    `(m₁v₁ + m₂v₂ + m₁·e·(v₁−v₂)) / (m₁+m₂) = `+
+    `<b>${fmtP(v2f)} m/s</b>`;
+
+  // status badge
+  const type = cType();
+  const [bg, fg] = badgeStyle(type);
+  $('sbadge').textContent = type;
+  $('sbadge').style.background = bg;
+  $('sbadge').style.color = fg;
+}
+
+/* ---- drawing ---- */
+function drawBlock(ctx, cx, color, m, vel, lbl){
+  const bw = blockW(m), bh = BLOCK_H;
+  const bx = cx - bw/2, by = TRACK_Y - bh;
+
+  ctx.save();
+  rr(ctx, bx, by, bw, bh, 4);
+  ctx.fillStyle = color+'20'; ctx.fill();
+  ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+
+  ctx.font = `bold 12px sans-serif`;
+  ctx.fillStyle = color;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(lbl, cx, by+bh/2-6);
+  ctx.font = '10px sans-serif';
+  ctx.fillText(m.toFixed(1)+' kg', cx, by+bh/2+8);
+  ctx.restore();
+
+  // momentum arrow above block
+  const p = m * vel;
+  const aLen = p * P_ARROW;
+  const ay = by - 16;
+  if(Math.abs(aLen) > 3){
+    arrow(ctx, cx, ay, cx+aLen, ay, CM, 2);
+    ctx.save();
+    ctx.font = '10px sans-serif';
+    ctx.fillStyle = CM;
+    ctx.textAlign = aLen > 0 ? 'left' : 'right';
+    ctx.textBaseline = 'bottom';
+    const pLabel = (p>=0?'':'-')+Math.abs(p).toFixed(1);
+    ctx.fillText(`p=${pLabel}`, cx+aLen+(aLen>0?4:-4), ay-1);
+    ctx.restore();
+  } else {
+    // dot for zero momentum
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, ay, 3, 0, 2*Math.PI);
+    ctx.fillStyle = CM; ctx.fill();
+    ctx.restore();
+  }
+
+  // velocity label below track
+  ctx.save();
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = color;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  ctx.fillText('v = '+fmtV(vel)+' m/s', cx, TRACK_Y+6);
+  ctx.restore();
+}
+
+function drawFrame(){
+  const canvas = $('cv');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,W,H);
+
+  // Track line
+  ctx.save();
+  ctx.strokeStyle = '#c8d0d8'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(0,TRACK_Y); ctx.lineTo(W,TRACK_Y); ctx.stroke();
+  ctx.strokeStyle = '#e8ecf0'; ctx.lineWidth = 1;
+  for(let x=0; x<=W; x+=PX_PER_M){
+    ctx.beginPath(); ctx.moveTo(x,TRACK_Y); ctx.lineTo(x,TRACK_Y+5); ctx.stroke();
+  }
+  ctx.restore();
+
+  // Blocks
+  drawBlock(ctx, x1, C1, m1, v1, 'B₁');
+  drawBlock(ctx, x2, C2, m2, v2, 'B₂');
+
+  // Collision flash
+  if(collided && flashTimer < 0.35){
+    const alpha = 0.55 * (1 - flashTimer/0.35);
+    const fx = (x1+x2)/2, fy = TRACK_Y - BLOCK_H/2;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.beginPath(); ctx.arc(fx, fy, 32, 0, 2*Math.PI);
+    ctx.fillStyle = '#FFD700'; ctx.fill();
+    ctx.restore();
+    ctx.save();
+    ctx.globalAlpha = alpha * 0.9;
+    ctx.font = 'bold 13px sans-serif';
+    ctx.fillStyle = '#8a6000';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('¡choque!', fx, fy);
+    ctx.restore();
+  }
+
+  // Total momentum arrow at bottom
+  const Ptot = m1*v1 + m2*v2;
+  const totLen = Ptot * P_ARROW;
+  const tx = W/2 - 10, ty = H - 16;
+  ctx.save();
+  ctx.font = 'bold 11px sans-serif';
+  ctx.fillStyle = CM;
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  ctx.fillText('P_total:', tx-4, ty);
+  ctx.restore();
+  if(Math.abs(totLen) > 2){
+    arrow(ctx, tx, ty, tx+totLen, ty, CM, 2.5);
+  } else {
+    ctx.save();
+    ctx.beginPath(); ctx.arc(tx, ty, 4, 0, 2*Math.PI);
+    ctx.fillStyle = CM; ctx.fill();
+    ctx.restore();
+  }
+  ctx.save();
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = CM;
+  ctx.textAlign = totLen >= 0 ? 'left' : 'right';
+  ctx.textBaseline = 'middle';
+  const offset = totLen >= 0 ? totLen+5 : totLen-5;
+  ctx.fillText(' '+fmtP(Ptot,2)+' kg·m/s', tx+offset, ty);
+  ctx.restore();
+}
+
+/* ---- physics ---- */
+function physicsStep(){
+  if(collided){
+    flashTimer += DT;
+  } else {
+    x1 += v1 * PX_PER_M * DT;
+    x2 += v2 * PX_PER_M * DT;
+
+    const hw1 = blockW(m1)/2, hw2 = blockW(m2)/2;
+    if(x1 + hw1 >= x2 - hw2 && v1 > v2){
+      // collision
+      const {v1f, v2f} = collide(m1, m2, v1, v2, eCoef);
+      v1 = v1f; v2 = v2f;
+      const overlap = (x1+hw1) - (x2-hw2);
+      x1 -= overlap/2 + 1;
+      x2 += overlap/2 + 1;
+      collided = true;
+      flashTimer = 0;
+      $('sdot').style.background = '#FFD700';
+      $('stxt').textContent = '¡Colisión! — ' + cType();
+    }
+  }
+
+  if(collided && flashTimer >= 0.5){
+    x1 += v1 * PX_PER_M * DT;
+    x2 += v2 * PX_PER_M * DT;
+  }
+
+  // Stop when both blocks have left the canvas
+  if(collided && flashTimer > 1.5){
+    const hw1=blockW(m1)/2, hw2=blockW(m2)/2;
+    const out1 = x1+hw1 < 0 || x1-hw1 > W;
+    const out2 = x2+hw2 < 0 || x2-hw2 > W;
+    if(out1 && out2){
+      running = false; updateBtn();
+      $('sdot').style.background = '#888';
+      $('stxt').textContent = 'Simulación completa';
+    }
+  }
+}
+
+/* ---- loop ---- */
+function loop(){
+  if(!running) return;
+  physicsStep();
+  drawFrame();
+  rafId = requestAnimationFrame(loop);
+}
+
+function toggleRun(){
+  if(running){ running=false; updateBtn(); cancelAnimationFrame(rafId); return; }
+  running=true; updateBtn();
+  $('sdot').style.background='var(--green)';
+  $('stxt').textContent='Simulando…';
+  loop();
+}
+
+function updateBtn(){
+  const btn=$('btnRun');
+  if(running){ btn.textContent='⏹ Detener'; btn.className='btn stop'; }
+  else        { btn.textContent='▶ Iniciar'; btn.className='btn go'; }
+}
+
+function resetSim(){
+  if(running){ running=false; cancelAnimationFrame(rafId); }
+  readParams();
+  initPositions();
+  updateCards();
+  drawFrame();
+  updateBtn();
+  $('sdot').style.background='var(--green)';
+  $('stxt').textContent='Listo — presiona Iniciar';
+}
+
+/* ---- bootstrap ---- */
+readParams();
+initPositions();
+updateCards();
+onParam();
+drawFrame();
+</script>
+</body>
+</html>

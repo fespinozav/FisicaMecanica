@@ -790,6 +790,13 @@ de tal forma que una persona los recibe en el punto B. Si el saco es liberado co
 inicial $v_A$ a una altura $h = 5 \ \text{m}$ y llega al punto B con rapidez $10 \ \text{m/s}$,
 determine el valor de $v_A$.
 ```
+```{figure} ../images/e_m_24.png
+---
+width: 60%
+name: ej24
+---
+
+```
 
 **Datos del problema**
 
