@@ -453,7 +453,7 @@ Así, la fuerza neta controla la aceleración y, por tanto, el cambio de movimie
 
 ## 17 Ejercicios de ejemplo
 
-#### 17.a Ejemplo: Carrito sobre una pista (Cart moving on a Track)
+### 17.a Ejemplo: Carrito sobre una pista (Cart moving on a Track)
 
 
 Un carrito con un sensor de fuerza (masa total $m_C$) se desliza libremente sobre una pista horizontal con coeficiente de fricción cinética $\mu_k$​. Una cuerda conecta el sensor a un bloque de masa $m_B$​ que cuelga verticalmente a través de una polea. La cuerda y la polea son ideales (sin masa, sin fricción). Al soltar el bloque:[^MIT-OpenCourseWare_8]

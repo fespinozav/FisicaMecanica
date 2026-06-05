@@ -63,6 +63,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/mechanics/problemas_aplicados';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
@@ -170,6 +172,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad4.html">Unidad 4: Dinámica de la partícula</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad5.html">Unidad 5: Trabajo y energía mecánica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad6.html">Unidad 6: Dinámica de un sistema de partículas</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad7.html">Unidad 7: Impulso y momentum lineal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utem/unidad8.html">Unidad 8: Estática del sólido rígido</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utem/guias_trabajo.html">Guias de trabajo</a></li>
@@ -373,6 +376,33 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proyectos-o-evaluaciones-integradoras">Proyectos o evaluaciones integradoras</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vinculo-con-las-guias-del-curso">Vinculo con las guias del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criterios-de-calidad-para-una-buena-entrega">Criterios de calidad para una buena entrega</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-integrador-unidades-16">Ejercicio Integrador: Unidades 1–6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-del-problema">Datos del problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramas-de-cuerpo-libre">Diagramas de cuerpo libre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-a-vector-posicion-al-final-del-empuje">Parte A — Vector posición al final del empuje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-b-aceleracion-y-velocidad-al-final-del-empuje">Parte B — Aceleración y velocidad al final del empuje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segunda-ley-de-newton-sobre-el-eje-hat-j">Segunda Ley de Newton sobre el eje <span class="math notranslate nohighlight">\(\hat{j}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cinematica-1d-velocidad-al-final-del-empuje">Cinemática 1D — velocidad al final del empuje</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-c-velocidad-del-fragmento-2-conservacion-de-momentum">Parte C — Velocidad del fragmento 2 (conservación de momentum)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-d-velocidad-del-fragmento-2-en-la-altura-maxima">Parte D — Velocidad del fragmento 2 en la altura máxima</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-e-energia-mecanica">Parte E — Energía mecánica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajo-neto-durante-el-empuje">Trabajo neto durante el empuje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-potencial-en-el-punto-de-separacion">Energía potencial en el punto de separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-mecanica-total-en-el-instante-de-la-separacion">Energía mecánica total en el instante de la separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-cinetica-de-cada-fragmento-justo-despues-de-la-separacion">Energía cinética de cada fragmento justo después de la separación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-f-posicion-del-cm-y-trayectoria-post-separacion">Parte F — Posición del CM y trayectoria post-separación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-del-cm-en-el-instante-de-la-separacion">Posición del CM en el instante de la separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-del-cm-post-separacion">Velocidad del CM post-separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria-del-cm-despues-de-la-separacion">Trayectoria del CM después de la separación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-tabla-de-casos-limite">Verificación: tabla de casos límite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica-global">Interpretación física global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python</a></li>
 </ul>
             </nav>
         </div>
@@ -452,6 +482,544 @@
 <li><p>Explicar el significado fisico de la respuesta final.</p></li>
 </ul>
 </section>
+<hr class="docutils" />
+<section id="ejercicio-integrador-unidades-16">
+<h2>Ejercicio Integrador: Unidades 1–6<a class="headerlink" href="#ejercicio-integrador-unidades-16" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Problema integrador</p>
+<p>Un cohete de masa total <span class="math notranslate nohighlight">\(M = 12{,}0\ \text{kg}\)</span> es lanzado verticalmente desde el suelo
+con velocidad inicial <span class="math notranslate nohighlight">\(v_0 = 0\)</span>. Sus motores generan una fuerza de empuje constante
+<span class="math notranslate nohighlight">\(F = 180{,}0\ \text{N}\)</span> durante una fase de ascenso de <span class="math notranslate nohighlight">\(h_1 = 80{,}0\ \text{m}\)</span>.
+Al alcanzar esa altura, el cohete se separa en dos fragmentos iguales
+(<span class="math notranslate nohighlight">\(m_1 = m_2 = 6{,}0\ \text{kg}\)</span>):
+el <strong>fragmento 1</strong> sale despedido horizontalmente con <span class="math notranslate nohighlight">\(\vec{v}_1 = +15{,}0\,\hat{i}\ \text{m/s}\)</span>,
+y el <strong>fragmento 2</strong> continúa moviéndose.</p>
+<p>Determinar:</p>
+<p><strong>(A)</strong> El vector posición del CM al final de la fase de empuje. <em>(Unidad 1)</em></p>
+<p><strong>(B)</strong> La aceleración neta y la velocidad del cohete al final del empuje. <em>(Unidades 2 y 4)</em></p>
+<p><strong>©</strong> La velocidad vectorial del fragmento 2 justo después de la separación. <em>(Unidad 6)</em></p>
+<p><strong>(D)</strong> La velocidad del fragmento 2 cuando alcanza su altura máxima. <em>(Unidad 3)</em></p>
+<p><strong>(E)</strong> La energía mecánica total del sistema en el instante de la separación
+y la energía cinética de cada fragmento. <em>(Unidad 5)</em></p>
+<p><strong>(F)</strong> La posición del CM en el instante de la separación y su trayectoria posterior. <em>(Unidad 6)</em></p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="datos-del-problema">
+<h2>Datos del problema<a class="headerlink" href="#datos-del-problema" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Símbolo</p></th>
+<th class="head text-center"><p>Valor</p></th>
+<th class="head text-center"><p>Unidad</p></th>
+<th class="head text-center"><p>Unidad de origen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(M\)</span></p></td>
+<td class="text-center"><p>12,0</p></td>
+<td class="text-center"><p>kg</p></td>
+<td class="text-center"><p>—</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="text-center"><p>180,0</p></td>
+<td class="text-center"><p>N</p></td>
+<td class="text-center"><p>U4 — Dinámica</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(h_1\)</span></p></td>
+<td class="text-center"><p>80,0</p></td>
+<td class="text-center"><p>m</p></td>
+<td class="text-center"><p>U2 — Cinemática 1D</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td class="text-center"><p>9,8</p></td>
+<td class="text-center"><p>m/s²</p></td>
+<td class="text-center"><p>U4 — Dinámica</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(v_0\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>m/s</p></td>
+<td class="text-center"><p>U2 — Cinemática 1D</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(m_1 = m_2\)</span></p></td>
+<td class="text-center"><p>6,0</p></td>
+<td class="text-center"><p>kg</p></td>
+<td class="text-center"><p>U6 — Sistema de partículas</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(v_{1x}\)</span></p></td>
+<td class="text-center"><p>+15,0</p></td>
+<td class="text-center"><p>m/s</p></td>
+<td class="text-center"><p>U6 — Sistema de partículas</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="diagramas-de-cuerpo-libre">
+<h2>Diagramas de cuerpo libre<a class="headerlink" href="#diagramas-de-cuerpo-libre" title="Link to this heading">#</a></h2>
+<svg width="100%" viewBox="0 0 680 980" role="img"
+     xmlns="http://www.w3.org/2000/svg"
+     style="font-family: sans-serif; font-size: 12px;">
+  <title>Diagramas de cuerpo libre — Ejercicio integrador cohete bietápico</title>
+  <desc>Cuatro DCL: fase de empuje, fragmento 1, fragmento 2 y sistema CM post-separación</desc>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- ── DCL 1: Cohete completo ── -->
+  <rect x="40" y="30" width="600" height="26" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="340" y="47" text-anchor="middle" dominant-baseline="central"
+        font-weight="500" font-size="13">DCL fase 1 — Cohete completo durante el empuje (M = 12,0 kg)</text>
+
+  <line x1="340" y1="295" x2="340" y2="80"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="348" y="84" font-size="11" fill="#888">ĵ</text>
+  <line x1="240" y1="200" x2="460" y2="200"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="462" y="204" font-size="11" fill="#888">î</text>
+  <circle cx="340" cy="200" r="3" fill="#888"/>
+  <text x="328" y="215" font-size="11" fill="#888">O</text>
+
+  <!-- Cohete -->
+  <polygon points="340,115 315,170 365,170"
+           fill="#e8e8e8" stroke="#555" stroke-width="1.2"/>
+  <rect x="315" y="170" width="50" height="55" rx="3"
+        fill="#e8e8e8" stroke="#555" stroke-width="1.2"/>
+  <polygon points="325,225 340,255 355,225"
+           fill="#f5c542" stroke="#c8a000" stroke-width="0.8" opacity="0.9"/>
+
+  <!-- F empuje -->
+  <line x1="340" y1="200" x2="340" y2="100"
+        stroke="#0f6e56" stroke-width="2.2" marker-end="url(#arw)"/>
+  <rect x="350" y="94" width="135" height="20" rx="4"
+        fill="#e1f5ee" opacity="0.9"/>
+  <text x="355" y="107" font-size="11" fill="#0f6e56">F = 180,0 N ↑ (empuje)</text>
+
+  <!-- W peso -->
+  <line x1="340" y1="200" x2="340" y2="280"
+        stroke="#993c1d" stroke-width="2.2" marker-end="url(#arw)"/>
+  <rect x="350" y="275" width="170" height="20" rx="4"
+        fill="#faece7" opacity="0.9"/>
+  <text x="355" y="288" font-size="11" fill="#993c1d">W = Mg = 117,6 N ↓ (peso)</text>
+
+  <!-- a_cm -->
+  <line x1="260" y1="200" x2="260" y2="152"
+        stroke="#534ab7" stroke-width="2"
+        stroke-dasharray="5 3" marker-end="url(#arw)"/>
+  <text x="172" y="165" font-size="11" fill="#534ab7">a = 5,2 m/s² ↑</text>
+
+  <!-- Cajas resultado -->
+  <rect x="40" y="290" width="270" height="36" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="52" y="305" font-size="11">ΣF = F − W = 62,4 N</text>
+  <text x="52" y="318" font-size="11">a = ΣF / M = 5,2 m/s²</text>
+
+  <rect x="370" y="290" width="270" height="36" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="382" y="305" font-size="11">v_A² = 2 a h₁ = 832 m²/s²</text>
+  <text x="382" y="318" font-size="11">v_A = 28,8 m/s ĵ</text>
+
+  <!-- Separador -->
+  <line x1="40" y1="348" x2="640" y2="348"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="6 4"/>
+
+  <!-- ── DCL 2a: Fragmento 1 ── -->
+  <rect x="40" y="362" width="600" height="26" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="340" y="379" text-anchor="middle" dominant-baseline="central"
+        font-weight="500" font-size="13">DCL fase 2a — Fragmento 1 (m₁ = 6,0 kg, proyectil)</text>
+
+  <line x1="220" y1="580" x2="220" y2="420"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="228" y="424" font-size="11" fill="#888">ĵ</text>
+  <line x1="130" y1="510" x2="320" y2="510"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="322" y="514" font-size="11" fill="#888">î</text>
+  <circle cx="220" cy="510" r="3" fill="#888"/>
+
+  <rect x="196" y="476" width="48" height="38" rx="5"
+        fill="#e8e8e8" stroke="#555" stroke-width="1.2"/>
+  <text x="220" y="498" text-anchor="middle" font-size="11">m₁</text>
+
+  <line x1="220" y1="510" x2="220" y2="575"
+        stroke="#993c1d" stroke-width="2.2" marker-end="url(#arw)"/>
+  <text x="230" y="580" font-size="11" fill="#993c1d">W₁ = 58,8 N ↓</text>
+
+  <line x1="220" y1="495" x2="295" y2="495"
+        stroke="#0f6e56" stroke-width="2"
+        stroke-dasharray="5 3" marker-end="url(#arw)"/>
+  <text x="230" y="488" font-size="11" fill="#0f6e56">v₁ = +15,0 î m/s</text>
+
+  <rect x="40" y="598" width="300" height="48" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="52" y="614" font-size="11">Solo actúa W₁ (proyectil sin roce)</text>
+  <text x="52" y="628" font-size="11">Trayectoria parabólica.</text>
+  <text x="52" y="642" font-size="11">En altura máx.: v_y = 0, v_x = +15,0 m/s</text>
+
+  <!-- ── DCL 2b: Fragmento 2 ── -->
+  <line x1="520" y1="580" x2="520" y2="420"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="528" y="424" font-size="11" fill="#888">ĵ</text>
+  <line x1="390" y1="510" x2="620" y2="510"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="622" y="514" font-size="11" fill="#888">î</text>
+  <circle cx="520" cy="510" r="3" fill="#888"/>
+
+  <rect x="496" y="476" width="48" height="38" rx="5"
+        fill="#e8e8e8" stroke="#555" stroke-width="1.2"/>
+  <text x="520" y="498" text-anchor="middle" font-size="11">m₂</text>
+
+  <line x1="520" y1="510" x2="520" y2="575"
+        stroke="#993c1d" stroke-width="2.2" marker-end="url(#arw)"/>
+  <text x="530" y="580" font-size="11" fill="#993c1d">W₂ = 58,8 N ↓</text>
+
+  <line x1="520" y1="510" x2="520" y2="432"
+        stroke="#0f6e56" stroke-width="2"
+        stroke-dasharray="5 3" marker-end="url(#arw)"/>
+  <text x="530" y="440" font-size="11" fill="#0f6e56">v₂y = +57,6 m/s ↑</text>
+
+  <line x1="520" y1="495" x2="440" y2="495"
+        stroke="#534ab7" stroke-width="2"
+        stroke-dasharray="5 3" marker-end="url(#arw)"/>
+  <text x="348" y="489" font-size="11" fill="#534ab7">v₂x = −15,0 m/s ←</text>
+
+  <rect x="360" y="598" width="280" height="48" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="372" y="614" font-size="11">Solo actúa W₂ (proyectil sin roce)</text>
+  <text x="372" y="628" font-size="11">v⃗₂ = −15,0 î + 57,6 ĵ m/s</text>
+  <text x="372" y="642" font-size="11">Por conservación de momentum</text>
+
+  <!-- Separador -->
+  <line x1="40" y1="664" x2="640" y2="664"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="6 4"/>
+
+  <!-- ── DCL Sistema CM post-separación ── -->
+  <rect x="40" y="678" width="600" height="26" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="340" y="695" text-anchor="middle" dominant-baseline="central"
+        font-weight="500" font-size="13">DCL sistema — CM post-separación (M = 12,0 kg)</text>
+
+  <line x1="340" y1="900" x2="340" y2="730"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="348" y="734" font-size="11" fill="#888">ĵ</text>
+  <line x1="230" y1="830" x2="460" y2="830"
+        stroke="#b0b0b0" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="462" y="834" font-size="11" fill="#888">î</text>
+  <circle cx="340" cy="830" r="5" fill="#534ab7" opacity="0.75"/>
+  <text x="350" y="846" font-size="11" fill="#534ab7">CM</text>
+
+  <line x1="340" y1="830" x2="340" y2="900"
+        stroke="#993c1d" stroke-width="2.2" marker-end="url(#arw)"/>
+  <text x="350" y="910" font-size="11" fill="#993c1d">W = Mg = 117,6 N ↓</text>
+
+  <line x1="340" y1="830" x2="340" y2="760"
+        stroke="#534ab7" stroke-width="2"
+        stroke-dasharray="5 3" marker-end="url(#arw)"/>
+  <text x="350" y="754" font-size="11" fill="#534ab7">v_cm = 28,8 ĵ m/s (conservada)</text>
+
+  <rect x="196" y="806" width="42" height="30" rx="4"
+        fill="#e8e8e8" stroke="#b0b0b0" stroke-width="0.8" opacity="0.55"/>
+  <text x="217" y="824" text-anchor="middle" font-size="10" opacity="0.55">m₁</text>
+
+  <rect x="412" y="806" width="42" height="30" rx="4"
+        fill="#e8e8e8" stroke="#b0b0b0" stroke-width="0.8" opacity="0.55"/>
+  <text x="433" y="824" text-anchor="middle" font-size="10" opacity="0.55">m₂</text>
+
+  <rect x="40" y="918" width="600" height="46" rx="6"
+        fill="#f5f5f5" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="340" y="936" text-anchor="middle" font-size="11">
+    Las fuerzas internas (explosión) no modifican el estado del CM.
+  </text>
+  <text x="340" y="952" text-anchor="middle" font-size="11">
+    Solo W actúa sobre el sistema → el CM sigue trayectoria de proyectil vertical.
+  </text>
+</svg></section>
+<hr class="docutils" />
+<section id="parte-a-vector-posicion-al-final-del-empuje">
+<h2>Parte A — Vector posición al final del empuje<a class="headerlink" href="#parte-a-vector-posicion-al-final-del-empuje" title="Link to this heading">#</a></h2>
+<p><strong>Unidad 1: vectores y sistema de referencia</strong></p>
+<p>El cohete asciende verticalmente. El origen se ubica en el punto de lanzamiento con <span class="math notranslate nohighlight">\(\hat{j}\)</span> apuntando hacia arriba.</p>
+<div class="math notranslate nohighlight" id="equation-i-1">
+<span class="eqno">(22)<a class="headerlink" href="#equation-i-1" title="Link to this equation">#</a></span>\[
+\vec{r}_A = h_1\,\hat{j} = \boxed{80{,}0\,\hat{j}\ \text{m}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="parte-b-aceleracion-y-velocidad-al-final-del-empuje">
+<h2>Parte B — Aceleración y velocidad al final del empuje<a class="headerlink" href="#parte-b-aceleracion-y-velocidad-al-final-del-empuje" title="Link to this heading">#</a></h2>
+<p><strong>Unidad 4: Segunda Ley de Newton | Unidad 2: cinemática 1D (M.R.U.A.)</strong></p>
+<section id="segunda-ley-de-newton-sobre-el-eje-hat-j">
+<h3>Segunda Ley de Newton sobre el eje <span class="math notranslate nohighlight">\(\hat{j}\)</span><a class="headerlink" href="#segunda-ley-de-newton-sobre-el-eje-hat-j" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-i-2">
+<span class="eqno">(23)<a class="headerlink" href="#equation-i-2" title="Link to this equation">#</a></span>\[
+F - Mg = Ma
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-3">
+<span class="eqno">(24)<a class="headerlink" href="#equation-i-3" title="Link to this equation">#</a></span>\[
+a = \frac{F - Mg}{M} = \frac{180{,}0 - (12{,}0)(9{,}8)}{12{,}0} = \frac{180{,}0 - 117{,}6}{12{,}0} = \frac{62{,}4}{12{,}0}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-4">
+<span class="eqno">(25)<a class="headerlink" href="#equation-i-4" title="Link to this equation">#</a></span>\[
+\boxed{a = 5{,}2\ \text{m/s}^2\ \hat{j}}
+\]</div>
+</section>
+<section id="cinematica-1d-velocidad-al-final-del-empuje">
+<h3>Cinemática 1D — velocidad al final del empuje<a class="headerlink" href="#cinematica-1d-velocidad-al-final-del-empuje" title="Link to this heading">#</a></h3>
+<p>Desde reposo (<span class="math notranslate nohighlight">\(v_0 = 0\)</span>) con aceleración constante <span class="math notranslate nohighlight">\(a\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-i-5">
+<span class="eqno">(26)<a class="headerlink" href="#equation-i-5" title="Link to this equation">#</a></span>\[
+v_A^2 = v_0^2 + 2a\,h_1 = 0 + 2(5{,}2)(80{,}0) = 832{,}0\ \text{m}^2/\text{s}^2
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-6">
+<span class="eqno">(27)<a class="headerlink" href="#equation-i-6" title="Link to this equation">#</a></span>\[
+\boxed{v_A = 28{,}8\ \text{m/s}\ \hat{j}}
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="parte-c-velocidad-del-fragmento-2-conservacion-de-momentum">
+<h2>Parte C — Velocidad del fragmento 2 (conservación de momentum)<a class="headerlink" href="#parte-c-velocidad-del-fragmento-2-conservacion-de-momentum" title="Link to this heading">#</a></h2>
+<p><strong>Unidad 6: sistema de partículas</strong></p>
+<p>En el instante de la separación solo actúan fuerzas internas (explosión). Por lo tanto el sistema es aislado en ese instante y el momentum se conserva:</p>
+<div class="math notranslate nohighlight" id="equation-i-7">
+<span class="eqno">(28)<a class="headerlink" href="#equation-i-7" title="Link to this equation">#</a></span>\[
+\vec{P}_i = M\,v_A\,\hat{j} = (12{,}0)(28{,}8)\,\hat{j} = 345{,}6\,\hat{j}\ \text{kg·m/s}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-8">
+<span class="eqno">(29)<a class="headerlink" href="#equation-i-8" title="Link to this equation">#</a></span>\[
+\vec{P}_f = m_1\vec{v}_1 + m_2\vec{v}_2 = \vec{P}_i
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-9">
+<span class="eqno">(30)<a class="headerlink" href="#equation-i-9" title="Link to this equation">#</a></span>\[
+345{,}6\,\hat{j} = (6{,}0)(15{,}0\,\hat{i}) + (6{,}0)\vec{v}_2
+\]</div>
+<p><strong>Componente <span class="math notranslate nohighlight">\(\hat{i}\)</span>:</strong></p>
+<div class="math notranslate nohighlight" id="equation-i-10">
+<span class="eqno">(31)<a class="headerlink" href="#equation-i-10" title="Link to this equation">#</a></span>\[
+0 = 90{,}0 + 6{,}0\,v_{2x} \implies v_{2x} = -15{,}0\ \text{m/s}
+\]</div>
+<p><strong>Componente <span class="math notranslate nohighlight">\(\hat{j}\)</span>:</strong></p>
+<div class="math notranslate nohighlight" id="equation-i-11">
+<span class="eqno">(32)<a class="headerlink" href="#equation-i-11" title="Link to this equation">#</a></span>\[
+345{,}6 = 0 + 6{,}0\,v_{2y} \implies v_{2y} = 57{,}6\ \text{m/s}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-12">
+<span class="eqno">(33)<a class="headerlink" href="#equation-i-12" title="Link to this equation">#</a></span>\[
+\boxed{\vec{v}_2 = -15{,}0\,\hat{i} + 57{,}6\,\hat{j}\ \text{m/s}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="parte-d-velocidad-del-fragmento-2-en-la-altura-maxima">
+<h2>Parte D — Velocidad del fragmento 2 en la altura máxima<a class="headerlink" href="#parte-d-velocidad-del-fragmento-2-en-la-altura-maxima" title="Link to this heading">#</a></h2>
+<p><strong>Unidad 3: cinemática bidimensional (proyectil)</strong></p>
+<p>El fragmento 2 es un proyectil bajo gravedad. En la altura máxima, la componente vertical se anula. La componente horizontal se conserva (sin rozamiento del aire):</p>
+<div class="math notranslate nohighlight" id="equation-i-13">
+<span class="eqno">(34)<a class="headerlink" href="#equation-i-13" title="Link to this equation">#</a></span>\[
+v_{2y}(t_{top}) = 0
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-14">
+<span class="eqno">(35)<a class="headerlink" href="#equation-i-14" title="Link to this equation">#</a></span>\[
+v_{2x}(t_{top}) = -15{,}0\ \text{m/s}\ (\text{constante})
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-15">
+<span class="eqno">(36)<a class="headerlink" href="#equation-i-15" title="Link to this equation">#</a></span>\[
+\boxed{\vec{v}_2\big|_{max} = -15{,}0\,\hat{i}\ \text{m/s}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="parte-e-energia-mecanica">
+<h2>Parte E — Energía mecánica<a class="headerlink" href="#parte-e-energia-mecanica" title="Link to this heading">#</a></h2>
+<p><strong>Unidad 5: trabajo y energía mecánica</strong></p>
+<section id="trabajo-neto-durante-el-empuje">
+<h3>Trabajo neto durante el empuje<a class="headerlink" href="#trabajo-neto-durante-el-empuje" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-i-16">
+<span class="eqno">(37)<a class="headerlink" href="#equation-i-16" title="Link to this equation">#</a></span>\[
+W_{neto} = W_{empuje} + W_{gravedad} = F\,h_1 - Mg\,h_1
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-17">
+<span class="eqno">(38)<a class="headerlink" href="#equation-i-17" title="Link to this equation">#</a></span>\[
+W_{neto} = (180{,}0)(80{,}0) - (12{,}0)(9{,}8)(80{,}0) = 14\,400 - 9\,408 = 4\,992\ \text{J}
+\]</div>
+<p>Verificación con el teorema trabajo-energía:</p>
+<div class="math notranslate nohighlight" id="equation-i-18">
+<span class="eqno">(39)<a class="headerlink" href="#equation-i-18" title="Link to this equation">#</a></span>\[
+\Delta K = \tfrac{1}{2}Mv_A^2 - 0 = \tfrac{1}{2}(12{,}0)(832{,}0) = 4\,992\ \text{J} \quad \checkmark
+\]</div>
+</section>
+<section id="energia-potencial-en-el-punto-de-separacion">
+<h3>Energía potencial en el punto de separación<a class="headerlink" href="#energia-potencial-en-el-punto-de-separacion" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-i-19">
+<span class="eqno">(40)<a class="headerlink" href="#equation-i-19" title="Link to this equation">#</a></span>\[
+U_A = Mgh_1 = (12{,}0)(9{,}8)(80{,}0) = 9\,408\ \text{J}
+\]</div>
+</section>
+<section id="energia-mecanica-total-en-el-instante-de-la-separacion">
+<h3>Energía mecánica total en el instante de la separación<a class="headerlink" href="#energia-mecanica-total-en-el-instante-de-la-separacion" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-i-20">
+<span class="eqno">(41)<a class="headerlink" href="#equation-i-20" title="Link to this equation">#</a></span>\[
+E_A = K_A + U_A = 4\,992 + 9\,408 = \boxed{14\,400\ \text{J}}
+\]</div>
+<p>Este valor coincide con el trabajo entregado por los motores, consistente con el balance energético total.</p>
+</section>
+<section id="energia-cinetica-de-cada-fragmento-justo-despues-de-la-separacion">
+<h3>Energía cinética de cada fragmento justo después de la separación<a class="headerlink" href="#energia-cinetica-de-cada-fragmento-justo-despues-de-la-separacion" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-i-21">
+<span class="eqno">(42)<a class="headerlink" href="#equation-i-21" title="Link to this equation">#</a></span>\[
+K_1 = \tfrac{1}{2}m_1\,v_1^2 = \tfrac{1}{2}(6{,}0)(15{,}0)^2 = \boxed{675\ \text{J}}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-22">
+<span class="eqno">(43)<a class="headerlink" href="#equation-i-22" title="Link to this equation">#</a></span>\[
+K_2 = \tfrac{1}{2}m_2\,|\vec{v}_2|^2 = \tfrac{1}{2}(6{,}0)\left[(15{,}0)^2 + (57{,}6)^2\right] = 3(225 + 3\,317{,}8) = \boxed{10\,628\ \text{J}}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-23">
+<span class="eqno">(44)<a class="headerlink" href="#equation-i-23" title="Link to this equation">#</a></span>\[
+K_1 + K_2 = 11\,303\ \text{J} &gt; K_A = 4\,992\ \text{J}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>La diferencia <span class="math notranslate nohighlight">\(\Delta K = 6\,311\ \text{J}\)</span> proviene de la energía química liberada por la explosión.
+Las fuerzas internas sí pueden hacer trabajo sobre las partes individuales del sistema,
+aunque no modifican el estado del CM.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="parte-f-posicion-del-cm-y-trayectoria-post-separacion">
+<h2>Parte F — Posición del CM y trayectoria post-separación<a class="headerlink" href="#parte-f-posicion-del-cm-y-trayectoria-post-separacion" title="Link to this heading">#</a></h2>
+<p><strong>Unidad 6: dinámica del sistema de partículas</strong></p>
+<section id="posicion-del-cm-en-el-instante-de-la-separacion">
+<h3>Posición del CM en el instante de la separación<a class="headerlink" href="#posicion-del-cm-en-el-instante-de-la-separacion" title="Link to this heading">#</a></h3>
+<p>Ambos fragmentos parten del mismo punto <span class="math notranslate nohighlight">\(\vec{r}_A\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-i-24">
+<span class="eqno">(45)<a class="headerlink" href="#equation-i-24" title="Link to this equation">#</a></span>\[
+\vec{r}_{cm}\big|_A = \frac{m_1\vec{r}_A + m_2\vec{r}_A}{M} = \vec{r}_A = \boxed{80{,}0\,\hat{j}\ \text{m}}
+\]</div>
+</section>
+<section id="velocidad-del-cm-post-separacion">
+<h3>Velocidad del CM post-separación<a class="headerlink" href="#velocidad-del-cm-post-separacion" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-i-25">
+<span class="eqno">(46)<a class="headerlink" href="#equation-i-25" title="Link to this equation">#</a></span>\[
+\vec{v}_{cm} = \frac{m_1\vec{v}_1 + m_2\vec{v}_2}{M}
+= \frac{(6{,}0)(15{,}0\,\hat{i}) + (6{,}0)(-15{,}0\,\hat{i} + 57{,}6\,\hat{j})}{12{,}0}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-i-26">
+<span class="eqno">(47)<a class="headerlink" href="#equation-i-26" title="Link to this equation">#</a></span>\[
+\vec{v}_{cm} = \frac{0\,\hat{i} + 345{,}6\,\hat{j}}{12{,}0} = \boxed{28{,}8\,\hat{j}\ \text{m/s}}
+\]</div>
+<p>La velocidad del CM es exactamente <span class="math notranslate nohighlight">\(v_A\,\hat{j}\)</span>: la explosión no la modificó.</p>
+</section>
+<section id="trayectoria-del-cm-despues-de-la-separacion">
+<h3>Trayectoria del CM después de la separación<a class="headerlink" href="#trayectoria-del-cm-despues-de-la-separacion" title="Link to this heading">#</a></h3>
+<p>Después de la separación, la única fuerza externa sobre el sistema es la gravedad <span class="math notranslate nohighlight">\(\vec{W} = -Mg\,\hat{j}\)</span>. Por la Segunda Ley para sistemas:</p>
+<div class="math notranslate nohighlight" id="equation-i-27">
+<span class="eqno">(48)<a class="headerlink" href="#equation-i-27" title="Link to this equation">#</a></span>\[
+\sum\vec{F}_{ext} = M\vec{a}_{cm} \implies \vec{a}_{cm} = -g\,\hat{j}
+\]</div>
+<p>El CM sigue una trayectoria de proyectil <strong>vertical</strong> idéntica a la de una partícula de masa <span class="math notranslate nohighlight">\(M\)</span> lanzada con <span class="math notranslate nohighlight">\(v_A\,\hat{j}\)</span> desde <span class="math notranslate nohighlight">\(h_1\)</span>, independientemente del caos interno de la explosión.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="verificacion-tabla-de-casos-limite">
+<h2>Verificación: tabla de casos límite<a class="headerlink" href="#verificacion-tabla-de-casos-limite" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Condición</p></th>
+<th class="head text-left"><p>Predicción</p></th>
+<th class="head text-center"><p>Consistencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(F = Mg\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(a = 0\)</span>, el cohete no despega</p></td>
+<td class="text-center"><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(m_1 \to 0\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\vec{v}_2 \to v_A\,\hat{j}\)</span>, sin cambio en el CM</p></td>
+<td class="text-center"><p>✓</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Fragmentos con velocidades iguales</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\vec{v}_{cm}\)</span> post-explosión = <span class="math notranslate nohighlight">\(v_A\,\hat{j}\)</span></p></td>
+<td class="text-center"><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_1 + K_2 = K_A\)</span></p></td>
+<td class="text-left"><p>Separación sin energía interna liberada</p></td>
+<td class="text-center"><p>✓ (caso especial)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(h_1 \to 0\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(v_A \to 0\)</span>, sistema no acumula energía</p></td>
+<td class="text-center"><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="interpretacion-fisica-global">
+<h2>Interpretación física global<a class="headerlink" href="#interpretacion-fisica-global" title="Link to this heading">#</a></h2>
+<p>Este ejercicio ilustra la jerarquía conceptual de la mecánica clásica de partículas:</p>
+<p>El <strong>sistema de referencia y los vectores</strong> (U1) son el lenguaje en que se expresan todas las demás unidades. La <strong>cinemática</strong> (U2, U3) describe el movimiento sin preguntar por sus causas. La <strong>dinámica</strong> (U4) conecta causas (fuerzas) con efectos (aceleraciones). El <strong>trabajo y la energía</strong> (U5) ofrecen un camino alternativo —escalar— para obtener velocidades sin resolver ecuaciones diferenciales. Finalmente, la <strong>dinámica de sistemas</strong> (U6) revela que el CM es un observador impasible del caos interno: las fuerzas internas, por intensas que sean, no pueden mover al CM si no hay fuerza externa neta.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><strong>Referencias:</strong>
+Malthe-Sørenssen, A. (2015). <em>Elementary Mechanics Using Python</em>. Springer.
+§7 (proyectiles), §9 (Segunda Ley), §10 (trabajo y energía), §13 (sistemas de partículas).</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="codigo-python">
+<h2>Código Python<a class="headerlink" href="#codigo-python" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># ── Datos ──────────────────────────────────────────────────</span>
+<span class="n">M</span>  <span class="o">=</span> <span class="mf">12.0</span>   <span class="c1"># kg — masa total del cohete</span>
+<span class="n">F</span>  <span class="o">=</span> <span class="mf">180.0</span>  <span class="c1"># N  — fuerza de empuje</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="mf">80.0</span>   <span class="c1"># m  — altura de la fase de empuje</span>
+<span class="n">g</span>  <span class="o">=</span> <span class="mf">9.8</span>    <span class="c1"># m/s²</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="mf">6.0</span>    <span class="c1"># kg — masa fragmento 1</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="mf">6.0</span>    <span class="c1"># kg — masa fragmento 2</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>   <span class="c1"># m/s — velocidad fragmento 1 (î)</span>
+
+<span class="c1"># ── Parte B: aceleración y velocidad al final del empuje ───</span>
+<span class="n">W_cohete</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">g</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="n">W_cohete</span><span class="p">)</span> <span class="o">/</span> <span class="n">M</span>
+<span class="n">vA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">h1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Aceleración: a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m/s²&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Velocidad final empuje: vA = </span><span class="si">{</span><span class="n">vA</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Parte C: velocidad fragmento 2 ─────────────────────────</span>
+<span class="n">P_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">M</span> <span class="o">*</span> <span class="n">vA</span><span class="p">])</span>       <span class="c1"># momentum antes</span>
+<span class="n">P_frag1</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">v1</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_i</span> <span class="o">-</span> <span class="n">P_frag1</span><span class="p">)</span> <span class="o">/</span> <span class="n">m2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Velocidad fragmento 2: v2 = </span><span class="si">{</span><span class="n">v2</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Parte D: velocidad frag 2 en altura máxima ─────────────</span>
+<span class="n">v2_top</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Velocidad frag 2 en altura máxima: </span><span class="si">{</span><span class="n">v2_top</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Parte E: energías ──────────────────────────────────────</span>
+<span class="n">KA</span>   <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">M</span> <span class="o">*</span> <span class="n">vA</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">UA</span>   <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">h1</span>
+<span class="n">EA</span>   <span class="o">=</span> <span class="n">KA</span> <span class="o">+</span> <span class="n">UA</span>
+<span class="n">K1</span>   <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v1</span><span class="p">)</span>
+<span class="n">K2</span>   <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="n">dK</span>   <span class="o">=</span> <span class="n">K1</span> <span class="o">+</span> <span class="n">K2</span> <span class="o">-</span> <span class="n">KA</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energía mecánica total en separación: EA = </span><span class="si">{</span><span class="n">EA</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> J&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;K1 = </span><span class="si">{</span><span class="n">K1</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> J  |  K2 = </span><span class="si">{</span><span class="n">K2</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> J&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energía liberada por explosión: ΔK = </span><span class="si">{</span><span class="n">dK</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> J&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Parte F: velocidad del CM post-separación ──────────────</span>
+<span class="n">v_cm</span> <span class="o">=</span> <span class="p">(</span><span class="n">m1</span> <span class="o">*</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">*</span> <span class="n">v2</span><span class="p">)</span> <span class="o">/</span> <span class="n">M</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Velocidad CM post-separación: v_cm = </span><span class="si">{</span><span class="n">v_cm</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coincide con vA ĵ: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">v_cm</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">vA</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -530,6 +1098,33 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proyectos-o-evaluaciones-integradoras">Proyectos o evaluaciones integradoras</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vinculo-con-las-guias-del-curso">Vinculo con las guias del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criterios-de-calidad-para-una-buena-entrega">Criterios de calidad para una buena entrega</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-integrador-unidades-16">Ejercicio Integrador: Unidades 1–6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-del-problema">Datos del problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramas-de-cuerpo-libre">Diagramas de cuerpo libre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-a-vector-posicion-al-final-del-empuje">Parte A — Vector posición al final del empuje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-b-aceleracion-y-velocidad-al-final-del-empuje">Parte B — Aceleración y velocidad al final del empuje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segunda-ley-de-newton-sobre-el-eje-hat-j">Segunda Ley de Newton sobre el eje <span class="math notranslate nohighlight">\(\hat{j}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cinematica-1d-velocidad-al-final-del-empuje">Cinemática 1D — velocidad al final del empuje</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-c-velocidad-del-fragmento-2-conservacion-de-momentum">Parte C — Velocidad del fragmento 2 (conservación de momentum)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-d-velocidad-del-fragmento-2-en-la-altura-maxima">Parte D — Velocidad del fragmento 2 en la altura máxima</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-e-energia-mecanica">Parte E — Energía mecánica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajo-neto-durante-el-empuje">Trabajo neto durante el empuje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-potencial-en-el-punto-de-separacion">Energía potencial en el punto de separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-mecanica-total-en-el-instante-de-la-separacion">Energía mecánica total en el instante de la separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-cinetica-de-cada-fragmento-justo-despues-de-la-separacion">Energía cinética de cada fragmento justo después de la separación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-f-posicion-del-cm-y-trayectoria-post-separacion">Parte F — Posición del CM y trayectoria post-separación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-del-cm-en-el-instante-de-la-separacion">Posición del CM en el instante de la separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-del-cm-post-separacion">Velocidad del CM post-separación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria-del-cm-despues-de-la-separacion">Trayectoria del CM después de la separación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-tabla-de-casos-limite">Verificación: tabla de casos límite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-fisica-global">Interpretación física global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python</a></li>
 </ul>
   </nav></div>
 

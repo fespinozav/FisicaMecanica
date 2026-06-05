@@ -687,6 +687,313 @@ plt.show()
 ```
 ---
 
+# Ejercicios Resueltos — Unidad 6: Dinámica de un sistema de partículas
+
+## Ejercicio 6.1 — Centro de masa de un sistema unidimensional
+
+```{admonition} Problema 6.1
+:class: tip
+
+Tres partículas se encuentran distribuidas sobre el eje $x$:
+
+| Partícula | Masa $m_i$ (kg) | Posición $x_i$ (m) |
+|:---------:|:---------------:|:-------------------:|
+| 1         | 2,0             | 0,0                 |
+| 2         | 4,0             | 3,0                 |
+| 3         | 6,0             | 8,0                 |
+
+Calcule la posición del centro de masa del sistema.
+```
+
+### Diagrama conceptual
+
+Las partículas están ordenadas sobre el eje $x$. Como $m_3 > m_2 > m_1$, se espera que el centro de masa quede desplazado hacia la derecha, más cerca de $m_3$.
+
+$$
+\underbrace{\bullet}_{\substack{m_1=2\,\text{kg}\\x_1=0}}
+\quad\longrightarrow\quad
+\underbrace{\bullet}_{\substack{m_2=4\,\text{kg}\\x_2=3\,\text{m}}}
+\quad\longrightarrow\quad
+\underbrace{\star}_{x_{cm}=?}
+\quad\longrightarrow\quad
+\underbrace{\bullet}_{\substack{m_3=6\,\text{kg}\\x_3=8\,\text{m}}}
+$$
+
+### Marco conceptual
+
+Para un sistema de $N$ partículas distribuidas sobre el eje $x$, la posición del centro de masa se define como el promedio ponderado de las posiciones individuales:
+
+$$
+x_{cm} = \frac{\displaystyle\sum_{i=1}^{N} m_i\, x_i}{\displaystyle\sum_{i=1}^{N} m_i}
+$$ (6.1.1)
+
+### Datos del problema
+
+$$
+m_1 = 2{,}0\ \text{kg},\quad x_1 = 0{,}0\ \text{m}
+$$
+
+$$
+m_2 = 4{,}0\ \text{kg},\quad x_2 = 3{,}0\ \text{m}
+$$
+
+$$
+m_3 = 6{,}0\ \text{kg},\quad x_3 = 8{,}0\ \text{m}
+$$
+
+### Desarrollo
+
+**Paso 1.** Calcular la masa total del sistema:
+
+$$
+M = m_1 + m_2 + m_3 = 2{,}0 + 4{,}0 + 6{,}0 = 12{,}0\ \text{kg}
+$$ (6.1.2)
+
+**Paso 2.** Calcular el numerador de la expresión (6.1.1):
+
+$$
+\sum_{i=1}^{3} m_i\, x_i = (2{,}0)(0{,}0) + (4{,}0)(3{,}0) + (6{,}0)(8{,}0)
+= 0 + 12{,}0 + 48{,}0 = 60{,}0\ \text{kg}\cdot\text{m}
+$$ (6.1.3)
+
+**Paso 3.** Sustituir en (6.1.1):
+
+$$
+x_{cm} = \frac{60{,}0\ \text{kg}\cdot\text{m}}{12{,}0\ \text{kg}} = \boxed{5{,}0\ \text{m}}
+$$ (6.1.4)
+
+### Verificación: casos límite
+
+| Condición                    | Predicción teórica             | Consistencia |
+|:-----------------------------|:-------------------------------|:------------:|
+| $m_3 \to 0$                  | $x_{cm} \to \frac{(2)(0)+(4)(3)}{6} = 2{,}0\ \text{m}$ | ✓ |
+| $m_1 = m_2 = m_3$            | $x_{cm} = \frac{0+3+8}{3} \approx 3{,}67\ \text{m}$     | ✓ |
+| $m_1 \to \infty$             | $x_{cm} \to 0\ \text{m}$      | ✓ |
+
+### Interpretación física
+
+El centro de masa se ubica en $x_{cm} = 5{,}0\ \text{m}$, claramente más cerca de $m_3 = 6{,}0\ \text{kg}$ ubicada en $x = 8{,}0\ \text{m}$ que de las demás. Esto confirma que el centro de masa es un promedio ponderado: las partículas más masivas «atraen» al punto representativo del sistema hacia su posición. Nótese que $x_{cm}$ no coincide con ninguna de las partículas, sino que es una propiedad emergente del sistema en su conjunto.
+
+```{note}
+**Referencia:** Malthe-Sørenssen, A. (2015). *Elementary Mechanics Using Python*. Springer. §13.1, ec. (13.1).
+```
+
+---
+
+## Ejercicio 6.2 — Conservación de la velocidad del centro de masa en un sistema aislado
+
+```{admonition} Problema 6.2
+:class: tip
+
+Un patinador de masa $M = 60{,}0\ \text{kg}$ se encuentra en reposo sobre una superficie horizontal sin fricción. Lanza horizontalmente un paquete de masa $m_p = 10{,}0\ \text{kg}$ con velocidad $\vec{v}_p = -8{,}0\,\hat{i}\ \text{m/s}$ (hacia la izquierda).
+
+(a) Determine la velocidad del patinador inmediatamente después del lanzamiento.
+
+(b) Verifique que la velocidad del centro de masa del sistema se conserva antes y después del lanzamiento.
+```
+
+### Diagrama de cuerpo libre del sistema
+
+```
+Antes:              [patinador + paquete]  →  en reposo
+                           M_total = 70 kg
+                           v_i = 0
+
+Después:     [paquete] ←←←        →→→  [patinador]
+              v_p = −8,0 m/s             v_s = ?
+```
+
+### Marco conceptual
+
+El sistema está aislado: la superficie no ejerce fricción, y las fuerzas de contacto entre patinador y paquete son **internas** al sistema. Por tanto:
+
+$$
+\sum \vec{F}_{ext} = 0 \implies \vec{P} = \text{constante}
+$$ (6.2.1)
+
+La velocidad del centro de masa también se conserva:
+
+$$
+\vec{v}_{cm} = \frac{\vec{P}}{M_{total}} = \text{constante}
+$$ (6.2.2)
+
+### Datos del problema
+
+$$
+M = 60{,}0\ \text{kg},\quad m_p = 10{,}0\ \text{kg},\quad M_{total} = 70{,}0\ \text{kg}
+$$
+
+$$
+\vec{v}_i = 0\ \text{m/s},\quad \vec{v}_p = -8{,}0\,\hat{i}\ \text{m/s}
+$$
+
+### Desarrollo
+
+#### Parte (a): Velocidad del patinador
+
+**Paso 1.** Calcular el momentum inicial del sistema:
+
+$$
+\vec{P}_i = M_{total}\,\vec{v}_i = (70{,}0\ \text{kg})(0) = 0\ \text{kg}\cdot\text{m/s}
+$$ (6.2.3)
+
+**Paso 2.** Plantear la conservación del momentum (de (6.2.1)):
+
+$$
+\vec{P}_f = m_p\,\vec{v}_p + M\,\vec{v}_s = \vec{P}_i = 0
+$$ (6.2.4)
+
+**Paso 3.** Despejar $\vec{v}_s$:
+
+$$
+M\,\vec{v}_s = -m_p\,\vec{v}_p = -(10{,}0)(-8{,}0)\,\hat{i} = +80{,}0\,\hat{i}\ \text{kg}\cdot\text{m/s}
+$$ (6.2.5)
+
+$$
+\vec{v}_s = \frac{80{,}0}{60{,}0}\,\hat{i} = \boxed{+1{,}33\,\hat{i}\ \text{m/s}}
+$$ (6.2.6)
+
+El patinador se mueve hacia la derecha, como exige la conservación del momentum.
+
+#### Parte (b): Verificación de la velocidad del CM
+
+**Antes del lanzamiento:**
+
+$$
+\vec{v}_{cm,i} = \frac{M_{total}\,(0)}{M_{total}} = 0\ \text{m/s}
+$$ (6.2.7)
+
+**Después del lanzamiento:**
+
+$$
+\vec{v}_{cm,f} = \frac{m_p\,\vec{v}_p + M\,\vec{v}_s}{M_{total}} = \frac{(10{,}0)(-8{,}0) + (60{,}0)(+1{,}33)}{70{,}0}
+$$ (6.2.8)
+
+$$
+\vec{v}_{cm,f} = \frac{-80{,}0 + 80{,}0}{70{,}0} = \frac{0}{70{,}0} = \boxed{0\ \text{m/s}}
+$$ (6.2.9)
+
+### Verificación: casos límite
+
+| Condición                          | Predicción               | Consistencia |
+|:-----------------------------------|:-------------------------|:------------:|
+| $m_p \to 0$                        | $v_s \to 0$              | ✓ |
+| $m_p = M$ (masas iguales)          | $v_s = -v_p = +8{,}0\ \text{m/s}$ | ✓ |
+| $v_p \to 0$                        | $v_s \to 0$              | ✓ |
+
+### Interpretación física
+
+Aunque el lanzamiento es un evento violento que cambia drásticamente los estados de movimiento internos del sistema, el centro de masa permanece en reposo durante todo el proceso. Esto ilustra el principio central de la dinámica de sistemas: **las fuerzas internas no pueden modificar el movimiento del centro de masa**. Solo una fuerza externa neta podría hacerlo. El CM actúa como un observador impasible del caos interno.
+
+```{note}
+**Referencia:** Malthe-Sørenssen, A. (2015). *Elementary Mechanics Using Python*. Springer. §13.3, ec. (13.18)–(13.20).
+```
+
+---
+
+## Ejercicio 6.3 — Dinámica del CM bajo fuerza externa: sistema de dos bloques
+
+```{admonition} Problema 6.3
+:class: tip
+
+Dos bloques de masas $m_1 = 3{,}0\ \text{kg}$ y $m_2 = 5{,}0\ \text{kg}$ reposan sobre una superficie horizontal sin fricción, conectados por un hilo inextensible de masa despreciable. Se aplica una fuerza horizontal $F = 16{,}0\ \text{N}$ sobre el bloque $m_2$.
+
+(a) Calcule la aceleración del centro de masa del sistema.
+
+(b) Determine la tensión $T$ en el hilo.
+
+(c) Verifique el resultado aplicando la segunda ley de Newton a cada bloque individualmente.
+```
+
+### Diagrama de cuerpo libre
+
+```
+          T →  [m₁ = 3 kg] ——hilo—— [m₂ = 5 kg]  ← F = 16 N
+
+Fuerzas externas sobre el sistema: solo F (la tensión T es interna)
+```
+
+### Marco conceptual
+
+Para el sistema completo, las fuerzas de tensión son **internas** y se cancelan. La segunda ley de Newton para el sistema de partículas es:
+
+$$
+\sum \vec{F}_{ext} = M\,\vec{a}_{cm}
+$$ (6.3.1)
+
+donde $M = m_1 + m_2$ es la masa total y $\vec{a}_{cm}$ es la aceleración del centro de masa.
+
+### Datos del problema
+
+$$
+m_1 = 3{,}0\ \text{kg},\quad m_2 = 5{,}0\ \text{kg},\quad F = 16{,}0\ \text{N}
+$$
+
+### Desarrollo
+
+#### Parte (a): Aceleración del CM
+
+**Paso 1.** Calcular la masa total:
+
+$$
+M = m_1 + m_2 = 3{,}0 + 5{,}0 = 8{,}0\ \text{kg}
+$$ (6.3.2)
+
+**Paso 2.** Aplicar (6.3.1) al sistema completo. La única fuerza externa horizontal es $F$:
+
+$$
+F = M\,a_{cm}
+$$ (6.3.3)
+
+**Paso 3.** Despejar $a_{cm}$:
+
+$$
+a_{cm} = \frac{F}{M} = \frac{16{,}0\ \text{N}}{8{,}0\ \text{kg}} = \boxed{2{,}0\ \text{m/s}^2}
+$$ (6.3.4)
+
+#### Parte (b): Tensión en el hilo
+
+Dado que el hilo es inextensible, ambos bloques tienen la misma aceleración $a = a_{cm} = 2{,}0\ \text{m/s}^2$. Aplicando la segunda ley de Newton al bloque $m_1$ como subsistema (la única fuerza horizontal sobre él es la tensión $T$):
+
+$$
+T = m_1\,a_{cm} = (3{,}0\ \text{kg})(2{,}0\ \text{m/s}^2) = \boxed{6{,}0\ \text{N}}
+$$ (6.3.5)
+
+#### Parte (c): Verificación sobre $m_2$
+
+Aplicando la segunda ley de Newton al bloque $m_2$ (recibe $F$ hacia la derecha y $T$ hacia la izquierda):
+
+$$
+F - T = m_2\,a_{cm}
+$$ (6.3.6)
+
+$$
+16{,}0 - 6{,}0 = (5{,}0)(2{,}0)
+$$ (6.3.7)
+
+$$
+10{,}0\ \text{N} = 10{,}0\ \text{N} \quad \checkmark
+$$ (6.3.8)
+
+### Verificación: casos límite
+
+| Condición                        | Predicción                             | Consistencia |
+|:---------------------------------|:---------------------------------------|:------------:|
+| $m_1 \to 0$                      | $T \to 0$, $a_{cm} \to F/m_2$         | ✓ |
+| $m_2 \to \infty$                 | $a_{cm} \to 0$, $T \to 0$             | ✓ |
+| $F = 0$                          | $a_{cm} = 0$, $T = 0$                 | ✓ |
+| $m_1 = m_2 = 4{,}0\ \text{kg}$  | $a_{cm} = 2{,}0\ \text{m/s}^2$, $T = 8{,}0\ \text{N}$ | ✓ |
+
+### Interpretación física
+
+Este problema ilustra la potencia del enfoque de sistemas: al tratar el conjunto como una sola entidad, se obtiene la aceleración del CM directamente desde la fuerza externa, sin necesidad de conocer los detalles de la interacción interna (la tensión). Una vez conocida la aceleración global, se puede «bajar» al nivel de cada partícula individual para encontrar las fuerzas internas. Esta estrategia de dos niveles —sistema global primero, subsistema después— es el método canónico de análisis en dinámica de sistemas de partículas.
+
+```{note}
+**Referencia:** Malthe-Sørenssen, A. (2015). *Elementary Mechanics Using Python*. Springer. §13.2, ec. (13.10)–(13.12).
+```
+
+---
+
 ## Conceptos clave
 
 - sistema de partículas

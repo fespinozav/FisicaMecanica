@@ -450,7 +450,7 @@ $$
 g \approx 9.8 \text{ m/s}^2
 $$
 
-#### Si el eje positivo apunta hacia arriba
+### Si el eje positivo apunta hacia arriba
 
 Entonces:
 
@@ -460,19 +460,19 @@ $$
 
 Las ecuaciones quedan:
 
-#### Velocidad
+### Velocidad
 
 $$
 v(t) = v_0 - gt
 $$
 
-#### Posición
+### Posición
 
 $$
 y(t) = y_0 + v_0 t - \frac{1}{2}gt^2
 $$
 
-#### Relación entre velocidad y posición
+### Relación entre velocidad y posición
 
 $$
 v^2 = v_0^2 - 2g(y - y_0)
