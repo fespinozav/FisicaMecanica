@@ -63,10 +63,8 @@ Los materiales principales del curso se articulan en cuatro capas:
 
 Dentro del book y del repositorio, el recorrido principal queda organizado asi:
 
-- [Introduccion y objetivos del curso](contents/phy321/intro.md)
 - [Programacion oficial del curso](contents/presentations/PROGRAMACION_MECANICA_CLASICA.pdf)
 - [Fundamentos previos: vectores, coordenadas y operadores basicos](contents/phy321/fundamentos_previos.md)
-- [Unidad 0: Presentacion, reglamentos y politicas](contents/utem/unidad0.md)
 - [Unidad 1: Sistema de unidades, magnitudes y vectores](contents/utem/unidad1.md)
 - [Unidad 2: Cinemática de la partícula en una dimensión](contents/utem/unidad2.md)
 - [Unidad 3: Cinemática bidimensional de la partícula](contents/utem/unidad3.md)
@@ -76,8 +74,6 @@ Dentro del book y del repositorio, el recorrido principal queda organizado asi:
 - [Unidad 7: Impulso y momento lineal](contents/utem/unidad7.md)
 - [Unidad 8: Estática del sólido rígido](contents/utem/unidad8.md)
 - [Anexo 1: Serway y Jewett como apoyo bibliografico](contents/phy321/serway_apoyo.md)
-- [Anexo 2: Criterios editoriales y uso de materiales](contents/phy321/source_attribution.md)
-- [Anexo 3: Mecánica elemental con Python](contents/utem/mechpython)
 
 El bloque de contenidos principales del ebook cubre:
 

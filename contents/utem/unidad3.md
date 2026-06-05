@@ -309,7 +309,7 @@ $$\vec{v}=\vec{\omega} \times \vec{r} = \frac{d\theta}{dt}\vec{k} \times r\vec{r
 ```{figure} ../images/angular_vel1.png
 ---
 width: 40%
-name: mcu
+name: angular-vel1
 ---
 Diagrama de la velocidad angular
 ```
@@ -317,7 +317,7 @@ Diagrama de la velocidad angular
 ```{figure} ../images/angular_vel2.png
 ---
 width: 40%
-name: mcu
+name: mcu-negativo
 ---
 Diagrama de la velocidad angular en sentido negativo
 ```

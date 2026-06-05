@@ -438,7 +438,7 @@ $$e = - \frac{v_{2f} - v_{1f}}{v_{2i} - v_{1i}} = - \frac{3.33 - 1.0}{0 - 6.0} =
 Como $0 < e < 1$, clasificamos formalmente este evento como una **Colisión Inelástica.**
 
 
-#### Código para Colab:
+### Código para Colab:
 
 Este script grafica la fuerza del impacto y la evolución en tiempo real de las velocidades y momenta de ambas partículas durante el milisegundo del choque.
 
@@ -494,7 +494,7 @@ plt.show()
 
 ```
 
-#### Dato interesante:
+### Dato interesante:
 
 Si observas con detenimiento el gráfico de la derecha obtenido al correr el código, notarás que aproximadamente en $t \approx 0.065 \text{ s}$, la curva azul ($m_1$) y la curva naranja ($m_2$) se cruzan. En ese instante exacto, **ambas masas se mueven a la misma velocidad ($\approx 2.4 \text{ m/s}$)**. 
 

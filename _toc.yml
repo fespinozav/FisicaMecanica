@@ -24,7 +24,6 @@ parts:
   numbered: False
   chapters:
   - file: contents/mechanics/problemas_aplicados
-  - file: contents/utem/pruebas_anteriores
   - file: contents/utem/sim_cinematica_2d
   - file: contents/utem/sim_movimiento_circular
   - file: contents/utem/sim_plano_inclinado
