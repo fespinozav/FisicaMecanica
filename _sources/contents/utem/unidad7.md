@@ -281,8 +281,6 @@ En toda colisión aislada se conserva el momentum lineal total.
 
 Sin embargo, la energía cinética no siempre se conserva. Según esto, las colisiones se clasifican en distintos tipos.
 
-![alt text](image.png)
-
 ```{figure} ../images/elastic.png
 ---
 width: 50%
