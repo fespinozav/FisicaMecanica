@@ -70,7 +70,7 @@ Cuando el atleta arquea la espalda sobre la barra, su centro de masa en realidad
 
 ```{figure} ../images/flop.png
 ---
-width: 30%
+width: 60%
 name: flop
 ---
 ```
