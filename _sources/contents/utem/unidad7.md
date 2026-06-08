@@ -6,6 +6,13 @@ En esta unidad se estudia el momentum lineal como una magnitud fundamental del m
 
 Además, se introduce el principio de conservación de la cantidad de movimiento, una herramienta central para el estudio de sistemas de partículas y colisiones.
 
+```{figure} ../images/Newtons_cradle_animation_book.gif
+---
+width: 60%
+name: Newtons_cradle_animation_book
+---
+```
+
 ## Objetivo de aprendizaje
 
 Al finalizar esta unidad, el estudiante será capaz de:
@@ -80,6 +87,13 @@ Esto explica por qué el momentum es especialmente útil para analizar choques e
 
 El impulso cuantifica el efecto global de una fuerza que actúa sobre un cuerpo durante un intervalo de tiempo.
 
+```{figure} ../images/impulso.jpeg
+---
+width: 60%
+name: impulso
+---
+```
+
 Para una fuerza media aplicada durante un intervalo $\Delta t$, se define como:
 
 $$
@@ -101,6 +115,13 @@ $$
 $$
 
 es decir, las mismas unidades que el momentum lineal.
+
+```{figure} ../images/raqueta.png
+---
+width: 60%
+name: raqueta
+---
+```
 
 ---
 
@@ -129,6 +150,13 @@ $$
 - si el impulso es grande, el cambio de momentum será grande;
 - si la fuerza actúa durante más tiempo, puede producir un mayor cambio de momentum;
 - una fuerza intensa en poco tiempo puede tener el mismo efecto que una fuerza menor actuando durante más tiempo.
+
+```{figure} ../images/12.png
+---
+width: 40%
+name: baseball
+---
+```
 
 ---
 
@@ -197,6 +225,13 @@ $$
 ### Interpretación física
 
 Aunque las partículas del sistema choquen, se separen o cambien sus velocidades, el momentum total del sistema se conserva si no hay fuerzas externas netas.
+
+```{figure} ../images/fefc4a61013a11dfcc092c656e87b86f36ebaab2.webp
+---
+width: 40%
+name: momemtum2
+---
+```
 
 ---
 
