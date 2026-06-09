@@ -17,12 +17,12 @@ name: Newtons_cradle_animation_book
 
 Al finalizar esta unidad, el estudiante será capaz de:
 
-- definir e interpretar el momentum lineal de una partícula;
-- relacionar impulso y cambio de momentum;
-- aplicar la forma impulsiva de la Segunda Ley de Newton;
-- comprender el principio de conservación del momentum lineal;
-- resolver problemas de retroceso y colisiones unidimensionales;
-- distinguir entre colisiones elásticas, inelásticas y perfectamente inelásticas.
+- Definir e interpretar el momentum lineal de una partícula
+- relacionar impulso y cambio de momentum
+- Aplicar la forma impulsiva de la Segunda Ley de Newton
+- Comprender el principio de conservación del momentum lineal
+- resolver problemas de retroceso y colisiones unidimensionales
+- Distinguir entre colisiones elásticas, inelásticas y perfectamente inelásticas.
 
 ---
 
@@ -32,8 +32,8 @@ Cuando una fuerza actúa sobre un cuerpo durante un cierto intervalo de tiempo, 
 
 Para ello se introducen dos conceptos clave:
 
-- el **momentum lineal** o cantidad de movimiento;
-- el **impulso**.
+- El **momentum lineal** o cantidad de movimiento.
+- El **impulso**.
 
 ---
 
@@ -54,9 +54,9 @@ donde:
 
 ### Propiedades
 
-- es una magnitud vectorial;
-- tiene la misma dirección y sentido que la velocidad;
-- aumenta si aumenta la masa o la rapidez.
+- Es una magnitud vectorial.
+- Tiene la misma dirección y sentido que la velocidad.
+- Aumenta si aumenta la masa o la rapidez.
 
 ### Unidad de medida
 
@@ -76,8 +76,8 @@ El momentum lineal da una medida de qué tan difícil es cambiar el movimiento d
 
 Por ejemplo:
 
-- un objeto muy masivo moviéndose lentamente puede tener un momentum importante;
-- un objeto liviano moviéndose muy rápido también puede tener un momentum considerable.
+- Un objeto muy masivo moviéndose lentamente puede tener un momentum importante.
+- Un objeto liviano moviéndose muy rápido también puede tener un momentum considerable.
 
 Esto explica por qué el momentum es especialmente útil para analizar choques e impactos.
 
@@ -147,9 +147,9 @@ $$
 
 ### Interpretación física
 
-- si el impulso es grande, el cambio de momentum será grande;
-- si la fuerza actúa durante más tiempo, puede producir un mayor cambio de momentum;
-- una fuerza intensa en poco tiempo puede tener el mismo efecto que una fuerza menor actuando durante más tiempo.
+- Si el impulso es grande, el cambio de momentum será grande.
+- Si la fuerza actúa durante más tiempo, puede producir un mayor cambio de momentum.
+- Una fuerza intensa en poco tiempo puede tener el mismo efecto que una fuerza menor actuando durante más tiempo.
 
 ```{figure} ../images/12.png
 ---
@@ -184,8 +184,8 @@ Si la fuerza no es constante, el impulso corresponde al área bajo la curva en u
 
 Conceptualmente:
 
-- mayor área bajo la curva implica mayor impulso;
-- el signo del área determina el signo del impulso;
+- mayor área bajo la curva implica mayor impulso.
+- el signo del área determina el signo del impulso.
 - el impulso sigue siendo igual al cambio de momentum.
 
 ---
@@ -294,8 +294,8 @@ name: elastic
 
 En una colisión elástica se conservan:
 
-- el momentum lineal;
-- la energía cinética.
+- El momentum lineal.
+- La energía cinética.
 
 Para dos cuerpos en una dimensión:
 
@@ -337,8 +337,8 @@ $$
 
 Parte de la energía cinética se transforma en otras formas de energía, por ejemplo:
 
-- calor;
-- deformaciones;
+- calor.
+- deformaciones.
 - sonido.
 
 ---
@@ -383,9 +383,9 @@ $$
 
 ### Casos importantes
 
-- $e = 1$: colisión elástica;
-- $0 < e < 1$: colisión inelástica;
-- $e = 0$: colisión perfectamente inelástica.
+- $e = 1$: colisión elástica
+- $0 < e < 1$: colisión inelástica
+- $e = 0$: colisión perfectamente inelástica
 
 ---
 
@@ -395,8 +395,8 @@ Durante una colisión, los cuerpos ejercen fuerzas mutuamente durante un tiempo 
 
 Por la Tercera Ley de Newton:
 
-- las fuerzas internas son iguales y opuestas;
-- los impulsos internos también son iguales y opuestos.
+- las fuerzas internas son iguales y opuestas
+- los impulsos internos también son iguales y opuestos
 
 Esto explica por qué el momentum total del sistema se conserva en ausencia de fuerzas externas.
 
@@ -406,12 +406,12 @@ Esto explica por qué el momentum total del sistema se conserva en ausencia de f
 
 Los conceptos de impulso y momentum lineal permiten analizar situaciones como:
 
-- deportes de impacto;
-- choque entre vehículos;
-- retroceso de armas o cañones;
-- colisiones entre masas;
-- explosiones;
-- separación o unión de cuerpos.
+- deportes de impacto
+- choque entre vehículos
+- retroceso de armas o cañones
+- colisiones entre masas
+- explosiones
+- separación o unión de cuerpos
 
 En muchos casos, el enfoque basado en momentum es más útil que el enfoque basado en fuerzas, especialmente cuando las interacciones ocurren en tiempos muy cortos.
 
@@ -421,8 +421,8 @@ En muchos casos, el enfoque basado en momentum es más útil que el enfoque basa
 
 En esta unidad se estudiaron dos magnitudes fundamentales para describir interacciones mecánicas:
 
-- el momentum lineal, asociado al movimiento de una masa;
-- el impulso, asociado a la acción de una fuerza en el tiempo.
+- el momentum lineal, asociado al movimiento de una masa
+- el impulso, asociado a la acción de una fuerza en el tiempo
 
 También se introdujo el principio de conservación de la cantidad de movimiento, que permite resolver problemas de colisiones y sistemas aislados de manera directa.
 
