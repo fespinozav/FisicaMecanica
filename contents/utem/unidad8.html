@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=93a6d1e2" />
   
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sim_montana_rusa.html">Simulación montaña rusa con resorte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sim_sistema_particulas.html">Simulación: centro de masa de un sistema de partículas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sim_colisiones.html">Simulación: Colisiones y momentum lineal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim_estatica_barra.html">Simulación: Estática del sólido rígido — DCL interactivo</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bases de la mecanica</span></p>
 <ul class="nav bd-sidenav">
@@ -380,6 +381,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brazo-de-palanca">5. Brazo de palanca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquimedes-y-la-ley-de-la-palanca">Arquímedes y la ley de la palanca</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convencion-de-signos-para-el-torque">6. Convención de signos para el torque</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#torque-nulo">7. Torque nulo</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-la-fuerza-es-cero">a) La fuerza es cero</a></li>
@@ -407,6 +409,13 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">18. Síntesis de la unidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-la-unidad">Ejercicios de la unidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-analitico-1-barra-con-apoyo-y-carga-excentrica">Ejercicio analítico 1: barra con apoyo y carga excéntrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-analitico-2-escalera-apoyada-en-una-pared-lisa">Ejercicio analítico 2: escalera apoyada en una pared lisa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-analitico-3-rueda-con-multiples-torques">Ejercicio analítico 3: rueda con múltiples torques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-integrador-barra-articulada-con-cable-inclinado-y-carga-colgante">Ejercicio integrador: barra articulada con cable inclinado y carga colgante</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
 </ul>
             </nav>
@@ -423,18 +432,47 @@
 <h1>Unidad 8: Estática del sólido rígido<a class="headerlink" href="#unidad-8-estatica-del-solido-rigido" title="Link to this heading">#</a></h1>
 <section id="descripcion-general">
 <h2>Descripción general<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
+<p>La mecánica clásica estudia el movimiento y el equilibrio de los cuerpos materiales. Se organiza en tres grandes ramas, cada una con un enfoque distinto:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Rama</p></th>
+<th class="head"><p>Qué estudia</p></th>
+<th class="head"><p>Pregunta central</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Cinemática</strong></p></td>
+<td><p>El movimiento en sí mismo: posición, velocidad y aceleración, sin considerar las causas.</p></td>
+<td><p>¿Cómo se mueve el cuerpo?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dinámica</strong></p></td>
+<td><p>Las causas del movimiento. Relaciona fuerzas con aceleraciones mediante las leyes de Newton.</p></td>
+<td><p>¿Por qué se mueve (o acelera) el cuerpo?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Estática</strong></p></td>
+<td><p>Las condiciones bajo las cuales un cuerpo permanece en equilibrio, sin trasladarse ni rotar.</p></td>
+<td><p>¿Por qué el cuerpo no se mueve?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Esta unidad se centra en la <strong>estática del sólido rígido</strong>.</p>
 <p>En esta unidad se estudia el equilibrio de cuerpos rígidos. A diferencia del análisis de una partícula, aquí interesa no solo la traslación del cuerpo, sino también su posible rotación. Para ello se introduce el concepto de <strong>torque</strong> o <strong>momento de una fuerza</strong>, que mide la tendencia de una fuerza a producir un giro alrededor de un punto o eje.</p>
 <p>Se establecerán las condiciones necesarias para que un sólido rígido permanezca en equilibrio estático.</p>
+<figure class="align-default" id="instagram">
+<a class="reference internal image-reference" href="../../_images/insta_image.png"><img alt="../../_images/insta_image.png" src="../../_images/insta_image.png" style="width: 60%;" />
+</a>
+</figure>
 </section>
 <section id="objetivo-de-aprendizaje">
 <h2>Objetivo de aprendizaje<a class="headerlink" href="#objetivo-de-aprendizaje" title="Link to this heading">#</a></h2>
 <p>Al finalizar esta unidad, el estudiante será capaz de:</p>
 <ul class="simple">
-<li><p>comprender el concepto de torque y su significado físico;</p></li>
-<li><p>calcular el torque de una fuerza respecto de un punto o eje;</p></li>
-<li><p>aplicar la convención de signos para el sentido de rotación;</p></li>
-<li><p>identificar las condiciones de equilibrio estático;</p></li>
-<li><p>resolver problemas simples de barras y cuerpos rígidos en equilibrio.</p></li>
+<li><p>Comprender el concepto de torque y su significado físico.</p></li>
+<li><p>Calcular el torque de una fuerza respecto de un punto o eje.</p></li>
+<li><p>Aplicar la convención de signos para el sentido de rotación.</p></li>
+<li><p>Identificar las condiciones de equilibrio estático.</p></li>
+<li><p>Resolver problemas simples de barras y cuerpos rígidos en equilibrio.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -444,9 +482,15 @@
 <p>Cuando se trata de un sólido rígido, no basta con exigir que la fuerza neta sea cero. También es necesario que no exista tendencia a rotar.</p>
 <p>Por ello, en el estudio del equilibrio de un cuerpo rígido intervienen dos condiciones:</p>
 <ul class="simple">
-<li><p>equilibrio traslacional;</p></li>
-<li><p>equilibrio rotacional.</p></li>
+<li><p>Equilibrio traslacional.</p></li>
+<li><p>Equilibrio rotacional.</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Un libro descansa sobre una mesa. Ahora se le aplica una fuerza lateral en uno de sus extremos. Aunque la fuerza neta vertical puede ser cero, el libro tiende a rotar.</p>
+<p>¿Por qué no basta con exigir <span class="math notranslate nohighlight">\(\sum \vec{F} = 0\)</span> para garantizar el reposo?</p>
+<p><strong>Respuesta:</strong> esa condición solo asegura que no hay aceleración traslacional. Para que el libro quede completamente en reposo también debe cumplirse <span class="math notranslate nohighlight">\(\sum \tau = 0\)</span>, condición que controla la rotación.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="solido-rigido">
@@ -454,16 +498,30 @@
 <p>Un sólido rígido es un modelo ideal de cuerpo cuyas partículas mantienen distancias fijas entre sí, aun cuando actúen fuerzas externas.</p>
 <p>Aunque en la realidad todo cuerpo puede deformarse, este modelo es muy útil para estudiar:</p>
 <ul class="simple">
-<li><p>barras;</p></li>
-<li><p>vigas;</p></li>
-<li><p>balanzas;</p></li>
-<li><p>estructuras simples;</p></li>
-<li><p>cuerpos en equilibrio.</p></li>
+<li><p>Barras.</p></li>
+<li><p>Vigas.</p></li>
+<li><p>Balanzas.</p></li>
+<li><p>Estructuras simples.</p></li>
+<li><p>Cuerpos en equilibrio.</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Clasifique los siguientes objetos como sólidos rígidos (para un análisis estático típico) o no:</p>
+<ul class="simple">
+<li><p>Una viga de acero de 5 m sometida a cargas normales de construcción</p></li>
+<li><p>Una goma de borrar aplastada al apoyar la mano</p></li>
+<li><p>Una escalera de madera apoyada contra una pared</p></li>
+</ul>
+<p><strong>Respuesta:</strong> la viga y la escalera se modelan habitualmente como sólidos rígidos porque sus deformaciones son despreciables frente a sus dimensiones y a las fuerzas involucradas. La goma, en cambio, se deforma de manera apreciable y el modelo de sólido rígido no aplica en ese caso.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="torque-o-momento-de-una-fuerza">
 <h2>3. Torque o momento de una fuerza<a class="headerlink" href="#torque-o-momento-de-una-fuerza" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="fast-and-furious">
+<a class="reference internal image-reference" href="../../_images/200.gif"><img alt="../../_images/200.gif" src="../../_images/200.gif" style="width: 60%;" />
+</a>
+</figure>
 <p>El torque mide la tendencia de una fuerza a producir una rotación alrededor de un punto o eje.</p>
 <p>En forma vectorial se define como:</p>
 <div class="math notranslate nohighlight">
@@ -472,9 +530,13 @@
 \]</div>
 <p>donde:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\vec{r}\)</span> es el vector posición desde el eje o punto de giro hasta el punto de aplicación de la fuerza;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{r}\)</span> es el vector posición desde el eje o punto de giro hasta el punto de aplicación de la fuerza.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\vec{F}\)</span> es la fuerza aplicada.</p></li>
 </ul>
+<figure class="align-default" id="control-rot">
+<a class="reference internal image-reference" href="../../_images/Bolt-Torque-Control-Tips-1.jpg"><img alt="../../_images/Bolt-Torque-Control-Tips-1.jpg" src="../../_images/Bolt-Torque-Control-Tips-1.jpg" style="width: 40%;" />
+</a>
+</figure>
 <section id="magnitud-del-torque">
 <h3>Magnitud del torque<a class="headerlink" href="#magnitud-del-torque" title="Link to this heading">#</a></h3>
 <p>La magnitud del torque se calcula como:</p>
@@ -484,10 +546,14 @@
 \]</div>
 <p>donde:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(r\)</span> es la distancia desde el eje al punto de aplicación;</p></li>
-<li><p><span class="math notranslate nohighlight">\(F\)</span> es la magnitud de la fuerza;</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> es la distancia desde el eje al punto de aplicación.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F\)</span> es la magnitud de la fuerza.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo entre <span class="math notranslate nohighlight">\(\vec{r}\)</span> y <span class="math notranslate nohighlight">\(\vec{F}\)</span>.</p></li>
 </ul>
+<figure class="align-default" id="torque">
+<a class="reference internal image-reference" href="../../_images/torque_magnitud.png"><img alt="../../_images/torque_magnitud.png" src="../../_images/torque_magnitud.png" style="width: 60%;" />
+</a>
+</figure>
 </section>
 <section id="unidad-de-medida">
 <h3>Unidad de medida<a class="headerlink" href="#unidad-de-medida" title="Link to this heading">#</a></h3>
@@ -496,6 +562,19 @@
 \[
 \text{N}\cdot\text{m}
 \]</div>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una llave de torque aplica una fuerza de <span class="math notranslate nohighlight">\(F = 15\,\text{N}\)</span> sobre un perno, en un punto ubicado a <span class="math notranslate nohighlight">\(r = 0{,}4\,\text{m}\)</span> del eje de la tuerca. El ángulo entre la fuerza y el vector de posición es <span class="math notranslate nohighlight">\(\theta = 60°\)</span>. Calcule el torque producido.</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\tau = rF\sin\theta = 0{,}4 \times 15 \times \sin 60° = 6 \times \frac{\sqrt{3}}{2} \approx 5{,}2\,\text{N}\cdot\text{m}
+\]</div>
+</div>
+<figure class="align-default" id="torque1">
+<a class="reference internal image-reference" href="../../_images/unnamed.gif"><img alt="../../_images/unnamed.gif" src="../../_images/unnamed.gif" style="width: 60%;" />
+</a>
+</figure>
 </section>
 </section>
 <hr class="docutils" />
@@ -503,24 +582,46 @@
 <h2>4. Interpretación física del torque<a class="headerlink" href="#interpretacion-fisica-del-torque" title="Link to this heading">#</a></h2>
 <p>El torque depende de tres factores:</p>
 <ul class="simple">
-<li><p>la magnitud de la fuerza;</p></li>
-<li><p>la distancia al eje de rotación;</p></li>
-<li><p>el ángulo con que actúa la fuerza.</p></li>
+<li><p>La magnitud de la fuerza.</p></li>
+<li><p>La distancia al eje de rotación.</p></li>
+<li><p>El ángulo con que actúa la fuerza.</p></li>
 </ul>
 <section id="consecuencias">
 <h3>Consecuencias<a class="headerlink" href="#consecuencias" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>una fuerza más grande produce mayor tendencia al giro;</p></li>
-<li><p>una fuerza aplicada más lejos del eje produce mayor torque;</p></li>
-<li><p>si la fuerza actúa en la misma dirección de <span class="math notranslate nohighlight">\(\vec{r}\)</span>, el torque es cero.</p></li>
+<li><p>Una fuerza más grande produce mayor tendencia al giro.</p></li>
+<li><p>Una fuerza aplicada más lejos del eje produce mayor torque.</p></li>
+<li><p>Si la fuerza actúa en la misma dirección de <span class="math notranslate nohighlight">\(\vec{r}\)</span>, el torque es cero.</p></li>
 </ul>
 <p>Esto explica por qué resulta más fácil abrir una puerta empujando lejos de las bisagras que cerca de ellas.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una puerta tiene las bisagras en uno de sus extremos. Una persona A empuja con <span class="math notranslate nohighlight">\(10\,\text{N}\)</span> a <span class="math notranslate nohighlight">\(0{,}9\,\text{m}\)</span> de las bisagras, otra persona B empuja con la misma fuerza (<span class="math notranslate nohighlight">\(10\,\text{N}\)</span>) a <span class="math notranslate nohighlight">\(0{,}3\,\text{m}\)</span> de las bisagras. Compare los torques producidos.</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\tau_A = 10 \times 0{,}9 = 9\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_B = 10 \times 0{,}3 = 3\,\text{N}\cdot\text{m}
+\]</div>
+<p>Persona A produce un torque tres veces mayor que persona B a pesar de aplicar la misma fuerza. La diferencia radica únicamente en la distancia al eje.</p>
+</div>
+<figure class="align-default" id="torque2">
+<a class="reference internal image-reference" href="../../_images/IL_S_G10_U01_L05_03_05_09.png"><img alt="../../_images/IL_S_G10_U01_L05_03_05_09.png" src="../../_images/IL_S_G10_U01_L05_03_05_09.png" style="width: 50%;" />
+</a>
+</figure>
 </section>
 </section>
 <hr class="docutils" />
 <section id="brazo-de-palanca">
 <h2>5. Brazo de palanca<a class="headerlink" href="#brazo-de-palanca" title="Link to this heading">#</a></h2>
 <p>En muchos problemas, el torque puede calcularse usando el <strong>brazo de palanca</strong>, que es la distancia perpendicular desde el eje de rotación hasta la línea de acción de la fuerza.</p>
+<figure class="align-default" id="brazo-palanca">
+<a class="reference internal image-reference" href="../../_images/brazo_palanca.png"><img alt="../../_images/brazo_palanca.png" src="../../_images/brazo_palanca.png" style="width: 30%;" />
+</a>
+</figure>
 <p>Entonces:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -533,16 +634,82 @@
 \tau = rF\sin\theta
 \]</div>
 <p>y muchas veces resulta más intuitiva.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una fuerza de <span class="math notranslate nohighlight">\(F = 25\,\text{N}\)</span> actúa sobre un sistema con pivote. La distancia perpendicular desde el pivote hasta la línea de acción de la fuerza (brazo de palanca) es <span class="math notranslate nohighlight">\(d_\perp = 0{,}3\,\text{m}\)</span>. Calcule el torque.</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\tau = F\,d_\perp = 25 \times 0{,}3 = 7{,}5\,\text{N}\cdot\text{m}
+\]</div>
+<p>No fue necesario conocer el ángulo exacto entre la fuerza y <span class="math notranslate nohighlight">\(\vec{r}\)</span>: basta con la distancia perpendicular a la línea de acción.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="arquimedes-y-la-ley-de-la-palanca">
+<h2>Arquímedes y la ley de la palanca<a class="headerlink" href="#arquimedes-y-la-ley-de-la-palanca" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="arquimedes">
+<a class="reference internal image-reference" href="../../_images/Archimedes_lever,_vector_format.svg.png"><img alt="../../_images/Archimedes_lever%2C_vector_format.svg.png" src="../../_images/Archimedes_lever%2C_vector_format.svg.png" style="width: 50%;" />
+</a>
+</figure>
+<blockquote class="epigraph">
+<div><p>Dadme un punto de apoyo y moveré el mundo.</p>
+<p class="attribution">—Arquímedes de Siracusa (c. 287–212 a. C.)</p>
+</div></blockquote>
+<p>Arquímedes fue uno de los primeros en estudiar matemáticamente el equilibrio de la palanca. Su resultado principal, conocido como la <strong>ley de la palanca</strong>, establece que dos fuerzas verticales mantienen una palanca horizontal en equilibrio cuando los productos de cada fuerza por su distancia al pivote son iguales:</p>
+<div class="math notranslate nohighlight">
+\[
+F_1 \cdot d_1 = F_2 \cdot d_2
+\]</div>
+<p>Esta expresión es equivalente a la condición de equilibrio rotacional (<span class="math notranslate nohighlight">\(\sum \tau = 0\)</span>) aplicada al pivote: cada término <span class="math notranslate nohighlight">\(F_i \cdot d_i\)</span> es precisamente el torque de la fuerza <span class="math notranslate nohighlight">\(F_i\)</span> respecto del punto de apoyo.</p>
+<p>La frase de Arquímedes no era solo retórica: si se dispone de una palanca suficientemente larga y un punto de apoyo adecuado, una fuerza pequeña puede equilibrar un peso enormemente mayor, simplemente aplicándose a una distancia mucho mayor del pivote.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo resuelto</p>
+<p>Una palanca horizontal está apoyada en su pivote. A la izquierda, a <span class="math notranslate nohighlight">\(0{,}5\,\text{m}\)</span> del pivote, actúa un peso de <span class="math notranslate nohighlight">\(200\,\text{N}\)</span>. ¿A qué distancia del pivote, al lado derecho, debe aplicarse una fuerza de <span class="math notranslate nohighlight">\(50\,\text{N}\)</span> para mantener el equilibrio?</p>
+<p><strong>Solución:</strong></p>
+<p>Aplicando la ley de la palanca:</p>
+<div class="math notranslate nohighlight">
+\[
+F_1 \cdot d_1 = F_2 \cdot d_2 \implies 200 \times 0{,}5 = 50 \times d_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d_2 = \frac{200 \times 0{,}5}{50} = \frac{100}{50} = 2{,}0\,\text{m}
+\]</div>
+<p>Una fuerza cuatro veces menor necesita aplicarse cuatro veces más lejos del pivote para producir el mismo torque.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="convencion-de-signos-para-el-torque">
 <h2>6. Convención de signos para el torque<a class="headerlink" href="#convencion-de-signos-para-el-torque" title="Link to this heading">#</a></h2>
 <p>Para trabajar en dos dimensiones, se adopta una convención de signos:</p>
 <ul class="simple">
-<li><p>si la fuerza tiende a producir una rotación <strong>antihoraria</strong>, el torque es <strong>positivo</strong>;</p></li>
-<li><p>si la fuerza tiende a producir una rotación <strong>horaria</strong>, el torque es <strong>negativo</strong>.</p></li>
+<li><p>Si la fuerza tiende a producir una rotación <strong>antihoraria</strong>, el torque es <strong>positivo</strong>.</p></li>
+<li><p>Si la fuerza tiende a producir una rotación <strong>horaria</strong>, el torque es <strong>negativo</strong>.</p></li>
 </ul>
+<figure class="align-default" id="arquimedes1">
+<a class="reference internal image-reference" href="../../_images/Tendencia-de-giro-de-un-momento-en-2D.jpg"><img alt="../../_images/Tendencia-de-giro-de-un-momento-en-2D.jpg" src="../../_images/Tendencia-de-giro-de-un-momento-en-2D.jpg" style="width: 50%;" />
+</a>
+</figure>
 <p>Esta convención permite sumar algebraicamente los torques en problemas planos.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Sobre un pivote actúan dos fuerzas: <span class="math notranslate nohighlight">\(F_1 = 8\,\text{N}\)</span> a <span class="math notranslate nohighlight">\(0{,}5\,\text{m}\)</span> con tendencia antihoraria, y <span class="math notranslate nohighlight">\(F_2 = 12\,\text{N}\)</span> a <span class="math notranslate nohighlight">\(0{,}3\,\text{m}\)</span> con tendencia horaria. Determine la suma de torques y el sentido de rotación neto.</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\tau_1 = +8 \times 0{,}5 = +4{,}0\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_2 = -12 \times 0{,}3 = -3{,}6\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau = +4{,}0 + (-3{,}6) = +0{,}4\,\text{N}\cdot\text{m}
+\]</div>
+<p>El torque neto es positivo: la tendencia de rotación resultante es en sentido <strong>antihorario</strong>.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="torque-nulo">
@@ -579,6 +746,19 @@ r = 0
 \[
 \tau = 0
 \]</div>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Determine si el torque es nulo en cada caso:</p>
+<p>a) una fuerza de 10 N aplicada exactamente sobre el eje de rotación (<span class="math notranslate nohighlight">\(r = 0\)</span>)</p>
+<p>b) una fuerza de 0 N aplicada a 2 m del eje (<span class="math notranslate nohighlight">\(F = 0\)</span>)</p>
+<p>c) una fuerza de 5 N a 1 m del eje, con <span class="math notranslate nohighlight">\(\theta = 0°\)</span> (fuerza paralela a <span class="math notranslate nohighlight">\(\vec{r}\)</span>)</p>
+<p>d) una fuerza de 5 N a 1 m del eje, con <span class="math notranslate nohighlight">\(\theta = 90°\)</span></p>
+<p><strong>Respuesta:</strong></p>
+<p>a) <span class="math notranslate nohighlight">\(\tau = 0 \times 10 \times \sin\theta = 0\)</span> — torque nulo porque <span class="math notranslate nohighlight">\(r = 0\)</span></p>
+<p>b) <span class="math notranslate nohighlight">\(\tau = 2 \times 0 \times \sin\theta = 0\)</span> — torque nulo porque <span class="math notranslate nohighlight">\(F = 0\)</span></p>
+<p>c) <span class="math notranslate nohighlight">\(\tau = 1 \times 5 \times \sin 0° = 0\)</span> — torque nulo porque la fuerza es paralela al brazo</p>
+<p>d) <span class="math notranslate nohighlight">\(\tau = 1 \times 5 \times \sin 90° = 5\,\text{N}\cdot\text{m}\)</span> — torque no nulo; este es el ángulo de máxima eficiencia</p>
+</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -586,6 +766,10 @@ r = 0
 <h2>8. Equilibrio estático<a class="headerlink" href="#equilibrio-estatico" title="Link to this heading">#</a></h2>
 <p>Un cuerpo rígido está en equilibrio estático cuando permanece en reposo sin trasladarse ni rotar.</p>
 <p>Para que esto ocurra, deben cumplirse simultáneamente dos condiciones.</p>
+<figure class="align-default" id="equilibrio">
+<a class="reference internal image-reference" href="../../_images/equilibrio-mujer.jpg"><img alt="../../_images/equilibrio-mujer.jpg" src="../../_images/equilibrio-mujer.jpg" style="width: 60%;" />
+</a>
+</figure>
 <section id="condicion-1-equilibrio-traslacional">
 <h3>Condición 1: equilibrio traslacional<a class="headerlink" href="#condicion-1-equilibrio-traslacional" title="Link to this heading">#</a></h3>
 <p>La suma de todas las fuerzas que actúan sobre el cuerpo debe ser cero:</p>
@@ -603,6 +787,20 @@ r = 0
 \sum \tau = 0
 \]</div>
 <p>Esto garantiza que no haya aceleración angular.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una caja de 20 kg descansa sobre una mesa. Dos personas la sostienen: la primera ejerce <span class="math notranslate nohighlight">\(F_1 = 80\,\text{N}\)</span> hacia arriba y la segunda ejerce <span class="math notranslate nohighlight">\(F_2\)</span> también hacia arriba. Si el sistema está en equilibrio, determine <span class="math notranslate nohighlight">\(F_2\)</span>. (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p><strong>Solución:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+W = mg = 20 \times 10 = 200\,\text{N}
+\]</div>
+<p>Condición de equilibrio traslacional (eje vertical):</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_y = 0 \implies F_1 + F_2 - W = 0 \implies 80 + F_2 = 200 \implies F_2 = 120\,\text{N}
+\]</div>
+</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -618,6 +816,24 @@ r = 0
 \sum F_y = 0
 \]</div>
 <p>Estas ecuaciones permiten analizar las fuerzas horizontales y verticales por separado.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una lámpara de <span class="math notranslate nohighlight">\(m = 5\,\text{kg}\)</span> cuelga del techo mediante dos cables que forman <span class="math notranslate nohighlight">\(45°\)</span> con la horizontal. Por simetría, la tensión en cada cable es igual. Determine la tensión <span class="math notranslate nohighlight">\(T\)</span>. (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p><strong>Solución:</strong></p>
+<p>Por simetría, <span class="math notranslate nohighlight">\(T_1 = T_2 = T\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_x = 0: \quad T\cos 45° - T\cos 45° = 0 \quad \checkmark
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum F_y = 0: \quad 2T\sin 45° - mg = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+T = \frac{mg}{2\sin 45°} = \frac{5 \times 10}{2 \times \dfrac{\sqrt{2}}{2}} = \frac{50}{\sqrt{2}} \approx 35{,}4\,\text{N}
+\]</div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="equilibrio-rotacional">
@@ -632,6 +848,17 @@ r = 0
 <h3>Elección del punto de referencia<a class="headerlink" href="#eleccion-del-punto-de-referencia" title="Link to this heading">#</a></h3>
 <p>El punto respecto del cual se calculan torques puede elegirse de manera conveniente.</p>
 <p>Una buena elección puede simplificar mucho el problema, por ejemplo anulando el torque de fuerzas desconocidas que pasan por ese punto.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una barra horizontal de 4 m está articulada en su extremo izquierdo (pivote en A). Una fuerza de <span class="math notranslate nohighlight">\(30\,\text{N}\)</span> actúa hacia abajo a <span class="math notranslate nohighlight">\(1\,\text{m}\)</span> del pivote, y una fuerza <span class="math notranslate nohighlight">\(F\)</span> actúa hacia arriba a <span class="math notranslate nohighlight">\(3\,\text{m}\)</span>. Determine <span class="math notranslate nohighlight">\(F\)</span> para que haya equilibrio rotacional.</p>
+<p><strong>Solución:</strong></p>
+<p>Torques respecto de A (positivo = antihorario):</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau_A = 0: \quad F \times 3 - 30 \times 1 = 0 \implies F = \frac{30}{3} = 10\,\text{N}
+\]</div>
+<p>Al elegir el pivote como punto de referencia, la reacción en A queda fuera de la ecuación de torques.</p>
+</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -639,11 +866,11 @@ r = 0
 <h2>11. Procedimiento general para resolver problemas de estática<a class="headerlink" href="#procedimiento-general-para-resolver-problemas-de-estatica" title="Link to this heading">#</a></h2>
 <p>Para resolver un problema de equilibrio estático se recomienda:</p>
 <ol class="arabic simple">
-<li><p>identificar el cuerpo rígido que se analizará;</p></li>
-<li><p>construir el diagrama de cuerpo libre;</p></li>
-<li><p>elegir un sistema de ejes;</p></li>
-<li><p>elegir un punto de referencia para calcular torques;</p></li>
-<li><p>aplicar las ecuaciones de equilibrio:</p>
+<li><p>Identificar el cuerpo rígido que se analizará.</p></li>
+<li><p>Construir el diagrama de cuerpo libre.</p></li>
+<li><p>Elegir un sistema de ejes.</p></li>
+<li><p>Elegir un punto de referencia para calcular torques.</p></li>
+<li><p>Aplicar las ecuaciones de equilibrio:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\sum F_x = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\sum F_y = 0\)</span></p></li>
@@ -651,52 +878,132 @@ r = 0
 </ul>
 </li>
 </ol>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una tabla uniforme de 2 m y 4 kg está articulada en su extremo izquierdo (A) y sostenida por una cuerda vertical en su extremo derecho. Aplicando el procedimiento:</p>
+<ol class="arabic simple">
+<li><p>Cuerpo: la tabla.</p></li>
+<li><p>DCL: peso <span class="math notranslate nohighlight">\(W = 40\,\text{N}\)</span> en el centro (a 1 m de A), tensión <span class="math notranslate nohighlight">\(T\)</span> hacia arriba en el extremo derecho (a 2 m de A), reacción <span class="math notranslate nohighlight">\(\vec{R}_A\)</span> en el pivote.</p></li>
+<li><p>Ejes: <span class="math notranslate nohighlight">\(x\)</span> horizontal, <span class="math notranslate nohighlight">\(y\)</span> vertical.</p></li>
+<li><p>Punto de referencia: A (así <span class="math notranslate nohighlight">\(\vec{R}_A\)</span> no genera torque).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\sum\tau_A = 0\)</span>: <span class="math notranslate nohighlight">\(T \times 2 - 40 \times 1 = 0 \implies T = 20\,\text{N}\)</span>.</p></li>
+</ol>
+</div>
 </section>
 <hr class="docutils" />
 <section id="diagrama-de-cuerpo-libre-en-un-solido-rigido">
 <h2>12. Diagrama de cuerpo libre en un sólido rígido<a class="headerlink" href="#diagrama-de-cuerpo-libre-en-un-solido-rigido" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="camion">
+<a class="reference internal image-reference" href="../../_images/camion_sample.png"><img alt="../../_images/camion_sample.png" src="../../_images/camion_sample.png" style="width: 60%;" />
+</a>
+</figure>
 <p>El diagrama de cuerpo libre de un sólido rígido debe incluir:</p>
 <ul class="simple">
-<li><p>todas las fuerzas externas que actúan sobre el cuerpo;</p></li>
-<li><p>sus puntos de aplicación;</p></li>
-<li><p>las distancias relevantes al eje o punto de giro.</p></li>
+<li><p>Todas las fuerzas externas que actúan sobre el cuerpo.</p></li>
+<li><p>Sus puntos de aplicación.</p></li>
+<li><p>Las distancias relevantes al eje o punto de giro.</p></li>
 </ul>
 <p>En este tipo de problemas, no basta con indicar solo las fuerzas: también es muy importante mostrar <strong>dónde</strong> actúan, porque eso afecta el torque.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una barra uniforme de 3 m está apoyada en dos soportes verticales: uno en su extremo izquierdo (A) y otro a 2 m de A (B). Una carga de 100 N cuelga del extremo derecho.</p>
+<p>Elementos que debe mostrar el DCL:</p>
+<ul class="simple">
+<li><p>Reacción vertical <span class="math notranslate nohighlight">\(R_A\)</span> en A (hacia arriba), a 0 m del origen</p></li>
+<li><p>Reacción vertical <span class="math notranslate nohighlight">\(R_B\)</span> en B (hacia arriba), a 2 m del origen</p></li>
+<li><p>Peso de la barra <span class="math notranslate nohighlight">\(W_{barra}\)</span> hacia abajo en el punto medio (a 1,5 m del origen)</p></li>
+<li><p>carga <span class="math notranslate nohighlight">\(P = 100\,\text{N}\)</span> hacia abajo en el extremo derecho (a 3 m del origen)</p></li>
+</ul>
+<p>Sin las distancias anotadas no es posible calcular los torques.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">Ver también</p>
+<p>Explora el <strong><a class="reference internal" href="sim_estatica_barra.html"><span class="std std-doc">DCL interactivo de la barra rígida</span></a></strong> para visualizar fuerzas, mover el pivote y calcular torques en tiempo real.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="fuerzas-tipicas-en-problemas-de-estatica">
 <h2>13. Fuerzas típicas en problemas de estática<a class="headerlink" href="#fuerzas-tipicas-en-problemas-de-estatica" title="Link to this heading">#</a></h2>
 <p>En problemas de estática del sólido rígido suelen aparecer fuerzas como:</p>
 <ul class="simple">
-<li><p>peso del cuerpo;</p></li>
-<li><p>fuerza normal;</p></li>
-<li><p>tensiones;</p></li>
-<li><p>fuerzas aplicadas por cuerdas o soportes;</p></li>
-<li><p>reacciones en apoyos o pivotes.</p></li>
+<li><p>Peso del cuerpo.</p></li>
+<li><p>Fuerza normal.</p></li>
+<li><p>Tensiones.</p></li>
+<li><p>Fuerzas aplicadas por cuerdas o soportes.</p></li>
+<li><p>Reacciones en apoyos o pivotes.</p></li>
 </ul>
 <p>Cada una de estas fuerzas puede contribuir al equilibrio traslacional y/o rotacional.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una escalera uniforme apoya su pie en el suelo rugoso y su extremo superior contra una pared lisa. Identifique todas las fuerzas que actúan sobre la escalera.</p>
+<ul class="simple">
+<li><p>peso <span class="math notranslate nohighlight">\(W\)</span> de la escalera, aplicado en su centro de masa (punto medio)</p></li>
+<li><p>normal del suelo <span class="math notranslate nohighlight">\(N_s\)</span> (vertical hacia arriba, en el pie)</p></li>
+<li><p>fricción del suelo <span class="math notranslate nohighlight">\(f\)</span> (horizontal, en el pie), que impide que el pie resbale</p></li>
+<li><p>normal de la pared <span class="math notranslate nohighlight">\(N_p\)</span> (horizontal, perpendicular a la pared, en el extremo superior)</p></li>
+</ul>
+<p>La pared no ejerce fricción porque se declara lisa. La fricción está solo en el suelo.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="centro-de-masa-y-peso-en-un-cuerpo-uniforme">
 <h2>14. Centro de masa y peso en un cuerpo uniforme<a class="headerlink" href="#centro-de-masa-y-peso-en-un-cuerpo-uniforme" title="Link to this heading">#</a></h2>
 <p>En un cuerpo uniforme, el peso puede considerarse aplicado en el centro de masa.</p>
+<figure class="align-default" id="mass">
+<a class="reference internal image-reference" href="../../_images/centro_mass.gif"><img alt="../../_images/centro_mass.gif" src="../../_images/centro_mass.gif" style="width: 50%;" />
+</a>
+</figure>
 <p>Por ejemplo:</p>
 <ul class="simple">
-<li><p>en una barra uniforme, el peso actúa en su punto medio;</p></li>
-<li><p>en una placa uniforme y simétrica, actúa en el centro geométrico.</p></li>
+<li><p>En una barra uniforme, el peso actúa en su punto medio.</p></li>
+<li><p>En una placa uniforme y simétrica, actúa en el centro geométrico.</p></li>
 </ul>
 <p>Esto es especialmente útil en problemas de barras y vigas en equilibrio.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo resuelto</p>
+<p>Una barra uniforme de longitud <span class="math notranslate nohighlight">\(L = 3\,\text{m}\)</span> y masa <span class="math notranslate nohighlight">\(m = 6\,\text{kg}\)</span> está articulada en su extremo izquierdo (A). ¿En qué punto actúa su peso y qué torque produce respecto de A? (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p><strong>Solución:</strong></p>
+<p>El peso actúa en el centro de masa, a <span class="math notranslate nohighlight">\(\dfrac{L}{2} = 1{,}5\,\text{m}\)</span> del extremo.</p>
+<div class="math notranslate nohighlight">
+\[
+W = mg = 6 \times 10 = 60\,\text{N}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_W = W \times \frac{L}{2} = 60 \times 1{,}5 = 90\,\text{N}\cdot\text{m} \quad \text{(sentido horario)}
+\]</div>
+<p>Este torque tendería a hacer girar la barra en sentido horario, por lo que alguna otra fuerza debe generar un torque antihorario de igual magnitud para mantener el equilibrio.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="ejemplo-conceptual-barra-en-equilibrio">
 <h2>15. Ejemplo conceptual: barra en equilibrio<a class="headerlink" href="#ejemplo-conceptual-barra-en-equilibrio" title="Link to this heading">#</a></h2>
 <p>Supongamos una barra horizontal apoyada en su centro y con masas colgando a distintas distancias.</p>
+<figure class="align-default" id="ej2">
+<a class="reference internal image-reference" href="../../_images/gr_est2_08_1.gif"><img alt="../../_images/gr_est2_08_1.gif" src="../../_images/gr_est2_08_1.gif" style="width: 50%;" />
+</a>
+</figure>
 <p>Para resolver el problema se debe:</p>
 <ul class="simple">
-<li><p>aplicar equilibrio de fuerzas para encontrar la reacción del apoyo;</p></li>
-<li><p>aplicar equilibrio de torques para determinar las distancias o fuerzas faltantes.</p></li>
+<li><p>Aplicar equilibrio de fuerzas para encontrar la reacción del apoyo.</p></li>
+<li><p>Aplicar equilibrio de torques para determinar las distancias o fuerzas faltantes.</p></li>
 </ul>
 <p>Este tipo de ejercicio muestra que un cuerpo puede tener varias fuerzas actuando y aun así permanecer en reposo si se equilibran tanto los efectos traslacionales como los rotacionales.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Una barra uniforme de 4 m y masa despreciable está apoyada en su centro (punto O). A la izquierda, a <span class="math notranslate nohighlight">\(1{,}5\,\text{m}\)</span> de O, cuelga una masa <span class="math notranslate nohighlight">\(m_1 = 8\,\text{kg}\)</span>. ¿A qué distancia <span class="math notranslate nohighlight">\(d\)</span> al lado derecho de O debe colgarse <span class="math notranslate nohighlight">\(m_2 = 6\,\text{kg}\)</span> para que la barra quede en equilibrio? (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p><strong>Solución:</strong></p>
+<p>Torques respecto de O (positivo = antihorario):</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau_O = 0: \quad m_1 g \times 1{,}5 - m_2 g \times d = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d = \frac{m_1 \times 1{,}5}{m_2} = \frac{8 \times 1{,}5}{6} = 2{,}0\,\text{m}
+\]</div>
+<p>La masa de 6 kg debe colgarse a 2 m del apoyo hacia la derecha.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="importancia-de-la-distancia-al-eje">
@@ -707,18 +1014,31 @@ r = 0
 <div><p>no solo importa cuánto vale una fuerza, sino también dónde actúa.</p>
 </div></blockquote>
 <p>Por esta razón, al estudiar sólidos rígidos no basta con sumar fuerzas como en el caso de una partícula.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejemplo</p>
+<p>Dos operarios intentan girar una rueda de radio <span class="math notranslate nohighlight">\(R = 0{,}8\,\text{m}\)</span> fija en su eje. El operario A aplica <span class="math notranslate nohighlight">\(F = 20\,\text{N}\)</span> tangencialmente en el borde (a <span class="math notranslate nohighlight">\(0{,}8\,\text{m}\)</span> del eje). El operario B aplica la misma fuerza en un punto a <span class="math notranslate nohighlight">\(0{,}2\,\text{m}\)</span> del eje.</p>
+<div class="math notranslate nohighlight">
+\[
+\tau_A = 20 \times 0{,}8 = 16\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_B = 20 \times 0{,}2 = 4\,\text{N}\cdot\text{m}
+\]</div>
+<p>A pesar de aplicar la misma fuerza, el operario A genera cuatro veces más torque. Para igualar ese efecto, el operario B necesitaría aplicar <span class="math notranslate nohighlight">\(80\,\text{N}\)</span>.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="aplicaciones-tipicas-de-la-estatica">
 <h2>17. Aplicaciones típicas de la estática<a class="headerlink" href="#aplicaciones-tipicas-de-la-estatica" title="Link to this heading">#</a></h2>
 <p>La estática del sólido rígido es fundamental para estudiar:</p>
 <ul class="simple">
-<li><p>balanzas;</p></li>
-<li><p>barras apoyadas;</p></li>
-<li><p>vigas;</p></li>
-<li><p>escaleras;</p></li>
-<li><p>estructuras simples;</p></li>
-<li><p>mecanismos en equilibrio;</p></li>
+<li><p>balanzas</p></li>
+<li><p>barras apoyadas</p></li>
+<li><p>vigas</p></li>
+<li><p>escaleras</p></li>
+<li><p>estructuras simples</p></li>
+<li><p>mecanismos en equilibrio</p></li>
 <li><p>distribución de cargas.</p></li>
 </ul>
 <p>Es una base importante para cursos posteriores de mecánica, resistencia de materiales y estructuras.</p>
@@ -729,10 +1049,10 @@ r = 0
 <p>En esta unidad se introdujo el concepto de torque como medida de la tendencia de una fuerza a producir rotación.</p>
 <p>Se estudiaron:</p>
 <ul class="simple">
-<li><p>la definición vectorial y escalar del torque;</p></li>
-<li><p>la convención de signos;</p></li>
-<li><p>el equilibrio traslacional;</p></li>
-<li><p>el equilibrio rotacional;</p></li>
+<li><p>la definición vectorial y escalar del torque</p></li>
+<li><p>la convención de signos</p></li>
+<li><p>el equilibrio traslacional</p></li>
+<li><p>el equilibrio rotacional</p></li>
 <li><p>las condiciones de equilibrio estático de un sólido rígido.</p></li>
 </ul>
 <p>Estos contenidos permiten analizar cuerpos en reposo sometidos a varias fuerzas aplicadas en diferentes puntos.</p>
@@ -786,6 +1106,195 @@ r = 0
 \sum \tau = 0
 \]</div>
 </section>
+<hr class="docutils" />
+<section id="ejercicios-de-la-unidad">
+<h2>Ejercicios de la unidad<a class="headerlink" href="#ejercicios-de-la-unidad" title="Link to this heading">#</a></h2>
+<section id="ejercicio-analitico-1-barra-con-apoyo-y-carga-excentrica">
+<h3>Ejercicio analítico 1: barra con apoyo y carga excéntrica<a class="headerlink" href="#ejercicio-analitico-1-barra-con-apoyo-y-carga-excentrica" title="Link to this heading">#</a></h3>
+<p>Una barra uniforme de longitud <span class="math notranslate nohighlight">\(L = 3\,\text{m}\)</span> y masa <span class="math notranslate nohighlight">\(m = 6\,\text{kg}\)</span> está articulada en su extremo izquierdo (pivote en A) y sostenida por un cable vertical unido al punto B, ubicado a <span class="math notranslate nohighlight">\(2\,\text{m}\)</span> de A. Del extremo derecho C cuelga una masa <span class="math notranslate nohighlight">\(M = 8\,\text{kg}\)</span>. (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p>a) Dibuje el diagrama de cuerpo libre de la barra con todas las fuerzas y sus puntos de aplicación.</p>
+<p>b) Determine la tensión <span class="math notranslate nohighlight">\(T\)</span> en el cable.</p>
+<p>c) Calcule las componentes de la reacción en el pivote A.</p>
+<hr class="docutils" />
+<p><strong>Solución:</strong></p>
+<p><strong>Datos:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+W_{barra} = 6 \times 10 = 60\,\text{N} \quad \text{(actúa en } x = 1{,}5\,\text{m de A)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+W_M = 8 \times 10 = 80\,\text{N} \quad \text{(actúa en } x = 3\,\text{m de A)}
+\]</div>
+<p><strong>b)</strong> Torques respecto de A (positivo = antihorario):</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau_A = 0: \quad T \times 2 - 60 \times 1{,}5 - 80 \times 3 = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+2T = 90 + 240 = 330 \implies \boxed{T = 165\,\text{N}}
+\]</div>
+<p><strong>c)</strong> Equilibrio traslacional:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_x = 0: \quad A_x = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum F_y = 0: \quad A_y + T - 60 - 80 = 0 \implies A_y = 140 - 165 = \boxed{-25\,\text{N}}
+\]</div>
+<p>El signo negativo en <span class="math notranslate nohighlight">\(A_y\)</span> indica que la articulación ejerce una fuerza hacia abajo sobre la barra (la jala). Esto es físicamente posible en un pivote o articulación fija.</p>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-analitico-2-escalera-apoyada-en-una-pared-lisa">
+<h3>Ejercicio analítico 2: escalera apoyada en una pared lisa<a class="headerlink" href="#ejercicio-analitico-2-escalera-apoyada-en-una-pared-lisa" title="Link to this heading">#</a></h3>
+<p>Una escalera uniforme de longitud <span class="math notranslate nohighlight">\(L = 5\,\text{m}\)</span> y masa <span class="math notranslate nohighlight">\(m = 15\,\text{kg}\)</span> apoya su pie en el suelo rugoso y su extremo superior contra una pared vertical lisa (sin fricción). La escalera forma un ángulo de <span class="math notranslate nohighlight">\(\theta = 60°\)</span> con la horizontal. (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p>a) Identifique y dibuje todas las fuerzas sobre la escalera.</p>
+<p>b) Determine la fuerza normal <span class="math notranslate nohighlight">\(N_p\)</span> que ejerce la pared sobre la escalera.</p>
+<p>c) Determine la fuerza normal del suelo <span class="math notranslate nohighlight">\(N_s\)</span> y la fricción <span class="math notranslate nohighlight">\(f\)</span> en el pie.</p>
+<hr class="docutils" />
+<p><strong>Solución:</strong></p>
+<p><strong>Dato:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+W = 15 \times 10 = 150\,\text{N} \quad \text{(actúa en el punto medio, a } 2{,}5\,\text{m del pie)}
+\]</div>
+<p>Fuerzas: <span class="math notranslate nohighlight">\(N_p\)</span> (horizontal, en el extremo superior), <span class="math notranslate nohighlight">\(N_s\)</span> (vertical, en el pie) y <span class="math notranslate nohighlight">\(f\)</span> (horizontal, en el pie).</p>
+<p><strong>b)</strong> Torques respecto del pie (así <span class="math notranslate nohighlight">\(N_s\)</span> y <span class="math notranslate nohighlight">\(f\)</span> no aparecen en la ecuación):</p>
+<div class="math notranslate nohighlight">
+\[
+\text{brazo de } N_p: \quad L\sin\theta = 5 \times \sin 60° \approx 4{,}33\,\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{brazo de } W: \quad \frac{L}{2}\cos\theta = 2{,}5 \times \cos 60° = 1{,}25\,\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau_{pie} = 0: \quad N_p \times 4{,}33 - 150 \times 1{,}25 = 0 \implies \boxed{N_p \approx 43{,}3\,\text{N}}
+\]</div>
+<p><strong>c)</strong> Equilibrio traslacional:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_x = 0: \quad f - N_p = 0 \implies \boxed{f = 43{,}3\,\text{N}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum F_y = 0: \quad N_s - W = 0 \implies \boxed{N_s = 150\,\text{N}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-analitico-3-rueda-con-multiples-torques">
+<h3>Ejercicio analítico 3: rueda con múltiples torques<a class="headerlink" href="#ejercicio-analitico-3-rueda-con-multiples-torques" title="Link to this heading">#</a></h3>
+<p>Sobre el borde de una rueda de radio <span class="math notranslate nohighlight">\(R = 0{,}6\,\text{m}\)</span>, fija en su centro, actúan tres fuerzas tangenciales:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F_1 = 20\,\text{N}\)</span> en sentido antihorario</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_2 = 35\,\text{N}\)</span> en sentido horario</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_3 = 10\,\text{N}\)</span> en sentido antihorario</p></li>
+</ul>
+<p>a) Calcule el torque de cada fuerza respecto del centro.</p>
+<p>b) Determine el torque neto y el sentido de rotación resultante.</p>
+<p>c) ¿Qué fuerza tangencial adicional <span class="math notranslate nohighlight">\(F_4\)</span>, aplicada en el borde, llevaría la rueda al equilibrio rotacional? Indique magnitud y sentido.</p>
+<hr class="docutils" />
+<p><strong>Solución:</strong></p>
+<p><strong>a)</strong> Las fuerzas son tangenciales (<span class="math notranslate nohighlight">\(\theta = 90°\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\tau_1 = +F_1 R = +20 \times 0{,}6 = +12\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_2 = -F_2 R = -35 \times 0{,}6 = -21\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_3 = +F_3 R = +10 \times 0{,}6 = +6\,\text{N}\cdot\text{m}
+\]</div>
+<p><strong>b)</strong> Torque neto:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau = 12 - 21 + 6 = -3\,\text{N}\cdot\text{m}
+\]</div>
+<p>La tendencia neta es girar en sentido <strong>horario</strong> (torque neto negativo).</p>
+<p><strong>c)</strong> Para equilibrio rotacional:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau + \tau_4 = 0 \implies -3 + F_4 \times 0{,}6 = 0 \implies \boxed{F_4 = 5\,\text{N} \text{ en sentido antihorario}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-integrador-barra-articulada-con-cable-inclinado-y-carga-colgante">
+<h3>Ejercicio integrador: barra articulada con cable inclinado y carga colgante<a class="headerlink" href="#ejercicio-integrador-barra-articulada-con-cable-inclinado-y-carga-colgante" title="Link to this heading">#</a></h3>
+<p>Una barra uniforme de longitud <span class="math notranslate nohighlight">\(L = 4\,\text{m}\)</span> y masa <span class="math notranslate nohighlight">\(m = 10\,\text{kg}\)</span> está articulada en su extremo izquierdo (punto A). Un cable la sostiene en el punto B, ubicado a <span class="math notranslate nohighlight">\(3\,\text{m}\)</span> de A; el cable forma un ángulo de <span class="math notranslate nohighlight">\(30°\)</span> con la barra horizontal. Del extremo derecho C cuelga una masa <span class="math notranslate nohighlight">\(M = 15\,\text{kg}\)</span>. (<span class="math notranslate nohighlight">\(g = 10\,\text{m/s}^2\)</span>)</p>
+<p>a) Dibuje el diagrama de cuerpo libre de la barra, indicando todas las fuerzas y sus puntos de aplicación.</p>
+<p>b) Calcule el torque producido por cada fuerza respecto del punto A.</p>
+<p>c) Determine la tensión <span class="math notranslate nohighlight">\(T\)</span> en el cable.</p>
+<p>d) Determine las componentes <span class="math notranslate nohighlight">\(A_x\)</span> y <span class="math notranslate nohighlight">\(A_y\)</span> de la reacción en la articulación.</p>
+<p>e) Verifique que se cumplen las dos condiciones de equilibrio.</p>
+<hr class="docutils" />
+<p><strong>Solución:</strong></p>
+<p><strong>Datos:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+W_b = mg = 10 \times 10 = 100\,\text{N} \quad \text{(actúa en } x = 2\,\text{m de A)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+W_M = Mg = 15 \times 10 = 150\,\text{N} \quad \text{(actúa en } x = 4\,\text{m de A)}
+\]</div>
+<p>El cable en B tiene componentes <span class="math notranslate nohighlight">\(T_x = T\cos 30°\)</span> (horizontal, hacia A) y <span class="math notranslate nohighlight">\(T_y = T\sin 30°\)</span> (vertical, hacia arriba).</p>
+<p><strong>b)</strong> Torques respecto de A (positivo = antihorario):</p>
+<p>La componente horizontal del cable (<span class="math notranslate nohighlight">\(T\cos 30°\)</span>) pasa por la línea de la barra y tiene brazo cero.</p>
+<div class="math notranslate nohighlight">
+\[
+\tau_T = +T\sin 30° \times 3 = 1{,}5\,T
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_{W_b} = -W_b \times 2 = -200\,\text{N}\cdot\text{m}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tau_{W_M} = -W_M \times 4 = -600\,\text{N}\cdot\text{m}
+\]</div>
+<p><strong>c)</strong> Equilibrio rotacional:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau_A = 0: \quad 1{,}5\,T - 200 - 600 = 0 \implies T = \frac{800}{1{,}5} \approx \boxed{533\,\text{N}}
+\]</div>
+<p><em>d)</em>* Equilibrio traslacional:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_x = 0: \quad A_x - T\cos 30° = 0 \implies A_x = 533 \times \frac{\sqrt{3}}{2} \approx \boxed{462\,\text{N}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum F_y = 0: \quad A_y + T\sin 30° - 100 - 150 = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A_y = 250 - 533 \times 0{,}5 \approx \boxed{-16{,}5\,\text{N}}
+\]</div>
+<p>El signo negativo en <span class="math notranslate nohighlight">\(A_y\)</span> indica que la articulación ejerce una fuerza vertical hacia abajo sobre la barra.</p>
+<p><strong>e)</strong> Verificación:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_x = -A_x + T\cos 30° = -462 + 462 = 0 \quad \checkmark
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum F_y = A_y + T\sin 30° - W_b - W_M = -16{,}5 + 266{,}5 - 100 - 150 = 0 \quad \checkmark
+\]</div>
+<p>Torques respecto de C (verificación independiente):</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\tau_C = A_y \times 4 + T\sin 30° \times 1 - W_b \times 2 = (-16{,}5)(4) + (266{,}5)(1) - (100)(2) \approx 0 \quad \checkmark
+\]</div>
+<p>Las dos condiciones de equilibrio (<span class="math notranslate nohighlight">\(\sum \vec{F} = 0\)</span> y <span class="math notranslate nohighlight">\(\sum\tau = 0\)</span>) se verifican de forma consistente.</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="guia-asociada">
 <h2>Guía asociada<a class="headerlink" href="#guia-asociada" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -874,6 +1383,7 @@ r = 0
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brazo-de-palanca">5. Brazo de palanca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquimedes-y-la-ley-de-la-palanca">Arquímedes y la ley de la palanca</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convencion-de-signos-para-el-torque">6. Convención de signos para el torque</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#torque-nulo">7. Torque nulo</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-la-fuerza-es-cero">a) La fuerza es cero</a></li>
@@ -901,6 +1411,13 @@ r = 0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-de-la-unidad">18. Síntesis de la unidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas-clave">Fórmulas clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-la-unidad">Ejercicios de la unidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-analitico-1-barra-con-apoyo-y-carga-excentrica">Ejercicio analítico 1: barra con apoyo y carga excéntrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-analitico-2-escalera-apoyada-en-una-pared-lisa">Ejercicio analítico 2: escalera apoyada en una pared lisa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-analitico-3-rueda-con-multiples-torques">Ejercicio analítico 3: rueda con múltiples torques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-integrador-barra-articulada-con-cable-inclinado-y-carga-colgante">Ejercicio integrador: barra articulada con cable inclinado y carga colgante</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-asociada">Guía asociada</a></li>
 </ul>
   </nav></div>
