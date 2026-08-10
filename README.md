@@ -31,7 +31,7 @@ La evaluacion oficial del curso se organiza de la siguiente manera:
 | Semana de autoaprendizaje | - | - | Del 18 al 24 de mayo de 2026 |
 | Control 2 | C2 | 20% | Viernes 12 de junio de 2026 |
 | Prueba 2 | P2 | 30% | Martes 30 de junio de 2026 |
-| Prueba recuperativa | - | - | Martes 7 de julio de 2026 |
+| Prueba recuperativa | - | - | Viernes 10 de julio de 2026 |
 | Termino de clases | - | - | Viernes 17 de julio de 2026 |
 | Examen | - | 40% | Martes 21 de julio de 2026 |
 
