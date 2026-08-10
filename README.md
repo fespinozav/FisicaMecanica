@@ -14,13 +14,13 @@ Aqui encontraras una vista general del curso, con recursos, evaluacion, material
 
 | Componente | Descripcion |
 | --- | --- |
-| Curso | FISB4020/541 |
+| Curso | FISC0001-104 / FISO8001-564 |
 | Institucion | Universidad Tecnologica Metropolitana |
 | Modalidad del repositorio | Ebook del curso, materiales descargables y notebooks |
 | Material base | Unidades locales, guias de trabajo |
 
-## Evaluaciones primer semestre de 2026
-### FÍSICA MECÁNICA | COD:FISB4020/541
+## Evaluaciones segundo semestre de 2026
+### FÍSICA MECÁNICA | FISC0001-104 / FISO8001-564
 
 La evaluacion oficial del curso se organiza de la siguiente manera:
 
