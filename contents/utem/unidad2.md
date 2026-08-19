@@ -670,7 +670,7 @@ Movimiento rectilíneo uniformemente acelerado (MRUA) en dirección vertical.
 
 ##### Ejercicios propuestos
 
-1. Resolver con $v_0 = 30\ \text{m/s}$  
+1. Resolver con $v_0 = 30\ \text{m/s}$  R. 
 2. Caída libre desde $50\ \text{m}$  
 3. Tiro vertical desde una altura inicial distinta de cero  
 
@@ -775,19 +775,11 @@ $$
 $$
 
 $$
-v(t) = \frac{dx}{dt}
-$$
-
-$$
 \bar{a} = \frac{\Delta v}{\Delta t}
 $$
 
 $$
-a(t) = \frac{dv}{dt}
-$$
-
-$$
-x(t) = x_0 + vt
+MRU : x(t) = x_0 + vt
 $$
 
 $$
@@ -795,7 +787,7 @@ v(t) = v_0 + at
 $$
 
 $$
-x(t) = x_0 + v_0 t + \frac{1}{2}at^2
+MRUA: x(t) = x_0 + v_0 t + \frac{1}{2}at^2
 $$
 
 $$
