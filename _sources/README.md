@@ -14,26 +14,26 @@ Aqui encontraras una vista general del curso, con recursos, evaluacion, material
 
 | Componente | Descripcion |
 | --- | --- |
-| Curso | FISB4020/541 |
+| Curso | FISC0001-104 / FISO8001-564 |
 | Institucion | Universidad Tecnologica Metropolitana |
 | Modalidad del repositorio | Ebook del curso, materiales descargables y notebooks |
 | Material base | Unidades locales, guias de trabajo |
 
-## Evaluaciones primer semestre de 2026
-### FÍSICA MECÁNICA | COD:FISB4020/541
+## Evaluaciones segundo semestre de 2026
+### FÍSICA MECÁNICA | FISC0001-104 / FISO8001-564
 
 La evaluacion oficial del curso se organiza de la siguiente manera:
 
 | Actividad | Sigla | Ponderacion | Fecha |
 | --- | --- | --- | --- |
-| Control 1 | C1 | 20% | Viernes 24 de abril de 2026 |
-| Prueba 1 | P1 | 30% | Martes 12 de mayo de 2026 |
-| Semana de autoaprendizaje | - | - | Del 18 al 24 de mayo de 2026 |
-| Control 2 | C2 | 20% | Viernes 12 de junio de 2026 |
-| Prueba 2 | P2 | 30% | Martes 30 de junio de 2026 |
-| Prueba recuperativa | - | - | Martes 7 de julio de 2026 |
-| Termino de clases | - | - | Viernes 17 de julio de 2026 |
-| Examen | - | 40% | Martes 21 de julio de 2026 |
+| Control 1 | C1 | 20% | Semana 07 de septiembre |
+| Prueba 1 | P1 | 30% | Semana 29 de septiembre |
+| Semana de autoaprendizaje | - | - | del 26 al 31 de Octubre |
+| Control 2 | C2 | 20% | Semana del 02 de noviembre |
+| Prueba 2 | P2 | 30% | semana del 23 de noviembre |
+| Prueba recuperativa | - | - | semana del 01 de diciembre |
+| Termino de clases | - | - | 12 de diciembre |
+| Examen | - | 40% | semana del 14 de diciembre |
 
 Para el trabajo semanal dentro del repositorio, conviene combinar:
 

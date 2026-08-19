@@ -321,9 +321,10 @@ Movimiento de un vehiculo modelado como una partícula
 
 a. $d_B= 120\vec{i}$ y $d_B=180\vec{i}$  
 b. $d_{AB}= 60m, d_{BC}=60m, d_{CD}=60m, d_{AD}=180m$
+
 c. $\Delta \vec{d_{AB}}=\vec{r_A}-\vec{r_B} = 60\vec{i}m$  
 d. ${v_{BC}}=\frac{d_{BC}}{\Delta t} = \frac{180-120}{14-12} = 30 \frac{m}{s}$  
-e. $\vec{v_{AD}}=\frac{d_{AD}}{\Delta t} = \frac{240-60}{19-0} = 9,47 \vec{j} \frac{m}{s}$  
+e. $\vec{v_{AD}}=\frac{d_{AD}}{\Delta t} = \frac{240-60}{19-0} = 9,47 \vec{i} \frac{m}{s}$  
 
 ---
 
@@ -365,8 +366,8 @@ Gráficos de movimiento MRU
 
 ### Interpretación gráfica
 
-- Gráfica $x$ vs $t$: una recta;
-- Gráfica $v$ vs $t$: una línea horizontal;
+- Gráfica $x$ vs $t$: una recta.
+- Gráfica $v$ vs $t$: una línea horizontal.
 - Gráfica $a$ vs $t$: una línea sobre cero.
 
 
@@ -411,8 +412,8 @@ Gráficos de movimiento MRUA
 
 ### Interpretación gráfica
 
-- gráfica $x$ vs $t$: parábola;
-- gráfica $v$ vs $t$: recta;
+- gráfica $x$ vs $t$: parábola.
+- gráfica $v$ vs $t$: recta.
 - gráfica $a$ vs $t$: línea horizontal constante.
 
 ---
@@ -669,7 +670,7 @@ Movimiento rectilíneo uniformemente acelerado (MRUA) en dirección vertical.
 
 ##### Ejercicios propuestos
 
-1. Resolver con $v_0 = 30\ \text{m/s}$  
+1. Resolver con $v_0 = 30\ \text{m/s}$  R. 
 2. Caída libre desde $50\ \text{m}$  
 3. Tiro vertical desde una altura inicial distinta de cero  
 
@@ -774,19 +775,11 @@ $$
 $$
 
 $$
-v(t) = \frac{dx}{dt}
-$$
-
-$$
 \bar{a} = \frac{\Delta v}{\Delta t}
 $$
 
 $$
-a(t) = \frac{dv}{dt}
-$$
-
-$$
-x(t) = x_0 + vt
+MRU : x(t) = x_0 + vt
 $$
 
 $$
@@ -794,7 +787,7 @@ v(t) = v_0 + at
 $$
 
 $$
-x(t) = x_0 + v_0 t + \frac{1}{2}at^2
+MRUA: x(t) = x_0 + v_0 t + \frac{1}{2}at^2
 $$
 
 $$
